@@ -110,3 +110,5 @@ html[data-path=r] .seq .sq>.pn,html[data-path=n] .seq .sq>.pr,html[data-offer="0
 .foot .wrap.foot-b>.phc2{border-top:1px solid var(--line);padding-top:12px}
 /* координатор, проверка v3.1: в режиме ?review=footer колонка «Компания и документы» на всю ширину — длинные пункты не выходят за рамку */
 @media (min-width:601px){.foot-nav .foot-co.review{grid-column:1/-1}.foot-co.review ul{flex-direction:row;flex-wrap:wrap;column-gap:28px}}
+/* координатор, проверка опубликованной v3.1: в подписи карточки первого экрана вложенный .nw тоже становился блоком (.rc-t span{display:block} из d.css), и вторая строка начиналась с «·» */
+.rc-t span span{display:inline;margin:0;font-size:inherit}
