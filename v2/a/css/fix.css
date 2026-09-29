@@ -9,3 +9,6 @@
 @media (max-width:600px){.cats ul{scroll-padding-inline:16px}}
 /* Т9: подзаголовок первого экрана держит одну высоту в обоих сценариях (фраза о шорт-листе удлинила перепродажу на строку) — переключатель и кнопки не прыгают */
 @media (min-width:601px){.h-l{min-height:7.5em}}
+/* Т10: после уточнения формулировок (29.09) карточка нового листинга выше — высота карточки первого экрана одинакова в обоих сценариях */
+@media (min-width:1280px){html[data-offer="0"] .res .rc{min-height:424px}html[data-offer="1"] .res .rc{min-height:479px}}
+@media (min-width:981px) and (max-width:1279px){html[data-offer="0"] .res .rc{min-height:424px}}
