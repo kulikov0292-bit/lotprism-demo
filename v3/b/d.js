@@ -8,8 +8,7 @@ var T={
 'live.offerExample.newListing':'Показан пример: прайс поставщика от 24.09.2026, сравнение с потолком набора условное.',
 'form.email.errorEmpty':'Укажите почту','form.email.errorInvalid':'Проверьте адрес почты',
 'form.submit':'Отправить заявку','form.submitting':'Отправляем…',
-'form.success.demo.resale':'Демо: заявка сформирована, но не отправлена. В рабочей версии здесь будет подтверждение.',
-'form.success.demo.newListing':'Демо: запрос на обсуждение исследования сформирован, но не отправлен. В рабочей версии здесь будет подтверждение.'};
+'form.success.demo':'Демо: заявка не отправлена.'};
 function t(k,p){var s=T[k];if(p)for(var n in p)s=s.split('{'+n+'}').join(p[n]);return s}
 function isN(){return H.getAttribute('data-path')==='n'}
 function sync(k){var v=H.getAttribute('data-'+k);
@@ -29,6 +28,8 @@ bs.forEach(function(b,i){b.addEventListener('keydown',function(e){var k=e.key,j=
 if(k==='ArrowRight'||k==='ArrowDown')j=(i+1)%bs.length;else if(k==='ArrowLeft'||k==='ArrowUp')j=(i-1+bs.length)%bs.length;else if(k==='Home')j=0;else if(k==='End')j=bs.length-1;
 if(j>=0){e.preventDefault();bs[j].focus();bs[j].click()}})})});
 sync('path');sync('offer');
+/* v3.1: подвал — скрытые места для сведений оператора видны только в режиме ?review=footer */
+if(new URLSearchParams(location.search).get('review')==='footer')[].forEach.call(document.querySelectorAll('[data-review]'),function(e){e.hidden=false;if(!e.classList.contains('wrap'))e.classList.add('review')});
 /* v3: ссылки подвала «Перепродажа» / «Новый листинг» — сценарий без перезагрузки, затем к #how; href ?p=…#how — запасной вариант без JS */
 [].forEach.call(document.querySelectorAll('a[data-go]'),function(a){a.addEventListener('click',function(e){var s=document.getElementById('how');if(!s)return;e.preventDefault();set('path',a.getAttribute('data-go'));window.scrollTo({top:s.getBoundingClientRect().top+window.pageYOffset-80,behavior:mo?'smooth':'instant'});var h=document.getElementById('h-how');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}})});
 /* БРИФ-20: на компьютере полосы сравнения стоят на уровне числа потолка в левой колонке */
@@ -65,7 +66,7 @@ dlg.addEventListener('cancel',function(){setTimeout(back,0)});
 dlg.addEventListener('close',back);
 mail.addEventListener('input',function(){if(mail.getAttribute('aria-invalid')==='true'&&RE.test(mail.value.trim()))inv(false)});
 form.addEventListener('submit',function(e){e.preventDefault();if(sb.dataset.state)return;if(!RE.test(mail.value.trim())){inv(true);mail.focus();return}
-inv(false);sb.setAttribute('data-state','loading');if(stx)stx.textContent=t('form.submitting');fs.disabled=true;st=setTimeout(function(){form.hidden=true;ok.hidden=false;okm.textContent=t(isN()?'form.success.demo.newListing':'form.success.demo.resale');okm.focus()},mo?900:0)})}
+inv(false);sb.setAttribute('data-state','loading');if(stx)stx.textContent=t('form.submitting');fs.disabled=true;st=setTimeout(function(){form.hidden=true;ok.hidden=false;okm.textContent=t('form.success.demo');okm.focus()},mo?900:0)})}
 if(mb&&dr){mb.addEventListener('click',function(){var o=!dr.classList.contains('open');dr.classList.toggle('open',o);mb.setAttribute('aria-expanded',o)});
 [].forEach.call(dr.querySelectorAll('a'),function(a){a.addEventListener('click',function(){dr.classList.remove('open');mb.setAttribute('aria-expanded','false')})});function closeMenu(f){if(!dr.classList.contains('open'))return;dr.classList.remove('open');mb.setAttribute('aria-expanded','false');if(f)mb.focus()}document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu(true)});document.addEventListener('click',function(e){if(!dr.contains(e.target)&&!mb.contains(e.target))closeMenu(false)})}
 })();

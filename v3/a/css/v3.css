@@ -16,6 +16,9 @@
 /* телефон: подпись «свой листинг по спросу» длиннее прежней — на 390 умещается в строку за счёт 2 px полей; на ≤375 окно фото ниже на 16 px, чтобы главная кнопка не опустилась */
 @media (min-width:376px) and (max-width:600px){.h-s .seg button{padding-inline:7px}}
 @media (max-width:375px){.res{--win:132px}}
+/* v3.1: подпись «Пример: Amazon Германия · EUR · …» в карточке первого экрана на телефоне занимает две строки (+16 px); окно фото ниже на 16 px, чтобы главная кнопка не опустилась */
+@media (min-width:376px) and (max-width:600px){.res{--win:143.5px}}
+@media (max-width:375px){.res{--win:115.5px}}
 /* «04 · необязательно ↓»: цель касания */
 .sup a.opt{display:inline-flex;align-items:center;min-height:24px}
 @media (pointer:coarse){.sup a.opt{min-height:44px}}
@@ -41,17 +44,16 @@ html[data-path=r] .seq .sq>.pn,html[data-path=n] .seq .sq>.pr,html[data-offer="0
 @media (max-width:600px){.seq .sq{padding:14px 16px}.seq-n{padding:10px 16px 12px}}
 /* слот: строка о демонстрации над кнопкой */
 .slot .dnote{font-size:12.5px;color:var(--mute);text-wrap:pretty}
-/* раздел #assistant */
-.as{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:28px 40px;align-items:start}
-.as-c h3{font:500 15px/1.3 Onest,system-ui,sans-serif;padding-bottom:12px}
-.as-1{padding-top:0}
-.as-l{list-style:none;border-bottom:1px solid var(--line)}
-.as-l li{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 20px;padding:12px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.4;text-wrap:pretty}
-.as-l li>span:first-child{flex:1 1 240px;min-width:0}
-.as-l .mark{flex:none}
-.mark.out::before{display:none}
-@media (min-width:981px){.as-c:not(.as-1){padding-top:0}.as-1 .as-l{margin-top:31px}}
-@media (max-width:980px){.as{grid-template-columns:minmax(0,1fr)}.as-1 .as-l{margin-top:0}.as-l .mark{flex:1 1 100%}}
+/* v3.1 · раздел #assistant: строка трёх результатов — оформление .chgs; пять шагов — узлы .nodes/.nd из «Двух путей» */
+.as-r{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.as-r>li{padding:14px 18px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.as-r>li:first-child{padding-left:0}.as-r>li:last-child{padding-right:0}
+.as-r>li+li{border-left:1px solid var(--line)}
+.as-r p{font-size:14.5px;line-height:1.45;color:var(--ink);text-wrap:pretty}
+.as-n{--lc:var(--teal);--gx:26px;--gy:20px;margin-top:28px}
+.as-n .nd .ms.nt{font-size:12.5px;color:var(--faint)}
+.as-n .nd .mark{margin-top:auto;padding-top:2px}
+@media (max-width:980px){.as-r{grid-template-columns:minmax(0,1fr)}.as-r>li{padding-inline:0}.as-r>li+li{border-left:0;border-top:1px solid var(--line)}}
 /* подвал */
 .foot{padding-block:48px 56px}
 .foot .wrap.foot-g{display:grid;grid-template-columns:minmax(260px,2fr) minmax(0,2fr);gap:32px 40px;align-items:start;justify-content:normal;font-size:14px}
@@ -87,10 +89,24 @@ html[data-path=r] .seq .sq>.pn,html[data-path=n] .seq .sq>.pr,html[data-offer="0
 .lang-l a[aria-current=true]{color:var(--ink)}.lang-l a[aria-current=true]::after{content:"✓";color:var(--lem)}
 .lang-l .c{font:500 12px/1 'JetBrains Mono',ui-monospace,monospace;color:var(--faint)}
 /* высоты, пересчитанные под тексты v3 (замер: естественная высота большего из двух сценариев): .rc — Т10; .h-l (Т9) — 5 строк в обоих сценариях, 7,5em достаточно */
-@media (min-width:981px){html[data-offer="0"] .res .rc{min-height:445px}html[data-offer="1"] .res .rc{min-height:500px}}
-@media (min-width:601px) and (max-width:980px){html[data-offer="0"] .res .rc{min-height:386px}html[data-offer="1"] .res .rc{min-height:341px}}
+/* v3.1: пересчёт под новые подписи карточки и hero.lead (замер hgt): .rc 462 / 517 на ≥ 981, 403 / 341 на 601–980; .h-l — 6 строк у перепродажи (153 px) */
+@media (min-width:981px){html[data-offer="0"] .res .rc{min-height:462px}html[data-offer="1"] .res .rc{min-height:517px}}
+@media (min-width:601px) and (max-width:980px){html[data-offer="0"] .res .rc{min-height:403px}html[data-offer="1"] .res .rc{min-height:341px}}
+@media (min-width:601px){.h-l{min-height:9em}}
 /* координатор, проверка 29.09: .nw внутри флекс-строки «Следующий шаг» становился отдельным флекс-элементом и уезжал вправо («8–12 шт.», «9,60 €»). Дефект пришёл из v2 (Т4) */
 .chgs .nx p>.nw{display:contents}
+/* v3.1 · подвал: места для сведений — только в режиме ?review=footer (d.js снимает hidden и ставит .review) */
+.foot-co ul{list-style:none;display:flex;flex-direction:column}
+.foot-co li{display:flex;align-items:center;min-height:32px;font-size:14px}
+.foot .review{border:1px dashed var(--line2);border-radius:8px;padding:10px 12px;color:var(--faint)}
+.foot-cr.review{margin-top:12px;font-size:13px}
+.foot .wrap.foot-sw{display:block;margin-top:16px}
+.foot-st{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:12px 14px;border:1px dashed var(--line2);border-radius:8px;font-size:13px;line-height:1.5;color:var(--mute)}
+.foot-st p,.foot-st li{font-size:13px;color:var(--mute)}.foot-st b{font-weight:500;color:var(--ink)}
+.foot-st ul{padding-left:18px}
+@media (max-width:600px){.foot-nav .foot-co{grid-column:1/-1}}
 /* координатор: разделитель нижней строки подвала — по ширине содержимого, а не с полями .wrap */
 .foot .wrap.foot-b{border-top:0;padding-top:0}
 .foot .wrap.foot-b>.phc2{border-top:1px solid var(--line);padding-top:12px}
+/* координатор, проверка v3.1: в режиме ?review=footer колонка «Компания и документы» на всю ширину — длинные пункты не выходят за рамку */
+@media (min-width:601px){.foot-nav .foot-co.review{grid-column:1/-1}.foot-co.review ul{flex-direction:row;flex-wrap:wrap;column-gap:28px}}
