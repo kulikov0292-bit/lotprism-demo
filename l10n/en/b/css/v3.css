@@ -1,0 +1,141 @@
+/* v3 RU · БРИФ-21. Подключается последним, поверх fix.css и b20.css. Новых цветов, анимаций и шрифтов нет. */
+/* шрифты со своей папки (как в приложении): Onest и JetBrains Mono. Unbounded — пока с Google, см. отчёт */
+@font-face{font-family:Onest;font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/onest-cyrillic-ext.woff2) format("woff2");unicode-range:u+0460-052f,u+1c80-1c8a,u+20b4,u+2de0-2dff,u+a640-a69f,u+fe2e-fe2f}
+@font-face{font-family:Onest;font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/onest-cyrillic.woff2) format("woff2");unicode-range:u+0301,u+0400-045f,u+0490-0491,u+04b0-04b1,u+2116}
+@font-face{font-family:Onest;font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/onest-latin-ext.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}
+@font-face{font-family:Onest;font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/onest-latin.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 600;font-display:swap;src:url(assets/jetbrains-mono-cyrillic-ext.woff2) format("woff2");unicode-range:u+0460-052f,u+1c80-1c8a,u+20b4,u+2de0-2dff,u+a640-a69f,u+fe2e-fe2f}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 600;font-display:swap;src:url(assets/jetbrains-mono-cyrillic.woff2) format("woff2");unicode-range:u+0301,u+0400-045f,u+0490-0491,u+04b0-04b1,u+2116}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 600;font-display:swap;src:url(assets/jetbrains-mono-latin-ext.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 600;font-display:swap;src:url(assets/jetbrains-mono-latin.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}
+/* кегль ≥ 12 px */
+.rc-h .eyebrow,.rc-l dt,.bl,.nd .nn,.sup .opt,.unkn .st,.an thead th,.keep,.src2,.cats li b,.unk,.lh .k,.bases .n{font-size:12px}
+/* первый экран: неизвестная цена и рассчитанный потолок — две мысли */
+.rc-l dd .cl{display:block;margin-top:5px}
+@media (max-width:600px){.rc-l dd .cl{display:inline;margin:0 0 0 4px}}
+/* телефон: подпись «свой листинг по спросу» длиннее прежней — на 390 умещается в строку за счёт 2 px полей; на ≤375 окно фото ниже на 16 px, чтобы главная кнопка не опустилась */
+@media (min-width:376px) and (max-width:600px){.h-s .seg button{padding-inline:7px}}
+@media (max-width:375px){.res{--win:132px}}
+/* v3.1: подпись «Пример: Amazon Германия · EUR · …» в карточке первого экрана на телефоне занимает две строки (+16 px); окно фото ниже на 16 px, чтобы главная кнопка не опустилась */
+@media (min-width:376px) and (max-width:600px){.res{--win:143.5px}}
+@media (max-width:375px){.res{--win:115.5px}}
+/* «04 · необязательно ↓»: цель касания */
+.sup a.opt{display:inline-flex;align-items:center;min-height:24px}
+@media (pointer:coarse){.sup a.opt{min-height:44px}}
+/* «Основания»: нейтральная метка «нет в продукте», действие над следующей проверкой */
+.unkn .st.nip{border:1px solid var(--line2);color:var(--mute)}
+.nxc .act{margin-top:-2px}
+.fig .rnote{font-size:13px;margin-top:-4px}
+/* вложенный .nw в подписи шапки карточки не должен становиться блоком (наследие v2) */
+.oc3-h h3 span span{display:inline;margin:0;font-size:inherit}
+/* строка «Вопрос · Действие · Исследование» — стиль .chgs; все четыре состояния лежат в одной ячейке, высота = самый длинный текст */
+.seq{border-bottom:1px solid var(--line)}
+.seq-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,2.4fr)}
+.seq .sq{display:grid;grid-template-rows:auto 1fr;row-gap:6px;padding:14px 18px 16px;min-width:0}
+.seq .sq+.sq{border-left:1px solid var(--line)}
+html[data-path][data-offer] .seq .sq>p{display:block!important;grid-row:2;grid-column:1;align-self:start;font-size:14.5px;line-height:1.45;color:var(--ink);text-wrap:pretty}
+html[data-path=r] .seq .sq>.pn,html[data-path=n] .seq .sq>.pr,html[data-offer="0"] .seq .sq>.oa,html[data-offer="1"] .seq .sq>.ob{visibility:hidden}
+.seq .sq .mark{display:flex;margin-top:4px}
+.seq .sq .tagdemo{display:inline-block;margin-left:4px;padding:3px 5px;vertical-align:1px}
+.seq-n{display:flex;flex-wrap:wrap;gap:2px 16px;padding:10px 18px 12px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.45;color:var(--faint);text-wrap:pretty}
+/* 981–1279: «Исследование» — на всю ширину второй строкой, иначе в ячейке больше двух строк; ниже 981 — столбиком, как .chgs */
+@media (min-width:981px) and (max-width:1279px){.seq-g{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.seq .sq:nth-child(3){grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}}
+@media (max-width:980px){.seq-g{grid-template-columns:minmax(0,1fr)}.seq .sq+.sq{border-left:0;border-top:1px solid var(--line)}}
+@media (max-width:600px){.seq .sq{padding:14px 16px}.seq-n{padding:10px 16px 12px}}
+/* слот: строка о демонстрации над кнопкой */
+.slot .dnote{font-size:12.5px;color:var(--mute);text-wrap:pretty}
+/* v3.1 · раздел #assistant: строка трёх результатов — оформление .chgs; пять шагов — узлы .nodes/.nd из «Двух путей» */
+.as-r{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.as-r>li{padding:14px 18px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.as-r>li:first-child{padding-left:0}.as-r>li:last-child{padding-right:0}
+.as-r>li+li{border-left:1px solid var(--line)}
+.as-r p{font-size:14.5px;line-height:1.45;color:var(--ink);text-wrap:pretty}
+.as-n{--lc:var(--teal);--gx:26px;--gy:20px;margin-top:28px}
+.as-n .nd .ms.nt{font-size:12.5px;color:var(--faint)}
+.as-n .nd .mark{margin-top:auto;padding-top:2px}
+@media (max-width:980px){.as-r{grid-template-columns:minmax(0,1fr)}.as-r>li{padding-inline:0}.as-r>li+li{border-left:0;border-top:1px solid var(--line)}}
+/* подвал */
+.foot{padding-block:48px 56px}
+.foot .wrap.foot-g{display:grid;grid-template-columns:minmax(260px,2fr) minmax(0,2fr);gap:32px 40px;align-items:start;justify-content:normal;font-size:14px}
+.foot-id{display:flex;flex-direction:column;align-items:flex-start;gap:10px;max-width:60ch;color:var(--mute);font-size:14px;line-height:1.5;text-wrap:pretty}
+.foot-id img{margin-bottom:6px}
+.foot-id .demo{font-size:13px;color:var(--faint)}
+.foot-nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px 40px}
+.foot-nav h2{margin-bottom:8px;color:var(--faint)}
+.foot-nav ul{list-style:none;display:flex;flex-direction:column}
+.foot-nav a{display:inline-flex;align-items:center;gap:4px;min-height:32px;color:var(--mute);font-size:14px}
+.foot-nav a:hover{color:var(--ink)}
+.foot .wrap.foot-b{display:block;margin-top:28px;padding-top:12px;border-top:1px solid var(--line);font-size:13px}
+.phc2 summary{list-style:none;display:inline-flex;align-items:center;gap:8px;min-height:32px;cursor:pointer;color:var(--mute);border-radius:8px}
+.phc2 summary::-webkit-details-marker{display:none}
+.phc2 summary .chev{width:22px;height:22px}
+.phc2[open] summary .chev{transform:rotate(180deg)}
+.phc2 p{margin-top:6px;font-size:12.5px;line-height:1.5;color:var(--faint);max-width:80ch}
+.phc2 p a,main p a:not(.btn):not(.go2){color:var(--mute);text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:3px}
+.phc2 p a:hover{text-decoration-color:var(--lem);color:var(--ink)}
+@media (pointer:coarse){.foot-nav a,.phc2 summary{min-height:44px}}
+@media (max-width:600px){.foot{padding-block:40px 44px}.foot .wrap.foot-g{grid-template-columns:minmax(0,1fr);gap:28px}.foot-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px}}
+/* форма: вместо вращающегося значка — слово «Отправляем…» */
+#req-s[data-state=loading] .tx{color:inherit}
+#req-s[data-state=loading] .spin{display:none}
+/* принудительные цвета: выбранный сегмент различим */
+@media (forced-colors:active){.seg button[aria-checked=true],.ll[aria-pressed=true]{outline:2px solid Highlight;outline-offset:-2px}}
+/* переключатель языка (БРИФ-25): шапка ≥ 981, меню ≤ 980, подвал. Скрыт без window.LP_L10N. Позиции и отступы — логическими свойствами */
+.lang{position:relative}
+.lang-b{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding-inline:4px;background:none;border:0;color:var(--mute);font:inherit;white-space:nowrap;cursor:pointer;transition:color var(--d-hover) var(--ease-out)}
+.lang-b:hover,.lang-b[aria-expanded=true]{color:var(--ink)}
+.lang-i{width:16px;height:16px;flex:none}.lang-v{width:12px;height:12px;flex:none;transition:transform var(--d-open) var(--ease-out)}
+.lang-b[aria-expanded=true] .lang-v{transform:rotate(180deg)}
+.lang-l{position:absolute;inset-inline-end:0;inset-block-start:100%;z-index:30;list-style:none;width:max-content;min-width:200px;max-width:320px;margin-block-start:4px;padding:6px;background:var(--p1);border:1px solid var(--line2);border-radius:var(--r-panel,12px);box-shadow:var(--shadow);font-size:15px}
+.lang-l a{display:grid;grid-template-columns:minmax(0,1fr) auto 14px;column-gap:12px;align-items:center;min-height:44px;padding-block:6px;padding-inline:10px;border-radius:8px;color:var(--mute);line-height:1.3;text-align:start}
+.lang-l a:hover{color:var(--ink);background:var(--p2)}
+.lang-l a::after{content:"";text-align:center}
+.lang-l a[aria-current=true]{color:var(--ink)}.lang-l a[aria-current=true]::after{content:"✓";color:var(--lem)}
+.lang-l a:focus-visible{outline:2px solid var(--lem);outline-offset:-2px}
+.lang-l .c{font:500 12px/1 'JetBrains Mono',ui-monospace,monospace;color:var(--faint)}
+.mo .lang-l:not([hidden]){animation:langIn var(--d-open) var(--ease-out)}
+@keyframes langIn{from{opacity:0;transform:translateY(-4px)}}
+/* шапка: на ≤ 980 язык — в меню; на 981–1179 строка шапки без запаса уже на русском (замер hdr) — язык только в подвале */
+@media (max-width:1179px){.site-h .acts .lang-hd{display:none}}
+/* 1180–1279: полная кнопка с подписями +30 % не помещается — только значок 44×44; самоназвание остаётся в доступном имени */
+@media (min-width:1180px) and (max-width:1279px){.lang-hd .lang-c{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.lang-hd .lang-v{display:none}.lang-hd .lang-b{min-width:44px;justify-content:center;padding-inline:0}.lang-hd .lang-i{width:18px;height:18px}}
+html:not(.mo) .lang-b,html:not(.mo) .lang-v{transition:none}
+/* меню: строка «Язык · Русский ›», список раскрывается на месте */
+.drawer .lang-dr{border-bottom:1px solid var(--line)}
+.drawer .lang-dr .lang-b{display:flex;width:100%;min-height:48px;gap:8px;padding-inline:4px;color:var(--ink);text-align:start}
+.lang-dr .lang-t{color:var(--ink)}.lang-dr .lang-dot{color:var(--faint)}.lang-dr .lang-c{color:var(--mute);margin-inline-end:auto}
+.lang-dr .lang-b[aria-expanded=true] .lang-v{transform:rotate(90deg)}
+.drawer .lang-dr .lang-l{position:static;width:auto;min-width:0;max-width:none;margin:0 0 8px;padding:0;background:none;border:0;border-radius:0;box-shadow:none}
+.drawer .lang-dr .lang-l a{min-height:48px;padding-block:0;padding-inline:16px 4px;border-bottom:0;border-radius:8px}
+.mo .drawer .lang-dr .lang-l:not([hidden]){animation:langFade var(--d-open) var(--ease-out)}
+@keyframes langFade{from{opacity:0}}
+/* подвал: нижняя строка, список вверх */
+.foot .wrap.foot-l{display:block;font-size:14px}
+.lang-ft:not([hidden]){display:inline-block;margin-block-start:8px;margin-inline-start:-4px}
+.lang-ft .lang-l{inset-inline-start:0;inset-inline-end:auto;inset-block-start:auto;inset-block-end:100%;margin-block:0 4px}
+.mo .lang-ft .lang-l:not([hidden]){animation-name:langUp}
+@keyframes langUp{from{opacity:0;transform:translateY(4px)}}
+/* высоты, пересчитанные под тексты v3 (замер: естественная высота большего из двух сценариев): .rc — Т10; .h-l (Т9) — 5 строк в обоих сценариях, 7,5em достаточно */
+/* v3.1: пересчёт под новые подписи карточки и hero.lead (замер hgt): .rc 462 / 517 на ≥ 981, 403 / 341 на 601–980; .h-l — 6 строк у перепродажи (153 px) */
+@media (min-width:981px){html[data-offer="0"] .res .rc{min-height:462px}html[data-offer="1"] .res .rc{min-height:517px}}
+@media (min-width:601px) and (max-width:980px){html[data-offer="0"] .res .rc{min-height:403px}html[data-offer="1"] .res .rc{min-height:341px}}
+@media (min-width:601px){.h-l{min-height:9em}}
+/* координатор, проверка 29.09: .nw внутри флекс-строки «Следующий шаг» становился отдельным флекс-элементом и уезжал вправо («8–12 шт.», «9,60 €»). Дефект пришёл из v2 (Т4) */
+.chgs .nx p>.nw{display:contents}
+/* v3.1 · подвал: места для сведений — только в режиме ?review=footer (d.js снимает hidden и ставит .review) */
+.foot-co ul{list-style:none;display:flex;flex-direction:column}
+.foot-co li{display:flex;align-items:center;min-height:32px;font-size:14px}
+.foot .review{border:1px dashed var(--line2);border-radius:8px;padding:10px 12px;color:var(--faint)}
+.foot-cr.review{margin-top:12px;font-size:13px}
+.foot .wrap.foot-sw{display:block;margin-top:16px}
+.foot-st{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:12px 14px;border:1px dashed var(--line2);border-radius:8px;font-size:13px;line-height:1.5;color:var(--mute)}
+.foot-st p,.foot-st li{font-size:13px;color:var(--mute)}.foot-st b{font-weight:500;color:var(--ink)}
+.foot-st ul{padding-left:18px}
+@media (max-width:600px){.foot-nav .foot-co{grid-column:1/-1}}
+/* координатор: разделитель нижней строки подвала — по ширине содержимого, а не с полями .wrap */
+.foot .wrap.foot-b{border-top:0;padding-top:0}
+.foot .wrap.foot-b>.phc2{border-top:1px solid var(--line);padding-top:12px}
+/* координатор, проверка v3.1: в режиме ?review=footer колонка «Компания и документы» на всю ширину — длинные пункты не выходят за рамку */
+@media (min-width:601px){.foot-nav .foot-co.review{grid-column:1/-1}.foot-co.review ul{flex-direction:row;flex-wrap:wrap;column-gap:28px}}
+/* координатор, проверка опубликованной v3.1: в подписи карточки первого экрана вложенный .nw тоже становился блоком (.rc-t span{display:block} из d.css), и вторая строка начиналась с «·» */
+.rc-t span span{display:inline;margin:0;font-size:inherit}

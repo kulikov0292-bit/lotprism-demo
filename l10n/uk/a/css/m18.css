@@ -1,0 +1,31 @@
+/* БРИФ-18/19 · мобильный hero демо-3. Только ≤600 px поверх h17.css; .h-x на desktop скрыт. */
+.h-x{display:none}
+@media (max-width:600px){
+/* порядок: смысл → сценарий → пример → объяснение → кнопка */
+.hin{grid-template-areas:"t" "s" "r" "l" "c"}
+.h-l{display:none}
+.res{--win:160px}
+.rimg img.ar,.rimg img.an{object-position:50% 58%}
+.illu.m{left:auto;right:10px}
+/* оба сценария лежат в одной ячейке: строка держит высоту длинного варианта, неактивный скрыт visibility */
+html[data-path] .rc .pr:not(.ob):not(.oa),html[data-path] .rc .pn:not(.ob):not(.oa),html[data-offer="0"] .rc .ob:is(.pr,.pn),html[data-offer="1"] .rc .oa:is(.pr,.pn),html[data-path] .h-x :is(.pr,.pn){display:block!important}
+html[data-path] .rc .verdict:is(.pr,.pn){display:inline-flex!important}
+html[data-offer="0"] .rc .nx dd.ob,html[data-offer="1"] .rc .nx dd.oa{display:flex!important}
+html[data-path=r] .rc .pn,html[data-path=n] .rc .pr,html[data-path=r] .h-x .pn,html[data-path=n] .h-x .pr{visibility:hidden}
+/* ритм карточки: шапка (ярлык / статус) → название → строки с равными отступами; без распределения запаса */
+html[data-offer] .res .rc{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"h" "t" "l" "g";align-content:start;row-gap:10px;min-height:0}
+.rc>.rc-h{grid-area:h;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"e v";align-items:center;column-gap:10px}
+.rc-h .eyebrow{grid-area:e}.rc-h .ey-l{display:none}
+.rc-h .verdict{grid-area:v;justify-self:end}
+.rc>.rc-t{grid-area:t}
+.rc>.rc-l{grid-area:l;display:block}
+.rc>.go{grid-area:g}
+.rc-l>div{display:grid;grid-template-areas:"dt" "dd";row-gap:3px;padding:8px 0}
+.rc-l>div>dt{grid-area:dt}.rc-l>div>dd{grid-area:dd}
+html[data-offer] .rc-l>.nx{display:grid} /* d.css держит .nx во flex-колонке: без этого варианты «Следующего шага» стоят друг под другом */
+/* объяснение до кнопки: польза + условие сценария */
+.h-x{display:grid;margin-top:14px;font-size:14.5px;line-height:1.45;color:var(--mute);text-wrap:pretty}
+.h-x>span{grid-area:1/1}
+.h-c{margin-top:12px}
+}
+@media (max-width:375px){.res{--win:148px}}

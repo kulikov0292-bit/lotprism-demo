@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" data-path="r" data-offer="0">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>LotPrism&nbsp;– a software assistant for selling on Amazon</title>
+<meta name="description" content="LotPrism helps sellers on Amazon find products for resale, research demand for new listings and assess purchases based on supplier offers.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/v.css">
+<link rel="stylesheet" href="css/d.css">
+<link rel="stylesheet" href="css/h17.css">
+<link rel="stylesheet" href="css/m18.css">
+<link rel="stylesheet" href="css/fix.css">
+<link rel="stylesheet" href="css/b20.css">
+<link rel="stylesheet" href="css/v3.css">
+<link rel="stylesheet" href="css/l10n.css">
+<link rel="preload" as="image" href="img/hero-d-r.jpg" media="(min-width:601px)"><link rel="preload" as="image" href="img/hero-m-r.jpg" media="(max-width:600px)">
+<script>(function(){var h=document.documentElement,q=new URLSearchParams(location.search);try{if('scrollRestoration' in history)history.scrollRestoration='manual';var nv=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];if(location.hash&&nv&&nv.type==='reload')history.replaceState(null,'',location.pathname+location.search)}catch(e){}h.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&q.get('rm')!=='1')h.classList.add('mo');if(q.get('p')==='n'||q.get('p')==='r')h.setAttribute('data-path',q.get('p'));else h.setAttribute('data-path','r');if(q.get('o')==='1')h.setAttribute('data-offer','1')})()</script>
+<link rel="alternate" hreflang="de" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/de/a/"><link rel="alternate" hreflang="en" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/en/a/"><link rel="alternate" hreflang="es" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/es/a/"><link rel="alternate" hreflang="ru" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/ru/a/"><link rel="alternate" hreflang="uk" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/uk/a/"></head>
+<body>
+<header class="site-h">
+<div class="wrap nav">
+<a class="logo" href="#hero" aria-label="LotPrism – home page"><img src="logo.svg" alt="LotPrism" width="166" height="22"></a>
+<nav class="links" aria-label="Main navigation"><a href="#how">How it works</a><a href="#why">Reasons</a><a href="#offer">Supplier</a><a href="#faq">Questions</a></nav>
+<div class="acts"><div class="lang lang-hd" id="lang" hidden><button class="lang-b" type="button" aria-expanded="false" aria-controls="lang-l"><svg class="lang-i" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="8" cy="8" r="6.25"></circle><ellipse cx="8" cy="8" rx="2.6" ry="6.25"></ellipse><path d="M1.75 8h12.5"></path></svg><span class="sr">Language: </span><span class="lang-c">English</span><svg class="lang-v" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 4.5 3 3 3-3"></path></svg></button><ul class="lang-l" id="lang-l" aria-label="Site language" hidden></ul></div><a class="in" href="https://app.lotprism.com/login">Sign in</a><a class="btn btn-s sm" href="#faq" data-req><span class="lbl"><span class="tx pr">Request access</span><span class="tx pn">Discuss research</span></span></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span></span></button></div>
+</div>
+<nav class="drawer" id="drawer" aria-label="Menu"><a href="#how">How it works</a><a href="#why">Reasons</a><a href="#offer">Supplier</a><a href="#faq">Questions</a><div class="lang lang-dr" id="lang-d" hidden><button class="lang-b" type="button" aria-expanded="false" aria-controls="lang-dl"><span class="lang-t">Language</span><span class="lang-dot" aria-hidden="true">·</span><span class="lang-c">English</span><svg class="lang-v" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4.5 3 3 3-3 3"></path></svg></button><ul class="lang-l" id="lang-dl" aria-label="Site language" hidden></ul></div><a href="https://app.lotprism.com/login">Sign in</a><a class="btn btn-p" href="#faq" data-req><span class="lbl"><span class="tx pr">Request access</span><span class="tx pn">Discuss research</span></span></a></nav>
+</header>
+<p class="sr" id="live" aria-live="polite"></p>
+<main>
+<section class="hero" id="hero" aria-labelledby="h1" data-screen-label="01 · первый экран">
+<div class="art" role="img" aria-label="Illustration: a shelf of products from different categories, with one product lit up"><img class="ar" src="img/hero-d-r.jpg" alt="" width="1672" height="941"><img class="an" src="img/hero-d-n.jpg" alt="" width="1672" height="941"></div>
+<div class="wrap hin">
+<div class="h-t"><h1 id="h1">Products for Amazon worth checking</h1></div>
+<p class="h-l"><span class="pr">LotPrism&nbsp;– a software assistant for selling on Amazon. It shows products for resale based on data from the connected marketplace, along with the reasons, the calculated purchase ceiling and the next step. A supplier offer, if there is one, refines the assessment. The decision to buy is yours.</span><span class="pn">LotPrism&nbsp;– a software assistant for selling on Amazon. For a new listing, it helps you research demand and formulate a product hypothesis: signals from similar listings, open questions and the next check. The decision to launch is yours.</span></p>
+<p class="h-x"><span class="pr">The LotPrism software assistant shows products for resale, along with the reasons, the calculated purchase ceiling and the next step.</span><span class="pn">The LotPrism software assistant helps you research demand and formulate a new-listing hypothesis. At the moment, the research is carried out by the LotPrism team.</span></p>
+<div class="h-s"><span class="lbl2" id="sc-h">What are you looking for?</span>
+<div class="seg" role="radiogroup" aria-labelledby="sc-h">
+<button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span><span>Resale<small>product already on Amazon</small></span></button>
+<button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span><span>New listing<small>your own listing, based on demand</small></span></button>
+</div></div>
+<div class="h-c"><a class="btn btn-p" href="#faq" data-req><span class="lbl"><span class="tx pr">Request access</span><span class="tx pn">Discuss research</span></span><span class="ic" aria-hidden="true"><svg class="ar" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"></path></svg></span></a><a class="btn btn-s" href="#offer"><span class="lbl"><span class="tx">See an example</span></span></a><p class="illu d">Generated illustration</p></div>
+<figure class="res" aria-label="Example product card">
+<div class="rimg" role="img" aria-label="Illustration: a shelf of products, with one product lit up">
+<img class="m ar" src="img/hero-m-r.jpg" alt="" width="1122" height="1402"><img class="m an" src="img/hero-m-n.jpg" alt="" width="1122" height="1402">
+<p class="illu m">Illustration</p>
+</div>
+<article class="rc">
+<div class="rc-h"><span class="eyebrow pr"><span class="ey-l">Resale · </span>demo</span><span class="eyebrow pn"><span class="ey-l">New listing · </span>demo</span><span class="verdict pr">Candidate for further checks</span><span class="verdict y pn">Product hypothesis</span></div>
+<h2 class="rc-t pr">Clay teapot, 400&nbsp;ml<span><span class="nw">Example: Amazon Germany · EUR</span>&nbsp;· existing listing</span></h2>
+<h2 class="rc-t pn">Set of glass jars in mixed sizes<span><span class="nw">Example: Amazon Germany · EUR</span>&nbsp;· hypothesis prepared by the LotPrism team</span></h2>
+<dl class="rc-l">
+<div class="why1"><dt>Why check it</dt>
+<dd class="pr"><span class="k f">FACT</span><span class="num">300+</span> bought in past month<small>Amazon badge, lower bound</small></dd>
+<dd class="pn"><span class="k f">FACT</span>6 similar sets: Amazon ‘bought in past month’ badges from <span class="num">200+</span> to <span class="num">500+</span>, <span class="nw">1–3</span> sellers per set<small>lower bounds, not exact or forecast sales</small><span class="hy"><span class="k s">HYPOTHESIS</span>customers need sets in mixed sizes</span></dd></div>
+<div class="oa of"><dt>Now known</dt>
+<dd class="pr">Offer at <span class="num nw">€7.95</span> per unit&nbsp;– <span class="num nw">€1.65</span> below the ceiling</dd>
+<dd class="pn">Offer: a set of 10 for <span class="num nw">€5.40</span>, excl.&nbsp;VAT</dd></div>
+<div><dt>Not yet known</dt>
+<dd class="pr ob">Purchase price: no offer.<span class="cl"><span class="k c">CALCULATION</span>Only the ceiling has been calculated&nbsp;– <span class="num nw">€9.60</span> per unit, excl.&nbsp;VAT<small>based on the example’s assumptions</small></span></dd>
+<dd class="pr oa">Costs after purchase: prep, storage, returns, advertising<small>the ceiling does not include them</small></dd>
+<dd class="pn ob">Whether a set of <span class="nw">8–12&nbsp;pcs</span> will sell at <span class="nw">€20 – €25</span></dd>
+<dd class="pn oa">Demand for a set like this has not been checked<small>supplier shipping is unknown</small></dd></div>
+<div class="nx"><dt>Next step</dt>
+<dd class="pr ob"><a class="go2" href="#offer">Find a supplier offer ↓</a></dd><dd class="pr oa">Request a sample</dd>
+<dd class="pn ob">Check ‘bought’ badges and prices of sets in mixed sizes</dd><dd class="pn oa">Request a sample and the shipping cost</dd></div>
+</dl>
+<a class="go" href="#why">Why this product ↓</a>
+</article>
+</figure>
+</div>
+</section>
+
+<section class="sec" id="how" aria-labelledby="h-how" data-screen-label="02 · два пути">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">How it works</span><h2 id="h-how">Two paths to a product</h2><p>Resale starts with products that are already sold on Amazon. New listing starts with a demand signal and a hypothesis based on similar listings. In both paths, a supplier offer refines the purchase assessment, but you do not need a price list to get started.</p></div>
+<div class="seg sm" role="radiogroup" aria-label="Scenario"><button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span>Resale</button><button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>New listing</button></div></div>
+<div class="lanes">
+<div class="lane r">
+<div class="lane-h"><button class="ll" type="button" data-set="path" data-v="r" aria-pressed="true">Resale</button><span class="lsub">from products already on Amazon</span></div>
+<ol class="nodes" style="--n:5" aria-label="Resale path">
+<li class="nd"><span class="nn">01</span><h3>Marketplace</h3><p class="ms">Price, the ‘bought’ badge and sellers, including Amazon</p><span class="mark">in the app</span></li>
+<li class="nd"><span class="nn">02</span><h3>Candidate product</h3><div class="it"><img src="img/c-k18.jpg" alt="" loading="lazy"><span>Clay teapot</span></div><span class="mark team">shortlist compiled by the LotPrism team</span></li>
+<li class="nd noar"><span class="nn">03</span><h3>Reasons</h3><p class="ms">Why it is worth checking, and the calculated purchase ceiling</p><span class="mark">in the app</span></li>
+<li class="brn"><div class="skip" aria-hidden="true"><span>no supplier required</span><i class="stem"></i></div>
+<div class="nd sup"><a class="opt go2" href="#offer">04 · optional ↓</a><h3>Supplier offer</h3><p class="ms">Price, pack size, minimum order, supplier shipping</p><span class="mark team">price list uploaded by the team; no self-service upload yet</span></div></li>
+<li class="nd fin"><span class="nn">05</span><h3>Purchase assessment</h3><p class="ms ob">The ceiling is known; the purchase price is not. Next step: find an offer</p><p class="ms oa">The offer has been compared with the ceiling. Next step: a sample</p><span class="mark">in the app</span></li>
+</ol>
+</div>
+<div class="lane n">
+<div class="lane-h"><button class="ll" type="button" data-set="path" data-v="n" aria-pressed="false">New listing</button><span class="lsub">from demand · research is currently carried out by the LotPrism team</span></div>
+<ol class="nodes" style="--n:4" aria-label="New-listing path">
+<li class="nd"><span class="nn">01</span><h3>Demand signal</h3><p class="ms">Listings with a ‘bought’ badge and few sellers</p><span class="mark team">selected by the LotPrism team</span></li>
+<li class="nd"><span class="nn">02</span><h3>Customer-need hypothesis</h3><p class="ms">What customers may need&nbsp;– based on what similar sets contain</p><span class="mark team">done by the LotPrism team</span></li>
+<li class="nd"><span class="nn">03</span><h3>Product hypothesis</h3><div class="it"><img src="img/c-k15.jpg" alt="" loading="lazy"><span>Set of jars in mixed sizes</span></div></li>
+<li class="brn"><div class="nd fin"><span class="nn">04</span><h3>Next check</h3><p class="ms">What to check and how&nbsp;– before you decide</p></div>
+<div class="nd sup"><a class="opt go2" href="#offer">optional ↓</a><h3>Supplier offer</h3><p class="ms">Clarifies the set’s price and terms</p></div></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="why" aria-labelledby="h-why" data-screen-label="03 · основания">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Reasons</span><h2 id="h-why">Why this product is worth checking</h2><p>Every reason has a source, and its explanation opens when you select it. No single indicator proves on its own that the product is a good fit, so the card has no overall score.</p></div>
+<div class="seg sm" role="radiogroup" aria-label="Scenario"><button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span>Resale</button><button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>New listing</button></div></div>
+<div class="why">
+<div style="display:flex;flex-direction:column;gap:12px">
+<ol class="bases pr">
+<li><details><summary><span class="n">01</span><span class="tt"><span class="lh"><span class="k f">FACT</span><span>demand for this listing</span></span><span class="val"><span class="num">300+</span> bought in past month</span><span class="src">Amazon badge via Keepa · 26/09/2026</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>This is a <b>lower bound</b> on purchases for a single listing over the past month: not exact sales, not a forecast and not a LotPrism calculation. It should not be multiplied by the price.</p><p>It reflects demand for this listing, not for your offer at your price. If there is no badge, demand is unknown, not zero.</p></div></details></li>
+<li><details><summary><span class="n">02</span><span class="tt"><span class="lh"><span class="k f">FACT</span><span>competition</span></span><span class="val">5 sellers, none of them Amazon</span><span class="src">Keepa · 64 observations over 90 days</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>When Amazon is not among the sellers, price pressure is usually lower, but this is <b>not proof</b>. The mix of sellers may change.</p></div></details></li>
+<li><details><summary><span class="n">03</span><span class="tt"><span class="lh"><span class="k f">FACT</span><span>price over 90 days</span></span><span class="val"><span class="num"><span class="nw">€23.90 – €25.90</span></span>, now <span class="num nw">€24.90</span></span><span class="src">amazon.de price history · chart</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>A narrow price range makes the ceiling calculation more stable. The forecast on the chart is produced by a model; it does not affect the ceiling or the verdict.</p></div></details></li>
+</ol>
+<ol class="bases pn">
+<li><details><summary><span class="n">01</span><span class="tt"><span class="lh"><span class="k f">FACT</span><span>demand signal</span></span><span class="val">6 similar sets: <span class="num">200+</span> to <span class="num">500+</span> bought, <span class="nw">1–3</span> sellers per set</span><span class="src">Amazon badges via Keepa · selected by the LotPrism team · 26/09/2026</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>The team selects amazon.de listings that show the ‘bought in past month’ badge and have few sellers. Each badge is a <b>lower bound</b> for its own listing; they cannot be added together.</p><p>This is demand for existing sets. Demand for your set remains a hypothesis.</p></div></details></li>
+<li><details><summary><span class="n">02</span><span class="tt"><span class="lh"><span class="k s">HYPOTHESIS</span><span>customer need</span></span><span class="val">Customers need sets in mixed sizes</span><span class="src">Basis: 2 of 6 similar sets come in mixed sizes · demo</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>This is a <b>hypothesis</b> that still has to be tested. There is only one observation: 2 of 6 similar sets come in mixed sizes. It shows what is being sold, not what is being bought.</p></div></details></li>
+<li><details><summary><span class="n">03</span><span class="tt"><span class="lh"><span class="k s">HYPOTHESIS</span><span>set contents</span></span><span class="val"><span class="nw">8–12</span> jars in <span class="nw">2–3</span> sizes per set</span><span class="src">Similar sets: 4 to 12&nbsp;pcs; mixed sizes in 2 of 6</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>The contents have <b>not been checked</b>. The 11 jars in the photo are an illustration, not a decision. The price is not derived from the overall price range of similar sets: those sets are not comparable in jar count or size.</p></div></details></li>
+</ol>
+<div class="unkn">
+<h3><span class="unk">UNKNOWN</span>Open questions</h3>
+<ul class="pr"><li class="ob"><span>Purchase price <small>– no supplier offer</small></span></li><li><span>Demand for your offer at your price</span></li><li><span>Supplier shipping, prep, storage, returns, advertising <small>– the ceiling does not include them</small></span></li></ul>
+<ul class="pn"><li><span>Whether a set of <span class="nw">8–12&nbsp;pcs</span> will sell at <span class="nw">€20 – €25</span></span></li><li><span>Keywords, search demand, trends<span class="st nip">not in the product</span></span></li><li class="ob"><span>Purchase price of the set <small>– no offer</small></span></li></ul>
+</div>
+<div class="unkn nxc pn" style="border-style:solid;border-color:var(--ct)">
+<h3><span class="bl" style="color:var(--yel)">Next check</span></h3>
+<p class="bl act">Action: research demand</p>
+<p style="font-size:15px">Check whether sets of <span class="nw">8–12&nbsp;pcs</span> in mixed sizes sell at <span class="nw">€20 – €25</span>: price history and ‘bought’ badges of such listings. At the same time, the team looks for a supplier for the set.</p>
+<span class="mark team">done by the LotPrism team</span>
+</div>
+</div>
+<figure class="fig pr" aria-labelledby="fg-r">
+<div class="fig-h"><h3 id="fg-r">Listing price: 90 days of observations and a 30-day model forecast</h3><span class="tagdemo">demo data</span><p>EUR, price incl.&nbsp;VAT · amazon.de price history</p></div>
+<div class="ch" role="img" aria-label="Observed price over 90 days: from €23.90 to €25.90, currently €24.90. The 30-day model forecast is shown separately, with a P10–P90 range of €22.90 to €26.40.">
+<svg viewBox="0 0 640 240" preserveAspectRatio="none" aria-hidden="true">
+<path d="M60 178.3H624M60 115H624M60 51.7H624" stroke="#1F2737" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+<path d="M483 12V225" stroke="#2A3446" stroke-dasharray="3 4" vector-effect="non-scaling-stroke"></path>
+<path d="M483 86.5 624 39V149.8Z" fill="rgba(255,216,74,.16)" stroke="#FFD84A" stroke-width="1" stroke-dasharray="4 4" vector-effect="non-scaling-stroke"></path>
+<path d="M483 86.5 624 92.8" fill="none" stroke="#FFD84A" stroke-width="1.5" stroke-dasharray="5 5" vector-effect="non-scaling-stroke"></path>
+<path d="M60 86.5H144.6V54.8H186.9V86.5H252.7V118.2H285.6V86.5H393.7V67.8H431.3V86.5H483" fill="none" stroke="#2FD1BE" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+<span class="yl" style="top:21.5%" aria-hidden="true">€26</span><span class="yl" style="top:47.9%" aria-hidden="true">€24</span><span class="yl" style="top:74.3%" aria-hidden="true">€22</span>
+<span class="xl" style="left:9.4%;transform:none" aria-hidden="true">−90 days</span><span class="xl" style="left:31.4%" aria-hidden="true">−60</span><span class="xl" style="left:53.4%" aria-hidden="true">−30</span><span class="xl" style="left:75.5%" aria-hidden="true">today</span><span class="xl e" style="left:100%" aria-hidden="true">+30 days</span>
+<span class="fl2 hi" style="top:16.25%" aria-hidden="true">P90 €26.40</span><span class="fl2 lo" style="top:62.4%" aria-hidden="true">P10 €22.90</span>
+</div>
+<ul class="lg"><li><span class="sw1" aria-hidden="true"></span><span><b>FACT</b> · observed price, 90 days</span></li><li><span class="sw2" aria-hidden="true"></span><span><b>Model forecast</b> · research mode · 30-day <span class="nw">P10–P90</span>. Not a basis: it does not affect the ceiling or the verdict and does not guarantee the selling price.</span></li></ul>
+</figure>
+<figure class="fig pn" aria-labelledby="fg-n">
+<div class="fig-h"><h3 id="fg-n">Similar sets on amazon.de</h3><span class="tagdemo">demo data</span><p>Price incl.&nbsp;VAT, EUR · ‘bought in past month’&nbsp;– Amazon badge, lower bound · Keepa, 26/09/2026</p></div>
+<table class="an"><thead><tr><th scope="col">Set</th><th scope="col" class="r">Price</th><th scope="col" class="r">Bought</th><th scope="col" class="r">Sellers</th></tr></thead><tbody>
+<tr><th scope="row">6 × 250&nbsp;ml<small>one size</small></th><td class="r num">19.90</td><td class="r num">500+</td><td class="r num">2</td></tr>
+<tr><th scope="row">4 × 500&nbsp;ml<small>one size</small></th><td class="r num">21.90</td><td class="r num">300+</td><td class="r num">2</td></tr>
+<tr><th scope="row">6&nbsp;pcs, screw-top lids<small>one size</small></th><td class="r num">22.50</td><td class="r num">200+</td><td class="r num">3</td></tr>
+<tr><th scope="row">12&nbsp;pcs for spices<small>one size</small></th><td class="r num">24.90</td><td class="r num">300+</td><td class="r num">1</td></tr>
+<tr><th scope="row">8&nbsp;pcs<small>2 sizes</small></th><td class="r num">24.90</td><td class="r num">200+</td><td class="r num">1</td></tr>
+<tr><th scope="row">10&nbsp;pcs<small>3 sizes</small></th><td class="r num">26.90</td><td class="r num">200+</td><td class="r num">1</td></tr>
+<tr class="us"><th scope="row">Hypothesis: <span class="nw">8–12&nbsp;pcs</span><small><span class="nw">2–3</span> sizes</small></th><td class="r num"><span class="nw">20–25</span></td><td class="r"><span class="unk" aria-hidden="true">?</span><span class="sr">unknown</span></td><td class="r"><span aria-hidden="true">—</span><span class="sr">no listing yet</span></td></tr>
+</tbody></table>
+<p class="note">Only two sets in mixed sizes are comparable with the hypothesis. Next step: their price history and ‘bought’ badges.</p>
+<p class="note rnote">This is what a demand research result looks like.</p>
+</figure>
+</div>
+</div>
+</section>
+
+<section class="sec" id="offer" aria-labelledby="h-offer" data-screen-label="04 · предложение поставщика">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Supplier offer · optional</span><h2 id="h-offer">What an offer adds</h2><p>The card is useful even without a supplier. An offer from a price list adds the purchase price and terms; LotPrism compares that price with the ceiling and updates the next step.</p></div>
+<div class="seg sm" role="radiogroup" aria-label="Scenario"><button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span>Resale</button><button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>New listing</button></div></div>
+<div class="ctl">
+<div class="seg" role="radiogroup" aria-label="Supplier offer"><button type="button" role="radio" data-set="offer" data-v="0" aria-checked="true"><span class="m" aria-hidden="true"></span>Without an offer</button><button type="button" role="radio" data-set="offer" data-v="1" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>With an offer</button></div>
+<button class="replay oa" type="button" id="replay">↻ Replay</button>
+</div>
+<article class="oc3" aria-label="Product card">
+<div class="oc3-h">
+<img class="pr" src="img/c-k18.jpg" alt="" width="40" height="50" loading="lazy"><img class="pn" src="img/c-k15.jpg" alt="" width="40" height="50" loading="lazy">
+<h3 class="pr">Clay teapot, 400&nbsp;ml<span><span class="nw">Example: Amazon Germany · EUR</span>&nbsp;· existing listing</span></h3>
+<h3 class="pn">Set of glass jars in mixed sizes<span><span class="nw">Example: Amazon Germany · EUR</span>&nbsp;· hypothesis, jar count <span class="nw">(8–12)</span> not checked</span></h3>
+<span class="verdict pr">Candidate for further checks</span><span class="verdict y pn">Product hypothesis</span>
+</div>
+<div class="seq" role="group" aria-label="Question, action and research for this card">
+<div class="seq-g">
+<div class="sq"><span class="bl">Question</span>
+<p class="pr">Can it be bought at or below <span class="nw">€9.60</span> per unit, excl.&nbsp;VAT?</p>
+<p class="pn">Is there a set of <span class="nw">8–12&nbsp;pcs</span> at or below <span class="nw">€8.90</span>, excl.&nbsp;VAT?</p></div>
+<div class="sq"><span class="bl">Action</span>
+<p>Find a supplier offer<span class="mark team">done by the LotPrism team</span></p></div>
+<div class="sq"><span class="bl">Research</span>
+<p class="pr ob">Not carried out yet. The LotPrism team looks for an offer in price lists, feeds and B2B catalogues, using a language model among other tools.</p>
+<p class="pr oa">Supplier price list dated 25/09/2026: EAN and units-per-pack matching, comparison with the calculated ceiling. The price list was uploaded by the LotPrism team. <span class="tagdemo">demo</span></p>
+<p class="pn ob">Not carried out yet. The LotPrism team looks for a supplier for the set, using a language model among other tools.</p>
+<p class="pn oa">Supplier price list dated 24/09/2026: the set’s jar count fits the hypothesis; the comparison with the ceiling is provisional. The price list was uploaded by the LotPrism team. <span class="tagdemo">demo</span></p></div>
+</div>
+<p class="seq-n"><span>A potential supplier found by search is not yet a supplier offer. The price and terms are confirmed by the supplier’s price list.</span> <span>If the search finds nothing, that means ‘not found by this search on this date’, not ‘there is no supplier’.</span></p>
+</div>
+<div class="oc3-g">
+<section class="col c-f" aria-label="What is known without a supplier">
+<p class="lh"><span class="k f">FACT</span><span class="pr">amazon.de · 26/09/2026</span><span class="pn">similar sets · 26/09/2026</span><span class="keep">unchanged</span></p>
+<dl class="fl pr">
+<div><dt>Listing price, incl.&nbsp;VAT</dt><dd class="num">€24.90</dd></div>
+<div><dt>Bought in past month</dt><dd class="num">300+</dd><span class="sub">Amazon badge, lower bound</span></div>
+<div><dt>Sellers</dt><dd><span class="num">5</span> · no Amazon</dd></div>
+<div><dt>Product code</dt><dd class="num">EAN 4 006…&nbsp;217</dd></div>
+</dl>
+<dl class="fl pn">
+<div><dt>Similar sets</dt><dd class="num">6</dd><span class="sub">‘bought in past month’ badges from 200+ to 500+&nbsp;– lower bounds; <span class="nw">1–3</span> sellers per set</span></div>
+<div><dt>Comparable in contents</dt><dd class="num">2</dd><span class="sub">8 and 10&nbsp;pcs in mixed sizes · €24.90 and €26.90</span></div>
+</dl>
+<p class="lh pn"><span class="k s">HYPOTHESIS</span><span>not tested</span></p>
+<dl class="fl pn">
+<div><dt>Customer-need hypothesis</dt><dd>mixed sizes</dd><span class="sub">basis: 2 of 6 similar sets come in mixed sizes</span></div>
+</dl>
+</section>
+<section class="col c-ce" aria-label="Calculated ceiling">
+<div class="ceil">
+<p class="lh"><span class="k c">CALCULATION</span><span>calculated purchase ceiling</span></p>
+<p class="cres"><span class="pr">Ceiling per unit, excl. VAT</span><span class="pn">Ceiling per set, selling at <span class="nw">€24.90</span></span><b class="num pr">€9.60</b><b class="num pn">€8.90</b><small>example assumptions: fees, shipping to Amazon, 30% return on purchase price</small></p>
+<details class="how2"><summary><span>How the ceiling is calculated</span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<ol class="cl2 pr">
+<li><span class="op"></span><span class="d">Listing price, incl. VAT<small>observed, amazon.de</small></span><span class="num">24.90</span></li>
+<li><span class="op">−</span><span class="d">19% VAT included in the price<small>German rate</small></span><span class="num">3.98</span></li>
+<li><span class="op">−</span><span class="d">Amazon referral fee 15%<small>example assumption</small></span><span class="num">3.74</span></li>
+<li><span class="op">−</span><span class="d">FBA fee<small>example assumption</small></span><span class="num">4.20</span></li>
+<li><span class="op">−</span><span class="d">Shipping to Amazon<small>example assumption</small></span><span class="num">0.50</span></li>
+<li class="eq"><span class="op">÷</span><span class="d">1 + 30% return<small>example assumption</small></span><span class="num">1.30</span></li>
+<li class="ce"><span class="op">=</span><span class="d">Ceiling per unit</span><span class="num">€9.60</span></li>
+</ol>
+<ol class="cl2 pn">
+<li><span class="op"></span><span class="d">Selling price of the set, incl. VAT<small>scenario: lower price of the comparable sets</small></span><span class="num">24.90</span></li>
+<li><span class="op">−</span><span class="d">19% VAT included in the price<small>German rate</small></span><span class="num">3.98</span></li>
+<li><span class="op">−</span><span class="d">Amazon referral fee 15%<small>example assumption</small></span><span class="num">3.74</span></li>
+<li><span class="op">−</span><span class="d">FBA fee<small>example assumption</small></span><span class="num">5.10</span></li>
+<li><span class="op">−</span><span class="d">Shipping to Amazon<small>example assumption</small></span><span class="num">0.50</span></li>
+<li class="eq"><span class="op">÷</span><span class="d">1 + 30% return<small>example assumption</small></span><span class="num">1.30</span></li>
+<li class="ce"><span class="op">=</span><span class="d">Ceiling per set</span><span class="num">€8.90</span></li>
+</ol>
+<div class="asm"><p><b>Return on purchase price</b>&nbsp;– what remains of the listing price after VAT, fees, shipping to Amazon and the purchase itself, as a percentage of the purchase price. This is not margin: margin is calculated on revenue. Levels available in the product: 0 / 10 / 20 / 30%.</p><p><b>Not included:</b> supplier shipping, prep, storage, returns, advertising. The ceiling is a limit on the price of the goods, not on the total cost.</p></div>
+</details>
+</div>
+<div class="model pr"><p class="lh"><span>Model forecast · research mode</span></p><p class="row"><span>Price in 30 days, <span class="nw">P10–P90</span></span><span class="num"><span class="nw">€22.90 – €26.40</span></span></p><p class="note" style="font-size:12.5px">Not a basis: it does not affect the ceiling or the verdict.</p></div>
+<p class="pinfo pn">Selling price <span class="nw">€24.90</span>&nbsp;– a scenario based on the lower price of the comparable sets, not an observed price: you have no listing yet.</p>
+</section>
+<section class="col c-of" aria-label="Supplier offer">
+<div class="slot ob">
+<h4>No supplier offer</h4>
+<p class="pr">Only the ceiling has been calculated&nbsp;– <span class="num nw">€9.60</span>. An offer will show whether you can buy below it.</p>
+<p class="pn">The hypothesis can be tested even without a supplier. An offer will show what the set will cost.</p>
+<ul aria-label="What an offer will add"><li>price excl. VAT</li><li>pack size</li><li>min. order</li><li>availability</li><li>shipping</li><li>country</li></ul>
+<p class="dnote js-only">Example using demo data. There is no such button in the LotPrism app: the LotPrism team looks for supplier offers.</p>
+<button class="addb js-only" type="button" data-set="offer" data-v="1">Show an example with an offer</button>
+</div>
+<div class="slip oa">
+<p class="src2 pr">Supplier price list · 25/09/2026</p><p class="src2 pn">Supplier price list · 24/09/2026</p>
+<dl class="fl pr">
+<div><dt>Price</dt><dd><span class="num">€7.60</span> per unit</dd><span class="sub">excl. VAT</span></div>
+<div><dt>Pack size</dt><dd>1&nbsp;pc</dd></div>
+<div><dt>Supplier shipping</dt><dd><span class="num">+&nbsp;€0.35</span> per unit</dd><span class="sub">stated as an amount&nbsp;– added to the price</span></div>
+<div><dt>Min. order · availability</dt><dd><span class="num">60</span>&nbsp;pcs · in stock</dd></div>
+<div><dt>Country</dt><dd>Czechia</dd></div>
+</dl>
+<dl class="fl pn">
+<div><dt>Price</dt><dd><span class="num">€5.40</span> per set</dd><span class="sub">excl. VAT</span></div>
+<div><dt>Pack size</dt><dd>set of 10&nbsp;pcs, 3 sizes</dd><span class="sub">within the <span class="nw">8–12</span> hypothesis</span></div>
+<div><dt>Supplier shipping</dt><dd>‘on request’</dd><span class="sub">stated as text&nbsp;– not added</span></div>
+<div><dt>Min. order · availability</dt><dd><span class="num">300</span>&nbsp;sets · in stock</dd></div>
+<div><dt>Country</dt><dd>Poland</dd></div>
+</dl>
+</div>
+<div class="idc ok oa pr"><i aria-hidden="true">✓</i><b>EAN and pack size match the listing</b><small>EAN matches, pack size 1&nbsp;pc = 1&nbsp;pc on the listing. This is not a quality check: you still need a sample. Without a match, the comparison would be provisional.</small></div>
+<div class="idc cd oa pn"><i aria-hidden="true">?</i><b>Provisional comparison</b><small>Supplier shipping is unknown, and the set’s contents have not been checked yet. There is no listing yet, so there is nothing to match the product code against.</small></div>
+<div class="cmp2 oa">
+<div class="pr"><div class="bar c"><span>Calculated ceiling</span><span class="num">€9.60</span><i></i></div></div>
+<div class="pr"><div class="bar o" style="--w:82.8%"><span>Offer: 7.60 + 0.35 supplier shipping</span><span class="num">€7.95</span><i></i></div></div>
+<div class="pn"><div class="bar c"><span>Calculated ceiling for the set</span><span class="num">€8.90</span><i></i></div></div>
+<div class="pn"><div class="bar o cond" style="--w:60.7%"><span>Offer excl. supplier shipping, provisional</span><span class="num">€5.40</span><i></i></div></div>
+<p class="note" style="font-size:12.5px">Per unit of sale · EUR · excl. VAT</p>
+</div>
+</section>
+</div>
+<div class="chgs" aria-live="polite">
+<div><span class="bl"><span class="ob">What is known</span><span class="oa">Now known</span></span>
+<p class="pr ob">Marketplace data for the listing and a purchase ceiling of <span class="num nw">€9.60</span></p>
+<p class="pn ob">Demand signal, customer-need hypothesis and two comparable sets</p>
+<p class="pr oa">Price <span class="num nw">€7.60</span> excl. VAT, supplier shipping <span class="num nw">€0.35</span>, min. 60&nbsp;pcs, in stock<small>from the price list dated 25/09/2026 · EAN matches</small></p>
+<p class="pn oa">Set of 10 for <span class="num nw">€5.40</span> excl. VAT, min. 300 sets, in stock<small>from the price list dated 24/09/2026 · supplier shipping ‘on request’</small></p>
+</div>
+<div><span class="bl"><span class="ob">Assessment</span><span class="oa">What has changed in the assessment</span></span>
+<p class="pr ob">Candidate for further checks. Purchase price unknown&nbsp;– nothing to compare with the ceiling</p>
+<p class="pn ob">Product hypothesis. Purchase price of the set unknown</p>
+<p class="pr oa">The offer is <span class="num nw">€1.65</span> below the ceiling&nbsp;– that is headroom, not profit. The verdict is unchanged: costs after purchase are unknown and no sample has been checked<small>Supplier shipping of <span class="nw">€0.35</span> has already been added to the offer. Not included: prep, storage, returns, advertising</small></p>
+<p class="pn oa">Provisionally <span class="num nw">€3.50</span> below the ceiling. The verdict is unchanged<small>at the scenario selling price of <span class="nw">€24.90</span>; supplier shipping is unknown</small><small>Demand for a set like this has still not been checked</small></p>
+</div>
+<div class="nx"><span class="bl">Next step</span>
+<p class="pr ob">Find an offer at or below <span class="nw">€9.60</span> per unit, excl. VAT</p>
+<p class="pn ob">Check sales of sets of <span class="nw">8–12&nbsp;pcs</span> priced at <span class="nw">€20 – €25</span> and find a supplier</p>
+<p class="pr oa">Request a sample; assess prep, storage, returns and advertising</p>
+<p class="pn oa">Request a sample and the supplier’s shipping cost; check sales of sets of <span class="nw">8–12&nbsp;pcs</span></p>
+</div>
+</div>
+<p class="who">The ceiling and headroom are neither profit nor permission to buy. The decision is yours, and there are no automatic purchases.</p>
+</article>
+</div>
+</section>
+
+<section class="sec" id="assistant" aria-labelledby="h-as" data-screen-label="05 · как работает ассистент">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Capabilities</span><h2 id="h-as">How the assistant works with a product</h2><p>The assistant produces three results: products for resale, new-listing hypotheses and a purchase assessment based on supplier offers. Below is the path of one product from its card to the next step, using a supplier search as the example. Each step is marked to show what the software does and what the LotPrism team does.</p></div></div>
+<ul class="as-r" aria-label="The assistant’s three results">
+<li><span class="bl">Resale</span><p>Products that are already sold on Amazon: verdict, points for and against, open questions, calculated purchase ceiling and next step.</p></li>
+<li><span class="bl">New listing</span><p>Product hypothesis based on demand signals: similar listings, ‘bought’ badges (lower bounds on sales), open questions and next check. Currently prepared by the LotPrism team.</p></li>
+<li><span class="bl">Supplier offer</span><p>Purchase price and terms from a price list: EAN and units-per-pack matching, comparison with the calculated ceiling, refined assessment.</p></li>
+</ul>
+<ol class="nodes as-n" style="--n:5" aria-label="A product’s path, using a supplier search as the example">
+<li class="nd"><span class="nn">01</span><h3>Product</h3><p class="ms">A card with marketplace data: the listing price, the ‘bought’ badge (a lower bound on sales, not an exact figure) and the sellers.</p><span class="mark">in the app</span></li>
+<li class="nd"><span class="nn">02</span><h3>Question</h3><p class="ms">What is missing to make a decision: the card shows the open questions. For example, whether there is a supplier offer at or below the calculated purchase ceiling.</p><p class="ms nt">In the current version, you cannot ask your own question from the card.</p><span class="mark">in the app</span></li>
+<li class="nd"><span class="nn">03</span><h3>Research</h3><p class="ms">A search for a supplier offer for this product.</p><p class="ms nt">At the moment, the LotPrism team runs the search across supplier price lists, feeds and B2B catalogues, using a language model among other tools.</p><span class="mark team">LotPrism team</span></li>
+<li class="nd"><span class="nn">04</span><h3>Result</h3><p class="ms">New information on the card: the supplier’s price and terms, and whether the EAN and units per pack match.</p><p class="ms nt">A potential supplier is not yet a supplier offer: the price and terms are confirmed by a price list. An EAN match is not a quality check. If the search finds nothing, that does not mean there is no supplier.</p><span class="mark">in the app</span></li>
+<li class="nd fin"><span class="nn">05</span><h3>Next step</h3><p class="ms">A refined assessment: the headroom below the calculated purchase ceiling, the verdict and the next check.</p><p class="ms nt">Headroom below the ceiling is not profit. The decision and the supplier order are up to you: in the current version, the software does not place orders or contact suppliers.</p><span class="mark">in the app</span></li>
+</ol>
+</div>
+</section>
+
+<section class="fin2" id="faq" aria-labelledby="h-fin" data-screen-label="06 · вопросы">
+<div class="wrap">
+<div class="l"><span class="eyebrow pr">Access</span><span class="eyebrow pn">Research</span><h2 id="h-fin"><span class="pr">Request access to LotPrism</span><span class="pn">Discuss new-listing research</span></h2><p class="pr">There is no self-service sign-up at the moment&nbsp;– leave your email address to request access.</p><p class="pn">At the moment, the LotPrism team carries out new-listing research, partly by hand. Leave your email address to send a request.</p>
+<a class="btn btn-p" href="#faq" data-req><span class="lbl"><span class="tx pr">Request access</span><span class="tx pn">Discuss research</span></span><span class="ic" aria-hidden="true"><svg class="ar" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"></path></svg></span></a></div>
+<div class="faq2">
+<details><summary>Which Amazon marketplaces does LotPrism work with?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>One marketplace is currently connected&nbsp;– Amazon Germany (amazon.de): marketplace data, prices in EUR, 19% VAT. Other Amazon marketplaces are not connected yet.</p></details>
+<details><summary>How are products for resale selected?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Marketplace data is collected automatically. The selection comes from screening this data against set thresholds; at the moment, the LotPrism team runs the screening. For each product, the software shows the reasons, the calculated purchase ceiling and the next step.</p></details>
+<details><summary>How does a supplier price list get into LotPrism?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>The LotPrism team uploads price lists; supplier feeds update automatically. LotPrism matches price list items to amazon.de listings by EAN/GTIN and units per pack. You cannot upload a price list yourself in the app yet.</p></details>
+<details><summary>Do you need a price list to get started?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>No. The card is useful even without a supplier: it has the reasons, the calculated purchase ceiling and the next step. A price list refines the purchase assessment.</p></details>
+<details><summary>Can you start research directly from the card?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Not yet. At the moment, the LotPrism team carries out supplier search and demand research; the offers it finds appear on the product card. You will be able to start research from the card once this action is available.</p></details>
+<details><summary>Are there any forecasts?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>For products with a price history on Amazon, there is a 30-day price forecast with a <span class="nw">P10–P90</span> range. The forecast is research-only and is not a basis for buying: it does not affect the calculated purchase ceiling or the verdict. There is no unit-sales forecast.</p></details>
+<details><summary>Does LotPrism check product quality?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Not in the current version. LotPrism matches the EAN/GTIN and units per pack against the Amazon listing. Product quality, samples and approval to sell the brand are for you to check.</p></details>
+<details><summary>Does LotPrism buy products itself?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>No. In the current version, the software does not place orders or contact suppliers. The decision to buy and the order are up to you.</p></details>
+<details><summary>Where does LotPrism use AI?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>In two places. A language model helps the team search for suppliers and research demand for a new listing. A machine learning model produces the price forecast. The verdict and the ceiling are calculated by rules based on marketplace data; LotPrism has no chat.</p></details>
+</div>
+</div>
+</section>
+</main>
+<footer class="foot">
+<div class="wrap foot-g">
+<div class="foot-id">
+<img src="logo.svg" alt="LotPrism" width="136" height="18">
+<p>A software assistant for selling on Amazon: products for resale, demand research, supplier offers.</p>
+<p>The product interface is available in English, Russian, German and Spanish. For now, the main text on the cards is in English.</p>
+<p class="demo">The products, prices, EANs and suppliers on this page are demo data. <span class="nw">Example: Amazon Germany · EUR</span>.</p>
+</div>
+<nav class="foot-nav" aria-label="Site sections">
+<section aria-labelledby="ft-p"><h2 id="ft-p" class="eyebrow">Product</h2>
+<ul><li><a href="?p=r#how" data-go="r">Resale</a></li><li><a href="?p=n#how" data-go="n">New listing</a></li><li><a href="#offer">Supplier offer</a></li><li><a href="#assistant">How the assistant works</a></li><li><a href="https://app.lotprism.com/login">Sign in<span aria-hidden="true"> ↗</span></a></li></ul></section>
+<section aria-labelledby="ft-h"><h2 id="ft-h" class="eyebrow">Help</h2>
+<ul><li><a href="#faq">Questions and answers</a></li><li><a href="#why">Reasons and sources</a></li></ul></section>
+<section class="foot-co" aria-labelledby="ft-c" data-review hidden><h2 id="ft-c" class="eyebrow">Company and legal</h2>
+<ul><li>Site operator&nbsp;– to be completed</li><li>Company registration&nbsp;– to be completed</li><li>Address&nbsp;– to be completed</li><li>Contact&nbsp;– to be completed</li><li>Privacy policy&nbsp;– to be completed</li><li>Terms of use&nbsp;– to be completed</li><li>Impressum&nbsp;– if applicable, owner to decide</li></ul></section>
+</nav>
+</div>
+<div class="wrap foot-b">
+<details class="phc2"><summary>Image credits<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>The illustration at the top of the page is generated.</p><p>Product photos: Seven Colors, pmv chamara, Ben Lambert, Emilio Garcia, Kedibone Isaac Makhumisane, Behnam Norouzi · <a href="https://unsplash.com">Unsplash</a></p></details>
+<p class="foot-cr" data-review hidden>© year · copyright holder&nbsp;– to be completed</p>
+</div>
+<div class="wrap foot-l"><div class="lang lang-ft" id="lang-f" hidden><button class="lang-b" type="button" aria-expanded="false" aria-controls="lang-fl"><svg class="lang-i" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="8" cy="8" r="6.25"></circle><ellipse cx="8" cy="8" rx="2.6" ry="6.25"></ellipse><path d="M1.75 8h12.5"></path></svg><span class="sr">Language: </span><span class="lang-c">English</span><svg class="lang-v" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 4.5 3 3 3-3"></path></svg></button><ul class="lang-l" id="lang-fl" aria-label="Site language" hidden></ul></div></div>
+<div class="wrap foot-sw" data-review hidden><div class="foot-st" role="note" aria-label="Footer status">
+<p><b>Ready now:</b> footer structure and style, brand line not tied to a marketplace, demo data notice, image credits, hidden placeholders without links.</p>
+<p><b>To be completed before the public launch:</b></p>
+<ul><li>site operator (the owner confirms the legal entity);</li><li>registration details and address;</li><li>a working contact;</li><li>privacy policy&nbsp;– required before the form that collects email addresses is switched on;</li><li>terms of use;</li><li>Impressum, if applicable;</li><li>a working form handler.</li></ul>
+</div></div>
+</footer>
+<dialog id="req" aria-labelledby="req-h">
+<div class="dlg">
+<div class="dlg-h"><h2 id="req-h"><span class="pr">Request access</span><span class="pn">Discuss research</span></h2><button class="x" type="button" id="req-x" aria-label="Close">×</button></div>
+<p class="dlg-p pr">The Amazon Germany marketplace (EUR) is currently connected; other Amazon marketplaces are not connected yet.</p>
+<p class="dlg-p pn">The Amazon Germany marketplace (EUR) is currently connected. Keywords, search volumes and trends are not included in the current version.</p>
+<form class="dlgf" id="req-f" novalidate>
+<fieldset class="fs" id="req-fs">
+<div class="fld"><label for="rq-mail">Email</label><input id="rq-mail" name="email" type="email" autocomplete="email" required aria-describedby="rq-mail-e"><p class="err" id="rq-mail-e" hidden>Enter your email address</p></div>
+<div class="fld"><label for="rq-name">Name <span class="opt">– optional</span></label><input id="rq-name" name="name" autocomplete="name"></div>
+<div class="fld"><label for="rq-co">Company <span class="opt">– optional</span></label><input id="rq-co" name="company" autocomplete="organization"></div>
+<div class="fld"><label for="rq-act">What you do <span class="opt">– optional</span></label><select id="rq-act" name="activity"><option value="">Not selected</option><option>I sell on Amazon</option><option>I buy from suppliers</option><option>I launch new products</option></select></div>
+<p class="proto">Demo: this request is not sent anywhere, and you will not get a reply.</p>
+<button class="btn btn-p" type="submit" id="req-s"><span class="lbl"><span class="tx" id="req-st">Send request</span><span class="spin" aria-hidden="true"></span></span><span class="ic" aria-hidden="true"><svg class="ar" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"></path></svg><svg class="ok" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5 6.5 11.5 12.5 5"></path></svg></span></button>
+</fieldset>
+</form>
+<div class="done" id="req-ok" hidden><p id="req-okm" tabindex="-1" aria-live="polite"></p><button class="btn btn-s" type="button" id="req-c"><span class="lbl"><span class="tx">Close</span></span></button></div>
+</div>
+</dialog>
+<script>window.LP_L10N={"cur": "en", "ready": ["de", "en", "es", "ru", "uk"], "names": {"de": "Deutsch", "en": "English", "es": "Español", "ru": "Русский", "uk": "Українська"},"href":function(c){return "../../"+c+"/a/"}};</script><script src="d.js"></script>
+<script>(function(){var H=document.documentElement,t;new MutationObserver(function(){if(!H.classList.contains('mo'))return;H.classList.remove('swap');void H.offsetWidth;H.classList.add('swap');clearTimeout(t);t=setTimeout(function(){H.classList.remove('swap')},260)}).observe(H,{attributes:true,attributeFilter:['data-path']})})()</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+/* Языковой слой главной (сборка локализации, координатор). Подключается после v3.css только в языковых версиях.
+   Дизайн не меняется: минимальные высоты, подобранные в v3.css под русский текст, пересчитаны для языков, где текст выше.
+   Правило подбора: естественная высота большего из двух сценариев на самой узкой ширине диапазона
+   (замер .playwright-mcp/calibrate-l10n.js на финальных пакетах 29.09.2026). Без этого при смене сценария блоки меняют высоту. */
+@media (min-width:601px){html[lang="de"] .h-l{min-height:10.53em}}
+@media (min-width:981px) and (max-width:1279px){html[lang="de"] .h-l{min-height:12em}}
+@media (min-width:981px){html[lang="es"][data-offer="0"] .res .rc{min-height:482px}html[lang="es"][data-offer="1"] .res .rc{min-height:537px}}
+@media (min-width:601px) and (max-width:980px){
+  html[lang="de"][data-offer="0"] .res .rc{min-height:423px}html[lang="de"][data-offer="1"] .res .rc{min-height:362px}
+  html[lang="es"][data-offer="0"] .res .rc{min-height:444px}html[lang="es"][data-offer="1"] .res .rc{min-height:362px}
+  html[lang="uk"][data-offer="0"] .res .rc{min-height:404px}
+}
+/* немецкие сложные слова в узких колонках подписей переносятся по словарю языка, а не вылезают за колонку */
+html[lang="de"] :is(.fl dt,.fl dd,.rc-l dt,.nd h3,.nd .ms,.bl,.an th,.an td,.sq p,.as-r p,.cl2 .d,.lsub,.mark){-webkit-hyphens:auto;hyphens:auto}
