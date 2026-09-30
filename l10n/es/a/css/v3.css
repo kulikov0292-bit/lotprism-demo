@@ -86,7 +86,16 @@ html[data-path=r] .seq .sq>.pn,html[data-path=n] .seq .sq>.pr,html[data-offer="0
 .lang-b:hover,.lang-b[aria-expanded=true]{color:var(--ink)}
 .lang-i{width:16px;height:16px;flex:none}.lang-v{width:12px;height:12px;flex:none;transition:transform var(--d-open) var(--ease-out)}
 .lang-b[aria-expanded=true] .lang-v{transform:rotate(180deg)}
-.lang-l{position:absolute;inset-inline-end:0;inset-block-start:100%;z-index:30;list-style:none;width:max-content;min-width:200px;max-width:320px;margin-block-start:4px;padding:6px;background:var(--p1);border:1px solid var(--line2);border-radius:var(--r-panel,12px);box-shadow:var(--shadow);font-size:15px}
+.lang-l{position:absolute;inset-inline-end:0;inset-block-start:100%;z-index:30;display:flex;flex-direction:column;gap:6px;width:max-content;min-width:200px;max-width:320px;max-height:60vh;margin-block-start:4px;padding:6px;background:var(--p1);border:1px solid var(--line2);border-radius:var(--r-panel,12px);box-shadow:var(--shadow);font-size:15px}
+.lang-l[hidden],.lang-s[hidden],.lang-u li[hidden]{display:none}
+.lang-u{list-style:none;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+/* БРИФ-26: поле «Найти язык» — при > 8 языках; подпись — видимый текст label (переводит сборка), скрывается, когда в поле есть текст */
+.lang-s{position:relative;flex:none;display:flex;align-items:center}
+.lang-q{width:100%;min-width:0;min-height:44px;padding-block:0;padding-inline:36px 10px;background:var(--bg);border:1px solid var(--line2);border-radius:8px;color:var(--ink);font:inherit}
+.lang-q:focus-visible{outline:2px solid var(--lem);outline-offset:-2px;border-radius:8px}
+.lang-si{position:absolute;inset-inline-start:12px;width:16px;height:16px;color:var(--faint);pointer-events:none}
+.lang-sl{position:absolute;inset-inline-start:37px;color:var(--faint);white-space:nowrap;pointer-events:none}
+.lang-q:not(:placeholder-shown)~.lang-sl{visibility:hidden}
 .lang-l a{display:grid;grid-template-columns:minmax(0,1fr) auto 14px;column-gap:12px;align-items:center;min-height:44px;padding-block:6px;padding-inline:10px;border-radius:8px;color:var(--mute);line-height:1.3;text-align:start}
 .lang-l a:hover{color:var(--ink);background:var(--p2)}
 .lang-l a::after{content:"";text-align:center}
@@ -95,10 +104,20 @@ html[data-path=r] .seq .sq>.pn,html[data-path=n] .seq .sq>.pr,html[data-offer="0
 .lang-l .c{font:500 12px/1 'JetBrains Mono',ui-monospace,monospace;color:var(--faint)}
 .mo .lang-l:not([hidden]){animation:langIn var(--d-open) var(--ease-out)}
 @keyframes langIn{from{opacity:0;transform:translateY(-4px)}}
-/* шапка: на ≤ 980 язык — в меню; на 981–1179 строка шапки без запаса уже на русском (замер hdr) — язык только в подвале */
-@media (max-width:1179px){.site-h .acts .lang-hd{display:none}}
-/* 1180–1279: полная кнопка с подписями +30 % не помещается — только значок 44×44; самоназвание остаётся в доступном имени */
-@media (min-width:1180px) and (max-width:1279px){.lang-hd .lang-c{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.lang-hd .lang-v{display:none}.lang-hd .lang-b{min-width:44px;justify-content:center;padding-inline:0}.lang-hd .lang-i{width:18px;height:18px}}
+/* шапка (БРИФ-26): на ≤ 980 язык — в меню; 981–1279 — значок 44×44; ≥ 1280 — полная кнопка, а при переполнении (.h-lc) тоже значок. Самоназвание остаётся в доступном имени */
+@media (max-width:980px){.site-h .acts .lang-hd{display:none}}
+@media (min-width:981px) and (max-width:1279px){.lang-hd .lang-c{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.lang-hd .lang-v{display:none}.lang-hd .lang-b{min-width:44px;justify-content:center;padding-inline:0}.lang-hd .lang-i{width:18px;height:18px}}
+.site-h.h-lc .lang-hd .lang-c{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.site-h.h-lc .lang-hd .lang-v{display:none}.site-h.h-lc .lang-hd .lang-b{min-width:44px;justify-content:center;padding-inline:0}.site-h.h-lc .lang-hd .lang-i{width:18px;height:18px}
+/* переполнение строки шапки (d.js, классы на .site-h): .h-nav — разделы в меню, .h-in — «Войти» в меню, .h-cta — кнопка заявки в меню */
+.site-h.h-in .acts .in,.site-h.h-cta .acts>.btn{display:none}
+@media (min-width:981px){
+.site-h.h-nav .links{display:none}.site-h.h-nav .menu-btn{display:inline-flex}
+.site-h.h-nav .drawer.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;z-index:6;max-height:calc(100vh - 68px);overflow-y:auto;background:var(--bg);border-bottom:1px solid var(--line);padding-block:4px 16px;padding-inline:max(24px,calc((100% - 1248px)/2 + 24px))}
+.site-h.h-nav .drawer a{min-height:48px;display:flex;align-items:center;padding:0 4px;border-bottom:1px solid var(--line)}
+.site-h.h-nav .drawer .btn{align-self:flex-start;margin-top:12px;border-bottom:0;padding-block:0;padding-inline:24px 6px}
+.drawer .lang-dr,.site-h:not(.h-in) .drawer>a[href*="/login"],.site-h:not(.h-cta) .drawer>.btn{display:none}
+}
+@media (max-width:980px){.drawer.open{max-height:calc(100vh - 64px);overflow-y:auto}}
 html:not(.mo) .lang-b,html:not(.mo) .lang-v{transition:none}
 /* меню: строка «Язык · Русский ›», список раскрывается на месте */
 .drawer .lang-dr{border-bottom:1px solid var(--line)}
@@ -106,6 +125,7 @@ html:not(.mo) .lang-b,html:not(.mo) .lang-v{transition:none}
 .lang-dr .lang-t{color:var(--ink)}.lang-dr .lang-dot{color:var(--faint)}.lang-dr .lang-c{color:var(--mute);margin-inline-end:auto}
 .lang-dr .lang-b[aria-expanded=true] .lang-v{transform:rotate(90deg)}
 .drawer .lang-dr .lang-l{position:static;width:auto;min-width:0;max-width:none;margin:0 0 8px;padding:0;background:none;border:0;border-radius:0;box-shadow:none}
+.drawer .lang-dr .lang-s{margin-inline-start:12px}
 .drawer .lang-dr .lang-l a{min-height:48px;padding-block:0;padding-inline:16px 4px;border-bottom:0;border-radius:8px}
 .mo .drawer .lang-dr .lang-l:not([hidden]){animation:langFade var(--d-open) var(--ease-out)}
 @keyframes langFade{from{opacity:0}}
@@ -139,3 +159,66 @@ html:not(.mo) .lang-b,html:not(.mo) .lang-v{transition:none}
 @media (min-width:601px){.foot-nav .foot-co.review{grid-column:1/-1}.foot-co.review ul{flex-direction:row;flex-wrap:wrap;column-gap:28px}}
 /* координатор, проверка опубликованной v3.1: в подписи карточки первого экрана вложенный .nw тоже становился блоком (.rc-t span{display:block} из d.css), и вторая строка начиналась с «·» */
 .rc-t span span{display:inline;margin:0;font-size:inherit}
+/* ── БРИФ-26 · справа налево: html[dir=rtl]. Сетки и flex зеркалятся сами; здесь — физические свойства старых слоёв (base, v, d, h17, m18, b20, v3), направленные знаки и изоляция чисел. Фото и график цены не отражаются ── */
+/* числа, коды, валюты — слева направо (числовые .nw получают dir=ltr в d.js) */
+html[dir=rtl] .num{direction:ltr;unicode-bidi:isolate}
+html[dir=rtl] .ch{direction:ltr}html[dir=rtl] .ch .yl,html[dir=rtl] .ch .fl2{unicode-bidi:isolate}html[dir=rtl] .ch .xl{unicode-bidi:plaintext}
+/* кнопки: поля и значок ↗ → ↖ */
+html[dir=rtl] .seg button{text-align:start}
+html[dir=rtl] .btn-p{padding:0 24px 0 6px}html[dir=rtl] .btn-p.sm{padding:0 18px 0 4px}html[dir=rtl] .drawer a.btn{padding:0 4px}
+html[dir=rtl] .btn-p::before{background:radial-gradient(90px circle at var(--mx,30%) var(--my,50%),rgba(47,209,190,.42),rgba(241,255,203,.0) 70%)}
+html[dir=rtl] .btn .ic .ar{transform:scaleX(-1)}
+@media (hover:hover) and (pointer:fine){html[dir=rtl] .btn:hover .ic .ar{transform:scaleX(-1) translate(2px,-2px)}}
+html[dir=rtl] .btn.is-hover .ic .ar{transform:scaleX(-1) translate(2px,-2px)}
+html[dir=rtl] .btn[data-state=done] .ic .ar{transform:scaleX(-1) scale(.9)}
+@media (prefers-reduced-motion:reduce){html[dir=rtl] .btn:hover .ic .ar,html[dir=rtl] .btn.is-hover .ic .ar{transform:scaleX(-1)}}
+html[dir=rtl] .ll{padding:0 14px 0 16px}
+html[dir=rtl] .foot-nav a>span[aria-hidden]{transform:scaleX(-1)}
+html[dir=rtl] .lang-dr .lang-v{transform:scaleX(-1)}html[dir=rtl] .lang-dr .lang-b[aria-expanded=true] .lang-v{transform:rotate(90deg)}
+/* первый экран ≥ 981: текст справа, фото слева. Снимок не переворачивается: окно фото уже (58 %), кадр прижат к правому краю снимка, чтобы товар стоял над карточкой, а не под текстом */
+@media (min-width:981px){
+html[dir=rtl] .art{right:auto;left:max(0px,calc((100vw - 1560px)/2));width:calc(var(--aw)*.58);-webkit-mask-image:linear-gradient(270deg,transparent 0,#000 14%),linear-gradient(0deg,transparent 0,#000 16%);mask-image:linear-gradient(270deg,transparent 0,#000 14%),linear-gradient(0deg,transparent 0,#000 16%)}
+html[dir=rtl] .art img{object-fit:cover;object-position:100% 0}
+html[dir=rtl] .hero::before{background:linear-gradient(270deg,rgba(10,14,22,.9) 0,rgba(10,14,22,.72) 38%,rgba(10,14,22,0) 56%)}
+html[dir=rtl] .res .rc{margin:0 auto 0 0}
+}
+@media (max-width:600px){html[dir=rtl] .illu.m{right:auto;left:10px}html[dir=rtl] .rc-l dd .cl{margin:0 4px 0 0}}
+html[dir=rtl] .rc-l dd .k{margin-right:0;margin-left:8px}
+/* «Следующий шаг», «Два пути», «Как работает ассистент»: стрелки и соединители */
+html[dir=rtl] .rc-l .nx dd::before,html[dir=rtl] .chgs .nx p::before{content:"←"}
+html[dir=rtl] .chgs .nx p{display:block;position:relative;padding-right:calc(1em + 8px)}html[dir=rtl] .chgs .nx p::before{position:absolute;right:0;top:0}html[dir=rtl] .chgs .nx p>.nw{display:inline}
+html[dir=rtl] .nodes>.nd:not(.noar):not(.fin)::after{content:"←";right:auto;left:-21px}
+html[dir=rtl] .skip::before{left:calc(-1 * var(--gx) + 3px);right:calc(-1 * var(--gx))}
+html[dir=rtl] .skip::after{right:auto;left:calc(-1 * var(--gx) + 2px);border-right:0;border-left:1.5px solid var(--lc);transform:rotate(-45deg)}
+@media (max-width:1100px){
+html[dir=rtl] .nodes>.nd:not(.noar):not(.fin)::after{content:"↓";left:auto;right:14px}
+html[dir=rtl] .skip::before{left:auto;right:14px}
+html[dir=rtl] .skip::after{left:auto;right:10.5px;transform:rotate(-135deg)}
+html[dir=rtl] .skip .stem{left:0;right:14.5px}
+html[dir=rtl] .lane.n .sup::before{left:auto;right:-26px;border-left:0;border-right:1.5px dashed var(--bl)}
+html[dir=rtl][data-offer="1"] .lane.n .sup::before{border-right-style:solid;border-right-color:var(--lem)}
+}
+/* «Основания», таблица, карточка #offer */
+html[dir=rtl] .bases summary{padding:14px 16px 14px 14px}html[dir=rtl] .bases .body{padding:0 54px 16px 16px}
+@media (max-width:600px){html[dir=rtl] .bases .body{padding-right:16px}}
+html[dir=rtl] .unkn .st{margin-left:0;margin-right:6px}
+html[dir=rtl] .an th,html[dir=rtl] .an td{text-align:right}html[dir=rtl] .an td.r,html[dir=rtl] .an th.r{text-align:left}
+html[dir=rtl] .lh .keep,html[dir=rtl] .lh .st{margin-left:0;margin-right:auto}
+html[dir=rtl] .fl dd{text-align:left}
+html[dir=rtl] .slip .fl dt::before{margin-right:0;margin-left:7px}
+html[dir=rtl] .cmp2 .bar i::after{left:auto;right:0;transform-origin:100% 50%}
+html[dir=rtl] .chgs>div+div{border-left:0;border-right:1px solid var(--line)}
+html[dir=rtl] .seq .sq+.sq{border-left:0;border-right:1px solid var(--line)}
+html[dir=rtl] .seq .sq .tagdemo{margin-left:0;margin-right:4px}
+@media (min-width:981px) and (max-width:1279px){html[dir=rtl] .seq .sq:nth-child(3){border-right:0}}
+html[dir=rtl] .as-r>li:first-child{padding-left:18px;padding-right:0}html[dir=rtl] .as-r>li:last-child{padding-right:18px;padding-left:0}
+html[dir=rtl] .as-r>li+li{border-left:0;border-right:1px solid var(--line)}
+@media (max-width:980px){html[dir=rtl] .chgs>div+div,html[dir=rtl] .seq .sq+.sq,html[dir=rtl] .as-r>li+li{border-right:0}html[dir=rtl] .as-r>li:nth-child(n){padding-inline:0}}
+/* вопросы, форма, подвал */
+html[dir=rtl] .faq2 p{padding:0 0 16px 40px}
+@media (max-width:600px){html[dir=rtl] .faq2 p{padding-left:0}}
+html[dir=rtl] .fld select{padding-right:14px;padding-left:40px;background-position:left 16px center}
+html[dir=rtl] .foot-st ul{padding-left:0;padding-right:18px}
+/* координатор, проверка БРИФ-26 на es (1024, «Новый листинг»): пункты строки шапки не сжимаются и не переносятся. Иначе «Iniciar sesión» уходил на две строки, кнопка сжималась и обрезала подпись, а hOver() в d.js не видел переполнения: ширины уже были сжаты */
+.site-h .nav>*,.site-h .links a,.site-h .acts>*{flex-shrink:0}
+.site-h .links a,.site-h .acts>*{white-space:nowrap}

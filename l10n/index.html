@@ -1,1 +1,40 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>LotPrism</title><script>(function(){var R=["de", "en", "es", "ru", "uk"],D="ru",c=null;try{var s=localStorage.getItem("lp:ui_language");if(R.indexOf(s)>=0)c=s}catch(e){}if(!c){var L=navigator.languages||[navigator.language||""];for(var i=0;i<L.length&&!c;i++){var p=String(L[i]).toLowerCase().split("-")[0];if(R.indexOf(p)>=0)c=p}}var q=new URLSearchParams(location.search),v=q.get("p")==="n"?"b":"a";location.replace((c||D)+"/"+v+"/"+location.search+location.hash)})()</script></head><body><ul><li><a href="de/a/" hreflang="de" lang="de">Deutsch</a></li><li><a href="en/a/" hreflang="en" lang="en">English</a></li><li><a href="es/a/" hreflang="es" lang="es">Español</a></li><li><a href="ru/a/" hreflang="ru" lang="ru">Русский</a></li><li><a href="uk/a/" hreflang="uk" lang="uk">Українська</a></li></ul></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>LotPrism</title><script>// Реестр языковых пакетов главной и выбор языка по полному коду BCP 47 (язык, письменность, регион).
+// Используется корневой страницей стенда (/l10n/) и проверкой. Язык интерфейса не меняет рынок, валюту и данные примера.
+const REGISTRY = {
+  'en': {name: 'English', intl: 'en-GB'}, 'ru': {name: 'Русский', intl: 'ru-RU'}, 'uk': {name: 'Українська', intl: 'uk-UA'},
+  'de': {name: 'Deutsch', intl: 'de-DE'}, 'es': {name: 'Español', intl: 'es-ES'}, 'fr': {name: 'Français', intl: 'fr-FR'},
+  'it': {name: 'Italiano', intl: 'it-IT'}, 'nl': {name: 'Nederlands', intl: 'nl-NL'}, 'sv': {name: 'Svenska', intl: 'sv-SE'},
+  'pl': {name: 'Polski', intl: 'pl-PL'}, 'tr': {name: 'Türkçe', intl: 'tr-TR'}, 'cs': {name: 'Čeština', intl: 'cs-CZ'},
+  'da': {name: 'Dansk', intl: 'da-DK'}, 'pt-BR': {name: 'Português (Brasil)', intl: 'pt-BR'}, 'pt-PT': {name: 'Português (Portugal)', intl: 'pt-PT'},
+  'ar': {name: 'العربية', intl: 'ar-AE', dir: 'rtl'}, 'he': {name: 'עברית', intl: 'he-IL', dir: 'rtl'},
+  'ja': {name: '日本語', intl: 'ja-JP'}, 'ko': {name: '한국어', intl: 'ko-KR'},
+  'zh-Hans': {name: '简体中文', intl: 'zh-Hans-CN'}, 'zh-Hant': {name: '繁體中文', intl: 'zh-Hant-TW'},
+  'hi': {name: 'हिन्दी', intl: 'hi-IN'}, 'mr': {name: 'मराठी', intl: 'mr-IN'}, 'bn': {name: 'বাংলা', intl: 'bn-IN'},
+  'ta': {name: 'தமிழ்', intl: 'ta-IN'}, 'te': {name: 'తెలుగు', intl: 'te-IN'}, 'kn': {name: 'ಕನ್ನಡ', intl: 'kn-IN'}, 'ml': {name: 'മലയാളം', intl: 'ml-IN'},
+};
+// Родительские регионы CLDR там, где у языка несколько пакетов: португальский вне Бразилии — европейский вариант.
+const PARENT = {pt: {AO: 'PT', MZ: 'PT', CV: 'PT', GW: 'PT', ST: 'PT', TL: 'PT', MO: 'PT', CH: 'PT', LU: 'PT', GQ: 'PT', FR: 'PT'}};
+
+// Выбор пакета для одного предпочтения: полное совпадение → язык+письменность (с родительским регионом) → язык по умолчанию.
+function matchOne(pref, ready) {
+  let L; try { L = new Intl.Locale(pref).maximize(); } catch (e) { return null; }
+  const R = ready.map(c => { const m = new Intl.Locale(c).maximize(); return {c, lang: m.language, script: m.script, region: m.region}; });
+  const lang = L.language === 'iw' ? 'he' : L.language; // устаревший код иврита
+  const same = R.filter(r => r.lang === lang && r.script === L.script);
+  if (!same.length) return null;
+  const exact = same.find(r => r.region === L.region);
+  if (exact) return exact.c;
+  const par = PARENT[lang] && PARENT[lang][L.region];
+  if (par) { const p = same.find(r => r.region === par); if (p) return p.c; }
+  if (same.length === 1) return same[0].c;
+  const def = new Intl.Locale(lang).maximize();                   // pt → pt-Latn-BR
+  return (same.find(r => r.region === def.region) || same[0]).c;
+}
+// Порядок: явный адрес (обрабатывается до вызова) → сохранённый выбор → список языков браузера → резервный язык.
+function pickLanguage(ready, stored, browserLangs, fallback) {
+  if (stored) { if (ready.indexOf(stored) >= 0) return {code: stored, by: 'saved'}; const m = matchOne(stored, ready); if (m) return {code: m, by: 'saved~'}; }
+  for (const b of browserLangs || []) { const m = matchOne(b, ready); if (m) return {code: m, by: 'browser:' + b}; }
+  return {code: fallback, by: 'fallback'};
+}
+if (typeof module !== 'undefined') module.exports = {REGISTRY, PARENT, matchOne, pickLanguage};
+</script><script>(function(){var R=["de", "en", "es", "ru", "uk"],s=null;try{s=localStorage.getItem("lp:ui_language")}catch(e){}var p=pickLanguage(R,s,navigator.languages||[navigator.language||""],"ru");var q=new URLSearchParams(location.search),v=q.get("p")==="n"?"b":"a";location.replace(p.code+"/"+v+"/"+location.search+location.hash)})()</script></head><body><ul><li><a href="de/a/" hreflang="de" lang="de">Deutsch</a></li><li><a href="en/a/" hreflang="en" lang="en">English</a></li><li><a href="es/a/" hreflang="es" lang="es">Español</a></li><li><a href="ru/a/" hreflang="ru" lang="ru">Русский</a></li><li><a href="uk/a/" hreflang="uk" lang="uk">Українська</a></li></ul></body></html>
