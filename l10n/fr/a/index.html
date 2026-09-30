@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr" data-path="r" data-offer="0">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>LotPrism&nbsp;– assistant logiciel pour travailler avec Amazon</title>
+<meta name="description" content="LotPrism aide les vendeurs sur Amazon à trouver des produits à revendre, à étudier la demande en vue de nouvelles fiches produits et à évaluer un achat à partir des offres des fournisseurs.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/v.css">
+<link rel="stylesheet" href="css/d.css">
+<link rel="stylesheet" href="css/h17.css">
+<link rel="stylesheet" href="css/m18.css">
+<link rel="stylesheet" href="css/fix.css">
+<link rel="stylesheet" href="css/b20.css">
+<link rel="stylesheet" href="css/v3.css">
+<link rel="stylesheet" href="css/l10n.css">
+<link rel="preload" as="image" href="img/hero-d-r.jpg" media="(min-width:601px)"><link rel="preload" as="image" href="img/hero-m-r.jpg" media="(max-width:600px)">
+<script>(function(){var h=document.documentElement,q=new URLSearchParams(location.search);try{if('scrollRestoration' in history)history.scrollRestoration='manual';var nv=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];if(location.hash&&nv&&nv.type==='reload')history.replaceState(null,'',location.pathname+location.search)}catch(e){}h.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&q.get('rm')!=='1')h.classList.add('mo');if(q.get('p')==='n'||q.get('p')==='r')h.setAttribute('data-path',q.get('p'));else h.setAttribute('data-path','r');if(q.get('o')==='1')h.setAttribute('data-offer','1');if(q.get('dir')==='rtl')h.dir='rtl'})()</script>
+<link rel="alternate" hreflang="da" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/da/a/"><link rel="alternate" hreflang="de" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/de/a/"><link rel="alternate" hreflang="en" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/en/a/"><link rel="alternate" hreflang="es" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/es/a/"><link rel="alternate" hreflang="fr" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/fr/a/"><link rel="alternate" hreflang="it" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/it/a/"><link rel="alternate" hreflang="nl" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/nl/a/"><link rel="alternate" hreflang="pl" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/pl/a/"><link rel="alternate" hreflang="pt-BR" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/pt-BR/a/"><link rel="alternate" hreflang="pt-PT" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/pt-PT/a/"><link rel="alternate" hreflang="sv" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/sv/a/"><link rel="alternate" hreflang="tr" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/tr/a/"><link rel="alternate" hreflang="cs" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/cs/a/"><link rel="alternate" hreflang="ru" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/ru/a/"><link rel="alternate" hreflang="uk" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/uk/a/"></head>
+<body>
+<header class="site-h">
+<div class="wrap nav">
+<a class="logo" href="#hero" aria-label="LotPrism – page d’accueil"><img src="logo.svg" alt="LotPrism" width="166" height="22"></a>
+<nav class="links" aria-label="Navigation principale"><a href="#how">Fonctionnement</a><a href="#why">Raisons</a><a href="#offer">Fournisseur</a><a href="#faq">Questions</a></nav>
+<div class="acts"><div class="lang lang-hd" id="lang" hidden><button class="lang-b" type="button" aria-expanded="false" aria-controls="lang-l"><svg class="lang-i" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="8" cy="8" r="6.25"></circle><ellipse cx="8" cy="8" rx="2.6" ry="6.25"></ellipse><path d="M1.75 8h12.5"></path></svg><span class="sr">Langue&nbsp;: </span><span class="lang-c">Français</span><svg class="lang-v" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 4.5 3 3 3-3"></path></svg></button><div class="lang-l" id="lang-l" hidden><label class="lang-s" hidden><svg class="lang-si" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="7" cy="7" r="4.75"></circle><path d="m10.5 10.5 3.5 3.5"></path></svg><input class="lang-q" type="search" autocomplete="off" spellcheck="false" placeholder=" "><span class="lang-sl">Rechercher une langue</span></label><ul class="lang-u" aria-label="Langue du site"></ul></div></div><a class="in" href="https://app.lotprism.com/login">Se connecter</a><a class="btn btn-s sm" href="#faq" data-req><span class="lbl"><span class="tx pr">Demander l’accès</span><span class="tx pn">Discuter d’une étude</span></span></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span></span></button></div>
+</div>
+<nav class="drawer" id="drawer" aria-label="Menu"><a href="#how">Fonctionnement</a><a href="#why">Raisons</a><a href="#offer">Fournisseur</a><a href="#faq">Questions</a><div class="lang lang-dr" id="lang-d" hidden><button class="lang-b" type="button" aria-expanded="false" aria-controls="lang-dl"><span class="lang-t">Langue</span><span class="lang-dot" aria-hidden="true">·</span><span class="lang-c">Français</span><svg class="lang-v" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4.5 3 3 3-3 3"></path></svg></button><div class="lang-l" id="lang-dl" hidden><label class="lang-s" hidden><svg class="lang-si" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="7" cy="7" r="4.75"></circle><path d="m10.5 10.5 3.5 3.5"></path></svg><input class="lang-q" type="search" autocomplete="off" spellcheck="false" placeholder=" "><span class="lang-sl">Rechercher une langue</span></label><ul class="lang-u" aria-label="Langue du site"></ul></div></div><a href="https://app.lotprism.com/login">Se connecter</a><a class="btn btn-p" href="#faq" data-req><span class="lbl"><span class="tx pr">Demander l’accès</span><span class="tx pn">Discuter d’une étude</span></span></a></nav>
+</header>
+<p class="sr" id="live" aria-live="polite"></p>
+<main>
+<section class="hero" id="hero" aria-labelledby="h1" data-screen-label="01 · первый экран">
+<div class="art" role="img" aria-label="Illustration&nbsp;: une étagère de produits de différentes catégories, l’un d’eux mis en lumière"><img class="ar" src="img/hero-d-r.jpg" alt="" width="1672" height="941"><img class="an" src="img/hero-d-n.jpg" alt="" width="1672" height="941"></div>
+<div class="wrap hin">
+<div class="h-t"><h1 id="h1">Des produits pour Amazon qui méritent d’être vérifiés</h1></div>
+<p class="h-l"><span class="pr">LotPrism&nbsp;– assistant logiciel pour travailler avec Amazon. D’après les données de marché de la boutique Amazon connectée, il présente des produits à revendre&nbsp;: les raisons, le prix d’achat maximal calculé par unité et la prochaine étape. S’il existe une offre fournisseur, elle affine l’évaluation. La décision d’achat vous appartient.</span><span class="pn">LotPrism&nbsp;– assistant logiciel pour travailler avec Amazon. Pour une nouvelle fiche produit, il vous aide à étudier la demande et à formuler une hypothèse produit&nbsp;: les signaux issus de fiches produits similaires, les questions en suspens et la prochaine vérification. La décision de lancement vous appartient.</span></p>
+<p class="h-x"><span class="pr">L’assistant LotPrism présente des produits à revendre&nbsp;: les raisons, le prix d’achat maximal calculé par unité et la prochaine étape.</span><span class="pn">L’assistant LotPrism vous aide à étudier la demande et à formuler une hypothèse de nouvelle fiche produit. Pour l’instant, l’étude est menée par l’équipe LotPrism.</span></p>
+<div class="h-s"><span class="lbl2" id="sc-h">Que cherchez-vous&nbsp;?</span>
+<div class="seg" role="radiogroup" aria-labelledby="sc-h">
+<button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span><span>Revente<small>produit déjà en vente</small></span></button>
+<button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span><span>Nouvelle fiche produit<small>votre fiche, guidée par la demande</small></span></button>
+</div></div>
+<div class="h-c"><a class="btn btn-p" href="#faq" data-req><span class="lbl"><span class="tx pr">Demander l’accès</span><span class="tx pn">Discuter d’une étude</span></span><span class="ic" aria-hidden="true"><svg class="ar" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"></path></svg></span></a><a class="btn btn-s" href="#offer"><span class="lbl"><span class="tx">Voir un exemple</span></span></a><p class="illu d">Illustration générée</p></div>
+<figure class="res" aria-label="Exemple de carte produit">
+<div class="rimg" role="img" aria-label="Illustration&nbsp;: une étagère de produits, l’un d’eux mis en lumière">
+<img class="m ar" src="img/hero-m-r.jpg" alt="" width="1122" height="1402"><img class="m an" src="img/hero-m-n.jpg" alt="" width="1122" height="1402">
+<p class="illu m">Illustration</p>
+</div>
+<article class="rc">
+<div class="rc-h"><span class="eyebrow pr"><span class="ey-l">Revente · </span>démo</span><span class="eyebrow pn"><span class="ey-l">Nouvelle fiche produit · </span>démo</span><span class="verdict pr">Candidat à vérifier</span><span class="verdict y pn">Hypothèse produit</span></div>
+<h2 class="rc-t pr">Théière en argile, 400&nbsp;ml<span><span class="nw">Exemple&nbsp;: Amazon Allemagne · EUR</span>&nbsp;· fiche produit existante</span></h2>
+<h2 class="rc-t pn">Lot de bocaux en verre de différentes contenances<span><span class="nw">Exemple&nbsp;: Amazon Allemagne · EUR</span>&nbsp;· hypothèse préparée par l’équipe LotPrism</span></h2>
+<dl class="rc-l">
+<div class="why1"><dt>Pourquoi vérifier</dt>
+<dd class="pr"><span class="k f">FAIT</span>Plus de <span class="num">300</span> achetés au cours du mois dernier<small>mention Amazon, borne inférieure</small></dd>
+<dd class="pn"><span class="k f">FAIT</span>6&nbsp;lots similaires&nbsp;: mentions Amazon «&nbsp;achetés au cours du mois dernier&nbsp;» de <span class="num">200+</span> à <span class="num">500+</span>, <span class="nw">1–3</span>&nbsp;vendeurs chacun<small>bornes inférieures, ni des ventes exactes ni des ventes prévues</small><span class="hy"><span class="k s">HYPOTHÈSE</span>les clients ont besoin de lots de différentes contenances</span></dd></div>
+<div class="oa of"><dt>Désormais connu</dt>
+<dd class="pr">Offre fournisseur à <span class="num nw">7,95&nbsp;€</span> l’unité, soit <span class="num nw">1,65&nbsp;€</span> sous le prix d’achat maximal</dd>
+<dd class="pn">Offre fournisseur&nbsp;: lot de 10&nbsp;pièces à <span class="num nw">5,40&nbsp;€</span> hors TVA</dd></div>
+<div><dt>Encore inconnu</dt>
+<dd class="pr ob">Prix d’achat&nbsp;: aucune offre fournisseur.<span class="cl"><span class="k c">CALCUL</span>Seul le prix d’achat maximal est calculé&nbsp;: <span class="num nw">9,60&nbsp;€</span> par unité, hors TVA<small>selon les paramètres de l’exemple</small></span></dd>
+<dd class="pr oa">Coûts après l’achat&nbsp;: préparation, stockage, retours, publicité<small>le prix d’achat maximal n’en tient pas compte</small></dd>
+<dd class="pn ob">Un lot de <span class="nw">8–12&nbsp;pièces</span> se vendra-t-il à <span class="nw">20–25&nbsp;€</span>&nbsp;?</dd>
+<dd class="pn oa">La demande pour ce type de lot n’est pas vérifiée<small>le coût de la livraison du fournisseur est inconnu</small></dd></div>
+<div class="nx"><dt>Prochaine étape</dt>
+<dd class="pr ob"><a class="go2" href="#offer">Trouver une offre fournisseur ↓</a></dd><dd class="pr oa">Demander un échantillon</dd>
+<dd class="pn ob">Vérifier la mention «&nbsp;achetés&nbsp;» et les prix des lots de différentes contenances</dd><dd class="pn oa">Demander un échantillon et le coût de la livraison du fournisseur</dd></div>
+</dl>
+<a class="go" href="#why">Pourquoi ce produit ↓</a>
+</article>
+</figure>
+</div>
+</section>
+
+<section class="sec" id="how" aria-labelledby="h-how" data-screen-label="02 · два пути">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Fonctionnement</span><h2 id="h-how">Deux parcours vers un produit</h2><p>La revente part de produits déjà en vente sur Amazon. Une nouvelle fiche produit part d’un signal de demande et d’une hypothèse fondée sur des fiches produits similaires. Dans les deux parcours, une offre fournisseur affine l’évaluation de l’achat, mais une liste de prix n’est pas nécessaire pour commencer.</p></div>
+<div class="seg sm" role="radiogroup" aria-label="Scénario"><button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span>Revente</button><button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>Nouvelle fiche produit</button></div></div>
+<div class="lanes">
+<div class="lane r">
+<div class="lane-h"><button class="ll" type="button" data-set="path" data-v="r" aria-pressed="true">Revente</button><span class="lsub">à partir de produits déjà en vente</span></div>
+<ol class="nodes" style="--n:5" aria-label="Parcours de revente">
+<li class="nd"><span class="nn">01</span><h3>Marché</h3><p class="ms">Prix, mention «&nbsp;achetés&nbsp;» et vendeurs, y compris Amazon</p><span class="mark">dans l’interface</span></li>
+<li class="nd"><span class="nn">02</span><h3>Produit candidat</h3><div class="it"><img src="img/c-k18.jpg" alt="" loading="lazy"><span>Théière en argile</span></div><span class="mark team">présélection établie par l’équipe LotPrism</span></li>
+<li class="nd noar"><span class="nn">03</span><h3>Raisons</h3><p class="ms">Raisons de le vérifier et prix d’achat maximal calculé</p><span class="mark">dans l’interface</span></li>
+<li class="brn"><div class="skip" aria-hidden="true"><span>possible sans fournisseur</span><i class="stem"></i></div>
+<div class="nd sup"><a class="opt go2" href="#offer">04 · facultatif ↓</a><h3>Offre du fournisseur</h3><p class="ms">Prix, conditionnement, minimum de commande, livraison du fournisseur</p><span class="mark team">liste de prix importée par l’équipe&nbsp;; pas encore d’import en libre-service</span></div></li>
+<li class="nd fin"><span class="nn">05</span><h3>Évaluation de l’achat</h3><p class="ms ob">Le prix d’achat maximal est connu, le prix d’achat réel ne l’est pas. Prochaine étape&nbsp;: trouver une offre fournisseur</p><p class="ms oa">Offre comparée au prix d’achat maximal. Prochaine étape&nbsp;: échantillon</p><span class="mark">dans l’interface</span></li>
+</ol>
+</div>
+<div class="lane n">
+<div class="lane-h"><button class="ll" type="button" data-set="path" data-v="n" aria-pressed="false">Nouvelle fiche produit</button><span class="lsub">à partir de la demande du marché · pour l’instant, l’étude est menée par l’équipe LotPrism</span></div>
+<ol class="nodes" style="--n:4" aria-label="Parcours d’une nouvelle fiche produit">
+<li class="nd"><span class="nn">01</span><h3>Signal de demande</h3><p class="ms">Fiches produits avec la mention «&nbsp;achetés&nbsp;» et peu de vendeurs</p><span class="mark team">sélection par l’équipe LotPrism</span></li>
+<li class="nd"><span class="nn">02</span><h3>Hypothèse de besoin</h3><p class="ms">Ce dont les clients pourraient avoir besoin, d’après la composition de lots similaires</p><span class="mark team">par l’équipe LotPrism</span></li>
+<li class="nd"><span class="nn">03</span><h3>Hypothèse produit</h3><div class="it"><img src="img/c-k15.jpg" alt="" loading="lazy"><span>Lot de bocaux de différentes contenances</span></div></li>
+<li class="brn"><div class="nd fin"><span class="nn">04</span><h3>Prochaine vérification</h3><p class="ms">Que vérifier et comment, avant de décider</p></div>
+<div class="nd sup"><a class="opt go2" href="#offer">facultatif ↓</a><h3>Offre du fournisseur</h3><p class="ms">Précise le prix du lot et les conditions</p></div></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="why" aria-labelledby="h-why" data-screen-label="03 · основания">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Raisons</span><h2 id="h-why">Pourquoi vérifier ce produit</h2><p>Chaque raison a sa source, et son explication s’ouvre d’un clic. Aucun indicateur ne prouve à lui seul que le produit conviendra&nbsp;: c’est pourquoi la carte ne comporte pas de score global.</p></div>
+<div class="seg sm" role="radiogroup" aria-label="Scénario"><button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span>Revente</button><button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>Nouvelle fiche produit</button></div></div>
+<div class="why">
+<div style="display:flex;flex-direction:column;gap:12px">
+<ol class="bases pr">
+<li><details><summary><span class="n">01</span><span class="tt"><span class="lh"><span class="k f">FAIT</span><span>demande pour cette fiche produit</span></span><span class="val">Plus de <span class="num">300</span> achetés au cours du mois dernier</span><span class="src">Mention Amazon via Keepa · 26/09/2026</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>C’est une <b>borne inférieure</b> des achats sur une seule fiche produit au cours du mois dernier. Ce n’est ni un chiffre de ventes exact, ni une prévision, ni un calcul de LotPrism. On ne la multiplie pas par le prix.</p><p>Elle renseigne sur la demande pour cette fiche produit, pas pour votre offre à votre prix. Sans cette mention, la demande est inconnue, pas nulle.</p></div></details></li>
+<li><details><summary><span class="n">02</span><span class="tt"><span class="lh"><span class="k f">FAIT</span><span>concurrence</span></span><span class="val">5&nbsp;vendeurs, Amazon n’en fait pas partie</span><span class="src">Keepa · 64&nbsp;observations sur 90&nbsp;jours</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Quand Amazon ne fait pas partie des vendeurs, la pression sur les prix est généralement plus faible, mais <b>ce n’est pas une preuve</b>. Les vendeurs présents peuvent changer.</p></div></details></li>
+<li><details><summary><span class="n">03</span><span class="tt"><span class="lh"><span class="k f">FAIT</span><span>prix sur 90&nbsp;jours</span></span><span class="val"><span class="num"><span class="nw">23,90–25,90&nbsp;€</span></span>, actuellement <span class="num nw">24,90&nbsp;€</span></span><span class="src">Historique des prix sur amazon.de · graphique</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Une fourchette de prix étroite rend le calcul du prix d’achat maximal plus stable. La prévision affichée sur le graphique est établie par un modèle&nbsp;; elle n’est pas utilisée pour calculer le prix d’achat maximal ni pour déterminer le verdict.</p></div></details></li>
+</ol>
+<ol class="bases pn">
+<li><details><summary><span class="n">01</span><span class="tt"><span class="lh"><span class="k f">FAIT</span><span>signal de demande</span></span><span class="val">6&nbsp;lots similaires&nbsp;: de <span class="num">200+</span> à <span class="num">500+</span> achetés, <span class="nw">1–3</span>&nbsp;vendeurs chacun</span><span class="src">Mentions Amazon via Keepa · sélection de l’équipe LotPrism · 26/09/2026</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>L’équipe sélectionne sur amazon.de des fiches produits portant la mention «&nbsp;achetés au cours du mois dernier&nbsp;» et comptant peu de vendeurs. Chaque mention est une <b>borne inférieure</b> pour sa propre fiche produit&nbsp;: on ne peut pas les additionner.</p><p>C’est la demande pour des lots qui existent déjà. La demande pour votre lot reste une hypothèse.</p></div></details></li>
+<li><details><summary><span class="n">02</span><span class="tt"><span class="lh"><span class="k s">HYPOTHÈSE</span><span>besoin</span></span><span class="val">Les clients ont besoin de lots de différentes contenances</span><span class="src">Raison&nbsp;: contenances différentes pour 2&nbsp;lots similaires sur 6 · démo</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>C’est une <b>hypothèse</b>, qui reste à vérifier. Une seule observation&nbsp;: des contenances différentes dans 2&nbsp;lots similaires sur 6. Elle montre ce qui est mis en vente, pas ce qui est acheté.</p></div></details></li>
+<li><details><summary><span class="n">03</span><span class="tt"><span class="lh"><span class="k s">HYPOTHÈSE</span><span>composition du lot</span></span><span class="val"><span class="nw">8–12</span>&nbsp;bocaux de <span class="nw">2–3</span>&nbsp;contenances dans un même lot</span><span class="src">Lots similaires&nbsp;: de 4 à 12&nbsp;pièces&nbsp;; contenances différentes pour 2&nbsp;lots sur 6</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>La composition <b>n’a pas été vérifiée</b>. La photo montre 11&nbsp;bocaux&nbsp;: c’est une illustration, pas une décision. Le prix n’est pas déduit de la fourchette de prix globale des lots similaires&nbsp;: ces lots ne sont comparables ni en nombre de pièces ni en contenance.</p></div></details></li>
+</ol>
+<div class="unkn">
+<h3><span class="unk">INCONNU</span>Questions en suspens</h3>
+<ul class="pr"><li class="ob"><span>Prix d’achat <small>– aucune offre fournisseur</small></span></li><li><span>Demande pour votre offre à votre prix</span></li><li><span>Livraison du fournisseur, préparation, stockage, retours, publicité <small>– le prix d’achat maximal n’en tient pas compte</small></span></li></ul>
+<ul class="pn"><li><span>Un lot de <span class="nw">8–12&nbsp;pièces</span> se vendra-t-il à <span class="nw">20–25&nbsp;€</span>&nbsp;?</span></li><li><span>Mots-clés, volume de recherche, tendances<span class="st nip">absents du produit</span></span></li><li class="ob"><span>Prix d’achat du lot <small>– aucune offre</small></span></li></ul>
+</div>
+<div class="unkn nxc pn" style="border-style:solid;border-color:var(--ct)">
+<h3><span class="bl" style="color:var(--yel)">Prochaine vérification</span></h3>
+<p class="bl act">Action&nbsp;: étudier la demande</p>
+<p style="font-size:15px">Vérifier si des lots de <span class="nw">8–12&nbsp;pièces</span> de différentes contenances se vendent à <span class="nw">20–25&nbsp;€</span>&nbsp;: historique des prix et mentions «&nbsp;achetés&nbsp;» des fiches produits correspondantes. En parallèle, l’équipe cherche un fournisseur pour le lot.</p>
+<span class="mark team">par l’équipe LotPrism</span>
+</div>
+</div>
+<figure class="fig pr" aria-labelledby="fg-r">
+<div class="fig-h"><h3 id="fg-r">Prix affiché&nbsp;: 90&nbsp;jours d’observations et prévision du modèle à 30&nbsp;jours</h3><span class="tagdemo">données de démo</span><p>EUR, prix TVA comprise · historique des prix sur amazon.de</p></div>
+<div class="ch" role="img" aria-label="Prix observé sur 90&nbsp;jours&nbsp;: de 23,90&nbsp;€ à 25,90&nbsp;€, actuellement 24,90&nbsp;€. La prévision du modèle à 30&nbsp;jours est affichée à part, fourchette P10–P90&nbsp;: de 22,90&nbsp;€ à 26,40&nbsp;€.">
+<svg viewBox="0 0 640 240" preserveAspectRatio="none" aria-hidden="true">
+<path d="M60 178.3H624M60 115H624M60 51.7H624" stroke="#1F2737" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+<path d="M483 12V225" stroke="#2A3446" stroke-dasharray="3 4" vector-effect="non-scaling-stroke"></path>
+<path d="M483 86.5 624 39V149.8Z" fill="rgba(255,216,74,.16)" stroke="#FFD84A" stroke-width="1" stroke-dasharray="4 4" vector-effect="non-scaling-stroke"></path>
+<path d="M483 86.5 624 92.8" fill="none" stroke="#FFD84A" stroke-width="1.5" stroke-dasharray="5 5" vector-effect="non-scaling-stroke"></path>
+<path d="M60 86.5H144.6V54.8H186.9V86.5H252.7V118.2H285.6V86.5H393.7V67.8H431.3V86.5H483" fill="none" stroke="#2FD1BE" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+<span class="yl" style="top:21.5%" aria-hidden="true">26&nbsp;€</span><span class="yl" style="top:47.9%" aria-hidden="true">24&nbsp;€</span><span class="yl" style="top:74.3%" aria-hidden="true">22&nbsp;€</span>
+<span class="xl" style="left:9.4%;transform:none" aria-hidden="true">−90&nbsp;j</span><span class="xl" style="left:31.4%" aria-hidden="true">−60</span><span class="xl" style="left:53.4%" aria-hidden="true">−30</span><span class="xl" style="left:75.5%" aria-hidden="true">aujourd’hui</span><span class="xl e" style="left:100%" aria-hidden="true">+30&nbsp;j</span>
+<span class="fl2 hi" style="top:16.25%" aria-hidden="true">P90 26,40&nbsp;€</span><span class="fl2 lo" style="top:62.4%" aria-hidden="true">P10 22,90&nbsp;€</span>
+</div>
+<ul class="lg"><li><span class="sw1" aria-hidden="true"></span><span><b>FAIT</b> · prix observé, 90&nbsp;jours</span></li><li><span class="sw2" aria-hidden="true"></span><span><b>Prévision du modèle</b> · mode exploratoire · <span class="nw">P10–P90</span> à 30&nbsp;jours. La prévision n’est pas utilisée pour calculer le prix d’achat maximal ni pour déterminer le verdict, et elle ne garantit pas le prix de vente.</span></li></ul>
+</figure>
+<figure class="fig pn" aria-labelledby="fg-n">
+<div class="fig-h"><h3 id="fg-n">Lots similaires sur amazon.de</h3><span class="tagdemo">données de démo</span><p>Prix TVA comprise, EUR · «&nbsp;achetés au cours du mois dernier&nbsp;»&nbsp;: mention Amazon, borne inférieure · Keepa, 26/09/2026</p></div>
+<table class="an"><thead><tr><th scope="col">Lot</th><th scope="col" class="r">Prix</th><th scope="col" class="r">Achetés</th><th scope="col" class="r">Vendeurs</th></tr></thead><tbody>
+<tr><th scope="row">6 × 250&nbsp;ml<small>une seule contenance</small></th><td class="r num">19,90</td><td class="r num">500+</td><td class="r num">2</td></tr>
+<tr><th scope="row">4 × 500&nbsp;ml<small>une seule contenance</small></th><td class="r num">21,90</td><td class="r num">300+</td><td class="r num">2</td></tr>
+<tr><th scope="row">6&nbsp;pièces, couvercle à vis<small>une seule contenance</small></th><td class="r num">22,50</td><td class="r num">200+</td><td class="r num">3</td></tr>
+<tr><th scope="row">12&nbsp;bocaux à épices<small>une seule contenance</small></th><td class="r num">24,90</td><td class="r num">300+</td><td class="r num">1</td></tr>
+<tr><th scope="row">8&nbsp;pièces<small>2&nbsp;contenances</small></th><td class="r num">24,90</td><td class="r num">200+</td><td class="r num">1</td></tr>
+<tr><th scope="row">10&nbsp;pièces<small>3&nbsp;contenances</small></th><td class="r num">26,90</td><td class="r num">200+</td><td class="r num">1</td></tr>
+<tr class="us"><th scope="row">Hypothèse&nbsp;: <span class="nw">8–12&nbsp;pièces</span><small><span class="nw">2–3</span>&nbsp;contenances</small></th><td class="r num"><span class="nw">20–25</span></td><td class="r"><span class="unk" aria-hidden="true">?</span><span class="sr">inconnu</span></td><td class="r"><span aria-hidden="true">—</span><span class="sr">pas encore de fiche produit</span></td></tr>
+</tbody></table>
+<p class="note">Seuls deux lots de différentes contenances sont comparables à l’hypothèse. Prochaine étape&nbsp;: l’historique de leurs prix et de leurs mentions «&nbsp;achetés&nbsp;».</p>
+<p class="note rnote">Voici à quoi ressemble le résultat d’une étude de la demande.</p>
+</figure>
+</div>
+</div>
+</section>
+
+<section class="sec" id="offer" aria-labelledby="h-offer" data-screen-label="04 · предложение поставщика">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Offre du fournisseur · facultatif</span><h2 id="h-offer">Ce qu’apporte l’offre</h2><p>La carte est utile même sans fournisseur. Une offre issue de la liste de prix du fournisseur ajoute le prix et les conditions d’achat&nbsp;; LotPrism compare ce prix au prix d’achat maximal et modifie la prochaine étape.</p></div>
+<div class="seg sm" role="radiogroup" aria-label="Scénario"><button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span>Revente</button><button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>Nouvelle fiche produit</button></div></div>
+<div class="ctl">
+<div class="seg" role="radiogroup" aria-label="Offre du fournisseur"><button type="button" role="radio" data-set="offer" data-v="0" aria-checked="true"><span class="m" aria-hidden="true"></span>Sans offre</button><button type="button" role="radio" data-set="offer" data-v="1" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>Avec offre</button></div>
+<button class="replay oa" type="button" id="replay">↻ Afficher à nouveau</button>
+</div>
+<article class="oc3" aria-label="Carte produit">
+<div class="oc3-h">
+<img class="pr" src="img/c-k18.jpg" alt="" width="40" height="50" loading="lazy"><img class="pn" src="img/c-k15.jpg" alt="" width="40" height="50" loading="lazy">
+<h3 class="pr">Théière en argile, 400&nbsp;ml<span><span class="nw">Exemple&nbsp;: Amazon Allemagne · EUR</span>&nbsp;· fiche produit existante</span></h3>
+<h3 class="pn">Lot de bocaux en verre de différentes contenances<span><span class="nw">Exemple&nbsp;: Amazon Allemagne · EUR</span>&nbsp;· hypothèse, nombre de pièces <span class="nw">(8–12)</span> non vérifié</span></h3>
+<span class="verdict pr">Candidat à vérifier</span><span class="verdict y pn">Hypothèse produit</span>
+</div>
+<div class="seq" role="group" aria-label="Question, action et recherche pour cette carte">
+<div class="seq-g">
+<div class="sq"><span class="bl">Question</span>
+<p class="pr">Y a-t-il une offre fournisseur à <span class="nw">9,60&nbsp;€</span> maximum par&nbsp;unité, hors&nbsp;TVA&nbsp;?</p>
+<p class="pn">Y a-t-il un lot de <span class="nw">8–12&nbsp;pièces</span> à <span class="nw">8,90&nbsp;€</span> maximum, hors&nbsp;TVA&nbsp;?</p></div>
+<div class="sq"><span class="bl">Action</span>
+<p>Trouver une offre fournisseur<span class="mark team">par l’équipe LotPrism</span></p></div>
+<div class="sq"><span class="bl">Recherche</span>
+<p class="pr ob">Pas encore effectuée. C’est l’équipe LotPrism qui cherche une offre fournisseur dans les listes de prix, les flux et les catalogues B2B, notamment avec l’aide d’un modèle de langage.</p>
+<p class="pr oa">Liste de prix du fournisseur du 25/09/2026&nbsp;: rapprochement de l’EAN et du nombre d’unités par conditionnement, comparaison avec le prix d’achat maximal calculé. Liste de prix importée par l’équipe LotPrism. <span class="tagdemo">démo</span></p>
+<p class="pn ob">Pas encore effectuée. C’est l’équipe LotPrism qui cherche un fournisseur pour le lot, notamment avec l’aide d’un modèle de langage.</p>
+<p class="pn oa">Liste de prix du fournisseur du 24/09/2026&nbsp;: nombre de pièces du lot dans la fourchette de l’hypothèse, comparaison indicative avec le prix d’achat maximal. Liste de prix importée par l’équipe LotPrism. <span class="tagdemo">démo</span></p></div>
+</div>
+<p class="seq-n"><span>Un fournisseur potentiel trouvé n’est pas encore une offre fournisseur. C’est la liste de prix du fournisseur qui confirme le prix et les conditions.</span> <span>Si la recherche n’a rien donné, cela signifie «&nbsp;non trouvé par cette recherche à cette date&nbsp;», et non «&nbsp;il n’y a pas de fournisseur&nbsp;».</span></p>
+</div>
+<div class="oc3-g">
+<section class="col c-f" aria-label="Ce que l’on sait sans fournisseur">
+<p class="lh"><span class="k f">FAIT</span><span class="pr">amazon.de · 26/09/2026</span><span class="pn">lots similaires · 26/09/2026</span><span class="keep">ne change pas</span></p>
+<dl class="fl pr">
+<div><dt>Prix affiché, TVA comprise</dt><dd class="num">24,90&nbsp;€</dd></div>
+<div><dt>Achetés au cours du mois dernier</dt><dd class="num">300+</dd><span class="sub">mention Amazon, borne inférieure</span></div>
+<div><dt>Vendeurs</dt><dd><span class="num">5</span> · sans Amazon</dd></div>
+<div><dt>Code produit</dt><dd class="num">EAN 4 006…&nbsp;217</dd></div>
+</dl>
+<dl class="fl pn">
+<div><dt>Lots similaires</dt><dd class="num">6</dd><span class="sub">mentions «&nbsp;achetés au cours du mois dernier&nbsp;» de 200+ à 500+&nbsp;– des bornes inférieures&nbsp;; <span class="nw">1–3</span>&nbsp;vendeurs chacun</span></div>
+<div><dt>De composition comparable</dt><dd class="num">2</dd><span class="sub">8 et 10&nbsp;pièces de différentes contenances · 24,90 et 26,90&nbsp;€</span></div>
+</dl>
+<p class="lh pn"><span class="k s">HYPOTHÈSE</span><span>non vérifiée</span></p>
+<dl class="fl pn">
+<div><dt>Hypothèse de besoin</dt><dd>contenances variées</dd><span class="sub">raison&nbsp;: contenances différentes pour 2&nbsp;lots similaires sur 6</span></div>
+</dl>
+</section>
+<section class="col c-ce" aria-label="Prix d’achat maximal calculé">
+<div class="ceil">
+<p class="lh"><span class="k c">CALCUL</span><span>prix d’achat maximal calculé</span></p>
+<p class="cres"><span class="pr">Prix d’achat max. par unité, hors TVA</span><span class="pn">Prix d’achat max. par lot, vente à <span class="nw">24,90&nbsp;€</span></span><b class="num pr">9,60&nbsp;€</b><b class="num pn">8,90&nbsp;€</b><small>paramètres de l’exemple&nbsp;: frais Amazon, envoi vers les centres de distribution Amazon, rendement de 30&nbsp;% sur le prix d’achat</small></p>
+<details class="how2"><summary><span>Calcul du prix d’achat maximal</span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<ol class="cl2 pr">
+<li><span class="op"></span><span class="d">Prix affiché, TVA comprise<small>observation, amazon.de</small></span><span class="num">24,90</span></li>
+<li><span class="op">−</span><span class="d">TVA de 19&nbsp;% incluse dans le prix<small>taux allemand</small></span><span class="num">3,98</span></li>
+<li><span class="op">−</span><span class="d">Commission sur vente Amazon, 15&nbsp;%<small>paramètre de l’exemple</small></span><span class="num">3,74</span></li>
+<li><span class="op">−</span><span class="d">Frais FBA<small>paramètre de l’exemple</small></span><span class="num">4,20</span></li>
+<li><span class="op">−</span><span class="d">Envoi au centre de distribution Amazon<small>paramètre de l’exemple</small></span><span class="num">0,50</span></li>
+<li class="eq"><span class="op">÷</span><span class="d">1 + rendement de 30&nbsp;%<small>paramètre de l’exemple</small></span><span class="num">1,30</span></li>
+<li class="ce"><span class="op">=</span><span class="d">Prix d’achat max. par unité</span><span class="num">9,60&nbsp;€</span></li>
+</ol>
+<ol class="cl2 pn">
+<li><span class="op"></span><span class="d">Prix de vente du lot, TVA comprise<small>scénario&nbsp;: prix le plus bas des lots comparables</small></span><span class="num">24,90</span></li>
+<li><span class="op">−</span><span class="d">TVA de 19&nbsp;% incluse dans le prix<small>taux allemand</small></span><span class="num">3,98</span></li>
+<li><span class="op">−</span><span class="d">Commission sur vente Amazon, 15&nbsp;%<small>paramètre de l’exemple</small></span><span class="num">3,74</span></li>
+<li><span class="op">−</span><span class="d">Frais FBA<small>paramètre de l’exemple</small></span><span class="num">5,10</span></li>
+<li><span class="op">−</span><span class="d">Envoi au centre de distribution Amazon<small>paramètre de l’exemple</small></span><span class="num">0,50</span></li>
+<li class="eq"><span class="op">÷</span><span class="d">1 + rendement de 30&nbsp;%<small>paramètre de l’exemple</small></span><span class="num">1,30</span></li>
+<li class="ce"><span class="op">=</span><span class="d">Prix d’achat max. par lot</span><span class="num">8,90&nbsp;€</span></li>
+</ol>
+<div class="asm"><p><b>Rendement sur le prix d’achat</b>&nbsp;: ce qui reste du prix affiché après la TVA, les frais Amazon, l’envoi vers les centres de distribution et l’achat lui-même, en % du prix d’achat. Ce n’est pas une marge&nbsp;: la marge nette se calcule sur le chiffre d’affaires. Niveaux proposés dans le produit&nbsp;: 0 / 10 / 20 / 30&nbsp;%.</p><p><b>Non pris en compte&nbsp;:</b> livraison du fournisseur, préparation, stockage, retours, publicité. Le prix d’achat maximal s’applique au prix de la marchandise, pas au coût de revient complet.</p></div>
+</details>
+</div>
+<div class="model pr"><p class="lh"><span>Prévision du modèle · mode exploratoire</span></p><p class="row"><span>Prix dans 30&nbsp;jours, <span class="nw">P10–P90</span></span><span class="num"><span class="nw">22,90–26,40&nbsp;€</span></span></p><p class="note" style="font-size:12.5px">La prévision n’est pas utilisée pour calculer le prix d’achat maximal ni pour déterminer le verdict.</p></div>
+<p class="pinfo pn">Le prix de vente de <span class="nw">24,90&nbsp;€</span> est un scénario fondé sur le prix le plus bas des lots comparables, et non une observation&nbsp;: votre fiche produit n’existe pas encore.</p>
+</section>
+<section class="col c-of" aria-label="Offre du fournisseur">
+<div class="slot ob">
+<h4>Aucune offre fournisseur</h4>
+<p class="pr">Seul le prix d’achat maximal est calculé&nbsp;: <span class="num nw">9,60&nbsp;€</span>. Une offre fournisseur montrera si l’on peut acheter à un prix inférieur.</p>
+<p class="pn">On peut vérifier l’hypothèse même sans fournisseur. Une offre fournisseur montrera combien coûtera le lot.</p>
+<ul aria-label="Ce qu’apportera une offre fournisseur"><li>prix hors TVA</li><li>conditionnement</li><li>commande min.</li><li>disponibilité</li><li>livraison</li><li>pays</li></ul>
+<p class="dnote js-only">Exemple avec des données de démo. Ce bouton n’existe pas dans l’interface LotPrism&nbsp;: c’est l’équipe LotPrism qui cherche une offre fournisseur.</p>
+<button class="addb js-only" type="button" data-set="offer" data-v="1">Afficher l’exemple avec offre</button>
+</div>
+<div class="slip oa">
+<p class="src2 pr">Liste de prix du fournisseur · 25/09/2026</p><p class="src2 pn">Liste de prix du fournisseur · 24/09/2026</p>
+<dl class="fl pr">
+<div><dt>Prix</dt><dd><span class="num">7,60&nbsp;€</span> l’unité</dd><span class="sub">hors TVA</span></div>
+<div><dt>Conditionnement</dt><dd>1&nbsp;unité</dd></div>
+<div><dt>Livraison du fournisseur</dt><dd><span class="num">+&nbsp;0,35&nbsp;€</span> l’unité</dd><span class="sub">indiquée en montant&nbsp;: s’ajoute au prix</span></div>
+<div><dt>Commande min. · disponibilité</dt><dd><span class="num">60</span>&nbsp;unités · disponible</dd></div>
+<div><dt>Pays</dt><dd>Tchéquie</dd></div>
+</dl>
+<dl class="fl pn">
+<div><dt>Prix</dt><dd><span class="num">5,40&nbsp;€</span> le lot</dd><span class="sub">hors TVA</span></div>
+<div><dt>Conditionnement</dt><dd>lot de 10&nbsp;pièces, 3&nbsp;contenances</dd><span class="sub">dans la fourchette <span class="nw">8–12</span> de l’hypothèse</span></div>
+<div><dt>Livraison du fournisseur</dt><dd>«&nbsp;sur demande&nbsp;»</dd><span class="sub">indiquée en texte&nbsp;: ne s’ajoute pas</span></div>
+<div><dt>Commande min. · disponibilité</dt><dd><span class="num">300</span>&nbsp;lots · disponible</dd></div>
+<div><dt>Pays</dt><dd>Pologne</dd></div>
+</dl>
+</div>
+<div class="idc ok oa pr"><i aria-hidden="true">✓</i><b>EAN et conditionnement identiques à la fiche produit</b><small>EAN identique, conditionnement&nbsp;: 1&nbsp;unité = 1&nbsp;unité de la fiche produit. Ce n’est pas un contrôle qualité&nbsp;: un échantillon reste nécessaire. Sans correspondance, la comparaison serait indicative.</small></div>
+<div class="idc cd oa pn"><i aria-hidden="true">?</i><b>Comparaison indicative</b><small>Le coût de la livraison du fournisseur est inconnu et la composition du lot n’est pas encore vérifiée. La fiche produit n’existe pas encore&nbsp;: il n’y a donc aucun code auquel comparer celui de l’offre.</small></div>
+<div class="cmp2 oa">
+<div class="pr"><div class="bar c"><span>Prix d’achat maximal calculé</span><span class="num">9,60&nbsp;€</span><i></i></div></div>
+<div class="pr"><div class="bar o" style="--w:82.8%"><span>Offre&nbsp;: 7,60 + 0,35 de livraison du fournisseur</span><span class="num">7,95&nbsp;€</span><i></i></div></div>
+<div class="pn"><div class="bar c"><span>Prix d’achat maximal calculé par lot</span><span class="num">8,90&nbsp;€</span><i></i></div></div>
+<div class="pn"><div class="bar o cond" style="--w:60.7%"><span>Offre hors livraison du fournisseur, à titre indicatif</span><span class="num">5,40&nbsp;€</span><i></i></div></div>
+<p class="note" style="font-size:12.5px">Pour une unité de vente · EUR · hors TVA</p>
+</div>
+</section>
+</div>
+<div class="chgs" aria-live="polite">
+<div><span class="bl"><span class="ob">Ce que l’on sait</span><span class="oa">Désormais connu</span></span>
+<p class="pr ob">Données de marché de la fiche produit et prix d’achat maximal par unité&nbsp;: <span class="num nw">9,60&nbsp;€</span></p>
+<p class="pn ob">Signal de demande, hypothèse de besoin et deux lots comparables</p>
+<p class="pr oa">Prix de <span class="num nw">7,60&nbsp;€</span> hors TVA, livraison du fournisseur à <span class="num nw">0,35&nbsp;€</span>, à partir de 60&nbsp;unités, en stock<small>d’après la liste de prix du 25/09/2026 · EAN identique</small></p>
+<p class="pn oa">Lot de 10&nbsp;pièces à <span class="num nw">5,40&nbsp;€</span> hors TVA, à partir de 300&nbsp;lots, en stock<small>d’après la liste de prix du 24/09/2026 · livraison du fournisseur «&nbsp;sur demande&nbsp;»</small></p>
+</div>
+<div><span class="bl"><span class="ob">Évaluation</span><span class="oa">Ce qui a changé dans l’évaluation</span></span>
+<p class="pr ob">Candidat à vérifier. Le prix d’achat réel est inconnu&nbsp;: rien à comparer au prix d’achat maximal</p>
+<p class="pn ob">Hypothèse produit. Le prix d’achat du lot est inconnu</p>
+<p class="pr oa">L’offre est <span class="num nw">1,65&nbsp;€</span> sous le prix d’achat maximal&nbsp;: c’est un écart, pas un bénéfice. Le verdict ne change pas&nbsp;: les coûts après l’achat sont inconnus et aucun échantillon n’a été contrôlé<small>Les <span class="nw">0,35&nbsp;€</span> de livraison du fournisseur sont déjà ajoutés à l’offre. Non pris en compte&nbsp;: préparation, stockage, retours, publicité</small></p>
+<p class="pn oa">À titre indicatif, l’offre est <span class="num nw">3,50&nbsp;€</span> sous le prix d’achat maximal par lot. Le verdict ne change pas<small>au prix de vente du scénario, soit <span class="nw">24,90&nbsp;€</span>&nbsp;; coût de la livraison du fournisseur inconnu</small><small>La demande pour ce type de lot n’est toujours pas vérifiée</small></p>
+</div>
+<div class="nx"><span class="bl">Prochaine étape</span>
+<p class="pr ob">Trouver une offre à <span class="nw">9,60&nbsp;€</span> maximum par unité, hors TVA</p>
+<p class="pn ob">Vérifier les ventes de lots de <span class="nw">8–12&nbsp;pièces</span> à <span class="nw">20–25&nbsp;€</span>, trouver un fournisseur</p>
+<p class="pr oa">Demander un échantillon&nbsp;; évaluer la préparation, le stockage, les retours et la publicité</p>
+<p class="pn oa">Demander un échantillon et le coût de la livraison du fournisseur&nbsp;; vérifier les ventes de lots de <span class="nw">8–12&nbsp;pièces</span></p>
+</div>
+</div>
+<p class="who">Le prix d’achat maximal et l’écart ne sont ni un bénéfice ni une autorisation d’achat. La décision vous appartient&nbsp;; aucun achat n’est effectué automatiquement.</p>
+</article>
+</div>
+</section>
+
+<section class="sec" id="assistant" aria-labelledby="h-as" data-screen-label="05 · как работает ассистент">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Fonctionnalités</span><h2 id="h-as">Comment l’assistant travaille sur un produit</h2><p>L’assistant fournit trois résultats&nbsp;: des produits à revendre, des hypothèses de nouvelle fiche produit et une évaluation de l’achat à partir des offres des fournisseurs. Ci-dessous, le parcours d’un produit de la carte à la prochaine étape, avec pour exemple une recherche de fournisseur. Chaque étape indique ce que fait le logiciel et ce que fait l’équipe LotPrism.</p></div></div>
+<ul class="as-r" aria-label="Les trois résultats de l’assistant">
+<li><span class="bl">Revente</span><p>Produits déjà en vente sur Amazon&nbsp;: verdict, arguments pour et contre, questions en suspens, prix d’achat maximal calculé par unité et prochaine étape.</p></li>
+<li><span class="bl">Nouvelle fiche produit</span><p>Hypothèse produit fondée sur des signaux de demande&nbsp;: fiches produits similaires, mentions «&nbsp;achetés&nbsp;» (borne inférieure des ventes), questions en suspens et prochaine vérification. Pour l’instant, l’hypothèse est préparée par l’équipe LotPrism.</p></li>
+<li><span class="bl">Offre du fournisseur</span><p>Prix et conditions d’achat issus d’une liste de prix&nbsp;: rapprochement de l’EAN et du nombre d’unités par conditionnement, comparaison avec le prix d’achat maximal calculé, évaluation affinée.</p></li>
+</ul>
+<ol class="nodes as-n" style="--n:5" aria-label="Parcours d’un produit, avec pour exemple une recherche de fournisseur">
+<li class="nd"><span class="nn">01</span><h3>Produit</h3><p class="ms">Carte avec les données de marché&nbsp;: prix affiché, mention «&nbsp;achetés&nbsp;» (borne inférieure des ventes, pas un chiffre exact), vendeurs.</p><span class="mark">dans l’interface</span></li>
+<li class="nd"><span class="nn">02</span><h3>Question</h3><p class="ms">Ce qui manque pour décider&nbsp;: la carte affiche les questions en suspens. Par exemple&nbsp;: existe-t-il une offre fournisseur qui ne dépasse pas le prix d’achat maximal calculé&nbsp;?</p><p class="ms nt">Dans la version actuelle, vous ne pouvez pas poser votre propre question depuis la carte.</p><span class="mark">dans l’interface</span></li>
+<li class="nd"><span class="nn">03</span><h3>Recherche</h3><p class="ms">Recherche d’une offre fournisseur pour ce produit.</p><p class="ms nt">Pour l’instant, la recherche est effectuée par l’équipe LotPrism&nbsp;: dans les listes de prix, les flux et les catalogues B2B des fournisseurs, notamment avec l’aide d’un modèle de langage.</p><span class="mark team">par l’équipe LotPrism</span></li>
+<li class="nd"><span class="nn">04</span><h3>Résultat</h3><p class="ms">Nouvelles informations dans la carte&nbsp;: prix et conditions du fournisseur, correspondance de l’EAN et du nombre d’unités par conditionnement.</p><p class="ms nt">Un fournisseur potentiel n’est pas encore une offre du fournisseur&nbsp;: c’est la liste de prix qui confirme le prix et les conditions. La correspondance de l’EAN n’est pas un contrôle qualité. Si la recherche n’a rien trouvé, cela ne veut pas dire qu’il n’y a pas de fournisseur.</p><span class="mark">dans l’interface</span></li>
+<li class="nd fin"><span class="nn">05</span><h3>Prochaine étape</h3><p class="ms">Évaluation affinée&nbsp;: écart avec le prix d’achat maximal calculé, verdict et prochaine vérification.</p><p class="ms nt">L’écart avec le prix d’achat maximal n’est pas un bénéfice. C’est à vous de décider et de passer commande auprès du fournisseur&nbsp;: dans la version actuelle, le logiciel ne passe pas de commandes et n’écrit pas aux fournisseurs.</p><span class="mark">dans l’interface</span></li>
+</ol>
+</div>
+</section>
+
+<section class="fin2" id="faq" aria-labelledby="h-fin" data-screen-label="06 · вопросы">
+<div class="wrap">
+<div class="l"><span class="eyebrow pr">Accès</span><span class="eyebrow pn">Recherche</span><h2 id="h-fin"><span class="pr">Demandez l’accès à LotPrism</span><span class="pn">Discutez d’une étude pour une nouvelle fiche produit</span></h2><p class="pr">Pas d’inscription en libre-service pour l’instant&nbsp;: laissez votre adresse e-mail pour faire une demande.</p><p class="pn">Pour l’instant, l’étude pour une nouvelle fiche produit est menée par l’équipe LotPrism, en partie manuellement. Laissez votre adresse e-mail pour faire une demande.</p>
+<a class="btn btn-p" href="#faq" data-req><span class="lbl"><span class="tx pr">Demander l’accès</span><span class="tx pn">Discuter d’une étude</span></span><span class="ic" aria-hidden="true"><svg class="ar" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"></path></svg></span></a></div>
+<div class="faq2">
+<details><summary>Avec quelles boutiques Amazon LotPrism fonctionne-t-il&nbsp;?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Pour l’instant, une seule boutique Amazon est connectée&nbsp;: Amazon Allemagne (amazon.de), avec ses données de marché, des prix en EUR et une TVA de 19&nbsp;%. Les autres boutiques Amazon ne sont pas encore connectées.</p></details>
+<details><summary>Comment les produits à revendre sont-ils sélectionnés&nbsp;?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Les données de marché sont collectées automatiquement. La sélection résulte d’un filtrage de ces données selon des seuils définis&nbsp;; pour l’instant, ce filtrage est lancé par l’équipe LotPrism. Pour chaque produit, le logiciel affiche les raisons, le prix d’achat maximal calculé par unité et la prochaine étape.</p></details>
+<details><summary>Comment la liste de prix d’un fournisseur arrive-t-elle dans LotPrism&nbsp;?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Les listes de prix sont importées par l’équipe LotPrism&nbsp;; les flux des fournisseurs se mettent à jour automatiquement. LotPrism met en correspondance les articles avec les fiches produits sur amazon.de d’après l’EAN/GTIN et le nombre d’unités par conditionnement. Il n’est pas encore possible d’importer soi-même une liste de prix dans l’interface.</p></details>
+<details><summary>Faut-il une liste de prix pour commencer&nbsp;?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Non. La carte est utile même sans fournisseur&nbsp;: elle présente les raisons, le prix d’achat maximal calculé et la prochaine étape. Une liste de prix affine l’évaluation de l’achat.</p></details>
+<details><summary>Peut-on lancer une recherche ou une étude directement depuis la carte&nbsp;?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Pas encore. Pour l’instant, la recherche de fournisseurs et l’étude de la demande sont réalisées par l’équipe LotPrism&nbsp;; les offres trouvées apparaissent dans la carte produit. Il sera possible de lancer une recherche ou une étude depuis la carte lorsque cette action sera activée.</p></details>
+<details><summary>Y a-t-il des prévisions&nbsp;?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Pour les produits qui ont un historique de prix sur Amazon, il existe une prévision de prix à 30&nbsp;jours avec une fourchette <span class="nw">P10–P90</span>. La prévision a un statut exploratoire et ne justifie pas un achat&nbsp;: elle n’est pas utilisée pour calculer le prix d’achat maximal ni pour déterminer le verdict. Il n’y a pas de prévision des ventes en unités.</p></details>
+<details><summary>LotPrism contrôle-t-il la qualité des produits&nbsp;?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Pas dans la version actuelle. LotPrism compare l’EAN/GTIN et le nombre d’unités par conditionnement à ceux de la fiche produit Amazon. La qualité des produits, les échantillons et l’autorisation de vendre la marque, c’est vous qui les contrôlez.</p></details>
+<details><summary>LotPrism achète-t-il lui-même les produits&nbsp;?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Non. Dans la version actuelle, le logiciel ne passe pas de commandes et n’écrit pas aux fournisseurs. C’est à vous de décider de l’achat et de passer commande.</p></details>
+<details><summary>Où LotPrism utilise-t-il l’IA&nbsp;?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>À deux endroits. Un modèle de langage aide l’équipe à rechercher des fournisseurs et à étudier la demande pour une nouvelle fiche produit. Un modèle d’apprentissage automatique calcule la prévision de prix. Le verdict et le prix d’achat maximal sont calculés par des règles à partir des données de marché&nbsp;; il n’y a pas de chat dans LotPrism.</p></details>
+</div>
+</div>
+</section>
+</main>
+<footer class="foot">
+<div class="wrap foot-g">
+<div class="foot-id">
+<img src="logo.svg" alt="LotPrism" width="136" height="18">
+<p>Assistant logiciel pour travailler avec Amazon&nbsp;: produits à revendre, étude de la demande, offres fournisseurs.</p>
+<p>L’interface du produit est disponible en anglais, en russe, en allemand et en espagnol. Pour l’instant, le texte principal des cartes est en anglais.</p>
+<p class="demo">Les produits, prix, EAN et fournisseurs de cette page sont des données de démonstration. <span class="nw">Exemple&nbsp;: Amazon Allemagne · EUR</span>.</p>
+</div>
+<nav class="foot-nav" aria-label="Rubriques du site">
+<section aria-labelledby="ft-p"><h2 id="ft-p" class="eyebrow">Produit</h2>
+<ul><li><a href="?p=r#how" data-go="r">Revente</a></li><li><a href="?p=n#how" data-go="n">Nouvelle fiche produit</a></li><li><a href="#offer">Offre du fournisseur</a></li><li><a href="#assistant">Comment fonctionne l’assistant</a></li><li><a href="https://app.lotprism.com/login">Se connecter<span aria-hidden="true"> ↗</span></a></li></ul></section>
+<section aria-labelledby="ft-h"><h2 id="ft-h" class="eyebrow">Aide</h2>
+<ul><li><a href="#faq">Questions fréquentes</a></li><li><a href="#why">Raisons et sources</a></li></ul></section>
+<section class="foot-co" aria-labelledby="ft-c" data-review hidden><h2 id="ft-c" class="eyebrow">Société et documents</h2>
+<ul><li>Éditeur du site – à compléter</li><li>Immatriculation – à compléter</li><li>Adresse – à compléter</li><li>Contact – à compléter</li><li>Politique de confidentialité – à compléter</li><li>Conditions d’utilisation – à compléter</li><li>Impressum – le propriétaire décide s’il s’applique</li></ul></section>
+</nav>
+</div>
+<div class="wrap foot-b">
+<details class="phc2"><summary>Sources des images<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>L’illustration du premier écran a été générée.</p><p>Photos des produits&nbsp;: Seven Colors, pmv chamara, Ben Lambert, Emilio Garcia, Kedibone Isaac Makhumisane, Behnam Norouzi · <a href="https://unsplash.com">Unsplash</a></p></details>
+<p class="foot-cr" data-review hidden>© année · titulaire des droits – à compléter</p>
+</div>
+<div class="wrap foot-l"><div class="lang lang-ft" id="lang-f" hidden><button class="lang-b" type="button" aria-expanded="false" aria-controls="lang-fl"><svg class="lang-i" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="8" cy="8" r="6.25"></circle><ellipse cx="8" cy="8" rx="2.6" ry="6.25"></ellipse><path d="M1.75 8h12.5"></path></svg><span class="sr">Langue&nbsp;: </span><span class="lang-c">Français</span><svg class="lang-v" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 4.5 3 3 3-3"></path></svg></button><div class="lang-l" id="lang-fl" hidden><label class="lang-s" hidden><svg class="lang-si" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="7" cy="7" r="4.75"></circle><path d="m10.5 10.5 3.5 3.5"></path></svg><input class="lang-q" type="search" autocomplete="off" spellcheck="false" placeholder=" "><span class="lang-sl">Rechercher une langue</span></label><ul class="lang-u" aria-label="Langue du site"></ul></div></div></div>
+<div class="wrap foot-sw" data-review hidden><div class="foot-st" role="note" aria-label="État du pied de page">
+<p><b>Déjà prêt&nbsp;:</b> structure et style du pied de page, présentation de la marque non liée à une boutique Amazon précise, mention des données de démo, sources des images, emplacements masqués sans liens.</p>
+<p><b>À compléter avant le lancement public&nbsp;:</b></p>
+<ul><li>éditeur du site (le propriétaire confirme l’entité juridique)&nbsp;;</li><li>données d’immatriculation et adresse&nbsp;;</li><li>contact opérationnel&nbsp;;</li><li>politique de confidentialité – obligatoire avant l’activation du formulaire qui collecte les adresses e-mail&nbsp;;</li><li>conditions d’utilisation&nbsp;;</li><li>Impressum, le cas échéant&nbsp;;</li><li>gestionnaire de formulaire opérationnel.</li></ul>
+</div></div>
+</footer>
+<dialog id="req" aria-labelledby="req-h">
+<div class="dlg">
+<div class="dlg-h"><h2 id="req-h"><span class="pr">Demander l’accès</span><span class="pn">Discuter d’une étude</span></h2><button class="x" type="button" id="req-x" aria-label="Fermer">×</button></div>
+<p class="dlg-p pr">Pour l’instant, la boutique Amazon Allemagne (EUR) est connectée&nbsp;; les autres boutiques Amazon ne le sont pas encore.</p>
+<p class="dlg-p pn">Pour l’instant, la boutique Amazon Allemagne (EUR) est connectée. La version actuelle ne propose ni mots-clés, ni volumes de recherche, ni tendances.</p>
+<form class="dlgf" id="req-f" novalidate>
+<fieldset class="fs" id="req-fs">
+<div class="fld"><label for="rq-mail">E-mail</label><input id="rq-mail" name="email" type="email" autocomplete="email" required aria-describedby="rq-mail-e"><p class="err" id="rq-mail-e" hidden>Indiquez votre adresse e-mail</p></div>
+<div class="fld"><label for="rq-name">Nom <span class="opt">– facultatif</span></label><input id="rq-name" name="name" autocomplete="name"></div>
+<div class="fld"><label for="rq-co">Entreprise <span class="opt">– facultatif</span></label><input id="rq-co" name="company" autocomplete="organization"></div>
+<div class="fld"><label for="rq-act">Votre activité <span class="opt">– facultatif</span></label><select id="rq-act" name="activity"><option value="">Aucune sélection</option><option>Je vends sur Amazon</option><option>J’achète auprès de fournisseurs</option><option>Je lance de nouveaux produits</option></select></div>
+<p class="proto">Démo&nbsp;: la demande n’est envoyée nulle part et vous ne recevrez pas de réponse.</p>
+<button class="btn btn-p" type="submit" id="req-s"><span class="lbl"><span class="tx" id="req-st">Envoyer la demande</span><span class="spin" aria-hidden="true"></span></span><span class="ic" aria-hidden="true"><svg class="ar" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"></path></svg><svg class="ok" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5 6.5 11.5 12.5 5"></path></svg></span></button>
+</fieldset>
+</form>
+<div class="done" id="req-ok" hidden><p id="req-okm" tabindex="-1" aria-live="polite"></p><button class="btn btn-s" type="button" id="req-c"><span class="lbl"><span class="tx">Fermer</span></span></button></div>
+</div>
+</dialog>
+<script>window.LP_L10N={"cur": "fr", "ready": ["da", "de", "en", "es", "fr", "it", "nl", "pl", "pt-BR", "pt-PT", "sv", "tr", "cs", "ru", "uk"], "names": {"da": "Dansk", "de": "Deutsch", "en": "English", "es": "Español", "fr": "Français", "it": "Italiano", "nl": "Nederlands", "pl": "Polski", "pt-BR": "Português (Brasil)", "pt-PT": "Português (Portugal)", "sv": "Svenska", "tr": "Türkçe", "cs": "Čeština", "ru": "Русский", "uk": "Українська"}, "search": {"da": "Danish датский danois", "de": "German немецкий allemand", "en": "English английский anglais", "es": "Spanish испанский espagnol", "fr": "French французский français", "it": "Italian итальянский italien", "nl": "Dutch нидерландский néerlandais", "pl": "Polish польский polonais", "pt-BR": "Brazilian Portuguese бразильский португальский portugais brésilien", "pt-PT": "European Portuguese европейский португальский portugais européen", "sv": "Swedish шведский suédois", "tr": "Turkish турецкий turc", "cs": "Czech чешский tchèque", "ru": "Russian русский russe", "uk": "Ukrainian украинский ukrainien"},"href":function(c){return "../../"+c+"/a/"}};</script><script src="d.js"></script>
+<script>(function(){var H=document.documentElement,t;new MutationObserver(function(){if(!H.classList.contains('mo'))return;H.classList.remove('swap');void H.offsetWidth;H.classList.add('swap');clearTimeout(t);t=setTimeout(function(){H.classList.remove('swap')},260)}).observe(H,{attributes:true,attributeFilter:['data-path']})})()</script>
+</body>
+</html>

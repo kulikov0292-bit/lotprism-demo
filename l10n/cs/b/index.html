@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="cs" data-path="n" data-offer="0">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>LotPrism&nbsp;– softwarový asistent pro práci s&nbsp;Amazonem</title>
+<meta name="description" content="LotPrism pomáhá prodejcům na Amazonu nacházet zboží k přeprodeji, zkoumat poptávku pro nové listingy a hodnotit nákup podle nabídek dodavatelů.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/v.css">
+<link rel="stylesheet" href="css/d.css">
+<link rel="stylesheet" href="css/h17.css">
+<link rel="stylesheet" href="css/m18.css">
+<link rel="stylesheet" href="css/fix.css">
+<link rel="stylesheet" href="css/b20.css">
+<link rel="stylesheet" href="css/v3.css">
+<link rel="stylesheet" href="css/l10n.css">
+<link rel="preload" as="image" href="img/hero-d-r.jpg" media="(min-width:601px)"><link rel="preload" as="image" href="img/hero-m-r.jpg" media="(max-width:600px)">
+<script>(function(){var h=document.documentElement,q=new URLSearchParams(location.search);try{if('scrollRestoration' in history)history.scrollRestoration='manual';var nv=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];if(location.hash&&nv&&nv.type==='reload')history.replaceState(null,'',location.pathname+location.search)}catch(e){}h.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&q.get('rm')!=='1')h.classList.add('mo');if(q.get('p')==='n'||q.get('p')==='r')h.setAttribute('data-path',q.get('p'));else h.setAttribute('data-path','n');if(q.get('o')==='1')h.setAttribute('data-offer','1');if(q.get('dir')==='rtl')h.dir='rtl'})()</script>
+<link rel="alternate" hreflang="da" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/da/a/"><link rel="alternate" hreflang="de" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/de/a/"><link rel="alternate" hreflang="en" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/en/a/"><link rel="alternate" hreflang="es" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/es/a/"><link rel="alternate" hreflang="fr" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/fr/a/"><link rel="alternate" hreflang="it" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/it/a/"><link rel="alternate" hreflang="nl" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/nl/a/"><link rel="alternate" hreflang="pl" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/pl/a/"><link rel="alternate" hreflang="pt-BR" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/pt-BR/a/"><link rel="alternate" hreflang="pt-PT" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/pt-PT/a/"><link rel="alternate" hreflang="sv" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/sv/a/"><link rel="alternate" hreflang="tr" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/tr/a/"><link rel="alternate" hreflang="cs" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/cs/a/"><link rel="alternate" hreflang="ru" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/ru/a/"><link rel="alternate" hreflang="uk" href="https://kulikov0292-bit.github.io/lotprism-demo/l10n/uk/a/"></head>
+<body>
+<header class="site-h">
+<div class="wrap nav">
+<a class="logo" href="#hero" aria-label="LotPrism – na úvodní stránku"><img src="logo.svg" alt="LotPrism" width="166" height="22"></a>
+<nav class="links" aria-label="Hlavní navigace"><a href="#how">Jak to funguje</a><a href="#why">Důvody</a><a href="#offer">Dodavatel</a><a href="#faq">Otázky</a></nav>
+<div class="acts"><div class="lang lang-hd" id="lang" hidden><button class="lang-b" type="button" aria-expanded="false" aria-controls="lang-l"><svg class="lang-i" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="8" cy="8" r="6.25"></circle><ellipse cx="8" cy="8" rx="2.6" ry="6.25"></ellipse><path d="M1.75 8h12.5"></path></svg><span class="sr">Jazyk: </span><span class="lang-c">Čeština</span><svg class="lang-v" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 4.5 3 3 3-3"></path></svg></button><div class="lang-l" id="lang-l" hidden><label class="lang-s" hidden><svg class="lang-si" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="7" cy="7" r="4.75"></circle><path d="m10.5 10.5 3.5 3.5"></path></svg><input class="lang-q" type="search" autocomplete="off" spellcheck="false" placeholder=" "><span class="lang-sl">Hledat jazyk</span></label><ul class="lang-u" aria-label="Jazyk webu"></ul></div></div><a class="in" href="https://app.lotprism.com/login">Přihlásit se</a><a class="btn btn-s sm" href="#faq" data-req><span class="lbl"><span class="tx pr">Požádat o&nbsp;přístup</span><span class="tx pn">Probrat průzkum</span></span></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span></span></button></div>
+</div>
+<nav class="drawer" id="drawer" aria-label="Menu"><a href="#how">Jak to funguje</a><a href="#why">Důvody</a><a href="#offer">Dodavatel</a><a href="#faq">Otázky</a><div class="lang lang-dr" id="lang-d" hidden><button class="lang-b" type="button" aria-expanded="false" aria-controls="lang-dl"><span class="lang-t">Jazyk</span><span class="lang-dot" aria-hidden="true">·</span><span class="lang-c">Čeština</span><svg class="lang-v" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4.5 3 3 3-3 3"></path></svg></button><div class="lang-l" id="lang-dl" hidden><label class="lang-s" hidden><svg class="lang-si" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="7" cy="7" r="4.75"></circle><path d="m10.5 10.5 3.5 3.5"></path></svg><input class="lang-q" type="search" autocomplete="off" spellcheck="false" placeholder=" "><span class="lang-sl">Hledat jazyk</span></label><ul class="lang-u" aria-label="Jazyk webu"></ul></div></div><a href="https://app.lotprism.com/login">Přihlásit se</a><a class="btn btn-p" href="#faq" data-req><span class="lbl"><span class="tx pr">Požádat o&nbsp;přístup</span><span class="tx pn">Probrat průzkum</span></span></a></nav>
+</header>
+<p class="sr" id="live" aria-live="polite"></p>
+<main>
+<section class="hero" id="hero" aria-labelledby="h1" data-screen-label="01 · первый экран">
+<div class="art" role="img" aria-label="Ilustrace: police se zbožím různých kategorií, jeden produkt je zvýrazněný světlem"><img class="ar" src="img/hero-d-r.jpg" alt="" width="1672" height="941"><img class="an" src="img/hero-d-n.jpg" alt="" width="1672" height="941"></div>
+<div class="wrap hin">
+<div class="h-t"><h1 id="h1">Zboží pro Amazon, které stojí za to prověřit</h1></div>
+<p class="h-l"><span class="pr">LotPrism&nbsp;– softwarový asistent pro práci s&nbsp;Amazonem. Ukazuje zboží k&nbsp;přeprodeji na základě dat z&nbsp;připojeného tržiště: důvody, vypočtenou maximální nákupní cenu za kus a&nbsp;další krok. Nabídka dodavatele, pokud je k&nbsp;dispozici, upřesňuje hodnocení. Rozhodnutí o&nbsp;nákupu je na vás.</span><span class="pn">LotPrism&nbsp;– softwarový asistent pro práci s&nbsp;Amazonem. Pro nový listing pomáhá prozkoumat poptávku a&nbsp;formulovat hypotézu produktu: signály z&nbsp;podobných listingů, otevřené otázky a&nbsp;další ověření. Rozhodnutí o&nbsp;spuštění listingu je na vás.</span></p>
+<p class="h-x"><span class="pr">Asistent LotPrism ukazuje zboží k&nbsp;přeprodeji: důvody, vypočtenou maximální nákupní cenu za kus a&nbsp;další krok.</span><span class="pn">Asistent LotPrism pomáhá prozkoumat poptávku a&nbsp;formulovat hypotézu nového listingu. Průzkum nyní vede tým LotPrism.</span></p>
+<div class="h-s"><span class="lbl2" id="sc-h">Co hledáte</span>
+<div class="seg" role="radiogroup" aria-labelledby="sc-h">
+<button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span><span>Přeprodej<small>zboží se už prodává</small></span></button>
+<button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span><span>Nový listing<small>vlastní listing podle poptávky</small></span></button>
+</div></div>
+<div class="h-c"><a class="btn btn-p" href="#faq" data-req><span class="lbl"><span class="tx pr">Požádat o&nbsp;přístup</span><span class="tx pn">Probrat průzkum</span></span><span class="ic" aria-hidden="true"><svg class="ar" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"></path></svg></span></a><a class="btn btn-s" href="#offer"><span class="lbl"><span class="tx">Zobrazit příklad</span></span></a><p class="illu d">Ilustrace je vygenerovaná</p></div>
+<figure class="res" aria-label="Příklad karty produktu">
+<div class="rimg" role="img" aria-label="Ilustrace: police se zbožím, jeden produkt je zvýrazněný světlem">
+<img class="m ar" src="img/hero-m-r.jpg" alt="" width="1122" height="1402"><img class="m an" src="img/hero-m-n.jpg" alt="" width="1122" height="1402">
+<p class="illu m">Ilustrace</p>
+</div>
+<article class="rc">
+<div class="rc-h"><span class="eyebrow pr"><span class="ey-l">Přeprodej · </span>demo</span><span class="eyebrow pn"><span class="ey-l">Nový listing · </span>demo</span><span class="verdict pr">Kandidát k&nbsp;prověření</span><span class="verdict y pn">Hypotéza produktu</span></div>
+<h2 class="rc-t pr">Hliněná čajová konvice, 400&nbsp;ml<span><span class="nw">Příklad: Amazon Německo · EUR</span>&nbsp;· existující listing</span></h2>
+<h2 class="rc-t pn">Sklenice různých objemů, sada<span><span class="nw">Příklad: Amazon Německo · EUR</span>&nbsp;· hypotézu připravuje tým LotPrism</span></h2>
+<dl class="rc-l">
+<div class="why1"><dt>Proč prověřit</dt>
+<dd class="pr"><span class="k f">FAKT</span>V&nbsp;minulém měsíci zakoupeno <span class="num">300+</span><small>údaj Amazonu, dolní hranice</small></dd>
+<dd class="pn"><span class="k f">FAKT</span>6 podobných sad: údaje Amazonu „V&nbsp;minulém měsíci zakoupeno“ od <span class="num">200+</span> do <span class="num">500+</span>, každá s&nbsp;<span class="nw">1–3</span> prodejci<small>dolní hranice, ne přesné ani předpovídané prodeje</small><span class="hy"><span class="k s">HYPOTÉZA</span>kupující potřebují sady sklenic různých objemů</span></dd></div>
+<div class="oa of"><dt>Nyní je známo</dt>
+<dd class="pr">Nabídka dodavatele: <span class="num nw">7,95&nbsp;€</span> za kus&nbsp;– o&nbsp;<span class="num nw">1,65&nbsp;€</span> pod maximální nákupní cenou</dd>
+<dd class="pn">Nabídka dodavatele: sada 10&nbsp;ks za <span class="num nw">5,40&nbsp;€</span> bez DPH</dd></div>
+<div><dt>Zatím není známo</dt>
+<dd class="pr ob">Nákupní cena: žádná nabídka.<span class="cl"><span class="k c">VÝPOČET</span>Vypočtena je jen maximální nákupní cena&nbsp;– <span class="num nw">9,60&nbsp;€</span> za&nbsp;kus bez&nbsp;DPH<small>podle předpokladů příkladu</small></span></dd>
+<dd class="pr oa">Náklady po nákupu: příprava, skladování, vratky, reklama<small>maximální nákupní cena s&nbsp;nimi nepočítá</small></dd>
+<dd class="pn ob">Zda se sada <span class="nw">8–12&nbsp;ks</span> za <span class="nw">20–25&nbsp;€</span> bude kupovat</dd>
+<dd class="pn oa">Poptávka po takové sadě není ověřena<small>doprava od dodavatele není známa</small></dd></div>
+<div class="nx"><dt>Další krok</dt>
+<dd class="pr ob"><a class="go2" href="#offer">Najít nabídku dodavatele ↓</a></dd><dd class="pr oa">Vyžádat vzorek</dd>
+<dd class="pn ob">Ověřit údaj „zakoupeno“ a&nbsp;ceny sad různých objemů</dd><dd class="pn oa">Vyžádat vzorek a&nbsp;cenu dopravy</dd></div>
+</dl>
+<a class="go" href="#why">Proč tento produkt ↓</a>
+</article>
+</figure>
+</div>
+</section>
+
+<section class="sec" id="how" aria-labelledby="h-how" data-screen-label="02 · два пути">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Jak to funguje</span><h2 id="h-how">Dvě cesty k&nbsp;produktu</h2><p>Přeprodej začíná u&nbsp;zboží, které se už na Amazonu prodává. Nový listing&nbsp;– u&nbsp;signálu poptávky a&nbsp;hypotézy podle podobných listingů. Nabídka dodavatele upřesňuje hodnocení nákupu na obou cestách, ale na začátku ceník nepotřebujete.</p></div>
+<div class="seg sm" role="radiogroup" aria-label="Scénář"><button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span>Přeprodej</button><button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>Nový listing</button></div></div>
+<div class="lanes">
+<div class="lane r">
+<div class="lane-h"><button class="ll" type="button" data-set="path" data-v="r" aria-pressed="true">Přeprodej</button><span class="lsub">od zboží, které se už prodává</span></div>
+<ol class="nodes" style="--n:5" aria-label="Cesta přeprodeje">
+<li class="nd"><span class="nn">01</span><h3>Trh</h3><p class="ms">Cena, údaj „zakoupeno“ a&nbsp;prodejci včetně Amazonu</p><span class="mark">v&nbsp;rozhraní</span></li>
+<li class="nd"><span class="nn">02</span><h3>Kandidátní produkt</h3><div class="it"><img src="img/c-k18.jpg" alt="" loading="lazy"><span>Hliněná čajová konvice</span></div><span class="mark team">užší výběr sestavuje tým LotPrism</span></li>
+<li class="nd noar"><span class="nn">03</span><h3>Důvody</h3><p class="ms">Proč stojí za prověření a&nbsp;jaká je vypočtená maximální nákupní cena</p><span class="mark">v&nbsp;rozhraní</span></li>
+<li class="brn"><div class="skip" aria-hidden="true"><span>lze i&nbsp;bez dodavatele</span><i class="stem"></i></div>
+<div class="nd sup"><a class="opt go2" href="#offer">04 · volitelné ↓</a><h3>Nabídka dodavatele</h3><p class="ms">Cena, počet kusů v&nbsp;balení, minimální odběr, doprava od dodavatele</p><span class="mark team">ceník nahrává tým; sami ho zatím nahrát nemůžete</span></div></li>
+<li class="nd fin"><span class="nn">05</span><h3>Hodnocení nákupu</h3><p class="ms ob">Maximální nákupní cena je známa, skutečná nákupní cena ne. Další krok: najít nabídku</p><p class="ms oa">Nabídka dodavatele je porovnána s&nbsp;maximální nákupní cenou. Další krok: vzorek</p><span class="mark">v&nbsp;rozhraní</span></li>
+</ol>
+</div>
+<div class="lane n">
+<div class="lane-h"><button class="ll" type="button" data-set="path" data-v="n" aria-pressed="false">Nový listing</button><span class="lsub">od poptávky · průzkum nyní vede tým LotPrism</span></div>
+<ol class="nodes" style="--n:4" aria-label="Cesta nového listingu">
+<li class="nd"><span class="nn">01</span><h3>Signál poptávky</h3><p class="ms">Listingy s&nbsp;údajem „zakoupeno“ a&nbsp;malým počtem prodejců</p><span class="mark team">vybírá tým LotPrism</span></li>
+<li class="nd"><span class="nn">02</span><h3>Hypotéza potřeby</h3><p class="ms">Co mohou kupující potřebovat&nbsp;– podle složení podobných sad</p><span class="mark team">provádí tým LotPrism</span></li>
+<li class="nd"><span class="nn">03</span><h3>Hypotéza produktu</h3><div class="it"><img src="img/c-k15.jpg" alt="" loading="lazy"><span>Sada sklenic různých objemů</span></div></li>
+<li class="brn"><div class="nd fin"><span class="nn">04</span><h3>Další ověření</h3><p class="ms">Co a&nbsp;čím ověřit, než se rozhodnete</p></div>
+<div class="nd sup"><a class="opt go2" href="#offer">volitelné ↓</a><h3>Nabídka dodavatele</h3><p class="ms">Upřesňuje nákupní cenu sady a&nbsp;podmínky</p></div></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="why" aria-labelledby="h-why" data-screen-label="03 · основания">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Důvody</span><h2 id="h-why">Proč stojí za to tento produkt prověřit</h2><p>Každý důvod má svůj zdroj, vysvětlení se zobrazí po kliknutí. Žádný ukazatel sám o&nbsp;sobě nedokazuje, že produkt bude vhodný, proto karta nemá celkové skóre.</p></div>
+<div class="seg sm" role="radiogroup" aria-label="Scénář"><button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span>Přeprodej</button><button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>Nový listing</button></div></div>
+<div class="why">
+<div style="display:flex;flex-direction:column;gap:12px">
+<ol class="bases pr">
+<li><details><summary><span class="n">01</span><span class="tt"><span class="lh"><span class="k f">FAKT</span><span>poptávka po tomto listingu</span></span><span class="val">V&nbsp;minulém měsíci zakoupeno <span class="num">300+</span></span><span class="src">Údaj Amazonu přes Keepa · 26.&nbsp;09.&nbsp;2026</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Je to <b>dolní hranice</b> nákupů u&nbsp;jednoho listingu za minulý měsíc: ne přesný počet prodejů, ne předpověď a&nbsp;ne výpočet LotPrism. Cenou se nenásobí.</p><p>Vypovídá o&nbsp;poptávce po tomto listingu, ne po vaší nabídce za vaši cenu. Pokud údaj chybí, poptávka není známa&nbsp;– to neznamená, že je nulová.</p></div></details></li>
+<li><details><summary><span class="n">02</span><span class="tt"><span class="lh"><span class="k f">FAKT</span><span>konkurence</span></span><span class="val">5 prodejců, Amazon mezi nimi není</span><span class="src">Keepa · 64 pozorování za 90 dní</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Když mezi prodejci není Amazon, je tlak na cenu obvykle nižší, ale <b>není to důkaz</b>. Složení prodejců se může změnit.</p></div></details></li>
+<li><details><summary><span class="n">03</span><span class="tt"><span class="lh"><span class="k f">FAKT</span><span>cena za posledních 90 dní</span></span><span class="val"><span class="num"><span class="nw">23,90–25,90&nbsp;€</span></span>, nyní <span class="num nw">24,90&nbsp;€</span></span><span class="src">Historie ceny amazon.de · graf</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Díky úzkému cenovému rozpětí je výpočet maximální nákupní ceny stabilnější. Předpověď v&nbsp;grafu vytváří model; nepoužívá se k&nbsp;výpočtu maximální nákupní ceny ani k&nbsp;určení verdiktu.</p></div></details></li>
+</ol>
+<ol class="bases pn">
+<li><details><summary><span class="n">01</span><span class="tt"><span class="lh"><span class="k f">FAKT</span><span>signál poptávky</span></span><span class="val">6 podobných sad: zakoupeno od <span class="num">200+</span> do <span class="num">500+</span>, každá s&nbsp;<span class="nw">1–3</span> prodejci</span><span class="src">Údaje Amazonu přes Keepa · výběr týmu LotPrism · 26.&nbsp;09.&nbsp;2026</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Tým vybírá listingy na amazon.de s&nbsp;údajem „V&nbsp;minulém měsíci zakoupeno“ a&nbsp;malým počtem prodejců. Každý údaj je <b>dolní hranicí</b> pro svůj listing; sčítat je nelze.</p><p>Je to poptávka po existujících sadách. Poptávka po vaší sadě zůstává hypotézou.</p></div></details></li>
+<li><details><summary><span class="n">02</span><span class="tt"><span class="lh"><span class="k s">HYPOTÉZA</span><span>potřeba</span></span><span class="val">Kupující potřebují sady sklenic různých objemů</span><span class="src">Důvod: různé objemy&nbsp;– u&nbsp;2 ze 6 podobných sad · demo</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Je to <b>hypotéza</b>, je ji teprve třeba ověřit. Pozorování je jen jedno: různé objemy u&nbsp;2 ze 6 podobných sad. Vypovídá o&nbsp;tom, co se nabízí, ne o&nbsp;tom, co se kupuje.</p></div></details></li>
+<li><details><summary><span class="n">03</span><span class="tt"><span class="lh"><span class="k s">HYPOTÉZA</span><span>složení sady</span></span><span class="val"><span class="nw">8–12</span> sklenic ve <span class="nw">2–3</span> objemech v&nbsp;jedné sadě</span><span class="src">Podobné sady&nbsp;– od 4 do 12&nbsp;ks; různé objemy&nbsp;– u&nbsp;2 ze 6</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Složení <b>není ověřeno</b>. Na fotografii je 11 sklenic&nbsp;– jde o&nbsp;ilustraci, ne o&nbsp;rozhodnutí. Cena se neodvozuje z&nbsp;celkového cenového rozpětí podobných sad: nejsou srovnatelné počtem sklenic ani objemy.</p></div></details></li>
+</ol>
+<div class="unkn">
+<h3><span class="unk">NEZNÁMÉ</span>Otevřené otázky</h3>
+<ul class="pr"><li class="ob"><span>Nákupní cena <small>– žádná nabídka dodavatele</small></span></li><li><span>Poptávka po vaší nabídce za vaši cenu</span></li><li><span>Doprava od dodavatele, příprava, skladování, vratky, reklama <small>– maximální nákupní cena s&nbsp;nimi nepočítá</small></span></li></ul>
+<ul class="pn"><li><span>Zda se sada <span class="nw">8–12&nbsp;ks</span> za <span class="nw">20–25&nbsp;€</span> bude kupovat</span></li><li><span>Klíčová slova, poptávka ve vyhledávání, trendy<span class="st nip">v&nbsp;LotPrismu nejsou</span></span></li><li class="ob"><span>Nákupní cena sady <small>– žádná nabídka dodavatele</small></span></li></ul>
+</div>
+<div class="unkn nxc pn" style="border-style:solid;border-color:var(--ct)">
+<h3><span class="bl" style="color:var(--yel)">Další ověření</span></h3>
+<p class="bl act">Akce: prozkoumat poptávku</p>
+<p style="font-size:15px">Ověřit, zda se sady <span class="nw">8–12&nbsp;ks</span> s&nbsp;různými objemy prodávají za <span class="nw">20–25&nbsp;€</span>: historie ceny a&nbsp;údaje „zakoupeno“ u&nbsp;takových listingů. Souběžně tým hledá dodavatele sady.</p>
+<span class="mark team">provádí tým LotPrism</span>
+</div>
+</div>
+<figure class="fig pr" aria-labelledby="fg-r">
+<div class="fig-h"><h3 id="fg-r">Cena listingu: 90 dní pozorování a&nbsp;předpověď modelu na 30 dní</h3><span class="tagdemo">ukázková data</span><p>EUR, cena vč. DPH · historie ceny amazon.de</p></div>
+<div class="ch" role="img" aria-label="Pozorovaná cena za posledních 90 dní: od 23,90&nbsp;€ do 25,90&nbsp;€, nyní 24,90&nbsp;€. Zvlášť je zobrazena předpověď modelu na 30 dní s rozpětím P10–P90: od 22,90&nbsp;€ do 26,40&nbsp;€.">
+<svg viewBox="0 0 640 240" preserveAspectRatio="none" aria-hidden="true">
+<path d="M60 178.3H624M60 115H624M60 51.7H624" stroke="#1F2737" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+<path d="M483 12V225" stroke="#2A3446" stroke-dasharray="3 4" vector-effect="non-scaling-stroke"></path>
+<path d="M483 86.5 624 39V149.8Z" fill="rgba(255,216,74,.16)" stroke="#FFD84A" stroke-width="1" stroke-dasharray="4 4" vector-effect="non-scaling-stroke"></path>
+<path d="M483 86.5 624 92.8" fill="none" stroke="#FFD84A" stroke-width="1.5" stroke-dasharray="5 5" vector-effect="non-scaling-stroke"></path>
+<path d="M60 86.5H144.6V54.8H186.9V86.5H252.7V118.2H285.6V86.5H393.7V67.8H431.3V86.5H483" fill="none" stroke="#2FD1BE" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+<span class="yl" style="top:21.5%" aria-hidden="true">26&nbsp;€</span><span class="yl" style="top:47.9%" aria-hidden="true">24&nbsp;€</span><span class="yl" style="top:74.3%" aria-hidden="true">22&nbsp;€</span>
+<span class="xl" style="left:9.4%;transform:none" aria-hidden="true">−90&nbsp;dní</span><span class="xl" style="left:31.4%" aria-hidden="true">−60</span><span class="xl" style="left:53.4%" aria-hidden="true">−30</span><span class="xl" style="left:75.5%" aria-hidden="true">dnes</span><span class="xl e" style="left:100%" aria-hidden="true">+30&nbsp;dní</span>
+<span class="fl2 hi" style="top:16.25%" aria-hidden="true">P90 26,40&nbsp;€</span><span class="fl2 lo" style="top:62.4%" aria-hidden="true">P10 22,90&nbsp;€</span>
+</div>
+<ul class="lg"><li><span class="sw1" aria-hidden="true"></span><span><b>FAKT</b> · pozorovaná cena, 90 dní</span></li><li><span class="sw2" aria-hidden="true"></span><span><b>Předpověď modelu</b> · výzkumný režim · <span class="nw">P10–P90</span> na 30 dní. Předpověď se nepoužívá k&nbsp;výpočtu maximální nákupní ceny ani k&nbsp;určení verdiktu a&nbsp;nezaručuje prodejní cenu.</span></li></ul>
+</figure>
+<figure class="fig pn" aria-labelledby="fg-n">
+<div class="fig-h"><h3 id="fg-n">Podobné sady na amazon.de</h3><span class="tagdemo">ukázková data</span><p>Cena vč. DPH, EUR · „V&nbsp;minulém měsíci zakoupeno“&nbsp;– údaj Amazonu, dolní hranice · Keepa, 26.&nbsp;09.&nbsp;2026</p></div>
+<table class="an"><thead><tr><th scope="col">Sada</th><th scope="col" class="r">Cena</th><th scope="col" class="r">Zakoupeno</th><th scope="col" class="r">Prodejci</th></tr></thead><tbody>
+<tr><th scope="row">6 × 250&nbsp;ml<small>jeden objem</small></th><td class="r num">19,90</td><td class="r num">500+</td><td class="r num">2</td></tr>
+<tr><th scope="row">4 × 500&nbsp;ml<small>jeden objem</small></th><td class="r num">21,90</td><td class="r num">300+</td><td class="r num">2</td></tr>
+<tr><th scope="row">6&nbsp;ks se šroubovacím víčkem<small>jeden objem</small></th><td class="r num">22,50</td><td class="r num">200+</td><td class="r num">3</td></tr>
+<tr><th scope="row">12&nbsp;ks na koření<small>jeden objem</small></th><td class="r num">24,90</td><td class="r num">300+</td><td class="r num">1</td></tr>
+<tr><th scope="row">8&nbsp;ks<small>2 objemy</small></th><td class="r num">24,90</td><td class="r num">200+</td><td class="r num">1</td></tr>
+<tr><th scope="row">10&nbsp;ks<small>3 objemy</small></th><td class="r num">26,90</td><td class="r num">200+</td><td class="r num">1</td></tr>
+<tr class="us"><th scope="row">Hypotéza: <span class="nw">8–12&nbsp;ks</span><small><span class="nw">2–3</span> objemy</small></th><td class="r num"><span class="nw">20–25</span></td><td class="r"><span class="unk" aria-hidden="true">?</span><span class="sr">není známo</span></td><td class="r"><span aria-hidden="true">—</span><span class="sr">listing zatím neexistuje</span></td></tr>
+</tbody></table>
+<p class="note">S&nbsp;hypotézou jsou srovnatelné jen dvě sady s&nbsp;různými objemy. Další krok: jejich historie ceny a&nbsp;údajů „zakoupeno“.</p>
+<p class="note rnote">Takto vypadá výsledek průzkumu poptávky.</p>
+</figure>
+</div>
+</div>
+</section>
+
+<section class="sec" id="offer" aria-labelledby="h-offer" data-screen-label="04 · предложение поставщика">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Nabídka dodavatele · volitelné</span><h2 id="h-offer">Co přidává nabídka</h2><p>Karta je užitečná i&nbsp;bez dodavatele. Nabídka z&nbsp;ceníku přidává cenu a&nbsp;podmínky nákupu; LotPrism tuto cenu porovnává s&nbsp;maximální nákupní cenou a&nbsp;mění další krok.</p></div>
+<div class="seg sm" role="radiogroup" aria-label="Scénář"><button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span>Přeprodej</button><button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>Nový listing</button></div></div>
+<div class="ctl">
+<div class="seg" role="radiogroup" aria-label="Nabídka dodavatele"><button type="button" role="radio" data-set="offer" data-v="0" aria-checked="true"><span class="m" aria-hidden="true"></span>Bez nabídky</button><button type="button" role="radio" data-set="offer" data-v="1" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>S&nbsp;nabídkou</button></div>
+<button class="replay oa" type="button" id="replay">↻ Zobrazit znovu</button>
+</div>
+<article class="oc3" aria-label="Karta produktu">
+<div class="oc3-h">
+<img class="pr" src="img/c-k18.jpg" alt="" width="40" height="50" loading="lazy"><img class="pn" src="img/c-k15.jpg" alt="" width="40" height="50" loading="lazy">
+<h3 class="pr">Hliněná čajová konvice, 400&nbsp;ml<span><span class="nw">Příklad: Amazon Německo · EUR</span>&nbsp;· existující listing</span></h3>
+<h3 class="pn">Sklenice různých objemů, sada<span><span class="nw">Příklad: Amazon Německo · EUR</span>&nbsp;· hypotéza, počet kusů <span class="nw">(8–12)</span> není ověřen</span></h3>
+<span class="verdict pr">Kandidát k&nbsp;prověření</span><span class="verdict y pn">Hypotéza produktu</span>
+</div>
+<div class="seq" role="group" aria-label="Otázka, akce a průzkum k této kartě">
+<div class="seq-g">
+<div class="sq"><span class="bl">Otázka</span>
+<p class="pr">Lze nakoupit do <span class="nw">9,60&nbsp;€</span> za&nbsp;kus bez&nbsp;DPH?</p>
+<p class="pn">Lze nakoupit sadu <span class="nw">8–12&nbsp;ks</span> do <span class="nw">8,90&nbsp;€</span> bez&nbsp;DPH?</p></div>
+<div class="sq"><span class="bl">Akce</span>
+<p>Najít nabídku dodavatele<span class="mark team">provádí tým LotPrism</span></p></div>
+<div class="sq"><span class="bl">Průzkum</span>
+<p class="pr ob">Zatím neproběhl. Nabídku hledá tým LotPrism v&nbsp;cenících, feedech a&nbsp;B2B katalozích, mimo jiné pomocí jazykového modelu.</p>
+<p class="pr oa">Ceník dodavatele z&nbsp;25.&nbsp;09.&nbsp;2026: porovnání EAN a&nbsp;počtu kusů v&nbsp;balení, srovnání s&nbsp;vypočtenou maximální nákupní cenou. Ceník nahrál tým LotPrism. <span class="tagdemo">demo</span></p>
+<p class="pn ob">Zatím neproběhl. Dodavatele sady hledá tým LotPrism, mimo jiné pomocí jazykového modelu.</p>
+<p class="pn oa">Ceník dodavatele z&nbsp;24.&nbsp;09.&nbsp;2026: počet kusů sady je v&nbsp;mezích hypotézy, srovnání s&nbsp;maximální nákupní cenou za sadu je podmíněné. Ceník nahrál tým LotPrism. <span class="tagdemo">demo</span></p></div>
+</div>
+<p class="seq-n"><span>Nalezený potenciální dodavatel ještě není nákupní nabídka. Cenu a&nbsp;podmínky potvrzuje ceník dodavatele.</span> <span>Když hledání nic nenašlo, znamená to „tímto hledáním k&nbsp;tomuto datu nenalezeno“, ne „dodavatel neexistuje“.</span></p>
+</div>
+<div class="oc3-g">
+<section class="col c-f" aria-label="Co je známo bez dodavatele">
+<p class="lh"><span class="k f">FAKT</span><span class="pr">amazon.de · 26.&nbsp;09.&nbsp;2026</span><span class="pn">podobné sady · 26.&nbsp;09.&nbsp;2026</span><span class="keep">nemění se</span></p>
+<dl class="fl pr">
+<div><dt>Cena listingu, vč. DPH</dt><dd class="num">24,90&nbsp;€</dd></div>
+<div><dt>V&nbsp;minulém měsíci zakoupeno</dt><dd class="num">300+</dd><span class="sub">údaj Amazonu, dolní hranice</span></div>
+<div><dt>Prodejci</dt><dd><span class="num">5</span> · bez Amazonu</dd></div>
+<div><dt>Kód produktu</dt><dd class="num">EAN 4 006…&nbsp;217</dd></div>
+</dl>
+<dl class="fl pn">
+<div><dt>Podobné sady</dt><dd class="num">6</dd><span class="sub">údaje „V&nbsp;minulém měsíci zakoupeno“ od 200+ do 500+&nbsp;– dolní hranice; každá s&nbsp;<span class="nw">1–3</span> prodejci</span></div>
+<div><dt>Se srovnatelným složením</dt><dd class="num">2</dd><span class="sub">8 a&nbsp;10&nbsp;ks různých objemů · 24,90 a&nbsp;26,90&nbsp;€</span></div>
+</dl>
+<p class="lh pn"><span class="k s">HYPOTÉZA</span><span>neověřená</span></p>
+<dl class="fl pn">
+<div><dt>Hypotéza potřeby</dt><dd>různé objemy</dd><span class="sub">důvod: různé objemy u&nbsp;2 ze 6 podobných sad</span></div>
+</dl>
+</section>
+<section class="col c-ce" aria-label="Vypočtená maximální nákupní cena">
+<div class="ceil">
+<p class="lh"><span class="k c">VÝPOČET</span><span>vypočtená maximální nákupní cena</span></p>
+<p class="cres"><span class="pr">Max. nákupní cena za 1&nbsp;ks, bez DPH</span><span class="pn">Max. nákupní cena za sadu při prodeji za <span class="nw">24,90&nbsp;€</span></span><b class="num pr">9,60&nbsp;€</b><b class="num pn">8,90&nbsp;€</b><small>předpoklady příkladu: poplatky, doprava do skladu Amazonu, výnosnost nákupu 30&nbsp;%</small></p>
+<details class="how2"><summary><span>Jak se počítá maximální nákupní cena</span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<ol class="cl2 pr">
+<li><span class="op"></span><span class="d">Cena listingu, vč. DPH<small>pozorování, amazon.de</small></span><span class="num">24,90</span></li>
+<li><span class="op">−</span><span class="d">DPH 19&nbsp;% obsažená v&nbsp;ceně<small>německá sazba</small></span><span class="num">3,98</span></li>
+<li><span class="op">−</span><span class="d">Prodejní poplatek Amazonu 15&nbsp;%<small>předpoklad příkladu</small></span><span class="num">3,74</span></li>
+<li><span class="op">−</span><span class="d">Poplatek FBA<small>předpoklad příkladu</small></span><span class="num">4,20</span></li>
+<li><span class="op">−</span><span class="d">Doprava do skladu Amazonu<small>předpoklad příkladu</small></span><span class="num">0,50</span></li>
+<li class="eq"><span class="op">÷</span><span class="d">1 + výnosnost 30&nbsp;%<small>předpoklad příkladu</small></span><span class="num">1,30</span></li>
+<li class="ce"><span class="op">=</span><span class="d">Max. nákupní cena za 1&nbsp;ks</span><span class="num">9,60&nbsp;€</span></li>
+</ol>
+<ol class="cl2 pn">
+<li><span class="op"></span><span class="d">Prodejní cena sady, vč. DPH<small>scénář: nižší cena srovnatelných sad</small></span><span class="num">24,90</span></li>
+<li><span class="op">−</span><span class="d">DPH 19&nbsp;% obsažená v&nbsp;ceně<small>německá sazba</small></span><span class="num">3,98</span></li>
+<li><span class="op">−</span><span class="d">Prodejní poplatek Amazonu 15&nbsp;%<small>předpoklad příkladu</small></span><span class="num">3,74</span></li>
+<li><span class="op">−</span><span class="d">Poplatek FBA<small>předpoklad příkladu</small></span><span class="num">5,10</span></li>
+<li><span class="op">−</span><span class="d">Doprava do skladu Amazonu<small>předpoklad příkladu</small></span><span class="num">0,50</span></li>
+<li class="eq"><span class="op">÷</span><span class="d">1 + výnosnost 30&nbsp;%<small>předpoklad příkladu</small></span><span class="num">1,30</span></li>
+<li class="ce"><span class="op">=</span><span class="d">Max. nákupní cena za sadu</span><span class="num">8,90&nbsp;€</span></li>
+</ol>
+<div class="asm"><p><b>Výnosnost nákupu</b>&nbsp;– co zbude z&nbsp;ceny listingu po odečtení DPH, poplatků, dopravy do skladu a&nbsp;samotného nákupu, v&nbsp;% z&nbsp;nákupní ceny. Není to marže: marže se počítá z&nbsp;tržeb. Úrovně v&nbsp;LotPrismu: 0 / 10 / 20 / 30&nbsp;%.</p><p><b>Nezahrnuto:</b> doprava od dodavatele, příprava, skladování, vratky, reklama. Maximální nákupní cena je limit ceny zboží, ne celkových nákladů na kus.</p></div>
+</details>
+</div>
+<div class="model pr"><p class="lh"><span>Předpověď modelu · výzkumný režim</span></p><p class="row"><span>Cena po 30 dnech, <span class="nw">P10–P90</span></span><span class="num"><span class="nw">22,90–26,40&nbsp;€</span></span></p><p class="note" style="font-size:12.5px">Předpověď se nepoužívá k&nbsp;výpočtu maximální nákupní ceny ani k&nbsp;určení verdiktu.</p></div>
+<p class="pinfo pn">Prodejní cena <span class="nw">24,90&nbsp;€</span> je scénář podle nižší ceny srovnatelných sad, ne pozorování: váš listing zatím neexistuje.</p>
+</section>
+<section class="col c-of" aria-label="Nabídka dodavatele">
+<div class="slot ob">
+<h4>Žádná nabídka dodavatele</h4>
+<p class="pr">Vypočtena je jen maximální nákupní cena&nbsp;– <span class="num nw">9,60&nbsp;€</span> za kus. Nabídka ukáže, zda lze nakoupit pod touto cenou.</p>
+<p class="pn">Hypotézu lze ověřovat i&nbsp;bez dodavatele. Nabídka ukáže, kolik bude sada stát.</p>
+<ul aria-label="Co přidá nabídka"><li>cena bez DPH</li><li>balení</li><li>min. odběr</li><li>dostupnost</li><li>doprava</li><li>země</li></ul>
+<p class="dnote js-only">Příklad s&nbsp;ukázkovými daty. V&nbsp;rozhraní LotPrism takové tlačítko není: nabídku dodavatele hledá tým LotPrism.</p>
+<button class="addb js-only" type="button" data-set="offer" data-v="1">Zobrazit příklad s&nbsp;nabídkou</button>
+</div>
+<div class="slip oa">
+<p class="src2 pr">Ceník dodavatele · 25.&nbsp;09.&nbsp;2026</p><p class="src2 pn">Ceník dodavatele · 24.&nbsp;09.&nbsp;2026</p>
+<dl class="fl pr">
+<div><dt>Cena</dt><dd><span class="num">7,60&nbsp;€</span> za kus</dd><span class="sub">bez DPH</span></div>
+<div><dt>Balení</dt><dd>1&nbsp;ks</dd></div>
+<div><dt>Doprava od dodavatele</dt><dd><span class="num">+&nbsp;0,35&nbsp;€</span> za kus</dd><span class="sub">uvedena částkou&nbsp;– připočítává se k&nbsp;ceně</span></div>
+<div><dt>Min. odběr · dostupnost</dt><dd><span class="num">60</span>&nbsp;ks · skladem</dd></div>
+<div><dt>Země</dt><dd>Česko</dd></div>
+</dl>
+<dl class="fl pn">
+<div><dt>Cena</dt><dd><span class="num">5,40&nbsp;€</span> za sadu</dd><span class="sub">bez DPH</span></div>
+<div><dt>Balení</dt><dd>sada 10&nbsp;ks, 3 objemy</dd><span class="sub">v&nbsp;mezích hypotézy <span class="nw">8–12</span></span></div>
+<div><dt>Doprava od dodavatele</dt><dd>„na dotaz“</dd><span class="sub">uvedena textem&nbsp;– nepřipočítává se</span></div>
+<div><dt>Min. odběr · dostupnost</dt><dd><span class="num">300</span>&nbsp;sad · skladem</dd></div>
+<div><dt>Země</dt><dd>Polsko</dd></div>
+</dl>
+</div>
+<div class="idc ok oa pr"><i aria-hidden="true">✓</i><b>EAN a&nbsp;balení se shodují s&nbsp;listingem</b><small>EAN se shoduje, balení 1&nbsp;ks = 1&nbsp;ks v&nbsp;listingu. Není to kontrola kvality: vzorek je potřeba tak jako tak. Bez shody by bylo srovnání podmíněné.</small></div>
+<div class="idc cd oa pn"><i aria-hidden="true">?</i><b>Srovnání je podmíněné</b><small>Doprava od dodavatele není známa, složení sady zatím nebylo ověřeno. Listing zatím neexistuje, takže kód není s&nbsp;čím porovnat.</small></div>
+<div class="cmp2 oa">
+<div class="pr"><div class="bar c"><span>Vypočtená max. nákupní cena</span><span class="num">9,60&nbsp;€</span><i></i></div></div>
+<div class="pr"><div class="bar o" style="--w:82.8%"><span>Nabídka: 7,60 + 0,35 za dopravu od dodavatele</span><span class="num">7,95&nbsp;€</span><i></i></div></div>
+<div class="pn"><div class="bar c"><span>Vypočtená max. nákupní cena za sadu</span><span class="num">8,90&nbsp;€</span><i></i></div></div>
+<div class="pn"><div class="bar o cond" style="--w:60.7%"><span>Nabídka bez dopravy od dodavatele, podmíněně</span><span class="num">5,40&nbsp;€</span><i></i></div></div>
+<p class="note" style="font-size:12.5px">Za jednu prodejní jednotku · EUR · bez DPH</p>
+</div>
+</section>
+</div>
+<div class="chgs" aria-live="polite">
+<div><span class="bl"><span class="ob">Co je známo</span><span class="oa">Nyní je známo</span></span>
+<p class="pr ob">Data z&nbsp;trhu o&nbsp;listingu a&nbsp;maximální nákupní cena <span class="num nw">9,60&nbsp;€</span> za kus</p>
+<p class="pn ob">Signál poptávky, hypotéza potřeby a&nbsp;dvě srovnatelné sady</p>
+<p class="pr oa">Cena <span class="num nw">7,60&nbsp;€</span> bez DPH, doprava od dodavatele <span class="num nw">0,35&nbsp;€</span>, od 60&nbsp;ks, skladem<small>z&nbsp;ceníku 25.&nbsp;09.&nbsp;2026 · EAN se shoduje</small></p>
+<p class="pn oa">Sada 10&nbsp;ks za <span class="num nw">5,40&nbsp;€</span> bez DPH, od 300 sad, skladem<small>z&nbsp;ceníku 24.&nbsp;09.&nbsp;2026 · doprava od dodavatele „na dotaz“</small></p>
+</div>
+<div><span class="bl"><span class="ob">Hodnocení</span><span class="oa">Co se změnilo v&nbsp;hodnocení</span></span>
+<p class="pr ob">Kandidát k&nbsp;prověření. Nákupní cena není známa&nbsp;– maximální nákupní cenu není s&nbsp;čím porovnat</p>
+<p class="pn ob">Hypotéza produktu. Nákupní cena sady není známa</p>
+<p class="pr oa">Nabídka dodavatele je o&nbsp;<span class="num nw">1,65&nbsp;€</span> pod maximální nákupní cenou&nbsp;– to je rezerva, ne zisk. Verdikt beze změny: náklady po nákupu nejsou známy, vzorek zatím nebyl zkontrolován<small>Doprava od dodavatele <span class="nw">0,35&nbsp;€</span> je už připočtena k&nbsp;nabídce. Nezahrnuto: příprava, skladování, vratky, reklama</small></p>
+<p class="pn oa">Podmíněně o&nbsp;<span class="num nw">3,50&nbsp;€</span> pod maximální nákupní cenou za sadu. Verdikt beze změny<small>při prodejní ceně podle scénáře <span class="nw">24,90&nbsp;€</span>; doprava od dodavatele není známa</small><small>Poptávka po takové sadě stále není ověřena</small></p>
+</div>
+<div class="nx"><span class="bl">Další krok</span>
+<p class="pr ob">Najít nabídku do <span class="nw">9,60&nbsp;€</span> za kus bez DPH</p>
+<p class="pn ob">Ověřit prodeje sad <span class="nw">8–12&nbsp;ks</span> za <span class="nw">20–25&nbsp;€</span>, najít dodavatele</p>
+<p class="pr oa">Vyžádat vzorek; odhadnout náklady na přípravu, skladování, vratky a&nbsp;reklamu</p>
+<p class="pn oa">Vyžádat vzorek a&nbsp;cenu dopravy od dodavatele; ověřit prodeje sad <span class="nw">8–12&nbsp;ks</span></p>
+</div>
+</div>
+<p class="who">Maximální nákupní cena a&nbsp;rezerva nejsou zisk ani povolení k&nbsp;nákupu. Rozhodnutí je na vás; automaticky se nic nenakupuje.</p>
+</article>
+</div>
+</section>
+
+<section class="sec" id="assistant" aria-labelledby="h-as" data-screen-label="05 · как работает ассистент">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Možnosti</span><h2 id="h-as">Jak asistent pracuje se zbožím</h2><p>Asistent přináší tři výsledky: zboží k&nbsp;přeprodeji, hypotézy nového listingu a&nbsp;hodnocení nákupu podle nabídek dodavatelů. Níže je cesta jednoho produktu od karty k&nbsp;dalšímu kroku na příkladu hledání dodavatele. U&nbsp;každého kroku je vyznačeno, co dělá program a&nbsp;co tým LotPrism.</p></div></div>
+<ul class="as-r" aria-label="Tři výsledky asistenta">
+<li><span class="bl">Přeprodej</span><p>Zboží, které se už prodává na Amazonu: verdikt, argumenty pro a&nbsp;proti, otevřené otázky, vypočtená maximální nákupní cena za kus a&nbsp;další krok.</p></li>
+<li><span class="bl">Nový listing</span><p>Hypotéza produktu podle signálů poptávky: podobné listingy, údaje „zakoupeno“ (dolní hranice prodejů), otevřené otázky a&nbsp;další ověření. Nyní ji připravuje tým LotPrism.</p></li>
+<li><span class="bl">Nabídka dodavatele</span><p>Cena a&nbsp;podmínky nákupu z&nbsp;ceníku: porovnání EAN a&nbsp;počtu kusů v&nbsp;balení, srovnání s&nbsp;vypočtenou maximální nákupní cenou, upřesněné hodnocení.</p></li>
+</ul>
+<ol class="nodes as-n" style="--n:5" aria-label="Cesta produktu na příkladu hledání dodavatele">
+<li class="nd"><span class="nn">01</span><h3>Produkt</h3><p class="ms">Karta s&nbsp;daty z&nbsp;trhu: cena listingu, údaj „zakoupeno“ (dolní hranice prodejů, ne přesné číslo), prodejci.</p><span class="mark">v&nbsp;rozhraní</span></li>
+<li class="nd"><span class="nn">02</span><h3>Otázka</h3><p class="ms">Co chybí k&nbsp;rozhodnutí: karta ukazuje otevřené otázky. Například zda existuje nabídka dodavatele, která nepřesahuje vypočtenou maximální nákupní cenu.</p><p class="ms nt">V&nbsp;aktuální verzi nelze z&nbsp;karty položit vlastní otázku.</p><span class="mark">v&nbsp;rozhraní</span></li>
+<li class="nd"><span class="nn">03</span><h3>Průzkum</h3><p class="ms">Hledání nabídky dodavatele pro tento produkt.</p><p class="ms nt">Nabídku nyní hledá tým LotPrism: v&nbsp;cenících, feedech a&nbsp;B2B katalozích dodavatelů, mimo jiné pomocí jazykového modelu.</p><span class="mark team">tým LotPrism</span></li>
+<li class="nd"><span class="nn">04</span><h3>Výsledek</h3><p class="ms">Nové údaje na kartě: cena a&nbsp;podmínky dodavatele, shoda EAN a&nbsp;počtu kusů v&nbsp;balení.</p><p class="ms nt">Potenciální dodavatel ještě není nabídka dodavatele: cenu a&nbsp;podmínky potvrzuje ceník. Shoda EAN není kontrola kvality. Když hledání nic nenašlo, neznamená to, že dodavatel neexistuje.</p><span class="mark">v&nbsp;rozhraní</span></li>
+<li class="nd fin"><span class="nn">05</span><h3>Další krok</h3><p class="ms">Upřesněné hodnocení: rezerva do vypočtené maximální nákupní ceny, verdikt a&nbsp;další ověření.</p><p class="ms nt">Rezerva do maximální nákupní ceny není zisk. Rozhodnutí i&nbsp;objednávka u&nbsp;dodavatele jsou na vás: v&nbsp;aktuální verzi program nezadává objednávky a&nbsp;nepíše dodavatelům.</p><span class="mark">v&nbsp;rozhraní</span></li>
+</ol>
+</div>
+</section>
+
+<section class="fin2" id="faq" aria-labelledby="h-fin" data-screen-label="06 · вопросы">
+<div class="wrap">
+<div class="l"><span class="eyebrow pr">Přístup</span><span class="eyebrow pn">Průzkum</span><h2 id="h-fin"><span class="pr">Požádejte o&nbsp;přístup k&nbsp;LotPrismu</span><span class="pn">Proberte průzkum nového listingu</span></h2><p class="pr">Zaregistrovat se sami zatím nemůžete&nbsp;– zadejte e-mail do žádosti.</p><p class="pn">Průzkum nového listingu nyní vede tým LotPrism, částečně ručně. Zadejte e-mail do žádosti.</p>
+<a class="btn btn-p" href="#faq" data-req><span class="lbl"><span class="tx pr">Požádat o&nbsp;přístup</span><span class="tx pn">Probrat průzkum</span></span><span class="ic" aria-hidden="true"><svg class="ar" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"></path></svg></span></a></div>
+<div class="faq2">
+<details><summary>S&nbsp;jakými tržišti Amazonu LotPrism pracuje?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Nyní je připojeno jedno tržiště&nbsp;– Amazon Německo (amazon.de): data z&nbsp;trhu, ceny v&nbsp;EUR, DPH 19&nbsp;%. Další tržiště Amazonu zatím nejsou připojena.</p></details>
+<details><summary>Jak se vybírá zboží k&nbsp;přeprodeji?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Data z&nbsp;trhu se sbírají automaticky. Výběr vzniká filtrováním těchto dat podle nastavených prahů; nyní ho spouští tým LotPrism. U&nbsp;každého produktu program ukazuje důvody, vypočtenou maximální nákupní cenu za kus a&nbsp;další krok.</p></details>
+<details><summary>Jak se ceník dodavatele dostane do LotPrismu?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Ceníky nahrává tým LotPrism, feedy dodavatelů se aktualizují automaticky. LotPrism páruje položky ceníků s&nbsp;listingy na amazon.de podle EAN/GTIN a&nbsp;počtu kusů v&nbsp;balení. Sami nahrát ceník v&nbsp;rozhraní zatím nemůžete.</p></details>
+<details><summary>Potřebujete ceník, abyste mohli začít?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Ne. Karta je užitečná i&nbsp;bez dodavatele: obsahuje důvody, vypočtenou maximální nákupní cenu a&nbsp;další krok. Ceník upřesňuje hodnocení nákupu.</p></details>
+<details><summary>Lze spustit průzkum přímo z&nbsp;karty?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Zatím ne. Hledání dodavatelů a&nbsp;průzkum poptávky nyní provádí tým LotPrism; nalezené nabídky se zobrazují na kartě produktu. Spouštět průzkum z&nbsp;karty půjde, až bude tato akce k&nbsp;dispozici.</p></details>
+<details><summary>Jsou k&nbsp;dispozici předpovědi?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>U&nbsp;produktů s&nbsp;historií ceny na Amazonu je k&nbsp;dispozici předpověď ceny na 30 dní s&nbsp;rozpětím <span class="nw">P10–P90</span>. Předpověď má výzkumný status a&nbsp;není podkladem pro nákup: nepoužívá se k&nbsp;výpočtu maximální nákupní ceny ani k&nbsp;určení verdiktu. Předpověď prodejů v&nbsp;kusech není.</p></details>
+<details><summary>Kontroluje LotPrism kvalitu zboží?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>V&nbsp;aktuální verzi ne. LotPrism porovnává EAN/GTIN a&nbsp;počet kusů v&nbsp;balení s&nbsp;listingem na Amazonu. Kvalitu zboží, vzorky a&nbsp;schválení k&nbsp;prodeji značky ověřujete vy.</p></details>
+<details><summary>Nakupuje LotPrism zboží sám?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Ne. V&nbsp;aktuální verzi program nezadává objednávky a&nbsp;nepíše dodavatelům. Rozhodnutí o&nbsp;nákupu i&nbsp;objednávka jsou na vás.</p></details>
+<details><summary>Kde LotPrism používá AI?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Na dvou místech. Jazykový model pomáhá týmu hledat dodavatele a&nbsp;zkoumat poptávku pro nový listing. Model strojového učení vytváří předpověď ceny. Verdikt a&nbsp;maximální nákupní cenu určují pravidla na základě dat z&nbsp;trhu; chat LotPrism nemá.</p></details>
+</div>
+</div>
+</section>
+</main>
+<footer class="foot">
+<div class="wrap foot-g">
+<div class="foot-id">
+<img src="logo.svg" alt="LotPrism" width="136" height="18">
+<p>Softwarový asistent pro práci s&nbsp;Amazonem: zboží k&nbsp;přeprodeji, průzkum poptávky, nabídky dodavatelů.</p>
+<p>Rozhraní LotPrism je v&nbsp;angličtině, ruštině, němčině a&nbsp;španělštině. Hlavní text karet je zatím v&nbsp;angličtině.</p>
+<p class="demo">Zboží, ceny, EAN a&nbsp;dodavatelé na stránce jsou ukázková data. <span class="nw">Příklad: Amazon Německo · EUR</span>.</p>
+</div>
+<nav class="foot-nav" aria-label="Sekce webu">
+<section aria-labelledby="ft-p"><h2 id="ft-p" class="eyebrow">Produkt</h2>
+<ul><li><a href="?p=r#how" data-go="r">Přeprodej</a></li><li><a href="?p=n#how" data-go="n">Nový listing</a></li><li><a href="#offer">Nabídka dodavatele</a></li><li><a href="#assistant">Jak asistent funguje</a></li><li><a href="https://app.lotprism.com/login">Přihlásit se<span aria-hidden="true"> ↗</span></a></li></ul></section>
+<section aria-labelledby="ft-h"><h2 id="ft-h" class="eyebrow">Nápověda</h2>
+<ul><li><a href="#faq">Otázky a&nbsp;odpovědi</a></li><li><a href="#why">Důvody a&nbsp;zdroje</a></li></ul></section>
+<section class="foot-co" aria-labelledby="ft-c" data-review hidden><h2 id="ft-c" class="eyebrow">Společnost a&nbsp;dokumenty</h2>
+<ul><li>Provozovatel webu&nbsp;– doplnit</li><li>Registrační údaje&nbsp;– doplnit</li><li>Adresa&nbsp;– doplnit</li><li>Kontakt&nbsp;– doplnit</li><li>Zásady ochrany osobních údajů&nbsp;– doplnit</li><li>Podmínky použití&nbsp;– doplnit</li><li>Impressum&nbsp;– zda je potřeba, rozhodne vlastník</li></ul></section>
+</nav>
+</div>
+<div class="wrap foot-b">
+<details class="phc2"><summary>Zdroje obrázků<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Ilustrace na úvodní obrazovce je vygenerovaná.</p><p>Fotografie produktů: Seven Colors, pmv chamara, Ben Lambert, Emilio Garcia, Kedibone Isaac Makhumisane, Behnam Norouzi · <a href="https://unsplash.com">Unsplash</a></p></details>
+<p class="foot-cr" data-review hidden>© rok · držitel práv&nbsp;– doplnit</p>
+</div>
+<div class="wrap foot-l"><div class="lang lang-ft" id="lang-f" hidden><button class="lang-b" type="button" aria-expanded="false" aria-controls="lang-fl"><svg class="lang-i" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="8" cy="8" r="6.25"></circle><ellipse cx="8" cy="8" rx="2.6" ry="6.25"></ellipse><path d="M1.75 8h12.5"></path></svg><span class="sr">Jazyk: </span><span class="lang-c">Čeština</span><svg class="lang-v" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 4.5 3 3 3-3"></path></svg></button><div class="lang-l" id="lang-fl" hidden><label class="lang-s" hidden><svg class="lang-si" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="7" cy="7" r="4.75"></circle><path d="m10.5 10.5 3.5 3.5"></path></svg><input class="lang-q" type="search" autocomplete="off" spellcheck="false" placeholder=" "><span class="lang-sl">Hledat jazyk</span></label><ul class="lang-u" aria-label="Jazyk webu"></ul></div></div></div>
+<div class="wrap foot-sw" data-review hidden><div class="foot-st" role="note" aria-label="Stav zápatí">
+<p><b>Nyní hotovo:</b> struktura a&nbsp;styl zápatí, řádek značky bez vazby na tržiště, upozornění na ukázková data, zdroje obrázků, skryté zástupné položky bez odkazů.</p>
+<p><b>Doplnit před veřejným spuštěním:</b></p>
+<ul><li>provozovatel webu (právní subjekt potvrzuje vlastník);</li><li>registrační údaje a&nbsp;adresa;</li><li>funkční kontakt;</li><li>zásady ochrany osobních údajů&nbsp;– povinné před zprovozněním formuláře, který shromažďuje e-mailové adresy;</li><li>podmínky použití;</li><li>Impressum, je-li potřeba;</li><li>funkční obsluha formuláře.</li></ul>
+</div></div>
+</footer>
+<dialog id="req" aria-labelledby="req-h">
+<div class="dlg">
+<div class="dlg-h"><h2 id="req-h"><span class="pr">Požádat o&nbsp;přístup</span><span class="pn">Probrat průzkum</span></h2><button class="x" type="button" id="req-x" aria-label="Zavřít">×</button></div>
+<p class="dlg-p pr">Nyní je připojeno tržiště Amazon Německo (EUR); další tržiště Amazonu zatím nejsou připojena.</p>
+<p class="dlg-p pn">Nyní je připojeno tržiště Amazon Německo (EUR). V&nbsp;aktuální verzi nejsou k&nbsp;dispozici klíčová slova, objemy vyhledávání ani trendy.</p>
+<form class="dlgf" id="req-f" novalidate>
+<fieldset class="fs" id="req-fs">
+<div class="fld"><label for="rq-mail">E-mail</label><input id="rq-mail" name="email" type="email" autocomplete="email" required aria-describedby="rq-mail-e"><p class="err" id="rq-mail-e" hidden>Zadejte e-mail</p></div>
+<div class="fld"><label for="rq-name">Jméno <span class="opt">– nepovinné</span></label><input id="rq-name" name="name" autocomplete="name"></div>
+<div class="fld"><label for="rq-co">Firma <span class="opt">– nepovinné</span></label><input id="rq-co" name="company" autocomplete="organization"></div>
+<div class="fld"><label for="rq-act">Čím se zabýváte <span class="opt">– nepovinné</span></label><select id="rq-act" name="activity"><option value="">Nevybráno</option><option>Prodávám na Amazonu</option><option>Nakupuji od dodavatelů</option><option>Uvádím na trh nové produkty</option></select></div>
+<p class="proto">Demo: žádost se nikam neodesílá a&nbsp;odpověď nepřijde.</p>
+<button class="btn btn-p" type="submit" id="req-s"><span class="lbl"><span class="tx" id="req-st">Odeslat žádost</span><span class="spin" aria-hidden="true"></span></span><span class="ic" aria-hidden="true"><svg class="ar" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"></path></svg><svg class="ok" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5 6.5 11.5 12.5 5"></path></svg></span></button>
+</fieldset>
+</form>
+<div class="done" id="req-ok" hidden><p id="req-okm" tabindex="-1" aria-live="polite"></p><button class="btn btn-s" type="button" id="req-c"><span class="lbl"><span class="tx">Zavřít</span></span></button></div>
+</div>
+</dialog>
+<script>window.LP_L10N={"cur": "cs", "ready": ["da", "de", "en", "es", "fr", "it", "nl", "pl", "pt-BR", "pt-PT", "sv", "tr", "cs", "ru", "uk"], "names": {"da": "Dansk", "de": "Deutsch", "en": "English", "es": "Español", "fr": "Français", "it": "Italiano", "nl": "Nederlands", "pl": "Polski", "pt-BR": "Português (Brasil)", "pt-PT": "Português (Portugal)", "sv": "Svenska", "tr": "Türkçe", "cs": "Čeština", "ru": "Русский", "uk": "Українська"}, "search": {"da": "Danish датский dánština", "de": "German немецкий němčina", "en": "English английский angličtina", "es": "Spanish испанский španělština", "fr": "French французский francouzština", "it": "Italian итальянский italština", "nl": "Dutch нидерландский nizozemština", "pl": "Polish польский polština", "pt-BR": "Brazilian Portuguese бразильский португальский portugalština (Brazílie)", "pt-PT": "European Portuguese европейский португальский portugalština (Evropa)", "sv": "Swedish шведский švédština", "tr": "Turkish турецкий turečtina", "cs": "Czech чешский čeština", "ru": "Russian русский ruština", "uk": "Ukrainian украинский ukrajinština"},"href":function(c){return "../../"+c+"/b/"}};</script><script src="d.js"></script>
+<script>(function(){var H=document.documentElement,t;new MutationObserver(function(){if(!H.classList.contains('mo'))return;H.classList.remove('swap');void H.offsetWidth;H.classList.add('swap');clearTimeout(t);t=setTimeout(function(){H.classList.remove('swap')},260)}).observe(H,{attributes:true,attributeFilter:['data-path']})})()</script>
+</body>
+</html>
