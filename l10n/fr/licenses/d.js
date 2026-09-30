@@ -4,7 +4,7 @@ var H=document.documentElement,mo=H.classList.contains('mo'),live=document.getEl
 var T={
 'scenario.resale.label':'Revente','scenario.newListing.label':'Nouvelle fiche produit',
 'live.scenario.noOffer':'Scénario\u00a0: {scenario}, sans offre fournisseur.','live.scenario.withOffer':'Scénario\u00a0: {scenario}, avec offre fournisseur.',
-'live.offerExample.resale':'Exemple affiché\u00a0: liste de prix du fournisseur du 25/09/2026\u00a0; l’offre est 1,65\u00a0€ sous le prix d’achat maximal calculé par unité.',
+'live.offerExample.resale':'Exemple affiché\u00a0: liste de prix du fournisseur du 25/09/2026\u00a0; l’offre est 2,00\u00a0€ sous le prix d’achat maximal calculé par unité.',
 'live.offerExample.newListing':'Exemple affiché\u00a0: liste de prix du fournisseur du 24/09/2026, comparaison indicative avec le prix d’achat maximal par lot.',
 'form.email.errorEmpty':'Indiquez votre adresse e-mail','form.email.errorInvalid':'Vérifiez l’adresse e-mail',
 'form.submit':'Envoyer la demande','form.submitting':'Envoi…',

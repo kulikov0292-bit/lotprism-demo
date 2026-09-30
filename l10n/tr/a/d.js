@@ -4,7 +4,7 @@ var H=document.documentElement,mo=H.classList.contains('mo'),live=document.getEl
 var T={
 'scenario.resale.label':'Yeniden satış','scenario.newListing.label':'Yeni listeleme',
 'live.scenario.noOffer':'Senaryo: {scenario}, tedarikçi teklifi olmadan.','live.scenario.withOffer':'Senaryo: {scenario}, tedarikçi teklifiyle.',
-'live.offerExample.resale':'Gösterilen örnek: 25.09.2026 tarihli tedarikçi fiyat listesi; teklif, adet başına hesaplanan azami alış fiyatının €1,65 altında.',
+'live.offerExample.resale':'Gösterilen örnek: 25.09.2026 tarihli tedarikçi fiyat listesi; teklif, adet başına hesaplanan azami alış fiyatının €2,00 altında.',
 'live.offerExample.newListing':'Gösterilen örnek: 24.09.2026 tarihli tedarikçi fiyat listesi; set başına azami alış fiyatıyla karşılaştırma koşullu.',
 'form.email.errorEmpty':'E-posta adresinizi girin','form.email.errorInvalid':'E-posta adresini kontrol edin',
 'form.submit':'Talebi gönder','form.submitting':'Gönderiliyor…',

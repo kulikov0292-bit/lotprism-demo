@@ -4,7 +4,7 @@ var H=document.documentElement,mo=H.classList.contains('mo'),live=document.getEl
 var T={
 'scenario.resale.label':'Resale','scenario.newListing.label':'New listing',
 'live.scenario.noOffer':'Scenario: {scenario}, without a supplier offer.','live.scenario.withOffer':'Scenario: {scenario}, with a supplier offer.',
-'live.offerExample.resale':'Example shown: supplier price list dated 25/09/2026; the offer is €1.65 below the calculated maximum purchase price.',
+'live.offerExample.resale':'Example shown: supplier price list dated 25/09/2026; the offer is €2.00 below the calculated maximum purchase price.',
 'live.offerExample.newListing':'Example shown: supplier price list dated 24/09/2026; the comparison with the maximum purchase price for the set is provisional.',
 'form.email.errorEmpty':'Enter your email address','form.email.errorInvalid':'Check your email address',
 'form.submit':'Send request','form.submitting':'Sending…',

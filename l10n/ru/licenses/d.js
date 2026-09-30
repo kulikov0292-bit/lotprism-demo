@@ -4,7 +4,7 @@ var H=document.documentElement,mo=H.classList.contains('mo'),live=document.getEl
 var T={
 'scenario.resale.label':'Перепродажа','scenario.newListing.label':'Новый листинг',
 'live.scenario.noOffer':'Сценарий: {scenario}, без предложения поставщика.','live.scenario.withOffer':'Сценарий: {scenario}, с предложением поставщика.',
-'live.offerExample.resale':'Показан пример: прайс поставщика от 25.09.2026, предложение ниже расчётного потолка на 1,65\u00a0€.',
+'live.offerExample.resale':'Показан пример: прайс поставщика от 25.09.2026, предложение ниже расчётного потолка на 2,00\u00a0€.',
 'live.offerExample.newListing':'Показан пример: прайс поставщика от 24.09.2026, сравнение с потолком набора условное.',
 'form.email.errorEmpty':'Укажите почту','form.email.errorInvalid':'Проверьте адрес почты',
 'form.submit':'Отправить заявку','form.submitting':'Отправляем…',

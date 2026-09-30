@@ -4,7 +4,7 @@ var H=document.documentElement,mo=H.classList.contains('mo'),live=document.getEl
 var T={
 'scenario.resale.label':'Återförsäljning','scenario.newListing.label':'Ny listning',
 'live.scenario.noOffer':'Scenario: {scenario}, utan leverantörserbjudande.','live.scenario.withOffer':'Scenario: {scenario}, med leverantörserbjudande.',
-'live.offerExample.resale':'Exempel visas: leverantörens prislista från 2026-09-25, erbjudandet ligger 1,65\u00a0€ per st. under det beräknade maximala inköpspriset.',
+'live.offerExample.resale':'Exempel visas: leverantörens prislista från 2026-09-25, erbjudandet ligger 2,00\u00a0€ per st. under det beräknade maximala inköpspriset.',
 'live.offerExample.newListing':'Exempel visas: leverantörens prislista från 2026-09-24, jämförelsen med det beräknade maximala inköpspriset för setet är bara vägledande.',
 'form.email.errorEmpty':'Ange din e-postadress','form.email.errorInvalid':'Kontrollera e-postadressen',
 'form.submit':'Skicka förfrågan','form.submitting':'Skickar\u00a0…',

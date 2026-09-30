@@ -4,7 +4,7 @@ var H=document.documentElement,mo=H.classList.contains('mo'),live=document.getEl
 var T={
 'scenario.resale.label':'Doorverkoop','scenario.newListing.label':'Nieuwe listing',
 'live.scenario.noOffer':'Scenario: {scenario}, zonder leveranciersaanbod.','live.scenario.withOffer':'Scenario: {scenario}, met leveranciersaanbod.',
-'live.offerExample.resale':'Voorbeeld getoond: prijslijst van de leverancier (25-09-2026); het aanbod ligt €\u00a01,65 onder de berekende maximale inkoopprijs.',
+'live.offerExample.resale':'Voorbeeld getoond: prijslijst van de leverancier (25-09-2026); het aanbod ligt €\u00a02,00 onder de berekende maximale inkoopprijs.',
 'live.offerExample.newListing':'Voorbeeld getoond: prijslijst van de leverancier (24-09-2026); de vergelijking met de maximale inkoopprijs per set is onder voorbehoud.',
 'form.email.errorEmpty':'Vul je e-mailadres in','form.email.errorInvalid':'Controleer je e-mailadres',
 'form.submit':'Aanvraag versturen','form.submitting':'Versturen…',

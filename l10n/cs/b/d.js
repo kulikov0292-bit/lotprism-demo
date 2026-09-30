@@ -4,7 +4,7 @@ var H=document.documentElement,mo=H.classList.contains('mo'),live=document.getEl
 var T={
 'scenario.resale.label':'Přeprodej','scenario.newListing.label':'Nový listing',
 'live.scenario.noOffer':'Scénář: {scenario}, bez nabídky dodavatele.','live.scenario.withOffer':'Scénář: {scenario}, s\u00a0nabídkou dodavatele.',
-'live.offerExample.resale':'Zobrazen příklad: ceník dodavatele z\u00a025.\u00a009.\u00a02026, nabídka je o\u00a01,65\u00a0€ pod vypočtenou maximální nákupní cenou za kus.',
+'live.offerExample.resale':'Zobrazen příklad: ceník dodavatele z\u00a025.\u00a009.\u00a02026, nabídka je o\u00a02,00\u00a0€ pod vypočtenou maximální nákupní cenou za kus.',
 'live.offerExample.newListing':'Zobrazen příklad: ceník dodavatele z\u00a024.\u00a009.\u00a02026, srovnání s\u00a0maximální nákupní cenou za sadu je podmíněné.',
 'form.email.errorEmpty':'Zadejte e-mail','form.email.errorInvalid':'Zkontrolujte e-mailovou adresu',
 'form.submit':'Odeslat žádost','form.submitting':'Odesíláme…',

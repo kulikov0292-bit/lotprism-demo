@@ -4,7 +4,7 @@ var H=document.documentElement,mo=H.classList.contains('mo'),live=document.getEl
 var T={
 'scenario.resale.label':'Перепродаж','scenario.newListing.label':'Новий лістинг',
 'live.scenario.noOffer':'Сценарій: {scenario}, без пропозиції постачальника.','live.scenario.withOffer':'Сценарій: {scenario}, з пропозицією постачальника.',
-'live.offerExample.resale':'Показано приклад: прайс постачальника від 25.09.2026, пропозиція нижче розрахункової стелі на 1,65\u00a0€.',
+'live.offerExample.resale':'Показано приклад: прайс постачальника від 25.09.2026, пропозиція нижче розрахункової стелі на 2,00\u00a0€.',
 'live.offerExample.newListing':'Показано приклад: прайс постачальника від 24.09.2026, порівняння зі стелею набору умовне.',
 'form.email.errorEmpty':'Вкажіть електронну пошту','form.email.errorInvalid':'Перевірте адресу електронної пошти',
 'form.submit':'Надіслати заявку','form.submitting':'Надсилаємо…',
