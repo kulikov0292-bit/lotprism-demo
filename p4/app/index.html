@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>LotPrism — прототип рабочего интерфейса · доводка 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="prototype.css">
+<link rel="stylesheet" href="prototype-4.css">
+</head>
+<body>
+<div class="app" id="app">
+<header class="top" id="top"></header>
+<div id="band"></div>
+<div class="body" id="body"><nav class="rail" id="rail" aria-label="Разделы"></nav><div id="view" class="view" tabindex="-1"></div></div>
+</div>
+<aside class="panel" id="panel" aria-label="Подробности" data-open="0"></aside>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<p class="sr-only" id="live" aria-live="polite"></p>
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-h"></dialog>
+<details class="proto" id="proto"><summary aria-label="Панель прототипа"><svg class="proto-ic" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 4h7M12 4h2M2 12h2M7 12h7"></path><circle cx="10.5" cy="4" r="1.5"></circle><circle cx="5.5" cy="12" r="1.5"></circle></svg><span class="proto-l">Панель прототипа</span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><div class="pb" id="proto-b"></div></details>
+<script src="data.js"></script>
+<script src="prototype.js"></script>
+<script src="prototype-2.js"></script>
+</body>
+</html>
