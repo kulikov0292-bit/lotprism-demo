@@ -372,7 +372,6 @@
 .pl-nm{flex-wrap:wrap;column-gap:10px}
 .pl-nm>.pl-tags{order:1;flex:0 1 auto;max-width:100%;flex-wrap:wrap;white-space:nowrap}
 .pl-nm>.pl-q{order:2;display:block;flex:1 1 0;min-width:64px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pl-src{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pl-r{grid-template-columns:minmax(0,1.15fr) minmax(0,1.35fr) 184px 120px 164px 100px}
 }
 @media (min-width:1280px) and (max-width:1439px){.pl-r{grid-template-columns:minmax(0,1.1fr) minmax(0,1.3fr) 160px 112px 150px 96px;gap:0 10px}}
@@ -438,4 +437,8 @@
 .pl-li>.pl-w.nosep::before{content:"предел\00a0"}
 .pl-df>.nosep::before,.pl-dt>.pl-s.nosep::before{content:none}
 }
+/* ══ правка 4: условия предложения целиком ══ */
+.pl-of .pl-src,.pl-of .pl-moq,.pl-of .pl-unit{display:block;white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
+@media (min-width:1280px) and (max-width:1439px){.pl-sr{flex:0 0 auto;min-width:0}.pl-sr input{width:220px}.pl-chips{flex-wrap:wrap;min-width:0;flex:1 1 0}}
+@media (max-width:760px){.pl-of>.pl-unit{order:1;flex:none;display:inline}.pl-of>.pl-src{order:9;flex:0 0 100%}.pl-of>.pl-moq{order:10;flex:0 0 100%}}
 @media (max-width:360px){.pl-gsf{flex:0 0 100%}.pl-ctl{row-gap:4px}.pl-ctl::before{margin-bottom:-4px}.pl-hr+.pl-gh{padding-top:0}}
