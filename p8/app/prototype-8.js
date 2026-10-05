@@ -38,8 +38,11 @@ const UI={
   P05:['LotPrism: Amazon на листинге с 28.09','не стоит искать предложение'],
   P08:['вы 10.09: «Одобрить покупку»','куплено · заказ оформлен вне системы']},
  /* предложение: вторая строка; число — из E4 */
- off:{P01:'S1 Чехия · прайс 25.09 · мин. 60 шт.',P13:'источник не указан',P07:'за шт. или за упаковку? · источник не указан',P16:'источник не указан',P06:'за набор',P03:'источник не указан',P08:'цена закупки партии 2'},
- offT:{P01:'S1 Чехия, прайс 25.09 · мин. 60 шт. = 456,00 €',P13:'источник и мин. заказ не указаны'},
+ /* правка 4: источник и дата прайса · мин. заказ · условие единицы — раздельно; только то, что было в UI.off */
+ off:{P01:'S1 Чехия · прайс\u00a025.09',P08:'цена закупки партии 2'},
+ moq:{P01:'60 шт.'},
+ unit:{P07:'за шт. или за упаковку?',P06:'за набор'},
+ offT:{P01:'60 шт. × 7,60 € = 456,00 €'},
  noOff:{P05:'не нужно'},
  lim:{P02:['4,91 €','COND','по позиции партии BT01-01'],P06:[null,'','по похожим товарам, сценарий'],P12:[null,'','по похожим товарам'],P15:['не посчитан','','нет цены продажи'],P04:['неизвестен','u'],P09:['неизвестен','u'],P18:['нет'],P05:['нет']},
  /* разница: основание (E4.draw_rules[0] — доставка от поставщика в разницу не входит) */
@@ -112,7 +115,8 @@ const thumb8=id=>id==='P01'?`<span class="th-w">${thumb(id)}<span class="th-l" a
 const kd=id=>E4[id]&&E4[id].conditional?K.COND:K.FACT;
 const money=(v,k)=>`<span class="pl-m"><b class="pl-num n">${v}</b><span class="pl-k">${k||''}</span></span>`;
 const word=t=>`<span class="pl-w">${t}</span>`;
-function cOffer(id){const e=E4[id];if(!e)return word(UI.noOff[id]||'нет');return money(e.offer.display,id==='P08'?'':kd(id))+(UI.off[id]?`<span class="pl-s pl-src${UI.off[id]==='за набор'?' pl-unit':''}" title="${esc(UI.offT[id]||UI.off[id])}">${esc(UI.off[id])}</span>`:'')}
+function cOffer(id){const e=E4[id];if(!e)return word(UI.noOff[id]||'нет');const buy=id==='P08',u=UI.unit[id],t=UI.offT[id]?` title="${esc(UI.offT[id])}"`:'';
+ return money(e.offer.display,buy?'':kd(id))+(u?`<span class="pl-s pl-unit">${esc(u)}</span>`:'')+`<span class="pl-s pl-src">${esc(UI.off[id]||'источник не указан')}</span>`+(buy?'':`<span class="pl-s pl-moq"${t}>${UI.moq[id]?'Мин. заказ: '+esc(UI.moq[id]):'Мин. заказ не указан'}</span>`)}
 function cLim(id){const l=UI.lim[id],e=E4[id];
  if(l&&!l[0]&&e)return money(e.ceiling_30.display,'')+`<span class="pl-s">${l[2]}</span>`;
  if(l&&l[1]==='COND')return money(esc(SITO['30'].display),K.COND)+`<span class="pl-s">${l[2]}</span>`;
@@ -147,7 +151,7 @@ const gOpts=s=>{const base=ALL.filter(i=>match(i,s,'state'));const cur=s.state.l
 function plPage(q){const s=sel(q);
  return `<main class="main pl" id="pl"${av('dev')}><a class="pl-back" href="#/" data-act="pl-home">← Главная</a>
 <div class="pl-hd"><h1 class="h1" id="pl-h1" tabindex="-1"></h1><p class="t2" id="pl-meta"></p></div>
-<div class="pl-ctl"><div class="pl-bar" role="search" aria-label="Поиск и фильтры"><div class="pl-sr"><label for="pl-q">Поиск по названию, варианту, номеру</label><input id="pl-q" type="search" autocomplete="off" value="${esc(s.q)}" placeholder="название, объём или номер"></div>
+<div class="pl-ctl"><div class="pl-bar" role="search" aria-label="Поиск и фильтры"><div class="pl-sr"><label for="pl-q"><span aria-hidden="true">Поиск по названию, варианту, номеру</span><span class="sr-only">Поиск по названию, варианту (например, 400 мл) и номеру товара</span></label><input id="pl-q" type="search" autocomplete="off" value="${esc(s.q)}" placeholder="Название или номер"></div>
 <div class="pl-fw"><button class="btn btn-s sm pl-fb" type="button" id="pl-fb" data-act="pl-fb" aria-expanded="false" aria-controls="pl-fp"></button><div class="pl-fp" id="pl-fp" role="dialog" aria-label="Добавить фильтр" hidden></div></div>
 <label class="pl-gsf"><span class="sr-only">Группа</span><select id="pl-gs" title="${GTIP}"></select></label>
 <div class="pl-chips" id="pl-chips" role="group" aria-label="Группы" title="${GTIP}"${av('des')}></div></div>
