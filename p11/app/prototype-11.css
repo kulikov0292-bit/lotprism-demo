@@ -1,0 +1,107 @@
+/* LotPrism · доводка 11 · Research: первый экран, линия дела словами клиента, заказ из четырёх вопросов. Поверх P10, токены P8. */
+.r11h{gap:24px}
+.r11-hd{display:flex;flex-direction:column;gap:6px}
+.r11-hd .r10-lede{font-size:var(--f14);color:var(--mute)}
+.r11-start{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,380px);gap:24px 40px;align-items:start}
+.r11-tasks{border:0;display:flex;flex-direction:column;min-width:0;padding:0;margin:0}
+.r11-tasks>legend{padding:0;margin-bottom:12px}
+.r11-tl{display:flex;flex-direction:column;gap:4px}
+.r11-ti{border-radius:12px;transition:background-color .18s var(--ease-out)}
+.r11-ti:has(input:checked){background:var(--p1);box-shadow:inset 0 0 0 1px var(--line2)}
+.r11-task{position:relative;display:block;cursor:pointer}
+.r11-task input{position:absolute;opacity:0;pointer-events:none}
+.r11-tt{display:flex;flex-direction:column;gap:3px;padding:10px 14px 10px 42px;border-radius:12px}
+.r11-tt::before{content:"";position:absolute;left:14px;top:13px;width:16px;height:16px;border-radius:50%;border:1.5px solid var(--edge);background:var(--bg);transition:border-color .18s var(--ease-out)}
+.r11-task input:checked+.r11-tt::before{border-color:var(--ink);background:radial-gradient(circle,var(--ink) 0 4px,var(--bg) 4.5px)}
+.r11-task input:focus-visible+.r11-tt{outline:2px solid var(--lem);outline-offset:-2px}
+@media (hover:hover){.r11-ti:not(:has(input:checked)):hover{background:color-mix(in srgb,var(--p1) 60%,transparent)}}
+.r11-tn{font-weight:600;font-size:var(--f16);line-height:1.3}
+.r11-l{display:flex;flex-direction:column;font-size:var(--f13);line-height:1.4;color:var(--mute)}
+.r11-l b{font-weight:500;color:var(--ink)}
+.r11-det{display:none;padding:0 14px 10px 42px}
+.r11-ti:has(input:checked) .r11-det{display:block;animation:r11in .22s var(--ease-out)}
+@keyframes r11in{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:none}}
+.r11-det>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:32px;font-size:var(--f13);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line2)}
+.r11-det>summary::-webkit-details-marker{display:none}
+.r11-det>summary::after{content:"+";margin-left:6px;color:var(--mute);text-decoration:none}
+.r11-det[open]>summary::after{content:"−"}
+.r11-dl{margin-top:4px}
+.r11-dl>div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:2px 12px;padding:6px 0;border-top:1px solid var(--line2);font-size:var(--f13);line-height:1.45}
+.r11-dl dt{color:var(--mute)}
+.r11-go{position:sticky;top:72px;display:flex;flex-direction:column;gap:10px;padding:20px;border:1px solid var(--edge);border-radius:16px;background:var(--p1)}
+.r11-go textarea{background:var(--bg)}
+.r11-sa{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+#f10-fl:empty{display:none}
+.r11-cta{display:flex;align-items:center;justify-content:center;width:100%;white-space:normal;height:auto;min-height:48px;padding:10px 16px;text-align:center;line-height:1.3}
+.r11-demo{font-size:var(--f12);color:var(--mute)}
+.r11-mi{display:flex;flex-wrap:wrap;gap:2px 14px;align-items:center;padding-top:10px;border-top:1px solid var(--line2);font-size:var(--f13)}
+.r11-mi .lnk{font-size:var(--f13)}
+.r11-aux{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:24px 40px;padding-top:20px;border-top:1px solid var(--line)}
+.r11-aux .h3{color:var(--mute);font-weight:500;font-size:var(--f14);margin-bottom:4px}
+.r11-aux .r10-mr{padding:8px 0}
+.r11-aux .r10-mr a{font-weight:400}
+/* правка 11a · «Мои исследования»: название — основная ширина, до 2 строк; статус — по содержимому справа */
+.r11-aux .r11-mr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;align-items:start}
+.r11-mt{min-width:0}
+.r11-mn a{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:normal;word-break:normal}
+.r11-mr>.st10{justify-self:end;white-space:nowrap;max-width:100%}
+.r11-myn{margin-top:8px;font-size:var(--f13)}
+@media (max-width:760px){.r11-aux .r11-mr{grid-template-columns:minmax(0,1fr)}.r11-mr>.st10{justify-self:start;white-space:normal}}
+/* линия: 7 шагов */
+.ln10 ol{grid-template-columns:repeat(7,minmax(0,1fr))}
+.ln-x[aria-current]{color:var(--ink)}
+.ln-t{overflow-wrap:normal;word-break:normal;hyphens:manual}
+/* заказ */
+.r11-ol{gap:28px}
+.r11-q{display:flex;flex-direction:column;gap:10px}
+.r11-qh{display:flex;align-items:center;gap:10px;font:600 var(--f16)/1.3 Onest,'Onest fb',sans-serif}
+.r11-qn{flex:none;display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--ink);font:600 var(--f12)/1 var(--num)}
+.r11-svc{font-weight:600;font-size:var(--f21);line-height:1.25}
+.r11-q>p{font-size:var(--f14);line-height:1.5;max-width:72ch}
+.r11-lim{display:flex;flex-direction:column}
+.r11-lim>li{display:flex;flex-direction:column;gap:2px;padding:8px 0;border-top:1px solid var(--line);font-size:var(--f14);line-height:1.45}
+.r11-lim>li>p:first-child{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}
+.r11-l2{display:flex;flex-direction:column;border-top:1px solid var(--line2)}
+.r11-l2>details{border-bottom:1px solid var(--line)}
+.r11-l2>details>*:not(summary){margin-bottom:14px}
+.r11-l2 p{font-size:var(--f14);line-height:1.5}
+.r11-or{gap:14px}
+.r11-sl>div{display:grid;grid-template-columns:84px minmax(0,1fr);gap:8px;padding:6px 0;border-top:1px solid var(--line2);font-size:var(--f14);line-height:1.4}
+.r11-sl dt{color:var(--mute)}
+.r11-cl{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.r11-tot{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:12px;border-top:1.5px solid var(--ink);font-size:var(--f14)}
+.r11-tot b{font:600 var(--f28)/1 var(--num);font-variant-numeric:tabular-nums}
+.r11-tn2{margin-top:-8px}
+.r11-mail{padding:14px;border:1px solid var(--line2);border-radius:12px;background:var(--bg);gap:6px}
+.r11-mail .h3{font-size:var(--f14)}
+.r10-or .r10-done .btn{flex:none}
+/* проверки словами */
+.gt b{font:600 var(--f13)/1.3 Onest,'Onest fb',sans-serif}
+.gt-w{color:var(--mute)}
+.r10-gates .gt{white-space:normal;flex-wrap:wrap;align-items:baseline;row-gap:0}
+.r10-gates .gt i{align-self:center}
+.r10-why li{grid-template-columns:240px minmax(0,1fr)}
+.r10-why .gt{white-space:normal;flex-wrap:wrap}
+.r11-rl{list-style:decimal;padding-left:22px;display:flex;flex-direction:column}
+.r11-rl li{display:list-item;padding:6px 0;border-top:1px solid var(--line);font-size:var(--f14)}
+.r11-codes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;margin:8px 0}
+.r11-codes li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:8px;padding:3px 0;font-size:var(--f13)}
+/* 4.3 · происхождение «по прайсу поставщика» */
+.k.pp{background:none;border:1px solid var(--edge);color:var(--ink);white-space:normal}
+.pp-s{margin-left:4px;color:var(--mute)}
+/* панель: для разработчика */
+.p11-dev>summary{cursor:pointer;min-height:32px;display:flex;align-items:center;font-weight:500;font-size:var(--f13)}
+.p11-dev dl>div{display:flex;flex-direction:column;padding:4px 0;border-top:1px solid var(--line);font-size:var(--f12);line-height:1.4}
+.p11-dev dt{color:var(--mute)}
+@media (max-width:1020px){.r11-start{grid-template-columns:minmax(0,1fr)}.r11-go{position:static}.r11-aux{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){
+.r11-tt{padding-left:38px}.r11-tt::before{left:12px}.r11-det{padding-left:38px}
+.r11-dl>div{grid-template-columns:minmax(0,1fr);gap:0}
+.r11-go{padding:16px}
+.ln10 ol{grid-template-columns:repeat(3,minmax(0,1fr))}.ln-i:nth-child(3)::before,.ln-i:nth-child(6)::before{display:none}
+.r10-why li{grid-template-columns:minmax(0,1fr)}
+.r11-codes{grid-template-columns:minmax(0,1fr)}
+.r11-tot b{font-size:var(--f24)}
+}
+@media (max-width:360px){.ln10 ol{grid-template-columns:repeat(2,minmax(0,1fr))}.ln-i:nth-child(3)::before,.ln-i:nth-child(5)::before{display:block}.ln-i:nth-child(2n)::before{display:none}}
+@media (prefers-reduced-motion:reduce){.r11-ti,.r11-tt::before{transition:none}.r11-det{animation:none!important}}
