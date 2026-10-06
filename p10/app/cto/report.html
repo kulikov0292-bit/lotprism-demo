@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Отчёт Research — TopDown</title>
+<meta name="description" content="Макет полного фирменного отчёта LotPrism Research на A4 для исторического кейса палеты детских футболок TopDown: действие NEEDS_EVIDENCE, проверки G01–G10, экономика на допущениях, план действий, доказательства.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Светлая палитра документа «Две четверти» (ПРАВИЛА.md §2): a #0E9C8E, b #F2B705, линза #0B5A3E, чернила #0B0D12.
+   Бирюза (3,41:1) и жёлтый (1,82:1) — только заливки и линии, никогда не цвет мелкого текста; цветной текст — линза (8,25:1).
+   Unbounded нужен только надписи, а она в связке — контуры, поэтому шрифт не загружается. Текст — Onest, числа — JetBrains Mono. */
+:root{
+  color-scheme: light;
+  --paper:#FFFFFF; --desk:#E6E7E2;
+  --ink:#0B0D12; --ink-2:rgb(11 13 18 / .80); --ink-3:rgb(11 13 18 / .64);
+  --line:rgb(11 13 18 / .13); --line-2:rgb(11 13 18 / .24);
+  --teal:#0E9C8E; --yellow:#F2B705; --lens:#0B5A3E;
+  --teal-tint:#E9F6F4; --yellow-tint:#FEF6DC; --grey-tint:#F3F4F2;
+  --hatch:repeating-linear-gradient(45deg, rgb(11 13 18 / .20) 0 1px, transparent 1px 4px);
+  --font:"Onest","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--desk);color:var(--ink);font:8.6pt/1.42 var(--font);-webkit-font-smoothing:antialiased}
+p,li{text-wrap:pretty}
+a{color:var(--lens)}
+.mono{font-family:var(--mono);font-size:.92em;letter-spacing:-.01em}
+.fig{font-family:var(--mono);font-variant-numeric:tabular-nums;letter-spacing:-.02em;white-space:nowrap}
+.neg::before{content:""}
+.code{font-family:var(--mono);font-size:7.2pt;color:var(--ink-2);letter-spacing:-.01em;word-break:break-word}
+.muted{color:var(--ink-3)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ── экранный режим: листы A4 стопкой ── */
+.screenbar{max-width:210mm;margin:0 auto;padding:16px 4px 0;color:#3A3D44;font-size:9pt}
+.screenbar b{font-weight:600}
+.doc{display:flex;flex-direction:column;align-items:center;gap:22px;padding:14px 0 48px}
+.page{position:relative;width:210mm;min-height:297mm;background:var(--paper);padding:12mm 16mm 12mm;display:flex;flex-direction:column;box-shadow:0 1px 2px rgb(0 0 0 / .08),0 10px 28px rgb(0 0 0 / .10)}
+.page-body{flex:1 1 auto;display:flex;flex-direction:column;gap:3.6mm}
+
+/* ── бланк первой страницы ── */
+.lh{border-bottom:1.6pt solid var(--ink);padding-bottom:2.4mm;margin-bottom:3.4mm}
+.lh-top{display:flex;justify-content:space-between;align-items:flex-start;gap:6mm}
+.lh-lockup{display:block;width:44mm;height:5.73mm}
+.lh-kind{text-align:right;font-size:7.6pt;color:var(--ink-2);line-height:1.3}
+.lh-kind b{display:block;font-size:9.6pt;color:var(--ink);font-weight:600}
+.mockflag{display:inline-block;margin-top:1mm;font-family:var(--mono);font-size:6.8pt;letter-spacing:.04em;border:1px dashed var(--ink-2);padding:0 1.4mm}
+.lh h1{margin:3mm 0 2.2mm;font-size:12.5pt;line-height:1.2;font-weight:600;letter-spacing:-.01em}
+.lh-grid{display:grid;grid-template-columns:1.5fr 1fr 1.6fr .8fr .7fr;gap:1.4mm 4mm;margin:0}
+.lh-grid div{min-width:0;border-top:1px solid var(--line);padding-top:1mm}
+.lh-grid dt{font-size:6.8pt;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.lh-grid dd{margin:0;font-size:7.8pt;font-weight:500;line-height:1.3}
+.pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6mm 4mm;margin:0}
+.pgrid div{min-width:0;border-top:1px solid var(--line);padding-top:.8mm}
+.pgrid .w2{grid-column:span 2}
+.pgrid dt{font-size:6.8pt;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.pgrid dd{margin:0;font-size:7.8pt;line-height:1.35}
+.lh-legal{margin-top:2mm;border:1px dashed var(--ink-2);padding:1.2mm 2mm;font-size:7.4pt;color:var(--ink-2);display:flex;flex-wrap:wrap;gap:1mm 4mm;justify-content:space-between}
+.lh-legal b{color:var(--ink);font-weight:600}
+
+/* ── колонтитул страниц 2+ ── */
+.rh{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5mm 5mm;padding-bottom:2.2mm;margin-bottom:4mm;border-bottom:1px solid var(--ink)}
+.rh-l{display:flex;align-items:center;gap:4mm;min-width:0}
+.rh-lockup{display:block;width:30mm;height:3.9mm;flex-shrink:0}
+.rh-title{font-size:7.6pt;color:var(--ink-2);min-width:0}
+.rh-r{display:flex;align-items:center;gap:3mm;font-size:7.4pt;color:var(--ink-2)}
+
+/* ── подвал листа (экран; в печати — поля @page) ── */
+.pf{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1mm 5mm;margin-top:4mm;padding-top:2mm;border-top:1px solid var(--line);font-size:6.9pt;color:var(--ink-3)}
+
+/* ── статусы: всегда слово + форма; цвет не единственный носитель ── */
+.act{display:flex;flex-wrap:wrap;align-items:center;gap:1.4mm 4mm;padding:2.4mm 4mm;border:1.2pt solid var(--ink);border-left:3.2mm solid var(--yellow);background:var(--yellow-tint)}
+.act-code{font-family:var(--mono);font-size:8pt;font-weight:600;border:1px solid var(--ink);background:#fff;padding:.4mm 1.6mm}
+.act-text{font-size:13pt;font-weight:700;letter-spacing:-.01em;line-height:1.15}
+.act-sub{flex-basis:100%;margin:0;font-size:8.2pt;color:var(--ink-2)}
+.sline{display:flex;flex-wrap:wrap;gap:1.2mm 2mm;margin-top:1.6mm}
+.s{display:inline-flex;align-items:center;gap:1.4mm;border:1px solid var(--line-2);padding:.3mm 1.6mm;font-size:7.4pt;background:#fff;white-space:nowrap}
+.s b{font-family:var(--mono);font-weight:600;font-size:7pt}
+.g{display:inline-flex;align-items:center;gap:1.2mm;font-family:var(--mono);font-size:7.2pt;font-weight:600;white-space:nowrap}
+.g::before{content:"";display:inline-block;width:2.4mm;height:2.4mm;border:1px solid var(--ink);flex-shrink:0}
+.g-pass::before{background:var(--teal);border-color:var(--lens)}
+.g-unk::before{background-image:var(--hatch)}
+.g-fail::before{background:linear-gradient(45deg,transparent 42%,var(--ink) 42% 58%,transparent 58%),linear-gradient(-45deg,transparent 42%,var(--ink) 42% 58%,transparent 58%)}
+.g-na::before{background:linear-gradient(transparent 44%,var(--ink) 44% 56%,transparent 56%)}
+.a{display:inline-block;font-size:6.9pt;font-weight:600;letter-spacing:.02em;border:1px solid var(--ink-2);padding:0 1.2mm;white-space:nowrap;vertical-align:1px}
+.a-conf{background:var(--teal-tint);border-color:var(--lens);color:var(--lens)}
+.a-calc{background:#fff}
+.a-ass{background:var(--yellow-tint);border-style:dashed}
+.a-unk{background-image:var(--hatch);border-style:dashed;color:var(--ink)}
+.a-na{background:var(--grey-tint);color:var(--ink-2)}
+.undet{display:inline-block;font-family:var(--mono);font-weight:600;background-image:var(--hatch);border:1px dashed var(--ink-2);padding:.2mm 1.6mm}
+
+/* ── типографика блоков ── */
+h2{margin:0 0 1.6mm;font-size:11pt;line-height:1.25;font-weight:600;letter-spacing:-.005em}
+h2 .num{font-family:var(--mono);font-size:8pt;color:var(--lens);margin-right:1.6mm}
+h3{margin:0 0 1.2mm;font-size:8.8pt;font-weight:600}
+.kicker{font-size:6.8pt;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin:0 0 .8mm}
+.box{border:1px solid var(--line-2);padding:2.6mm 3mm}
+.box-hist{border:1.2pt dashed var(--ink);background:var(--grey-tint);padding:2.4mm 3mm}
+.box-hist .kicker{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:minmax(0,1.32fr) minmax(0,1fr);gap:5mm}
+.grid2e{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5mm}
+.stack{display:flex;flex-direction:column;gap:3.2mm;min-width:0}
+.reasons{margin:0;padding:0;list-style:none;counter-reset:r}
+.reasons li{position:relative;padding:0 0 1.8mm 8mm;counter-increment:r}
+.reasons li::before{content:counter(r);position:absolute;left:0;top:0;width:5.4mm;height:5.4mm;border:1.2pt solid var(--ink);font:600 8pt/5mm var(--mono);text-align:center}
+.reasons b{display:block;font-size:9pt}
+.reasons p{margin:.4mm 0 .6mm;color:var(--ink-2)}
+.missing{margin:0;padding:0;list-style:none}
+.missing li{display:grid;grid-template-columns:3.4mm minmax(0,1fr) auto;gap:1.6mm;align-items:baseline;padding:.8mm 0;border-top:1px solid var(--line);font-size:8pt}
+.missing li::before{content:"";width:2.6mm;height:2.6mm;border:1px solid var(--ink);background-image:var(--hatch);align-self:center}
+.missing .who{font-size:6.9pt;color:var(--ink-3);text-align:right;white-space:nowrap}
+.missing.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:5mm}
+.big{font-family:var(--mono);font-size:12.5pt;font-weight:600;letter-spacing:-.02em}
+.kv{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.8mm 3mm;margin:0;align-items:baseline}
+.kv dt{color:var(--ink-2)}
+.kv dd{margin:0;text-align:right}
+.kv .sum{border-top:1px solid var(--ink);padding-top:.8mm;font-weight:600}
+.small{font-size:7.6pt}
+.tiny{font-size:7pt;color:var(--ink-3)}
+.qr{width:17mm;height:17mm;flex-shrink:0;border:1px dashed var(--ink-2);display:flex;align-items:center;justify-content:center;text-align:center;font:6pt/1.15 var(--mono);color:var(--ink-2);background-image:repeating-linear-gradient(0deg,transparent 0 2mm,rgb(11 13 18 / .06) 2mm 2.4mm),repeating-linear-gradient(90deg,transparent 0 2mm,rgb(11 13 18 / .06) 2mm 2.4mm)}
+.verify{display:flex;gap:3mm;align-items:center}
+
+/* ── таблицы ── */
+table.t{width:100%;border-collapse:collapse;font-size:7.7pt}
+table.t th{text-align:left;font-weight:600;font-size:6.9pt;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2);border-bottom:1.2pt solid var(--ink);padding:1.1mm 1.4mm;vertical-align:bottom}
+table.t td{border-bottom:1px solid var(--line);padding:1.3mm 1.4mm;vertical-align:top}
+table.t td.n,table.t th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+table.t tr.sum td{border-top:1.2pt solid var(--ink);font-weight:600}
+table.t tr.sub td{background:var(--grey-tint)}
+table.t .gid{font-family:var(--mono);font-weight:600;white-space:nowrap}
+table.t td .code{display:block;margin-top:.4mm}
+
+/* ── узкий экран: листы перетекают, таблицы раскладываются в карточки ── */
+@media screen and (max-width:860px){
+  .screenbar{padding:12px 16px 0}
+  .doc{gap:14px;padding:10px 0 32px}
+  .page{width:auto;min-height:0;margin:0 12px;padding:18px 16px;align-self:stretch}
+  .grid2,.grid2e,.missing.cols2,.pgrid{grid-template-columns:minmax(0,1fr)}
+  .pgrid .w2{grid-column:auto}
+  .lh-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .lh-lockup{width:38mm;height:4.97mm}
+}
+@media screen and (max-width:640px){
+  body{font-size:9.4pt}
+  .lh-top{flex-direction:column}
+  .lh-kind{text-align:left}
+  .lh-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rh-title{flex-basis:100%}
+  table.rt thead{display:none}
+  table.rt,table.rt tbody,table.rt tr,table.rt td{display:block;width:100%}
+  table.rt tr{border-bottom:1.2pt solid var(--line-2);padding:1.6mm 0}
+  table.rt td{border:0;padding:.7mm 0;text-align:left!important;white-space:normal!important}
+  table.rt td[data-l]::before{content:attr(data-l);display:block;font-family:var(--font);font-size:6.9pt;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
+  .missing li{grid-template-columns:3.4mm minmax(0,1fr)}
+  table.rt.rt-num tr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:2mm}
+  table.rt.rt-n2 tr{grid-template-columns:repeat(2,minmax(0,1fr))}
+  table.rt.rt-num td:first-child{grid-column:1 / -1;font-weight:500}
+  table.rt.rt-num td:first-child::before{display:none}
+  table.rt.rt-num td.n{font-size:8.6pt}
+  .missing .who{grid-column:2;text-align:left}
+  .kv{grid-template-columns:minmax(0,1fr)}
+  .kv dd{text-align:left;margin-bottom:1mm}
+}
+
+/* ── печать: A4, номера страниц в полях листа (Chrome 131+, WeasyPrint) ── */
+@page{
+  size:A4; margin:12mm 16mm 13mm 16mm;
+  @bottom-left{content:"LotPrism Research · LPR-R7K2-9QXM · отчёт v1 · проверить актуальность: app.lotprism.com/v/‹токен›";font:6.6pt "Onest",sans-serif;color:#555}
+  @bottom-right{content:"Стр. " counter(page) " из " counter(pages);font:6.6pt "JetBrains Mono",monospace;color:#333}
+}
+@media print{
+  body{background:#fff;font-size:8.6pt}
+  .screenbar,.pf,.pg-static{display:none!important}
+  .doc{display:block;padding:0}
+  .page{width:auto;min-height:0;padding:0;box-shadow:none;break-after:page;page-break-after:always}
+  .page:last-child{break-after:auto;page-break-after:auto}
+  table.t tr,.box,.box-hist,.reasons li{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false"><!-- Мастер «Две четверти» (утверждён Founder 25.09.2026), файлы связка-цвет-светлый-фон.svg и знак-цвет-светлый-фон.svg без изменений --><symbol id="lp-lockup-light" viewBox="0 -8.8 874 113.8"><g transform="translate(-21.389 -26.389) scale(1.528)"><path fill="#0E9C8E" d="M22 14H78A64 64 0 0 1 14 78V22A8 8 0 0 1 22 14Z"/><path fill="#F2B705" d="M78 86H22A64 64 0 0 1 86 22V78A8 8 0 0 1 78 86Z"/><path fill="#0B5A3E" d="M77.423 22.577A64 64 0 0 1 22.577 77.423A64 64 0 0 1 77.423 22.577Z"/></g><path fill="#0B0D12" transform="translate(142 0)" d="M34.93333333333333 0.0V88.8L23.6 77.73333333333333H98.53333333333333V100.0H9.733333333333333V0.0Z M148.0 102.13333333333334Q133.6 102.13333333333334 122.8 97.06666666666666Q112.0 92.0 106.0 82.93333333333334Q100.0 73.86666666666667 100.0 62.0Q100.0 50.0 106.0 41.0Q112.0 32.0 122.86666666666667 26.933333333333337Q133.73333333333335 21.866666666666674 148.0 21.866666666666674Q162.4 21.866666666666674 173.26666666666665 26.933333333333337Q184.13333333333333 32.0 190.13333333333333 41.0Q196.13333333333333 50.0 196.13333333333333 62.0Q196.13333333333333 74.0 190.13333333333333 83.0Q184.13333333333333 92.0 173.26666666666665 97.06666666666666Q162.4 102.13333333333334 148.0 102.13333333333334ZM148.0 83.46666666666667Q155.33333333333334 83.46666666666667 160.46666666666667 80.86666666666667Q165.6 78.26666666666667 168.33333333333331 73.46666666666667Q171.06666666666666 68.66666666666667 171.06666666666666 62.0Q171.06666666666666 55.333333333333336 168.33333333333331 50.53333333333333Q165.6 45.733333333333334 160.46666666666667 43.13333333333333Q155.33333333333334 40.53333333333333 148.0 40.53333333333333Q140.93333333333334 40.53333333333333 135.73333333333335 43.13333333333333Q130.53333333333333 45.733333333333334 127.73333333333333 50.53333333333333Q124.93333333333334 55.333333333333336 124.93333333333334 62.0Q124.93333333333334 68.66666666666667 127.73333333333333 73.46666666666667Q130.53333333333333 78.26666666666667 135.73333333333335 80.86666666666667Q140.93333333333334 83.46666666666667 148.0 83.46666666666667Z M196.9333333333333 42.4V31.599999999999994L212.66666666666666 25.866666666666674L223.33333333333331 3.7333333333333343H237.46666666666664V24.0H270.26666666666665V42.4H237.46666666666664V67.46666666666667Q237.46666666666664 76.0 240.9333333333333 79.4Q244.39999999999998 82.8 253.33333333333331 82.8Q259.06666666666666 82.8 263.4 81.8Q267.73333333333335 80.8 271.59999999999997 79.06666666666666V97.86666666666666Q267.59999999999997 99.46666666666667 261.1333333333333 100.80000000000001Q254.66666666666666 102.13333333333334 247.73333333333332 102.13333333333334Q235.6 102.13333333333334 227.8 98.26666666666668Q220.0 94.4 216.33333333333331 87.4Q212.66666666666666 80.4 212.66666666666666 70.93333333333334V42.4Z M337.46666666666664 0.0Q349.7333333333333 0.0 358.59999999999997 4.200000000000003Q367.46666666666664 8.400000000000006 372.19999999999993 16.0Q376.9333333333333 23.599999999999994 376.9333333333333 33.733333333333334Q376.9333333333333 43.86666666666667 372.19999999999993 51.46666666666667Q367.46666666666664 59.06666666666667 358.59999999999997 63.266666666666666Q349.7333333333333 67.46666666666667 337.46666666666664 67.46666666666667H293.7333333333333V47.06666666666667H336.1333333333333Q343.3333333333333 47.06666666666667 347.46666666666664 43.53333333333333Q351.59999999999997 40.0 351.59999999999997 33.733333333333334Q351.59999999999997 27.46666666666667 347.46666666666664 23.933333333333337Q343.3333333333333 20.400000000000006 336.1333333333333 20.400000000000006H296.0L307.3333333333333 8.666666666666671V100.0H282.1333333333333V0.0Z M381.4666666666666 24.0H406.53333333333325L411.0666666666666 51.333333333333336V100.0H386.2666666666666V49.333333333333336ZM447.33333333333326 22.933333333333337V44.266666666666666Q443.7333333333333 43.46666666666667 440.19999999999993 43.06666666666666Q436.66666666666663 42.666666666666664 433.7333333333333 42.666666666666664Q427.33333333333326 42.666666666666664 422.19999999999993 45.266666666666666Q417.0666666666666 47.86666666666667 414.0666666666666 53.46666666666667Q411.0666666666666 59.06666666666667 411.0666666666666 68.0L406.13333333333327 61.86666666666667Q407.0666666666666 53.733333333333334 409.19999999999993 46.53333333333333Q411.33333333333326 39.333333333333336 415.0666666666666 33.8Q418.79999999999995 28.266666666666666 424.33333333333326 25.06666666666667Q429.8666666666666 21.866666666666674 437.7333333333333 21.866666666666674Q439.99999999999994 21.866666666666674 442.5333333333333 22.13333333333334Q445.0666666666666 22.400000000000006 447.33333333333326 22.933333333333337Z M454.66666666666663 22.933333333333337 466.9333333333333 25.46666666666667 479.3333333333333 22.933333333333337V100.0H454.66666666666663ZM467.0666666666666 16.0Q460.5333333333333 16.0 456.4 12.600000000000001Q452.26666666666665 9.200000000000003 452.26666666666665 3.5999999999999943Q452.26666666666665 -2.1333333333333258 456.4 -5.4666666666666615Q460.5333333333333 -8.799999999999997 467.0666666666666 -8.799999999999997Q473.7333333333333 -8.799999999999997 477.7333333333333 -5.4666666666666615Q481.7333333333333 -2.1333333333333258 481.7333333333333 3.5999999999999943Q481.7333333333333 9.200000000000003 477.7333333333333 12.600000000000001Q473.7333333333333 16.0 467.0666666666666 16.0Z M578.2666666666667 75.6Q578.2666666666667 84.13333333333333 573.2666666666667 90.06666666666666Q568.2666666666667 96.0 558.6666666666666 99.06666666666666Q549.0666666666666 102.13333333333334 535.3333333333333 102.13333333333334Q521.3333333333333 102.13333333333334 510.79999999999995 98.66666666666667Q500.26666666666665 95.2 494.4 88.93333333333334Q488.5333333333333 82.66666666666667 488.13333333333327 74.4H513.3333333333333Q514.1333333333333 77.73333333333333 517.1333333333333 80.26666666666667Q520.1333333333333 82.8 524.9333333333334 84.06666666666666Q529.7333333333333 85.33333333333333 536.2666666666667 85.33333333333333Q545.0666666666666 85.33333333333333 549.5999999999999 83.46666666666667Q554.1333333333333 81.6 554.1333333333333 77.86666666666667Q554.1333333333333 75.06666666666666 550.8666666666666 73.6Q547.5999999999999 72.13333333333333 539.1999999999999 71.46666666666667L525.3333333333333 70.4Q512.2666666666667 69.46666666666667 504.5333333333333 66.26666666666667Q496.79999999999995 63.06666666666667 493.5333333333333 58.13333333333334Q490.26666666666665 53.2 490.26666666666665 47.06666666666667Q490.26666666666665 38.666666666666664 495.5333333333333 33.06666666666666Q500.79999999999995 27.46666666666667 510.13333333333327 24.66666666666667Q519.4666666666666 21.866666666666674 532.0 21.866666666666674Q544.5333333333333 21.866666666666674 554.3333333333333 25.200000000000003Q564.1333333333333 28.53333333333333 570.0666666666666 34.4Q576.0 40.266666666666666 576.8 48.13333333333333H551.5999999999999Q551.0666666666666 45.46666666666667 548.7333333333333 43.2Q546.4 40.93333333333334 542.0666666666666 39.53333333333333Q537.7333333333333 38.13333333333333 530.8 38.13333333333333Q522.9333333333333 38.13333333333333 518.8 39.86666666666667Q514.6666666666666 41.6 514.6666666666666 44.93333333333334Q514.6666666666666 47.46666666666667 517.2 48.93333333333334Q519.7333333333333 50.4 526.8 51.06666666666667L544.8 52.4Q557.5999999999999 53.46666666666667 564.8666666666666 56.46666666666667Q572.1333333333333 59.46666666666667 575.2 64.26666666666667Q578.2666666666667 69.06666666666666 578.2666666666667 75.6Z M583.9999999999999 24.0H608.6666666666666L613.5999999999999 53.6V100.0H588.8V49.86666666666667ZM640.2666666666665 21.866666666666674Q650.6666666666665 21.866666666666674 657.9333333333332 26.200000000000003Q665.1999999999999 30.53333333333333 669.0 38.53333333333333Q672.8 46.53333333333333 672.8 57.6V100.0H647.9999999999999V61.333333333333336Q647.9999999999999 51.86666666666667 643.8666666666666 47.0Q639.7333333333332 42.13333333333333 631.7333333333332 42.13333333333333Q626.1333333333332 42.13333333333333 622.0666666666666 44.733333333333334Q617.9999999999999 47.333333333333336 615.8 52.06666666666666Q613.5999999999999 56.8 613.5999999999999 63.333333333333336L605.7333333333332 59.2Q607.1999999999999 47.06666666666667 612.0666666666666 38.8Q616.9333333333333 30.53333333333333 624.1999999999999 26.200000000000003Q631.4666666666666 21.866666666666674 640.2666666666665 21.866666666666674ZM699.3333333333333 21.866666666666674Q709.7333333333332 21.866666666666674 717.0666666666666 26.200000000000003Q724.3999999999999 30.53333333333333 728.1999999999998 38.53333333333333Q731.9999999999999 46.53333333333333 731.9999999999999 57.6V100.0H707.1999999999999V61.333333333333336Q707.1999999999999 51.86666666666667 703.0666666666666 47.0Q698.9333333333333 42.13333333333333 690.9333333333333 42.13333333333333Q685.3333333333333 42.13333333333333 681.2666666666667 44.733333333333334Q677.1999999999999 47.333333333333336 675.0 52.06666666666666Q672.8 56.8 672.8 63.333333333333336L664.9333333333333 59.2Q666.3999999999999 47.06666666666667 671.1999999999998 38.8Q675.9999999999999 30.53333333333333 683.3333333333333 26.200000000000003Q690.6666666666665 21.866666666666674 699.3333333333333 21.866666666666674Z"/></symbol><symbol id="lp-mark-light" viewBox="14 14 72 72"><path fill="#0E9C8E" d="M22 14H78A64 64 0 0 1 14 78V22A8 8 0 0 1 22 14Z"/><path fill="#F2B705" d="M78 86H22A64 64 0 0 1 86 22V78A8 8 0 0 1 78 86Z"/><path fill="#0B5A3E" d="M77.423 22.577A64 64 0 0 1 22.577 77.423A64 64 0 0 1 77.423 22.577Z"/></symbol></svg>
+<p class="screenbar"><b>Макет фирменного отчёта.</b> Данные — исторический кейс TopDown (материалы 30.09.2026); значения, отсутствующие в материалах, показаны как неизвестные. ID, хэши и токен — примеры формата. Печать: A4, номера страниц в полях листа.</p>
+<main class="doc">
+
+<section class="page" aria-label="Страница 1 из 9">
+  <header class="lh">
+    <div class="lh-top">
+      <svg class="lh-lockup" role="img" aria-label="LotPrism"><use href="#lp-lockup-light"/></svg>
+      <div class="lh-kind"><b>Отчёт исследования · полный</b><span class="mockflag">МАКЕТ · исторический кейс</span></div>
+    </div>
+    <h1>Палета детских лицензионных футболок TopDown: проверка перед закупкой</h1>
+    <dl class="lh-grid">
+      <div><dt>Клиент</dt><dd>Founder — своё исследование</dd></div>
+      <div><dt>ID</dt><dd class="mono">LPR-R7K2-9QXM</dd></div>
+      <div><dt>Версия</dt><dd>отчёт v1 · решение v1 · расчёт v1</dd></div>
+      <div><dt>Дата</dt><dd>30.09.2026</dd></div>
+      <div><dt>Валюта</dt><dd>GBP</dd></div>
+      <div><dt>Рынок и маршрут</dt><dd>GB · закупка в GB → eBay UK</dd></div>
+      <div><dt>Статус</dt><dd><span class="mono">NEEDS_EVIDENCE</span></dd></div>
+      <div><dt>Конфиденциальность</dt><dd>Конфиденциально, для клиента</dd></div>
+      <div><dt>Страница</dt><dd>1 из 9</dd></div>
+    </dl>
+    <div class="lh-legal"><b>Реквизиты LotPrism — ожидают подтверждения Founder</b><span>Номер компании, адрес и VAT-номер не печатаются до подтверждения.</span></div>
+  </header>
+
+  <div class="page-body">
+    <div>
+      <p class="kicker">1 · Какое действие допустимо</p>
+      <div class="act" role="group" aria-label="Допустимое действие">
+        <span class="act-code">NEEDS_EVIDENCE</span>
+        <span class="act-text">Не покупать сейчас — нужны данные</span>
+        <p class="act-sub">Подтверждённых стоп-факторов нет — это не отказ. Статус не повысится, пока не появятся подтверждения из п. 6 (правило R6).</p>
+      </div>
+      <div class="sline" aria-label="Составляющие решения">
+        <span class="s">Доказательства <b>CONFLICTED</b> есть противоречие</span>
+        <span class="s">Экономика <b>UNDETERMINED</b> не определена</span>
+        <span class="s">Покрытие <b>SUPPORTED</b></span>
+        <span class="s">Проверка человеком: не запрашивается</span>
+      </div>
+    </div>
+
+    <div class="grid2e">
+      <div class="stack">
+        <div>
+          <p class="kicker">2 · Три причины</p>
+          <ol class="reasons">
+            <li><b>Состав и количество партии не подтверждены</b>
+              <p>Размеры и дизайны неизвестны. Страница продавца — 1 500 шт., поисковый фрагмент — 1 200 шт.; при проверке страница ответила 403 и не прочитана.</p>
+              <span class="g g-unk">G01 UNKNOWN</span> <span class="tiny">товар и состав</span></li>
+            <li><b>400 продаж троек по £16.95 — допущение</b>
+              <p>Найдены только активные предложения других наборов. Состоявшихся продаж сопоставимых троек нет.</p>
+              <span class="g g-unk">G03 UNKNOWN</span> <span class="tiny">спрос</span></li>
+            <li><b>Нет полной котировки склада</b>
+              <p>Сортировка, сборка троек, фото и листинг не оценены; есть только публичный прайс отдельных операций.</p>
+              <span class="g g-unk">G04 UNKNOWN</span> <span class="tiny">исполнение и затраты</span></li>
+          </ol>
+        </div>
+        <div class="box">
+          <p class="kicker">5 · Неблагоприятный случай: 300 троек по £15.25</p>
+          <dl class="kv">
+            <dt>Деньги на конец 90 дней</dt><dd class="fig">−£467.58</dd>
+            <dt>Экономический результат</dt><dd class="fig">−£617.58</dd>
+            <dt>Остаток 600 шт. по себестоимости</dt><dd class="fig">£846.00</dd>
+            <dt>Цена ликвидации остатка</dt><dd><span class="undet">неизвестна</span></dd>
+          </dl>
+          <p class="tiny" style="margin:.8mm 0 0">Рассчитано на допущениях. Запаса почти нет: 400 троек по £15.25 оставляют <span class="fig">£6.56</span>.</p>
+        </div>
+      </div>
+
+      <div class="stack">
+        <div class="box">
+          <p class="kicker">3 · Предел закупки</p>
+          <dl class="kv">
+            <dt>Максимальная цена</dt><dd><span class="undet">не определена</span></dd>
+            <dt>Объём</dt><dd><span class="undet">не определён</span></dd>
+          </dl>
+          <p class="small" style="margin:1mm 0 0">Нужны состав, три статьи затрат, подтверждённая выручка, ваша цель и предел убытка; лот продаётся целиком, количество спорно.</p>
+        </div>
+        <div class="box">
+          <p class="kicker">4 · Прибыль и деньги</p>
+          <dl class="kv">
+            <dt>Прибыль</dt><dd><span class="undet">не определена</span></dd>
+            <dt>Пиковая потребность в деньгах</dt><dd><span class="undet">не определена</span></dd>
+            <dt>Не меньше: закупка до продаж</dt><dd class="fig">£1 665.00</dd>
+            <dt>С подготовкой и фото до продаж</dt><dd class="fig">£2 265.00</dd>
+          </dl>
+          <p class="tiny" style="margin:.6mm 0 0">Обе суммы — <span class="a a-ass">Допущение</span>: цена со страницы продавца, бюджет без котировок.</p>
+          <div class="box-hist" style="margin-top:1.6mm">
+            <p class="small" style="margin:0"><b>Исторический условный сценарий, не прогноз:</b> <span class="fig" style="font-weight:600">£413.29</span> экономического результата, если 400 троек продадутся по £16.95 за 90 дней. <span class="a a-calc">Рассчитано на допущениях</span></p>
+          </div>
+        </div>
+        <div class="box">
+          <p class="kicker">7 · Актуальность</p>
+          <div class="verify">
+            <div class="qr" aria-label="QR-код — заглушка макета">QR<br>заглушка</div>
+            <div class="small"><b>Действует до 07.10.2026</b> — раньше всего истекает тариф eBay (7 дней). Скачанный PDF не обновляется: проверяйте актуальность по ссылке <span class="mono">app.lotprism.com/v/‹токен›</span>.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="kicker">6 · Каких подтверждений не хватает</p>
+      <ul class="missing cols2">
+        <li>Manifest с размерами и дизайнами<span class="who">продавец · G01</span></li>
+        <li>Письменная котировка: количество и цена<span class="who">продавец · G01, G02</span></li>
+        <li>Котировка 3PL: сортировка, сборка, фото, исполнение<span class="who">склад · G04</span></li>
+        <li>Продажи сопоставимых троек на eBay UK<span class="who">выгрузка · G03</span></li>
+        <li>Ваш предел убытка и цели<span class="who">вы · G06, G07</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pf"><span>LotPrism Research · LPR-R7K2-9QXM · отчёт v1 · 30.09.2026</span><span>Не инвестиционная рекомендация и не разрешение на закупку</span><span class="pg-static">Стр. 1 из 9</span></div>
+</section>
+
+<section class="page" aria-label="Страница 2 из 9">
+  <header class="rh">
+    <div class="rh-l"><svg class="rh-lockup" role="img" aria-label="LotPrism"><use href="#lp-lockup-light"/></svg><span class="rh-title">Палета детских футболок TopDown · отчёт исследования</span></div>
+    <div class="rh-r"><span class="mono">LPR-R7K2-9QXM · v1</span><span class="mono">NEEDS_EVIDENCE</span><span class="pg-static">Стр. 2 из 9</span></div>
+  </header>
+  <div class="page-body">
+    <div>
+      <h2><span class="num">01</span>Паспорт решения</h2>
+      <dl class="pgrid">
+        <div><dt>Область решения</dt><dd>смешанная партия · GB · eBay UK · торговля от своего имени · C3<span class="code">MIXED_LOT · GB · ebay.co.uk · OWN_ACCOUNT_TRADER · C3</span></dd></div>
+        <div><dt>Профиль правил · пилот</dt><dd><span class="mono">FULL_PURCHASE</span> · пилот не запрашивался</dd></div>
+        <div><dt>Покрытие</dt><dd><span class="mono">SUPPORTED</span> — GB, закупка внутри GB (срез FD-4; так только при подписанном GB-VAT/1, FD-14)</dd></div>
+        <div><dt>Доказательства · экономика</dt><dd><span class="mono">CONFLICTED</span> · <span class="mono">UNDETERMINED</span>, основание <span class="mono">CONDITIONAL</span></dd></div>
+        <div><dt>Действие · правило</dt><dd><span class="mono">NEEDS_EVIDENCE</span> · <span class="mono">R6</span> · <span class="mono">research-decision/1</span></dd></div>
+        <div><dt>Дата данных · действует до</dt><dd>30.09.2026 · 07.10.2026 (тариф eBay, 7 дней)</dd></div>
+        <div class="w2"><dt>Исполнители (исторически)</dt><dd>основной анализ — OpenAI (Codex); независимая проверка — Claude без доступа к прежним расчётам, вывод тот же. Совпадение моделей не считается доказательством.</dd></div>
+        <div><dt>Проверка человеком</dt><dd>не запрашивается: действие ниже «Готово к проверке решения»</dd></div>
+      </dl>
+    </div>
+
+    <div>
+      <h2><span class="num">02</span>Задача и ограничения</h2>
+      <div class="grid2e">
+        <ul class="small" style="margin:0;padding-left:4mm">
+          <li>Проверить палету до закупки для перепродажи тройками на eBay UK; горизонт 90 дней, GBP, только рынок GB.</li>
+          <li>Капитал, предел убытка и цели <b>не заданы</b> — G06 и G07 пройти не могут.</li>
+          <li>Объём C3: до 100 строк manifest и 20 SKU; manifest не получен.</li>
+        </ul>
+        <ul class="small" style="margin:0;padding-left:4mm">
+          <li>Ничего не отправлялось, не регистрировалось и не покупалось; запросы подготовлены.</li>
+          <li>Налог компании — только резерв по допущению.</li>
+          <li>Не инвестиционная рекомендация и не разрешение на закупку.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <h2><span class="num">03</span>Что установлено по блокам</h2>
+      <table class="t rt">
+        <thead><tr><th style="width:17%">Блок</th><th>Что установлено</th><th style="width:22%">Статус</th><th style="width:9%">Гейт</th></tr></thead>
+        <tbody>
+          <tr><td data-l="Блок"><b>Товар и состав</b></td><td data-l="Что установлено">Новые детские лицензионные футболки; бирки и упаковка — «у большинства» (со слов продавца). Размеры, дизайны, лицензии неизвестны. Количество: 1 500 на странице или 1 200 во фрагменте поиска.</td><td data-l="Статус"><span class="a a-unk">Неизвестно</span> состав · противоречие количества</td><td data-l="Гейт"><span class="g g-unk">G01</span></td></tr>
+          <tr><td data-l="Блок"><b>Продавец и закупка</b></td><td data-l="Что установлено">TopDown Trading; £1 665 за палету с доставкой по UK mainland, «No VAT», «в наличии» — только со страницы продавца. Письменной котировки нет; проверки продавца по реестру и санкциям в материалах нет.</td><td data-l="Статус"><span class="a a-ass">Допущение</span> цена · <span class="a a-unk">Неизвестно</span> продавец</td><td data-l="Гейт"><span class="g g-unk">G02</span></td></tr>
+          <tr><td data-l="Блок"><b>Спрос</b></td><td data-l="Что установлено">Продаж сопоставимых троек нет. Активные предложения других наборов: Character.com Minecraft 3-pack £14.95 + доставка; H&amp;M GB Minecraft 3-pack £11 вместо £17.99 (поисковая карточка). Это не продажи и не тот же товар.</td><td data-l="Статус"><span class="a a-unk">Неизвестно</span></td><td data-l="Гейт"><span class="g g-unk">G03</span></td></tr>
+          <tr><td data-l="Блок"><b>Канал</b></td><td data-l="Что установлено">eBay UK, бизнес-продавец, одежда: 11.9% + 0.35% regulatory + £0.40 за заказ — официальный тариф; в расчёте с запасом 13.25% + £0.40. Ограничения категории и бренда не проверены.</td><td data-l="Статус"><span class="a a-conf">Подтверждено</span> тариф · <span class="a a-unk">Неизвестно</span> ограничения</td><td data-l="Гейт"><span class="g g-unk">G05</span></td></tr>
+          <tr><td data-l="Блок"><b>Исполнение</b></td><td data-l="Что установлено">Прайс Complete Prep: pick £1, доп. единица £0.40, прочее отдельно. Royal Mail Tracked 48 до 2 кг — £3.75 с VAT с 05.10.2026, сбор £0.50. Цены сортировки, сборки троек, фото и листинга нет; вес упакованной тройки не измерен.</td><td data-l="Статус"><span class="a a-ass">Допущение</span> прайс · <span class="a a-unk">Неизвестно</span> 3 статьи</td><td data-l="Гейт"><span class="g g-unk">G04</span></td></tr>
+          <tr><td data-l="Блок"><b>Импорт</b></td><td data-l="Что установлено">Закупка внутри GB: пошлин, импортного VAT и импортёра нет. Страна происхождения неизвестна и на решение не влияет.</td><td data-l="Статус"><span class="a a-na">Неприменимо: закупка внутри GB</span></td><td data-l="Гейт">—</td></tr>
+          <tr><td data-l="Блок"><b>Налоги</b></td><td data-l="Что установлено">Нулевая ставка VAT на детскую одежду (HMRC Notice 714) зависит от размера и представления — размеры неизвестны. VAT-регистрация — со слов Founder. Налог компании — резерв 25% по допущению.</td><td data-l="Статус"><span class="a a-ass">Допущение</span></td><td data-l="Гейт">расчёт</td></tr>
+          <tr><td data-l="Блок"><b>Право продажи</b></td><td data-l="Что установлено">Подлинность лицензионного товара и право перепродажи на eBay не подтверждены: нет инвойса и подтверждения продавца.</td><td data-l="Статус"><span class="a a-unk">Неизвестно</span></td><td data-l="Гейт"><span class="g g-unk">G05</span></td></tr>
+          <tr><td data-l="Блок"><b>Цели клиента</b></td><td data-l="Что установлено">Предел капитала, предел убытка и цель прибыли с базой не заданы. Система их не подставляет.</td><td data-l="Статус"><span class="a a-unk">Не задано</span></td><td data-l="Гейт"><span class="g g-unk">G06</span> <span class="g g-unk">G07</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="pf"><span>LotPrism Research · LPR-R7K2-9QXM · отчёт v1 · 30.09.2026</span><span>Конфиденциально</span><span class="pg-static">Стр. 2 из 9</span></div>
+</section>
+
+<section class="page" aria-label="Страница 3 из 9">
+  <header class="rh">
+    <div class="rh-l"><svg class="rh-lockup" role="img" aria-label="LotPrism"><use href="#lp-lockup-light"/></svg><span class="rh-title">Палета детских футболок TopDown · отчёт исследования</span></div>
+    <div class="rh-r"><span class="mono">LPR-R7K2-9QXM · v1</span><span class="mono">NEEDS_EVIDENCE</span><span class="pg-static">Стр. 3 из 9</span></div>
+  </header>
+  <div class="page-body">
+    <div>
+      <h2><span class="num">04</span>Обязательные проверки G01–G10</h2>
+      <p class="small muted" style="margin:0 0 1.6mm">Все десять проверок вычислены без пропусков. Результат назван словом; значок его повторяет: заливка — пройдена, штриховка — неизвестно, крест — не пройдена, черта — неприменимо.</p>
+      <table class="t rt">
+        <thead><tr><th style="width:15%">Проверка</th><th style="width:12%">Результат</th><th>Почему</th><th style="width:25%">Что закроет</th></tr></thead>
+        <tbody>
+          <tr><td data-l="Проверка"><span class="gid">G01</span> Товар и состав</td><td data-l="Результат"><span class="g g-unk">UNKNOWN</span><br>Неизвестно</td><td data-l="Почему">Размеры и дизайны не подтверждены; количество 1 500 против 1 200 — открытое противоречие; страница продавца при проверке — 403.<span class="code">QUANTITY_CONFLICT · COMPOSITION_UNKNOWN</span></td><td data-l="Что закроет">Manifest этой партии или письменная котировка с количеством и составом</td></tr>
+          <tr><td data-l="Проверка"><span class="gid">G02</span> Условия закупки</td><td data-l="Результат"><span class="g g-unk">UNKNOWN</span><br>Неизвестно</td><td data-l="Почему">Цена, VAT и наличие — только со страницы продавца; письменной котировки нет.<span class="code">PURCHASE_TERMS_ASSUMED</span></td><td data-l="Что закроет">Письменная котировка с VAT по строкам и сроком</td></tr>
+          <tr><td data-l="Проверка"><span class="gid">G03</span> Спрос</td><td data-l="Результат"><span class="g g-unk">UNKNOWN</span><br>Неизвестно</td><td data-l="Почему">Только активные предложения; набор Character.com исключён как аналог; состоявшихся продаж сопоставимых троек нет.<span class="code">DEMAND_EVIDENCE_INSUFFICIENT</span></td><td data-l="Что закроет">Состоявшиеся продажи точного аналога на eBay UK; порог до ратификации (FD-18): 10 продаж, 3 продавца, 90 дней</td></tr>
+          <tr><td data-l="Проверка"><span class="gid">G04</span> Исполнение и затраты</td><td data-l="Результат"><span class="g g-unk">UNKNOWN</span><br>Неизвестно</td><td data-l="Почему">Сортировка, сборка троек, фото и листинг не оценены; остальные операции — по публичному прайсу, не по котировке.<span class="code">COST_MATERIAL_UNKNOWN: SORTING, KITTING, PHOTO_LISTING</span></td><td data-l="Что закроет">Письменная котировка 3PL на эти операции для этой партии</td></tr>
+          <tr><td data-l="Проверка"><span class="gid">G05</span> Право продажи и требования</td><td data-l="Результат"><span class="g g-unk">UNKNOWN</span><br>Неизвестно</td><td data-l="Почему">Право перепродажи лицензионного товара и ограничения канала не подтверждены.<span class="code">COMPLIANCE_REQUIREMENT_UNKNOWN</span></td><td data-l="Что закроет">Инвойс и подтверждение подлинности от продавца; проверка ограничений eBay для аккаунта</td></tr>
+          <tr><td data-l="Проверка"><span class="gid">G06</span> Экономика и цели</td><td data-l="Результат"><span class="g g-unk">UNKNOWN</span><br>Неизвестно</td><td data-l="Почему">Экономика не определена; цели не заданы.<span class="code">ECON_UNDETERMINED · TARGET_NOT_SET</span></td><td data-l="Что закроет">Закрытие G01, G03, G04 и ваши цели с базой</td></tr>
+          <tr><td data-l="Проверка"><span class="gid">G07</span> Неблагоприятный случай</td><td data-l="Результат"><span class="g g-unk">UNKNOWN</span><br>Неизвестно</td><td data-l="Почему">Предел убытка не задан; неблагоприятный сценарий есть только на допущениях.<span class="code">LOSS_LIMIT_NOT_SET</span></td><td data-l="Что закроет">Ваш предел убытка и подтверждённые входы сценариев</td></tr>
+          <tr><td data-l="Проверка"><span class="gid">G08</span> Актуальность и конфликты</td><td data-l="Результат"><span class="g g-unk">UNKNOWN</span><br>Неизвестно</td><td data-l="Почему">Открытое противоречие количества; существенные неизвестные.<span class="code">OPEN_CONFLICT · MATERIAL_UNKNOWN</span></td><td data-l="Что закроет">Письменное количество от продавца и свежие данные по закрытым полям</td></tr>
+          <tr><td data-l="Проверка"><span class="gid">G09</span> Программные проверки</td><td data-l="Результат"><span class="g g-pass">PASS</span><br>Пройдена</td><td data-l="Почему">Арифметика, единицы, тождество запасов (куплено = продано + остаток), одна валюта GBP; ни одно неизвестное не превращено в ноль.</td><td data-l="Что закроет">—</td></tr>
+          <tr><td data-l="Проверка"><span class="gid">G10</span> Проверка</td><td data-l="Результат"><span class="g g-pass">PASS</span> машинная<br><span class="g g-unk">UNKNOWN</span> человек</td><td data-l="Почему">Независимая проверка в отдельном контексте не оставила открытых существенных замечаний; исторически Claude пришёл к тому же выводу. Человек: не запрашивается.<span class="code">HUMAN_REVIEW_NOT_REQUESTED</span></td><td data-l="Что закроет">Человек проверяет только решения «Готово к проверке решения»</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid2e">
+      <div class="box">
+        <h3>Как получено действие</h3>
+        <table class="t" style="font-size:7.5pt">
+          <tbody>
+            <tr><td class="gid">R1</td><td>Подтверждённого провала проверки нет — отказа нет.</td></tr>
+            <tr><td class="gid">R2</td><td>Покрытие <span class="mono">SUPPORTED</span> — ограничения покрытия нет.</td></tr>
+            <tr><td class="gid">R3</td><td>Не скрининг.</td></tr>
+            <tr><td class="gid">R4</td><td>Не все G01–G09 пройдены — к проверке человеком не передаётся.</td></tr>
+            <tr><td class="gid">R5</td><td>Пилот не запрашивался. И при запросе невозможен: G01, G02, G04 блокируются не только спросом.</td></tr>
+            <tr class="sum"><td class="gid">R6</td><td><span class="mono">NEEDS_EVIDENCE</span> со списком того, что изменит вывод.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box">
+        <h3>Противоречие и устаревание — разные причины</h3>
+        <p class="small" style="margin:0 0 1.2mm">Дата наблюдения снимка страницы продавца неизвестна, поэтому суточный срок лота не вычисляется: наличие — «Неизвестно», а не «устарело». Устаревших свидетельств под пройденными проверками нет, поэтому статус доказательств — <span class="mono">CONFLICTED</span>, а не <span class="mono">STALE</span>.</p>
+        <p class="small" style="margin:0">Если бы две модели процитировали один и тот же фрагмент «1 200 шт.», это было бы одно свидетельство, а не два. Согласие моделей противоречие не закрывает.</p>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>LotPrism Research · LPR-R7K2-9QXM · отчёт v1 · 30.09.2026</span><span>Конфиденциально</span><span class="pg-static">Стр. 3 из 9</span></div>
+</section>
+
+<section class="page" aria-label="Страница 4 из 9">
+  <header class="rh">
+    <div class="rh-l"><svg class="rh-lockup" role="img" aria-label="LotPrism"><use href="#lp-lockup-light"/></svg><span class="rh-title">Палета детских футболок TopDown · отчёт исследования</span></div>
+    <div class="rh-r"><span class="mono">LPR-R7K2-9QXM · v1</span><span class="mono">NEEDS_EVIDENCE</span><span class="pg-static">Стр. 4 из 9</span></div>
+  </header>
+  <div class="page-body">
+    <div>
+      <h2><span class="num">05</span>Экономика сделки</h2>
+      <div class="act" style="border-left-color:var(--ink);background:var(--grey-tint)">
+        <span class="act-code">UNDETERMINED</span>
+        <span style="font-size:10.5pt;font-weight:600">Расчёт решения: прибыль, деньги и предел цены не определены</span>
+        <p class="act-sub">Блокируют входы <span class="mono">cost.sorting</span>, <span class="mono">cost.kitting</span>, <span class="mono">cost.photo_listing</span>, <span class="mono">lot.composition</span>; неизвестное не заменено нулём. Пиковая потребность, срок возврата денег, предел цены и объёма — не определены.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="box-hist">
+        <p class="kicker">Сценарии на допущениях — исторический расчёт 30.09.2026</p>
+        <p class="small" style="margin:0">Не прогноз и не основание для закупки. Входы — <span class="a a-ass">Допущение</span>, итоги — <span class="a a-calc">Рассчитано на допущениях</span>; GBP, округление до пенса; налоговый резерв — допущение.</p>
+      </div>
+      <table class="t rt rt-num" style="margin-top:2mm">
+        <thead><tr><th>Строка</th><th class="n">Базовый<br>400 × £16.95</th><th class="n">Неблагоприятный<br>300 × £15.25</th><th class="n">Благоприятный<br>500 × £16.95</th></tr></thead>
+        <tbody>
+          <tr><td data-l="Строка">Выручка, заказов-троек × цена</td><td class="n" data-l="Базовый">6 780.00</td><td class="n" data-l="Неблагоприятный">4 575.00</td><td class="n" data-l="Благоприятный">8 475.00</td></tr>
+          <tr><td data-l="Строка">Комиссии eBay: 13.25% + £0.40 за заказ</td><td class="n" data-l="Базовый">−1 058.35</td><td class="n" data-l="Неблагоприятный">−726.19</td><td class="n" data-l="Благоприятный">−1 322.94</td></tr>
+          <tr><td data-l="Строка">Реклама 3%</td><td class="n" data-l="Базовый">−203.40</td><td class="n" data-l="Неблагоприятный">−137.25</td><td class="n" data-l="Благоприятный">−254.25</td></tr>
+          <tr><td data-l="Строка">Отправка £4.85 за заказ</td><td class="n" data-l="Базовый">−1 940.00</td><td class="n" data-l="Неблагоприятный">−1 455.00</td><td class="n" data-l="Благоприятный">−2 425.00</td></tr>
+          <tr><td data-l="Строка">Закупка всей партии</td><td class="n" data-l="Базовый">−1 665.00</td><td class="n" data-l="Неблагоприятный">−1 665.00</td><td class="n" data-l="Благоприятный">−1 665.00</td></tr>
+          <tr><td data-l="Строка">Бюджет: подготовка 450, фото 150, хранение 100, учёт 50</td><td class="n" data-l="Базовый">−750.00</td><td class="n" data-l="Неблагоприятный">−750.00</td><td class="n" data-l="Благоприятный">−750.00</td></tr>
+          <tr class="sub"><td data-l="Строка"><b>Деньги до резервов</b></td><td class="n" data-l="Базовый">1 163.25</td><td class="n" data-l="Неблагоприятный">−158.44</td><td class="n" data-l="Благоприятный">2 057.81</td></tr>
+          <tr><td data-l="Строка">Резерв претензий 3%</td><td class="n" data-l="Базовый">−203.40</td><td class="n" data-l="Неблагоприятный">−137.25</td><td class="n" data-l="Благоприятный">−254.25</td></tr>
+          <tr><td data-l="Строка">Налоговый резерв 25% (допущение)</td><td class="n" data-l="Базовый">−396.56</td><td class="n" data-l="Неблагоприятный">−171.89</td><td class="n" data-l="Благоприятный">−514.45</td></tr>
+          <tr class="sum"><td data-l="Строка">Деньги на конец 90 дней, партия оплачена целиком</td><td class="n" data-l="Базовый">563.29</td><td class="n" data-l="Неблагоприятный">−467.58</td><td class="n" data-l="Благоприятный">1 289.11</td></tr>
+          <tr><td data-l="Строка">Время владельца 10 ч × £15</td><td class="n" data-l="Базовый">−150.00</td><td class="n" data-l="Неблагоприятный">−150.00</td><td class="n" data-l="Благоприятный">−150.00</td></tr>
+          <tr class="sum"><td data-l="Строка">Экономический результат</td><td class="n" data-l="Базовый">413.29</td><td class="n" data-l="Неблагоприятный">−617.58</td><td class="n" data-l="Благоприятный">1 139.11</td></tr>
+          <tr class="sub"><td data-l="Строка"><b>Прибыль по проданному</b> до резерва претензий, налога и времени = деньги до резервов + остаток по себестоимости</td><td class="n" data-l="Базовый">1 586.25</td><td class="n" data-l="Неблагоприятный">687.56</td><td class="n" data-l="Благоприятный">2 057.81</td></tr>
+          <tr><td data-l="Строка">Остаток, шт. · по себестоимости £1.41 за шт.</td><td class="n" data-l="Базовый">300 · 423.00</td><td class="n" data-l="Неблагоприятный">600 · 846.00</td><td class="n" data-l="Благоприятный">0 · 0.00</td></tr>
+        </tbody>
+      </table>
+      <p class="tiny" style="margin:1mm 0 0">Цена ликвидации остатка <span class="undet">неизвестна</span>, ликвидационный сценарий не рассчитан. Представления расходятся намеренно: в неблагоприятном случае прибыль по проданному +£687.56, а денег −£467.58 — 600 футболок на складе.</p>
+    </div>
+
+    <div class="grid2e">
+      <div>
+        <h3>Чувствительность</h3>
+        <table class="t rt rt-num rt-n2">
+          <thead><tr><th>Изменение</th><th class="n">Экон. результат</th><th class="n">Деньги</th></tr></thead>
+          <tbody>
+            <tr><td data-l="Изменение">База: 400 × £16.95</td><td class="n" data-l="Экон. результат">413.29</td><td class="n" data-l="Деньги">563.29</td></tr>
+            <tr><td data-l="Изменение">Только цена: 400 × £15.25</td><td class="n" data-l="Экон. результат">6.56</td><td class="n" data-l="Деньги">156.56</td></tr>
+            <tr><td data-l="Изменение">Только продажи: 300 × £16.95</td><td class="n" data-l="Экон. результат">−312.53</td><td class="n" data-l="Деньги">−162.53</td></tr>
+            <tr><td data-l="Изменение">Налоговый резерв 19% вместо 25%</td><td class="n" data-l="Экон. результат">508.46</td><td class="n" data-l="Деньги">658.46</td></tr>
+            <tr><td data-l="Изменение">Пятёрки 240 × £24.99 · 200 × £21.99 (гипотеза)</td><td class="n" data-l="Экон. результат">575.31 · −294.45</td><td class="n" data-l="Деньги">725.31 · −144.45</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="stack">
+        <div class="box">
+          <h3>Пороги на допущениях</h3>
+          <dl class="kv small">
+            <dt>Безубыточность по экономическому результату</dt><dd class="fig">344 тройки</dd>
+            <dt>£300 экономического результата</dt><dd class="fig">385 троек</dd>
+            <dt>Максимальная цена · объём</dt><dd><span class="undet">не определены</span></dd>
+          </dl>
+        </div>
+        <div class="box">
+          <h3>Если в партии 1 200 штук</h3>
+          <p class="small" style="margin:0">400 троек — вся партия: остатка нет, 500 троек невозможны. До письменного количества ни одна сумма не верна сама по себе.</p>
+        </div>
+        <div class="box">
+          <h3>Стоимость исследования</h3>
+          <p class="small" style="margin:0">£0 (профиль Founder, этапы S0–S2): полный результат проекта равен результату «с текущего момента».</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>LotPrism Research · LPR-R7K2-9QXM · отчёт v1 · 30.09.2026</span><span>Конфиденциально</span><span class="pg-static">Стр. 4 из 9</span></div>
+</section>
+
+<section class="page" aria-label="Страница 5 из 9">
+  <header class="rh">
+    <div class="rh-l"><svg class="rh-lockup" role="img" aria-label="LotPrism"><use href="#lp-lockup-light"/></svg><span class="rh-title">Палета детских футболок TopDown · отчёт исследования</span></div>
+    <div class="rh-r"><span class="mono">LPR-R7K2-9QXM · v1</span><span class="mono">NEEDS_EVIDENCE</span><span class="pg-static">Стр. 5 из 9</span></div>
+  </header>
+  <div class="page-body">
+    <div>
+      <h2><span class="num">06</span>Заключение</h2>
+      <p class="small" style="margin:0 0 2mm">Итог: <b>«Не покупать сейчас — нужны данные»</b> (<span class="mono">NEEDS_EVIDENCE</span>). Каждая строка ниже идёт по одной цепочке: вывод → доказательства → влияние на прибыль и деньги → условия действия → что изменит решение. Ссылки <span class="mono">ev-…</span> ведут в приложение A.</p>
+      <table class="t rt" style="font-size:7.4pt">
+        <thead><tr><th style="width:17%">Вывод</th><th style="width:21%">Доказательства</th><th style="width:21%">Влияние на прибыль и деньги</th><th style="width:19%">Условия действия</th><th>Что изменит решение</th></tr></thead>
+        <tbody>
+          <tr>
+            <td data-l="Вывод"><b>Состав и количество не подтверждены</b><span class="code">G01 · UNKNOWN</span></td>
+            <td data-l="Доказательства">ev-01 снимок страницы: 1 500 шт., бирки «у большинства»; ev-03 поисковый фрагмент: 1 200 шт.; ev-02 запрос страницы — 403, не прочитана.</td>
+            <td data-l="Влияние">Число троек одного размера неизвестно — выручка, остаток и предел цены не определены. При 1 200 шт. остатка нет, а 500 троек невозможны.</td>
+            <td data-l="Условия">Manifest этой партии по размеру и дизайну; количество — письменно от продавца.</td>
+            <td data-l="Что изменит">Хватает на 400 троек одного размера — G01 может пройти. Меньше — пересчёт объёма и цены. Другой товар — G01 не пройдена.</td>
+          </tr>
+          <tr>
+            <td data-l="Вывод"><b>Спрос на тройки по £16.95 не доказан</b><span class="code">G03 · UNKNOWN</span></td>
+            <td data-l="Доказательства">ev-04 Character.com: другой набор, £14.95 + доставка, активное предложение; ev-05 H&amp;M £11 по акции, поисковая карточка. Состоявшихся продаж нет.</td>
+            <td data-l="Влияние">300 продаж вместо 400 — экономический результат −£312.53; безубыточность — 344 тройки (на допущениях).</td>
+            <td data-l="Условия">Состоявшиеся продажи точного аналога на eBay UK; предложенный порог — 10 продаж от 3 продавцов за 90 дней.</td>
+            <td data-l="Что изменит">Цены продаж около £15.25 — запаса нет. Ноль продаж точного аналога за 90 дней — G03 не пройдена, условно.</td>
+          </tr>
+          <tr>
+            <td data-l="Вывод"><b>Расходы исполнения неполны</b><span class="code">G04 · UNKNOWN</span></td>
+            <td data-l="Доказательства">ev-08 прайс Complete Prep: pick £1, +£0.40 за единицу; ev-07 Royal Mail: £3.75 с VAT до 2 кг; бюджет £750 — предел, не котировка.</td>
+            <td data-l="Влияние">Каждый £1 сверх £4.85 на отправку — −£400 до резервов при 400 заказах. Превышение бюджета £750 уменьшает деньги до резервов на ту же сумму.</td>
+            <td data-l="Условия">Котировка 3PL: приёмка, сортировка, сборка троек, фото, хранение 90 дней, возвраты, вывоз остатка.</td>
+            <td data-l="Что изменит">Котировка в бюджете — G04 может пройти. Отказ собирать тройки без замены — G04 не пройдена.</td>
+          </tr>
+          <tr>
+            <td data-l="Вывод"><b>Нулевая ставка VAT на продажу — допущение</b><span class="code">расчёт · ASSUMED</span></td>
+            <td data-l="Доказательства">ev-09 HMRC Notice 714: ставка зависит от размера, дизайна и представления товара; размеры неизвестны.</td>
+            <td data-l="Влияние">Сценарии считают выручку без исходящего VAT. Для неподходящих размеров выручка ниже; этот пересчёт не выполнялся.</td>
+            <td data-l="Условия">Manifest с размерами; проверка условий Notice 714 по каждому размеру.</td>
+            <td data-l="Что изменит">Все размеры подходят — допущение подтверждается. Не все — пересчёт сценариев.</td>
+          </tr>
+          <tr>
+            <td data-l="Вывод"><b>Право продажи лицензионного товара не подтверждено</b><span class="code">G05 · UNKNOWN</span></td>
+            <td data-l="Доказательства">Нет инвойса и подтверждения подлинности; ограничения eBay для аккаунта не проверены.</td>
+            <td data-l="Влияние">Если продажа на eBay UK ограничена, выручки по этому каналу нет.</td>
+            <td data-l="Условия">Инвойс и подтверждение подлинности от продавца; проверка ограничений аккаунта.</td>
+            <td data-l="Что изменит">Подтверждённый запрет для опознанного товара — G05 не пройдена, подтверждено: отказ по правилу R1.</td>
+          </tr>
+          <tr>
+            <td data-l="Вывод"><b>Пределы клиента не заданы</b><span class="code">G06 · G07 · UNKNOWN</span></td>
+            <td data-l="Доказательства">Предел капитала, предел убытка и цель прибыли с базой не указаны в запросе.</td>
+            <td data-l="Влияние">Даже при подтверждённых входах положительного решения не будет: сравнивать не с чем.</td>
+            <td data-l="Условия">Предел убытка, предел капитала, цель прибыли с указанием базы.</td>
+            <td data-l="Что изменит">Убыток неблагоприятного сценария на подтверждённых входах выше предела — G07 не пройдена; отчёт покажет допустимый объём.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="box">
+      <h3>Чего этот отчёт не утверждает</h3>
+      <p class="small" style="margin:0">Он не утверждает, что сделка убыточна, и не утверждает, что она прибыльна. £413.29 — условный сценарий исторического расчёта, а не ожидаемая прибыль. Две независимые проверки (OpenAI и Claude) пришли к одному выводу «пока не покупать», но ни одна не сделала лот подтверждённым.</p>
+    </div>
+  </div>
+  <div class="pf"><span>LotPrism Research · LPR-R7K2-9QXM · отчёт v1 · 30.09.2026</span><span>Конфиденциально</span><span class="pg-static">Стр. 5 из 9</span></div>
+</section>
+
+<section class="page" aria-label="Страница 6 из 9">
+  <header class="rh">
+    <div class="rh-l"><svg class="rh-lockup" role="img" aria-label="LotPrism"><use href="#lp-lockup-light"/></svg><span class="rh-title">Палета детских футболок TopDown · отчёт исследования</span></div>
+    <div class="rh-r"><span class="mono">LPR-R7K2-9QXM · v1</span><span class="mono">NEEDS_EVIDENCE</span><span class="pg-static">Стр. 6 из 9</span></div>
+  </header>
+  <div class="page-body">
+    <div>
+      <h2><span class="num">07</span>План действий</h2>
+      <p class="small" style="margin:0 0 2mm">Исследование ничего не отправляет, не регистрирует и не покупает. Тексты запросов готовы в приложении к отчёту; отправляете вы. Предел закупочной цены в запросы не включается.</p>
+      <table class="t rt">
+        <thead><tr><th style="width:4%">#</th><th style="width:20%">Действие · кто</th><th>Что именно запросить или сделать</th><th style="width:11%">Закрывает</th><th style="width:14%">Статус</th></tr></thead>
+        <tbody>
+          <tr><td data-l="#" class="gid">1</td><td data-l="Действие"><b>Запрос продавцу о составе</b><br>TopDown Trading</td><td data-l="Что именно">(1) фактический состав партии по дизайну, лицензии и размеру, свежие фото товара и бирок; (2) общее количество, состояние, доля без бирок и упаковки, дефекты; (3) подтверждение £1 665 как итоговой цены с доставкой, VAT по строкам, прочие сборы; (4) подтверждение подлинности лицензионного товара с инвойсом и ограничения каналов; (5) число паллет и коробок, размеры, вес, порядок при расхождении. Запрос информационный — не заказ и не бронь.</td><td data-l="Закрывает"><span class="g g-unk">G01</span> <span class="g g-unk">G02</span> <span class="g g-unk">G05</span></td><td data-l="Статус">подготовлен, не отправлен</td></tr>
+          <tr><td data-l="#" class="gid">2</td><td data-l="Действие"><b>Котировка склада</b><br>3PL, например Complete Prep</td><td data-l="Что именно">Письменная цена с VAT и минимумами: приёмка и пересчёт; сортировка по размеру и дизайну; сборка до 500 запечатанных троек одного размера; одна повторяемая комбинация — один SKU; фото комбинаций отдельно от листинга; тройка как один pick, упаковка, измеренный вес и размер (цель — Royal Mail Small Parcel, до 2 кг); хранение 90 и 180 дней; возвраты; вывоз остатка; страхование; обмен данными и оплата.</td><td data-l="Закрывает"><span class="g g-unk">G04</span></td><td data-l="Статус">подготовлен, не отправлен</td></tr>
+          <tr><td data-l="#" class="gid">3</td><td data-l="Действие"><b>Состоявшиеся продажи</b><br>вы, в интерфейсе eBay</td><td data-l="Что именно">Проданные — не активные — объявления на eBay UK за 90 дней: тройка новых детских лицензионных футболок одного размера, сопоставимая лицензия, цена с доставкой и дата. Выгрузку или снимки загрузите в исследование. Данные eBay API для моделирования цен без письменного разрешения eBay не используются.</td><td data-l="Закрывает"><span class="g g-unk">G03</span></td><td data-l="Статус">ждёт вас</td></tr>
+          <tr><td data-l="#" class="gid">4</td><td data-l="Действие"><b>Задать пределы</b><br>вы</td><td data-l="Что именно">Сколько готовы потерять в худшем случае; предел капитала; цель прибыли с указанием базы (по проданному, деньги на горизонте или экономический результат); срок возврата денег. Пересчёт мгновенный, без нового анализа.</td><td data-l="Закрывает"><span class="g g-unk">G06</span> <span class="g g-unk">G07</span></td><td data-l="Статус">ждёт вас</td></tr>
+          <tr><td data-l="#" class="gid">5</td><td data-l="Действие"><b>Обновить исследование</b><br>после ответов</td><td data-l="Что именно">Задача «Обновить исследование»: повторяются только затронутые проверки; будет новая версия решения, эта станет заменённой. Цена обновления в оценке; для профиля Founder на этапах S0–S2 — £0.</td><td data-l="Закрывает">все</td><td data-l="Статус">после 1–4</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <h2><span class="num">08</span>Что изменит решение</h2>
+      <table class="t rt">
+        <thead><tr><th style="width:44%">Если</th><th>Тогда</th></tr></thead>
+        <tbody>
+          <tr><td data-l="Если">Manifest показывает другой товар или состояние, чем в предложении</td><td data-l="Тогда">G01 не пройдена, подтверждено → <span class="mono">REJECT</span> «Отказаться от сделки» (R1)</td></tr>
+          <tr><td data-l="Если">Продавец письменно подтверждает, что лот снят</td><td data-l="Тогда">G02 не пройдена, подтверждено → <span class="mono">REJECT</span></td></tr>
+          <tr><td data-l="Если">Подтверждён запрет продажи для опознанного товара или канала</td><td data-l="Тогда">G05 не пройдена, подтверждено → <span class="mono">REJECT</span></td></tr>
+          <tr><td data-l="Если">Убыток неблагоприятного сценария на подтверждённых входах выше вашего предела</td><td data-l="Тогда">G07 не пройдена, подтверждено → <span class="mono">REJECT</span> для запрошенного объёма; отчёт покажет допустимый объём</td></tr>
+          <tr><td data-l="Если">G01–G09 пройдены, экономика на подтверждённых входах соответствует целям</td><td data-l="Тогда"><span class="mono">READY_FOR_REVIEW</span> «Готово к проверке решения» → после проверки <span class="mono">APPROVED_UNDER_CONDITIONS</span> «Можно рассмотреть закупку на указанных условиях». Это не разрешение купить: покупка — отдельное решение Founder (FD-7).</td></tr>
+          <tr><td data-l="Если">Не доказан только спрос, вы просите пилот, а для объёма теста закрыты состав, закупка, расходы, право продажи и есть план измерения</td><td data-l="Тогда"><span class="mono">READY_FOR_REVIEW</span> с целью <span class="mono">PILOT_ONLY</span> «Допустим ограниченный тест»</td></tr>
+          <tr><td data-l="Если">Наступило 07.10.2026, а обновления нет</td><td data-l="Тогда">Новая версия <span class="mono">NEEDS_EVIDENCE</span> по устареванию (<span class="mono">STALE_EVIDENCE</span>); ссылка проверки покажет «устарел»</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="pf"><span>LotPrism Research · LPR-R7K2-9QXM · отчёт v1 · 30.09.2026</span><span>Конфиденциально</span><span class="pg-static">Стр. 6 из 9</span></div>
+</section>
+
+<section class="page" aria-label="Страница 7 из 9">
+  <header class="rh">
+    <div class="rh-l"><svg class="rh-lockup" role="img" aria-label="LotPrism"><use href="#lp-lockup-light"/></svg><span class="rh-title">Палета детских футболок TopDown · отчёт исследования</span></div>
+    <div class="rh-r"><span class="mono">LPR-R7K2-9QXM · v1</span><span class="mono">NEEDS_EVIDENCE</span><span class="pg-static">Стр. 7 из 9</span></div>
+  </header>
+  <div class="page-body">
+    <div>
+      <h2><span class="num">A</span>Приложение A. Доказательства</h2>
+      <p class="small" style="margin:0 0 2mm">Источники — по материалам исследования 30.09.2026; при подготовке макета повторно не открывались. Недоступная страница не выдаётся за прочитанную; поисковый фрагмент не закрывает ни одного существенного поля; активное объявление не доказывает продажи.</p>
+      <table class="t rt" style="font-size:7.3pt">
+        <thead><tr><th style="width:6%">ID</th><th style="width:25%">Источник · вид</th><th style="width:15%">Получено · доступ</th><th style="width:16%">Статус в отчёте</th><th>Что подтверждает и чего нет</th></tr></thead>
+        <tbody>
+          <tr><td data-l="ID" class="gid">ev-01</td><td data-l="Источник">Карточка лота TopDown Trading<span class="code">topdowntrading.co.uk/pound-wholesale-kids-licensed-t-shirts-pallet.html · PAGE_SNAPSHOT</span></td><td data-l="Получено">дата неизвестна — за несколько дней до 30.09 · <span class="mono">OK</span></td><td data-l="Статус"><span class="a a-ass">Допущение</span> цена; наличие, количество — <span class="a a-unk">Неизвестно</span></td><td data-l="Что подтверждает">Только заявления продавца: £1 665 с доставкой по UK mainland, «No VAT», 1 500 новых детских лицензионных футболок, «In stock». Размеры и дизайны не публикуются; бирки и упаковка — «у большинства». Дата наблюдения неизвестна: суточный срок лота не вычисляется.</td></tr>
+          <tr><td data-l="ID" class="gid">ev-02</td><td data-l="Источник">Та же страница, запрос независимой проверки<span class="code">PAGE_SNAPSHOT · retrieval_status=NO_ACCESS · http 403</span></td><td data-l="Получено">30.09.2026 · <span class="mono">NO_ACCESS</span> 403</td><td data-l="Статус"><span class="a a-unk">Нет доступа</span></td><td data-l="Что подтверждает">Ничего. Страница не прочитана и в отчёте как прочитанная не цитируется; это только причина неизвестности.</td></tr>
+          <tr><td data-l="ID" class="gid">ev-03</td><td data-l="Источник">Поисковый фрагмент о том же лоте<span class="code">SEARCH_SNIPPET</span></td><td data-l="Получено">30.09.2026 · <span class="mono">OK</span></td><td data-l="Статус">открывает противоречие</td><td data-l="Что подтверждает">£1 665 и 1 200 шт. Ни одно поле не закрывает; количество расходится с ev-01.</td></tr>
+          <tr class="sub"><td data-l="ID" class="gid">CG-01</td><td data-l="Источник"><b>Противоречие количества</b><span class="code">lot.quantity_units · lpr_conflict_group</span></td><td data-l="Получено">открыто</td><td data-l="Статус"><span class="a a-unk">Неизвестно</span> <span class="mono">CONFLICTED</span></td><td data-l="Что подтверждает">1 500 (ev-01) против 1 200 (ev-03). Не скрыто и не усреднено. Разрешает только письменное количество продавца или manifest этой партии.</td></tr>
+          <tr><td data-l="ID" class="gid">ev-04</td><td data-l="Источник">Character.com, Minecraft T-shirts 3-pack<span class="code">character.com/products/minecraft-t-shirts-3-pack · ACTIVE_LISTING</span></td><td data-l="Получено">30.09.2026 · <span class="mono">OK</span></td><td data-l="Статус">только конкуренция</td><td data-l="Что подтверждает">Тройка £14.95, доставка £4.95 для заказа до £40. Другой конкретный набор: цену и скорость продаж палеты не доказывает.</td></tr>
+          <tr><td data-l="ID" class="gid">ev-05</td><td data-l="Источник">H&amp;M GB, Minecraft 3-pack<span class="code">www2.hm.com/en_gb/productpage.1117463034.html · SEARCH_SNIPPET</span></td><td data-l="Получено">30.09.2026 · поисковая карточка</td><td data-l="Статус">сигнал, не закрывает</td><td data-l="Что подтверждает">Акция £11 вместо £17.99; наличие по размерам не проверено. Дешёвая конкуренция ограничивает цену перепродажи.</td></tr>
+          <tr><td data-l="ID" class="gid">ev-06</td><td data-l="Источник">eBay UK, комиссии бизнес-продавца<span class="code">ebay.co.uk/help/selling/selling-fees/store-fees?id=4809 · FEE_SCHEDULE</span></td><td data-l="Получено">30.09.2026 · <span class="mono">OK</span> · до 07.10.2026</td><td data-l="Статус"><span class="a a-conf">Подтверждено</span></td><td data-l="Что подтверждает">Одежда B2C: 11.9% + 0.35% regulatory + £0.40 за заказ, процент — от всей суммы заказа. Спрос и прибыль не подтверждает.</td></tr>
+          <tr><td data-l="ID" class="gid">ev-07</td><td data-l="Источник">Royal Mail, online price guide, октябрь 2026<span class="code">royalmail.com/…/online-price-guide-october-2026-v1-ta.pdf · FEE_SCHEDULE</span></td><td data-l="Получено">30.09.2026 · <span class="mono">OK</span></td><td data-l="Статус"><span class="a a-conf">Подтверждено</span> тариф; применимость <span class="a a-unk">Неизвестно</span></td><td data-l="Что подтверждает">С 05.10.2026 Tracked 48 Small Parcel до 2 кг — £3.75 с VAT; сбор £0.50 за отправление. Вес и размер упакованной тройки не измерены.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="pf"><span>LotPrism Research · LPR-R7K2-9QXM · отчёт v1 · 30.09.2026</span><span>Конфиденциально</span><span class="pg-static">Стр. 7 из 9</span></div>
+</section>
+
+<section class="page" aria-label="Страница 8 из 9">
+  <header class="rh">
+    <div class="rh-l"><svg class="rh-lockup" role="img" aria-label="LotPrism"><use href="#lp-lockup-light"/></svg><span class="rh-title">Палета детских футболок TopDown · отчёт исследования</span></div>
+    <div class="rh-r"><span class="mono">LPR-R7K2-9QXM · v1</span><span class="mono">NEEDS_EVIDENCE</span><span class="pg-static">Стр. 8 из 9</span></div>
+  </header>
+  <div class="page-body">
+    <div>
+      <h2><span class="num">A</span>Приложение A. Доказательства — продолжение</h2>
+      <table class="t rt" style="font-size:7.3pt">
+        <thead><tr><th style="width:6%">ID</th><th style="width:25%">Источник · вид</th><th style="width:15%">Получено · доступ</th><th style="width:16%">Статус в отчёте</th><th>Что подтверждает и чего нет</th></tr></thead>
+        <tbody>
+          <tr><td data-l="ID" class="gid">ev-08</td><td data-l="Источник">Complete Prep, публичный прайс<span class="code">completeprep.co.uk/prices.html · PAGE_SNAPSHOT</span></td><td data-l="Получено">30.09.2026 · <span class="mono">OK</span></td><td data-l="Статус"><span class="a a-ass">Допущение</span></td><td data-l="Что подтверждает">Первый pick £1, дополнительная единица £0.40, прочие операции отдельно; бесплатное хранение ограничено сроком. Не котировка этой партии: сортировка, сборка, фото — без цены.</td></tr>
+          <tr><td data-l="ID" class="gid">ev-09</td><td data-l="Источник">HMRC VAT Notice 714<span class="code">gov.uk/guidance/vat-on-young-childrens-clothing-and-footwear-notice-714 · REGULATION_TEXT</span></td><td data-l="Получено">30.09.2026 · <span class="mono">OK</span></td><td data-l="Статус">норма <span class="a a-conf">Подтверждено</span>; к партии <span class="a a-unk">Неизвестно</span></td><td data-l="Что подтверждает">Нулевая ставка — для подходящей детской одежды при условиях по назначению, размеру и представлению. Размеры партии неизвестны.</td></tr>
+          <tr><td data-l="ID" class="gid">ev-10</td><td data-l="Источник">HMRC BIM33135, стоимость запасов<span class="code">gov.uk/hmrc-internal-manuals/business-income-manual/bim33135 · REGULATION_TEXT</span></td><td data-l="Получено">30.09.2026 · <span class="mono">OK</span></td><td data-l="Статус">основание расчёта</td><td data-l="Что подтверждает">Запасы — по закупке и прямым затратам: остаток оценён по £1.41 за шт. = (1 665 + 450) / 1 500, на допущениях.</td></tr>
+          <tr><td data-l="ID" class="gid">ev-11</td><td data-l="Источник">GOV.UK, ставки Corporation Tax<span class="code">gov.uk/corporation-tax-rates · REGULATION_TEXT</span></td><td data-l="Получено">30.09.2026 · <span class="mono">OK</span></td><td data-l="Статус">норма <span class="a a-conf">Подтверждено</span>; к компании <span class="a a-unk">Неизвестно</span></td><td data-l="Что подтверждает">Основная ставка 25%, small profits rate 19%. Применимость зависит от года и положения компании — поэтому только резерв по допущению.</td></tr>
+          <tr><td data-l="ID" class="gid">ev-12</td><td data-l="Источник">Заявление Founder: компания зарегистрирована по UK VAT<span class="code">USER_STATEMENT · USER_STATED</span></td><td data-l="Получено">профиль компании</td><td data-l="Статус"><span class="a a-ass">Допущение</span></td><td data-l="Что подтверждает">Обычный учёт VAT с возмещением входящего. Номер не проверен в реестре HMRC.</td></tr>
+          <tr class="sub"><td data-l="ID" class="gid">—</td><td data-l="Источник"><b>Отсутствуют</b></td><td data-l="Получено">—</td><td data-l="Статус"><span class="a a-unk">Неизвестно</span></td><td data-l="Что подтверждает">Manifest партии; письменная котировка продавца; котировка 3PL; состоявшиеся продажи сопоставимых троек; инвойс и подтверждение подлинности лицензии.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid2e">
+      <div class="box">
+        <h3>Версии и происхождение цифр</h3>
+        <dl class="kv small">
+          <dt>Отчёт</dt><dd class="mono">FULL_REPORT · v1 · PUBLISHED</dd>
+          <dt>Решение</dt><dd class="mono">v1 · research-decision/1</dd>
+          <dt>Отпечаток решения</dt><dd class="mono">sha256:9c1e…4b07</dd>
+          <dt>Расчёт</dt><dd class="mono">v1 · основание CONDITIONAL</dd>
+          <dt>Свидетельства</dt><dd class="mono">claims sha256:52af…e1d3</dd>
+          <dt>Шаблон · язык</dt><dd class="mono">report-a4/1 · ru</dd>
+        </dl>
+        <p class="tiny" style="margin:1.4mm 0 0">Отпечатки и шаблон — примеры формата. PDF, DOCX, XLSX, CSV и JSON собираются из одной зафиксированной версии; текст PDF сверяется с ней по статусу и ключевым числам до публикации.</p>
+      </div>
+      <div class="box">
+        <h3>Проверка актуальности</h3>
+        <div class="verify">
+          <div class="qr" aria-label="QR-код — заглушка макета">QR<br>заглушка</div>
+          <p class="small" style="margin:0">Ссылка <span class="mono">app.lotprism.com/v/‹токен›</span> показывает только ID документа, версию, дату выпуска и состояние: действует, заменён новой версией, устарел или отозван. Содержимое отчёта по ссылке не раскрывается.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="pf"><span>LotPrism Research · LPR-R7K2-9QXM · отчёт v1 · 30.09.2026</span><span>Конфиденциально</span><span class="pg-static">Стр. 8 из 9</span></div>
+</section>
+
+<section class="page" aria-label="Страница 9 из 9">
+  <header class="rh">
+    <div class="rh-l"><svg class="rh-lockup" role="img" aria-label="LotPrism"><use href="#lp-lockup-light"/></svg><span class="rh-title">Палета детских футболок TopDown · отчёт исследования</span></div>
+    <div class="rh-r"><span class="mono">LPR-R7K2-9QXM · v1</span><span class="mono">NEEDS_EVIDENCE</span><span class="pg-static">Стр. 9 из 9</span></div>
+  </header>
+  <div class="page-body">
+    <div>
+      <h2><span class="num">B</span>Приложение B. Допущения</h2>
+      <p class="small" style="margin:0 0 2mm">Каждое допущение — вход сценариев на стр. 4. Ни одно не подтверждено; рядом — что его заменит.</p>
+      <table class="t rt" style="font-size:7.4pt">
+        <thead><tr><th style="width:5%">#</th><th>Допущение</th><th style="width:16%">Вид</th><th style="width:28%">Чем заменить</th></tr></thead>
+        <tbody>
+          <tr><td data-l="#" class="gid">a1</td><td data-l="Допущение">400 троек продаются по £16.95 за 90 дней; 300 футболок не входят в выручку</td><td data-l="Вид"><span class="mono">USER_ASSUMPTION</span>, сценарный ввод</td><td data-l="Чем заменить">Состоявшиеся продажи точного аналога</td></tr>
+          <tr><td data-l="#" class="gid">a2</td><td data-l="Допущение">Из партии собирается нужное число троек разных дизайнов одного размера</td><td data-l="Вид">не проверено</td><td data-l="Чем заменить">Manifest по размеру и дизайну</td></tr>
+          <tr><td data-l="#" class="gid">a3</td><td data-l="Допущение">Продажа облагается VAT по нулевой ставке</td><td data-l="Вид"><span class="mono">ASSUMPTION</span></td><td data-l="Чем заменить">Размеры из manifest и условия Notice 714</td></tr>
+          <tr><td data-l="#" class="gid">a4</td><td data-l="Допущение">Обычный учёт VAT с возмещением входящего, не Flat Rate Scheme</td><td data-l="Вид">со слов Founder</td><td data-l="Чем заменить">Проверка VAT-номера и схемы</td></tr>
+          <tr><td data-l="#" class="gid">a5</td><td data-l="Допущение">£750 — предел бюджета: подготовка £450, фото и листинги £150, хранение, страхование и вывоз остатка £100, дополнительный учёт £50</td><td data-l="Вид">без котировок</td><td data-l="Чем заменить">Письменная котировка 3PL</td></tr>
+          <tr><td data-l="#" class="gid">a6</td><td data-l="Допущение">Отправка £4.85 без VAT за заказ: тройка — один pick, пакет не дороже £0.225, до 2 кг, размер Royal Mail Small Parcel</td><td data-l="Вид">не подтверждено</td><td data-l="Чем заменить">Котировка 3PL и замер упакованной тройки</td></tr>
+          <tr><td data-l="#" class="gid">a7</td><td data-l="Допущение">Комиссии 13.25% от суммы заказа + £0.40 (официально 12.25% + £0.40); реклама 3%; резерв претензий 3%</td><td data-l="Вид">бюджет с запасом</td><td data-l="Чем заменить">Фактические данные аккаунта</td></tr>
+          <tr><td data-l="#" class="gid">a8</td><td data-l="Допущение">Налоговый резерв 25% от прибыли по проданному; претензии и время владельца из базы не вычитаются</td><td data-l="Вид">сценарный резерв</td><td data-l="Чем заменить">Годовой налоговый контекст компании</td></tr>
+          <tr><td data-l="#" class="gid">a9</td><td data-l="Допущение">Время владельца: 10 часов по £15 = £150</td><td data-l="Вид">оценка</td><td data-l="Чем заменить">Ваши часы и ставка</td></tr>
+          <tr><td data-l="#" class="gid">a10</td><td data-l="Допущение">Пятёрки по £24.99 — дополнительная ценовая гипотеза</td><td data-l="Вид">без подтверждения продаж</td><td data-l="Чем заменить">Продажи точного аналога</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="lh-legal" style="margin-top:0"><b>Реквизиты LotPrism — ожидают подтверждения Founder</b><span>До подтверждения, что LotPrism — торговое имя юридического лица, номер компании, адрес и VAT-номер не печатаются.</span></div>
+
+    <div class="box">
+      <h3>Оговорки</h3>
+      <p class="small" style="margin:0">Отчёт описывает доказательства на дату данных и не является инвестиционной, налоговой или юридической консультацией. Статус «Не покупать сейчас — нужны данные» не одобряет и не запрещает закупку. Ни один статус отчёта, включая будущий «Можно рассмотреть закупку на указанных условиях», не разрешает купить: решение о деньгах принимает клиент отдельно. Налоговый резерв — допущение, а не расчёт налога компании.</p>
+    </div>
+  </div>
+  <div class="pf"><span>LotPrism Research · LPR-R7K2-9QXM · отчёт v1 · 30.09.2026</span><span>Конфиденциально</span><span class="pg-static">Стр. 9 из 9</span></div>
+</section>
+
+</main>
+</body>
+</html>
