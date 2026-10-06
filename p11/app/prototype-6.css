@@ -1,0 +1,48 @@
+/* LotPrism · доводка 6 · слой поверх prototype-5.css: черновик запроса вне прокручиваемых областей; половинный лист без скрытой полосы прокрутки; область нажатия ссылки предела; условная цена S2. Новых цветов нет. */
+
+/* 2.3 · черновик на desktop — position:fixed в body, привязка к ссылке/кнопке, учёт границ окна (prototype.js · openReq) */
+.pop.pop-fx{position:fixed;z-index:40;width:min(400px,calc(100vw - 32px))}
+.pop-fx .pop-b{min-height:0;overflow-y:auto;overscroll-behavior:contain}
+#req-h{outline:0;border-radius:4px}
+#req-h:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+
+/* 2.1 · половинное раскрытие: тело прокрутки кончается у нижнего края экрана. Лист по-прежнему полной высоты и сдвигается transform; нижние 37dvh листа за экраном — это поле листа, а не область прокрутки. Компенсирующий отступ убран. */
+@media (max-width:760px){
+.panel[data-open="1"]:not([data-h=full]) .pn-b{padding-bottom:calc(16px + env(safe-area-inset-bottom));margin-bottom:37vh;margin-bottom:37dvh}
+}
+
+/* 2.2 · ссылка «предел 9,60 €»: на касании видимая высота 44 px, область = видимому элементу; деления и подписи шкалы не перехватывают нажатия */
+.sp-lb::after{content:none}
+.sp-axn,.sp-li,.sp-tka,.sp-lim,.sp-lv,.sp-trk{pointer-events:none}
+.sp-lb{border-radius:4px}
+.sp-lb:active{transform:scale(.97)}
+@media (pointer:coarse),(max-width:760px){
+.sp-al{margin-bottom:8px}
+.sp-lb{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;margin-left:-8px;text-underline-offset:4px}
+.sp-lb:focus-visible{outline-offset:0}
+}
+@media (prefers-reduced-motion:reduce){.sp-lb:active{transform:none}}
+
+/* 1.4 · S2 — цена условна: пунктирный контур, бледная половина и «?» — читается слабее сплошного S1 */
+.mk-q{border:1.5px dashed var(--ink);background:linear-gradient(90deg,var(--mute) 50%,transparent 50%) padding-box}
+.mk-q::after{content:"?";position:absolute;left:calc(100% + 2px);top:-9px;font:600 11px/1 var(--num);color:var(--ink)}
+.sp-lg .mk-q{position:relative;margin-right:8px}
+.sp-kd{display:flex;justify-content:flex-end}
+.sp-d{white-space:normal}
+.sp-d .nw{white-space:nowrap}
+.sp-dt{display:flex;flex-wrap:wrap;align-items:center;gap:0 16px}
+.sp-rq{font-size:var(--f14);font-weight:500;min-height:32px}
+.sp-rq:focus-visible,.pi-tu:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:4px}
+@media (pointer:coarse){.sp-rq{min-height:44px}}
+
+/* 1.1 · строка проверки в ответе */
+.cx-ck{font-size:var(--f14);line-height:1.5;color:var(--mute);text-wrap:pretty}
+.cx-ck .n{color:var(--ink)}
+
+/* 1.3 · главное ограничение под выводом; подпись под строкой таблицы */
+.pi-lim{font-size:var(--f14);line-height:1.5;color:var(--ink);text-wrap:pretty}
+.pi-tu{font-size:var(--f14);font-weight:500}
+.pi-tul{display:flex;margin-top:-8px}
+.sp-dq{color:var(--mute);font-weight:400}
+.pi-sub{display:block;font-size:var(--f14);color:var(--mute)}
+.pi-out dt{line-height:1.45}
