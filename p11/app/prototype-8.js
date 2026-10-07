@@ -112,7 +112,8 @@ function snapshot(s){const k=keyOf(s);if(ss.get(k))return;const ids=order(ALL.fi
 
 /* ══ ячейки строки: число — в слоте по правому краю, метка вида знания — в своём слоте; числа, метки, основания и свежесть не обрезаются ══ */
 const thumb8=id=>id==='P01'?`<span class="th-w">${thumb(id)}<span class="th-l" aria-hidden="true">илл.</span></span>`:thumb(id);
-const kd=id=>E4[id]&&E4[id].conditional?K.COND:K.FACT;
+/* правка 11b: у Чайника предложение — из прайса S1 (P01_offer.source) → метка по источнику поля */
+const kd=id=>E4[id]&&E4[id].conditional?K.COND:id==='P01'&&D.P01_offer&&LP.isS1(D.P01_offer.source)?K.S1PRICE:K.FACT;
 const money=(v,k)=>`<span class="pl-m"><b class="pl-num n">${v}</b><span class="pl-k">${k||''}</span></span>`;
 const word=t=>`<span class="pl-w">${t}</span>`;
 function cOffer(id){const e=E4[id];if(!e)return word(UI.noOff[id]||'нет');const buy=id==='P08',u=UI.unit[id],t=UI.offT[id]?` title="${esc(UI.offT[id])}"`:'';
