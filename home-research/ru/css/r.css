@@ -91,6 +91,14 @@
 #acc .sim-r input{accent-color:var(--yel);width:16px;height:16px}
 #acc .snd-e{font-size:15px;line-height:1.45;color:var(--ink);border-left:3px solid var(--yel);padding:6px 0 6px 12px}
 #acc .dlg{max-height:calc(100dvh - 32px);overflow:auto}
+#acc .okb{display:flex;flex-direction:column;gap:6px;outline:0}
+#acc .okb .okh{font-size:18px;font-weight:600;color:var(--ink)}
+#acc .okb p{font-size:15px;line-height:1.5;text-wrap:pretty}
+#acc .done .proto{display:flex;flex-direction:column;gap:8px}
+#acc .mail summary{cursor:pointer;text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:3px;width:max-content;border-radius:4px}
+#acc .mail summary:focus-visible{outline:2px solid var(--lem);outline-offset:2px}
+#acc .mail-b{margin-top:10px;padding:12px 14px;background:var(--bg);border:1px solid var(--line2);border-radius:10px;display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.5;color:var(--ink)}
+#acc .mail-b .mh{color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:8px}
 #acc-s[data-state=loading] .tx{color:inherit}
 #acc-s[data-state=loading] .spin{display:none}
 
