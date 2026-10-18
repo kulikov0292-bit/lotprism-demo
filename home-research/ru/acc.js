@@ -9,7 +9,9 @@ var S={ /* тексты — ключи для словаря сборки при
   'submit':'Отправить заявку','sending':'Отправляем…','retry':'Отправить ещё раз',
   'err.net':'Не удалось отправить заявку. Проверьте соединение и повторите — введённое сохранено.',
   'err.limit':'Слишком много попыток. Повторите позже — введённое сохранено.',
-  'ok':'Заявка получена. Ответим на {mail}.'
+  'ok':'Подтверждение отправим письмом на {mail}. Первым отвечает AI-ассистент Поддержки LotPrism; продолжить можно, просто ответив на письмо.',
+  'int.resale':'товар для перепродажи','int.new_listing':'идея нового листинга','int.supplier_offer':'предложение поставщика','int.research':'задача для LotPrism Research','int.other':'пока не знаю',
+  'mail.subj':'Поддержка LotPrism — заявка сохранена','mail.none':'не указан'
 };
 var dlg=document.getElementById('acc');if(!dlg||!dlg.showModal)return;
 var H=document.documentElement,mo=H.classList.contains('mo'),EP=dlg.getAttribute('data-endpoint');
@@ -24,7 +26,14 @@ function check(){var v=mail.value.trim(),a=!v?S['mail.empty']:!RE.test(v)?S['mai
   fld(mail,me,a);fld(sel,ie,b);return a?mail:b?sel:null}
 function sending(on){busy=on;fs.disabled=on;if(on){sb.setAttribute('data-state','loading');stx.textContent=S.sending}else{sb.removeAttribute('data-state')}}
 function fail(key){sending(false);se.textContent=S[key];se.hidden=false;stx.textContent=S.retry;se.scrollIntoView({block:'nearest',behavior:mo?'smooth':'auto'})}
-function done(){sending(false);f.hidden=true;intro.hidden=true;ok.hidden=false;okm.textContent=S.ok.replace('{mail}',mail.value.trim());okm.focus()}
+function esc(x){return String(x).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function letter(){var m=document.getElementById('acc-mkt').value.trim(),ex=document.getElementById('acc-mail-ex');if(!ex)return;
+  ex.innerHTML='<p class="mh"><b>Тема:</b> '+S['mail.subj']+'<br><b>От:</b> Поддержка LotPrism &lt;служебный адрес&gt;<br><b>Кому:</b> '+esc(mail.value.trim())+'</p>'+
+  '<p>Здравствуйте!</p><p>Ваша заявка на доступ к LotPrism сохранена. Вы указали: '+S['int.'+sel.value]+'; рынок: '+esc(m||S['mail.none'])+'.</p>'+
+  '<p>Вам отвечает AI-ассистент Поддержки LotPrism. Он объясняет возможности, помогает выбрать сценарий и уточнить задачу. Цены, сроки, выдачу доступа и платежи он не обещает: такие вопросы передаются сотруднику LotPrism, и сотрудник отвечает в этой же переписке.</p>'+
+  '<p>Чтобы продолжить, ответьте на это письмо: что вы продаёте или закупаете, на каком рынке и какой вопрос хотите решить. Если нужен сотрудник, напишите об этом в ответе.</p>'+
+  '<p>Поддержка LotPrism<br>Обращение № [номер]</p>'}
+function done(){sending(false);f.hidden=true;intro.hidden=true;ok.hidden=false;document.getElementById('acc-okt').textContent=S.ok.replace('{mail}',mail.value.trim());letter();okm.focus()}
 function fresh(){clearTimeout(tm);f.reset();f.hidden=false;intro.hidden=false;ok.hidden=true;se.hidden=true;fld(mail,me,'');fld(sel,ie,'');sending(false);stx.textContent=S.submit;rid=null}
 function open(a,interest){opener=a&&a.closest('.drawer')?mb:a;
   if(dr&&dr.classList.contains('open')){dr.classList.remove('open');if(mb)mb.setAttribute('aria-expanded','false')}
