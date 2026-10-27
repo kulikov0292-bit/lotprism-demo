@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru" data-path="r" data-offer="0">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>LotPrism&nbsp;— анализ товаров, закупок и Research</title>
+<meta name="description" content="Выбирайте товары для Amazon и оценивайте предложения поставщиков по данным рынка. Расчёты, допущения и открытые вопросы — в одном продукте; LotPrism Research готовится к запуску.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/v.css">
+<link rel="stylesheet" href="css/d.css">
+<link rel="stylesheet" href="css/h17.css">
+<link rel="stylesheet" href="css/m18.css">
+<link rel="stylesheet" href="css/fix.css">
+<link rel="stylesheet" href="css/b20.css">
+<link rel="stylesheet" href="css/v3.css">
+<link rel="stylesheet" href="css/l10n.css">
+<link rel="stylesheet" href="css/r.css">
+<link rel="preload" as="image" href="img/hero-d-r.jpg" media="(min-width:601px)"><link rel="preload" as="image" href="img/hero-m-r.jpg" media="(max-width:600px)">
+<script>(function(){var h=document.documentElement,q=new URLSearchParams(location.search);try{if('scrollRestoration' in history)history.scrollRestoration='manual';var nv=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];if(location.hash&&nv&&nv.type==='reload')history.replaceState(null,'',location.pathname+location.search)}catch(e){}h.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&q.get('rm')!=='1')h.classList.add('mo');if(q.get('p')==='n'||q.get('p')==='r')h.setAttribute('data-path',q.get('p'));else h.setAttribute('data-path','r');if(q.get('o')==='1')h.setAttribute('data-offer','1');if(q.get('dir')==='rtl')h.dir='rtl'})()</script>
+</head>
+<body>
+<header class="site-h">
+<div class="wrap nav">
+<a class="logo" href="#hero" aria-label="LotPrism — на главную"><img src="logo.svg" alt="LotPrism" width="166" height="22"></a>
+<nav class="links" aria-label="Основная навигация"><a href="#scenarios">Возможности</a><a href="#research">Research</a><a href="#example">Пример</a><a href="#process">Как работает</a><a href="#faq">Вопросы</a></nav>
+<div class="acts"><a class="in" href="https://app.lotprism.com/login?lang=ru">Войти</a><a class="btn btn-s sm" href="#access" data-acc><span class="lbl"><span class="tx">Запросить доступ</span></span></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Меню"><span></span></button></div>
+</div>
+<nav class="drawer" id="drawer" aria-label="Меню"><a href="#scenarios">Возможности</a><a href="#research">Research</a><a href="#example">Пример</a><a href="#process">Как работает</a><a href="#faq">Вопросы</a><a href="https://app.lotprism.com/login?lang=ru">Войти</a><a class="btn btn-p" href="#access" data-acc><span class="lbl"><span class="tx">Запросить доступ</span></span></a></nav>
+</header>
+<p class="sr" id="live" aria-live="polite"></p>
+<main>
+<section class="hero" id="hero" aria-labelledby="h1" data-screen-label="01 · первый экран">
+<div class="art" role="img" aria-label="Иллюстрация: полка с товарами разных категорий, один товар выделен светом"><img class="ar" src="img/hero-d-r.jpg" alt="" width="1672" height="941"><img class="an" src="img/hero-d-n.jpg" alt="" width="1672" height="941"></div>
+<div class="wrap hin">
+<div class="h-t"><span class="eyebrow h-ey">Программный ассистент для&nbsp;Amazon</span><h1 id="h1">Выбирайте товары и&nbsp;оценивайте условия закупки</h1></div>
+<p class="h-l">LotPrism помогает оценивать товары для&nbsp;перепродажи, исследовать идеи новых листингов и&nbsp;сравнивать предложения поставщиков.</p>
+<div class="h-c"><a class="btn btn-p" href="#access" data-acc><span class="lbl"><span class="tx">Запросить доступ</span></span></a><a class="h-ln" href="#example">Разбор примера<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a><p class="h-note">Программа не&nbsp;закупает и&nbsp;не&nbsp;пишет поставщикам&nbsp;— решение за&nbsp;вами.</p><p class="illu d">Иллюстрация сгенерирована</p></div>
+<figure class="res" aria-label="Пример карточки товара">
+<div class="h-s"><span class="lbl2" id="sc-h">Пример карточки — выберите сценарий</span>
+<div class="seg" role="radiogroup" aria-labelledby="sc-h">
+<button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span><span>Перепродажа<small>товар уже продаётся</small></span></button>
+<button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span><span>Новый листинг<small>гипотеза по&nbsp;спросу</small></span></button>
+</div></div>
+<div class="rimg" role="img" aria-label="Иллюстрация: полка с товарами, один товар выделен светом">
+<img class="m ar" src="img/hero-m-r.jpg" alt="" width="1122" height="1402"><img class="m an" src="img/hero-m-n.jpg" alt="" width="1122" height="1402">
+<p class="illu m">Иллюстрация</p>
+</div>
+<article class="rc">
+
+<div class="rr pr">
+<div class="rr-h"><span class="rr-kind">Демо-пример<span class="rr-kl"> · перепродажа</span></span><span class="rr-st"><i aria-hidden="true"></i>Кандидат для проверки</span></div>
+<div class="rr-id"><h2 class="rr-t">Чайник заварочный, глина, 400&nbsp;мл</h2><p class="rr-s">Уже продаётся на&nbsp;Amazon Германия, цены в&nbsp;евро</p></div>
+<dl class="rr-g">
+<div class="rr-r rr-d"><dt><span class="rr-n num">300+</span><span class="k f">факт</span></dt><dd><span class="rr-l">Куплено за&nbsp;прошлый месяц</span><span class="rr-q">Нижняя граница по&nbsp;отметке Amazon, не&nbsp;точные продажи</span></dd></div>
+<div class="rr-r rr-lim"><dt><span class="rr-n num">9,60&nbsp;€</span><span class="k c">расчёт</span></dt><dd><span class="rr-l">Предел закупочной цены</span><span class="rr-q">За&nbsp;штуку без&nbsp;НДС, по&nbsp;условиям примера</span></dd></div>
+<div class="rr-r rr-u ob"><dt><span class="rr-n num" aria-hidden="true">—</span><span class="k u">нет данных</span></dt><dd><span class="rr-l">Предложения поставщика пока нет</span><span class="rr-q">Предел не&nbsp;с&nbsp;чем сравнить</span></dd></div>
+<div class="rr-r oa"><dt><span class="rr-n num">7,60&nbsp;€</span><span class="k o">поставщик</span></dt><dd><span class="rr-l">Цена поставщика</span><span class="rr-q">За&nbsp;штуку без&nbsp;НДС, на&nbsp;<span class="num">2,00&nbsp;€</span> ниже предела</span></dd></div>
+<div class="rr-r rr-u oa"><dt><span class="rr-n num" aria-hidden="true">—</span><span class="k u">не учтено</span></dt><dd><span class="rr-l">Доставка партии и&nbsp;расходы после закупки</span><span class="rr-q">Подготовка, хранение, возвраты, реклама. Предел их не&nbsp;включает, поэтому <span class="num">2,00&nbsp;€</span>&nbsp;— ещё не&nbsp;прибыль</span></dd></div>
+</dl>
+<div class="rr-x">
+<p class="rr-c">Следующий шаг</p>
+<p class="rr-xt ob">Найти предложение поставщика и&nbsp;сравнить с&nbsp;пределом</p>
+<p class="rr-xt oa">Уточнить доставку партии и&nbsp;запросить образец</p>
+<div class="rr-a"><a class="btn btn-s sm rr-btn ob" href="#offer"><span class="lbl"><span class="tx">Пример с&nbsp;предложением</span></span><span class="ic" aria-hidden="true"><svg class="dn" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></span></a><a class="rr-ln" href="#example">На&nbsp;чём держится оценка<svg class="dn" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a></div>
+</div>
+</div>
+<div class="rr rn pn">
+<div class="rr-h"><span class="rr-kind">Демо-пример<span class="rr-kl"> · новый листинг</span></span><span class="rr-st rn-st"><i aria-hidden="true"></i>Гипотеза товара</span></div>
+<div class="rr-id"><h2 class="rr-t">Банки стеклянные разного объёма, набор</h2><p class="rr-s">Новый листинг для&nbsp;Amazon Германия, цены в&nbsp;евро</p></div>
+<div class="rn-hy"><span class="k s">гипотеза</span><p class="rn-ht">Покупателям нужны наборы разного объёма</p><p class="rr-q">Её готовит команда LotPrism; продажи похожих наборов её не&nbsp;доказывают</p></div>
+<dl class="rr-g">
+<div class="rr-r"><dt><span class="rr-n num">6</span><span class="k f">факт</span></dt><dd><span class="rr-l">похожих наборов на&nbsp;Amazon</span><span class="rn-q2"><span class="rr-q">У&nbsp;каждого&nbsp;— <span class="num nw">1–3</span>&nbsp;продавца.</span><span class="rr-q">Отметки «куплено за&nbsp;прошлый месяц»&nbsp;— от&nbsp;<span class="num nw">200+</span> до&nbsp;<span class="num nw">500+</span>. Это нижние границы числа покупок, не&nbsp;прогноз.</span></span></dd></div>
+<div class="rr-r rr-u ob"><dt><span class="rr-n num" aria-hidden="true">—</span><span class="k u">нет данных</span></dt><dd><span class="rr-l">Предложения поставщика пока нет</span><span class="rr-q">Цена и&nbsp;условия закупки неизвестны</span></dd></div>
+<div class="rr-r oa"><dt><span class="rr-n num">5,40&nbsp;€</span><span class="k o">поставщик</span></dt><dd><span class="rr-l">Цена набора из&nbsp;10 без&nbsp;НДС</span><span class="rr-q">Уточняет цену, комплектацию и&nbsp;условия, но&nbsp;не&nbsp;подтверждает спрос и&nbsp;прибыль</span></dd></div>
+<div class="rr-r rr-u ob"><dt><span class="rr-n num" aria-hidden="true">—</span><span class="k u">не проверено</span></dt><dd><span class="rr-l">Купят&nbsp;ли набор <span class="nw">8–12&nbsp;шт.</span> по&nbsp;<span class="nw">20–25&nbsp;€</span></span></dd></div>
+<div class="rr-r rr-u oa"><dt><span class="rr-n num" aria-hidden="true">—</span><span class="k u">не проверено</span></dt><dd><span class="rr-l">Спрос на&nbsp;такой набор</span><span class="rr-q">Цена доставки от&nbsp;поставщика тоже неизвестна</span></dd></div>
+</dl>
+<div class="rr-x">
+<p class="rr-c">Следующий шаг</p>
+<p class="rr-xt ob">Проверить «куплено» и&nbsp;цены наборов разного объёма</p>
+<p class="rr-xt oa">Запросить образец и&nbsp;цену доставки</p>
+<div class="rr-a rn-a"><a class="btn btn-s sm rn-go" href="#example"><span class="lbl"><span class="tx">Похожие наборы</span></span><span class="ic" aria-hidden="true"><svg class="dn" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></span></a></div>
+</div>
+</div>
+<div class="rc-h"></div>
+<dl class="rc-l">
+<div class="why1"><dt>Почему проверить</dt>
+</div>
+<div class="oa of"><dt>Стало известно</dt>
+</div>
+<div><dt>Пока неизвестно</dt>
+</div>
+<div class="nx"><dt>Следующий шаг</dt>
+</div>
+</dl>
+<a class="go rc-go" href="#example">Почему этот товар ↓</a>
+</article>
+</figure>
+</div>
+</section>
+
+<section class="sec cap4" id="scenarios" aria-labelledby="h-sc" data-screen-label="02 · с чего вы начинаете">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Возможности</span><h2 id="h-sc">С чего вы начинаете?</h2><p>Два сценария работы с&nbsp;товаром на&nbsp;Amazon. Предложение поставщика уточняет оценку в&nbsp;любом из&nbsp;них.</p></div></div>
+<div class="cp">
+<ul class="cp-s" aria-label="Два сценария">
+<li class="cp-c r"><span class="sc-k"><span class="m" aria-hidden="true"></span>Перепродажа</span><h3>Отобрать товары, которые уже продаются</h3><p>Карточка с&nbsp;данными Amazon и&nbsp;расчётным пределом закупочной цены помогает выбрать товары для&nbsp;дальнейшей проверки.</p><p class="cp-u">Расчёт учитывает не&nbsp;все расходы.</p><span class="mark">в&nbsp;приложении, после входа</span><a class="go2 cp-l" href="?p=r#example" data-go="r" data-to="example">Пример перепродажи<span class="cp-a" aria-hidden="true">↓</span></a></li>
+<li class="cp-c n"><span class="sc-k"><span class="m" aria-hidden="true"></span>Новый листинг</span><h3>Исследовать идею нового товара</h3><p>Гипотеза по&nbsp;данным о&nbsp;спросе и&nbsp;похожим предложениям: на&nbsp;что она опирается и&nbsp;что проверить до&nbsp;запуска.</p><p class="cp-u">Спрос на&nbsp;похожие товары не&nbsp;доказывает спрос на&nbsp;новую комплектацию.</p><span class="mark team">подборку гипотез готовит команда LotPrism</span><a class="go2 cp-l" href="?p=n#example" data-go="n" data-to="example">Пример нового листинга<span class="cp-a" aria-hidden="true">↓</span></a></li>
+</ul>
+<div class="cp-o" aria-labelledby="h-of" role="group"><div class="cp-h"><span class="sc-k"><span class="m" aria-hidden="true"></span>Предложение поставщика</span><h3 id="h-of">Уточняет оценку в&nbsp;обоих сценариях</h3></div><div class="cp-b"><p>Закупочная цена, состав, минимальный заказ и&nbsp;другие известные условия конкретного товара. В&nbsp;перепродаже цену сравнивают с&nbsp;расчётным пределом.</p><p class="cp-u">Спрос и&nbsp;прибыль предложение не&nbsp;подтверждает.</p><div class="cp-f"><span class="mark team">предложения подключает команда LotPrism</span><a class="go2 cp-l" href="#offer">Пример с&nbsp;предложением<span class="cp-a" aria-hidden="true">↓</span></a></div></div></div>
+</div>
+<div class="cp-r" role="group" aria-labelledby="h-rs4"><div class="cp-h"><span class="cp-k">Отдельный инструмент</span><h3 id="h-rs4">LotPrism Research</h3></div><div class="cp-b"><p>Для оптовиков: исследование возможностей перепродажи крупных партий. Объём разбора согласуется до&nbsp;начала работы.</p><div class="cp-f"><span class="mark soon">после входа&nbsp;— черновик задачи; запуск и&nbsp;оплата пока недоступны</span><a class="go2 cp-l" href="#research">Подробнее о&nbsp;Research<span class="cp-a" aria-hidden="true">↓</span></a></div></div></div>
+<div class="sc-next cp-n"><p>Хотите проверить свой товар или закупку? <a href="#access" data-acc>Запросите доступ</a>.</p><p>Уже пользуетесь LotPrism? <a href="https://app.lotprism.com/login?lang=ru">Войдите</a>.</p></div>
+</div>
+</section>
+
+<section class="sec ex5" id="example" aria-labelledby="h-why" data-screen-label="03 · основания карточки">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Пример карточки · демоданные</span><h2 id="h-why">Понятно, на чём держится оценка</h2><p>Вывод, данные, на которых он держится, и&nbsp;то, чего они не&nbsp;доказывают. Общего балла нет.</p></div>
+<div class="seg sm" role="radiogroup" aria-label="Сценарий"><button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span>Перепродажа</button><button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>Новый листинг</button></div></div>
+<div class="why ex-g">
+<div class="ex-c pr"><span class="ex-l">Вывод примера · перепродажа</span><p class="ex-v ob">Товар можно оценивать дальше: есть отметка покупок и&nbsp;узкий диапазон цены. Решить о&nbsp;закупке пока нельзя&nbsp;— нет предложения поставщика.</p><p class="ex-v oa">Цена поставщика <span class="num">7,60&nbsp;€</span> ниже расчётного предела <span class="num">9,60&nbsp;€</span> на&nbsp;<span class="num">2,00&nbsp;€</span>. Это ещё не&nbsp;прибыль: доставка партии, подготовка, хранение, возвраты и&nbsp;реклама не&nbsp;учтены.</p></div>
+<div class="ex-c pn"><span class="ex-l">Вывод примера · новый листинг</span><p class="ex-v ob">Идея опирается на&nbsp;продажи похожих наборов, но&nbsp;спрос на&nbsp;набор <span class="nw">8–12&nbsp;шт.</span> разного объёма не&nbsp;подтверждён.</p><p class="ex-v oa">Предложение <span class="num">5,40&nbsp;€</span> за&nbsp;набор из&nbsp;10 уточняет закупку. Спрос на&nbsp;такой набор и&nbsp;прибыльность оно не&nbsp;подтверждает.</p></div>
+<div class="ex-b">
+<h3 class="ex-h">Основания</h3>
+<ul class="bases pr">
+<li><details><summary><span class="tt"><span class="lh"><span class="k f">ФАКТ</span><span>спрос на этот листинг</span></span><span class="val">Куплено за прошлый месяц: <span class="num">300+</span></span><span class="src">Нижняя граница по&nbsp;отметке Amazon, не&nbsp;точные продажи · Keepa, 26.09.2026</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Это <b>нижняя граница</b> покупок по одному листингу за прошлый месяц: не точные продажи, не прогноз и не расчёт LotPrism. На цену её не умножают.</p><p>Она говорит о спросе на этот листинг, а не на ваше предложение по вашей цене. Если отметки нет, спрос неизвестен, а не равен нулю.</p></div></details></li>
+<li><details><summary><span class="tt"><span class="lh"><span class="k f">ФАКТ</span><span>продавцы</span></span><span class="val">5 продавцов, Amazon среди них нет</span><span class="src">Keepa · 64 наблюдения за&nbsp;90 дней до&nbsp;26.09.2026</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Это наблюдение за прошлые 90 дней. Силу конкуренции оно <b>не доказывает</b>: состав продавцов может измениться.</p></div></details></li>
+<li><details><summary><span class="tt"><span class="lh"><span class="k f">ФАКТ</span><span>цена за 90 дней</span></span><span class="val"><span class="num nw">23,90–25,90&nbsp;€</span>, сейчас <span class="num nw">24,90&nbsp;€</span></span><span class="src">amazon.de, цена с&nbsp;НДС · история на&nbsp;графике</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Цена в примере держалась в пределах 2&nbsp;€. Это <b>наблюдение прошлого</b>, а не обещание будущей цены или дохода.</p><p>Прогноз на графике строит модель; на расчётный предел и вердикт он не влияет.</p></div></details></li>
+<li><details><summary><span class="tt"><span class="lh"><span class="k c">РАСЧЁТ</span><span>по условиям примера</span></span><span class="val">Расчётный предел закупочной цены: <span class="num nw">9,60&nbsp;€</span></span><span class="src">За штуку без&nbsp;НДС · не&nbsp;цена поставщика и&nbsp;не&nbsp;прибыль</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Предел&nbsp;— ориентир для сравнения с ценой предложения. Расчёт учитывает <b>не все расходы</b>: доставка от поставщика, подготовка, хранение, возвраты и реклама в нём не учтены.</p></div></details></li>
+<li class="oa"><details><summary><span class="tt"><span class="lh"><span class="k o">ПРЕДЛОЖЕНИЕ</span><span>демонстрация</span></span><span class="val">Цена поставщика: <span class="num nw">7,60&nbsp;€</span></span><span class="src">За штуку без&nbsp;НДС · предложение подключает команда LotPrism</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Разница с пределом&nbsp;— <span class="num">2,00&nbsp;€</span>. Это <b>ещё не прибыль</b>: доставка партии, подготовка, хранение, возвраты и реклама не учтены.</p></div></details></li>
+</ul>
+<ul class="bases pn">
+<li><details><summary><span class="tt"><span class="lh"><span class="k f">ФАКТ</span><span>спрос на похожие наборы</span></span><span class="val">6 похожих наборов: куплено от&nbsp;<span class="num">200+</span> до&nbsp;<span class="num">500+</span></span><span class="src">Нижние границы по&nbsp;каждому листингу, складывать нельзя · Keepa, 26.09.2026</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Команда отбирает листинги amazon.de с отметкой «куплено за прошлый месяц». Отметка&nbsp;— <b>нижняя граница</b> по каждому листингу; это не точные продажи и не объём рынка.</p><p>Это спрос на существующие наборы. Спрос на ваш набор остаётся гипотезой.</p></div></details></li>
+<li><details><summary><span class="tt"><span class="lh"><span class="k f">ФАКТ</span><span>продавцы</span></span><span class="val">У&nbsp;каждого набора <span class="num nw">1–3</span> продавца</span><span class="src">Keepa · 26.09.2026</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Число продавцов&nbsp;— отдельный показатель. Состав продавцов может измениться.</p></div></details></li>
+<li><details><summary><span class="tt"><span class="lh"><span class="k s">ГИПОТЕЗА</span><span>потребность</span></span><span class="val">Покупателям нужны наборы разного объёма</span><span class="src">Наблюдение: разный объём у&nbsp;2 из&nbsp;6 похожих наборов</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Это <b>гипотеза</b>. Наблюдение говорит о том, что продают, а не о том, что выбирают покупатели.</p></div></details></li>
+<li><details><summary><span class="tt"><span class="lh"><span class="k s">ГИПОТЕЗА</span><span>состав и цена</span></span><span class="val">Набор <span class="nw">8–12</span> банок <span class="nw">2–3</span> объёмов по&nbsp;<span class="num nw">20–25&nbsp;€</span></span><span class="src">Параметры для&nbsp;проверки · подборку гипотез готовит команда LotPrism</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Для гипотезы <b>не определены</b> спрос, расчётный предел закупочной цены и прибыльность. 20–25&nbsp;€&nbsp;— предполагаемая цена, её предстоит проверить. Фото&nbsp;— иллюстрация.</p></div></details></li>
+<li class="oa"><details><summary><span class="tt"><span class="lh"><span class="k o">ПРЕДЛОЖЕНИЕ</span><span>демонстрация</span></span><span class="val">Набор из&nbsp;10 за&nbsp;<span class="num nw">5,40&nbsp;€</span></span><span class="src">Без&nbsp;НДС · уточняет закупку, не&nbsp;спрос</span></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="body"><p>Предложение уточняет цену, комплектацию и условия. Спрос на такой набор и прибыльность оно <b>не подтверждает</b>; доставка от поставщика неизвестна.</p></div></details></li>
+</ul>
+</div>
+<figure class="fig ex-f pr" aria-labelledby="fg-r">
+<div class="fig-h"><h3 id="fg-r">Цена листинга: история за&nbsp;90&nbsp;дней и&nbsp;прогноз модели на&nbsp;30&nbsp;дней</h3><span class="tagdemo">демоданные</span><p>amazon.de · EUR, цена с&nbsp;НДС · шкала от&nbsp;22&nbsp;€</p></div>
+<div class="ch ch5" role="img" aria-label="История цены за 90 дней до 26.09.2026: от 23,90 до 25,90 евро, на дату примера 24,90 евро. Прогноз модели на 30 дней: от 22,90 евро (P10) до 26,40 евро (P90). Демоданные.">
+<svg viewBox="60 0 564 240" preserveAspectRatio="none" aria-hidden="true">
+<path d="M60 178.3H624M60 115H624M60 51.7H624" style="stroke:var(--line)" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+<rect x="483" y="0" width="141" height="240" style="fill:var(--yel);fill-opacity:.05"></rect>
+<path d="M483 0V240" style="stroke:var(--line2)" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+<path d="M483 86.5 624 39V149.8Z" style="fill:var(--yel);fill-opacity:.14"></path>
+<path d="M483 86.5 624 39M483 86.5 624 149.8" fill="none" style="stroke:var(--yel)" stroke-width="1" stroke-dasharray="4 4" vector-effect="non-scaling-stroke"></path>
+<path d="M483 86.5 624 92.8" fill="none" style="stroke:var(--yel)" stroke-width="2" stroke-dasharray="6 5" vector-effect="non-scaling-stroke"></path>
+<path d="M60 86.5H144.6V54.8H186.9V86.5H252.7V118.2H285.6V86.5H393.7V67.8H431.3V86.5H483" fill="none" style="stroke:var(--teal)" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+<span class="rg h" aria-hidden="true">история</span><span class="rg p" aria-hidden="true">прогноз</span>
+<span class="dot" aria-hidden="true"></span><span class="now" aria-hidden="true"><span class="num">24,90&nbsp;€</span><span class="w"> на&nbsp;дату примера</span></span>
+<span class="yl" style="top:21.54%" aria-hidden="true">26&nbsp;€</span><span class="yl" style="top:47.92%" aria-hidden="true">24&nbsp;€</span><span class="yl" style="top:74.29%" aria-hidden="true">22&nbsp;€</span>
+<span class="xl s" style="left:0" aria-hidden="true">−90 дн.</span><span class="xl m" style="left:25%" aria-hidden="true">−60</span><span class="xl m" style="left:50%" aria-hidden="true">−30</span><span class="xl t" style="left:75%" aria-hidden="true">26.09.2026<small>дата примера</small></span><span class="xl e m" style="left:100%" aria-hidden="true">+30 дн.</span>
+<span class="fl2 hi" style="top:16.25%" aria-hidden="true">P90&nbsp;<span class="num">26,40&nbsp;€</span></span><span class="fl2 lo" style="top:62.42%" aria-hidden="true">P10&nbsp;<span class="num">22,90&nbsp;€</span></span>
+</div>
+<ul class="lg"><li><span class="sw1" aria-hidden="true"></span><span><b>История</b> · наблюдаемая цена, 90&nbsp;дней до&nbsp;26.09.2026</span></li><li><span class="sw2" aria-hidden="true"></span><span><b>Прогноз модели</b> · исследовательский режим. По&nbsp;оценке модели, в&nbsp;8 случаях из&nbsp;10 цена через 30&nbsp;дней будет между P10 и&nbsp;P90. Это оценка, не&nbsp;гарантия; на&nbsp;расчётный предел и&nbsp;вердикт не&nbsp;влияет.</span></li></ul>
+</figure>
+<figure class="fig ex-f pn" aria-labelledby="fg-n">
+<div class="fig-h"><h3 id="fg-n">Похожие наборы на&nbsp;amazon.de и&nbsp;гипотеза</h3><span class="tagdemo">демоданные</span><p>Цена с&nbsp;НДС, EUR · «куплено за&nbsp;прошлый месяц»&nbsp;— нижняя граница по&nbsp;каждому листингу, складывать нельзя · Keepa, 26.09.2026</p></div>
+<table class="an an5"><caption class="sr">Шесть похожих наборов и проверяемая гипотеза</caption><thead><tr><th scope="col">Набор</th><th scope="col">Объёмов</th><th scope="col" class="r">Цена, €</th><th scope="col" class="r">Куплено</th><th scope="col" class="r">Продавцы</th></tr></thead>
+<tbody>
+<tr><th scope="row">6 × 250&nbsp;мл</th><td data-l="Объёмов" class="num">1</td><td data-l="Цена, €" class="r num">19,90</td><td data-l="Куплено" class="r num">500+</td><td data-l="Продавцы" class="r num">2</td></tr>
+<tr><th scope="row">4 × 500&nbsp;мл</th><td data-l="Объёмов" class="num">1</td><td data-l="Цена, €" class="r num">21,90</td><td data-l="Куплено" class="r num">300+</td><td data-l="Продавцы" class="r num">2</td></tr>
+<tr><th scope="row">6&nbsp;шт., винтовая крышка</th><td data-l="Объёмов" class="num">1</td><td data-l="Цена, €" class="r num">22,50</td><td data-l="Куплено" class="r num">200+</td><td data-l="Продавцы" class="r num">3</td></tr>
+<tr><th scope="row">12&nbsp;шт. для специй</th><td data-l="Объёмов" class="num">1</td><td data-l="Цена, €" class="r num">24,90</td><td data-l="Куплено" class="r num">300+</td><td data-l="Продавцы" class="r num">1</td></tr>
+<tr class="mv"><th scope="row">8&nbsp;шт.</th><td data-l="Объёмов" class="num">2</td><td data-l="Цена, €" class="r num">24,90</td><td data-l="Куплено" class="r num">200+</td><td data-l="Продавцы" class="r num">1</td></tr>
+<tr class="mv"><th scope="row">10&nbsp;шт.</th><td data-l="Объёмов" class="num">3</td><td data-l="Цена, €" class="r num">26,90</td><td data-l="Куплено" class="r num">200+</td><td data-l="Продавцы" class="r num">1</td></tr>
+</tbody>
+<tbody class="hy5"><tr class="hl"><th colspan="5" scope="rowgroup"><span class="k s">ГИПОТЕЗА</span> не&nbsp;листинг&nbsp;— параметры для&nbsp;проверки</th></tr>
+<tr class="us"><th scope="row">Набор <span class="nw">8–12&nbsp;шт.</span></th><td data-l="Объёмов" class="num nw">2–3</td><td data-l="Цена, €" class="r"><span class="num nw">20–25</span><small>предполагаемая</small></td><td data-l="Куплено" class="r"><small>неизвестно</small></td><td data-l="Продавцы" class="r"><small>листинга нет</small></td></tr>
+</tbody></table>
+<p class="note">Ближе всего к&nbsp;гипотезе по&nbsp;составу наборы на&nbsp;8 и&nbsp;10&nbsp;шт. с&nbsp;разными объёмами. Это сходство по&nbsp;составу, а&nbsp;не&nbsp;доказательство спроса на&nbsp;ваш набор.</p>
+<p class="note">Спрос на&nbsp;предложенный набор ещё не&nbsp;подтверждён: таблица показывает основания и&nbsp;то, что проверять дальше.</p>
+</figure>
+<div class="unkn ex-u">
+<h3><span class="unk">НЕИЗВЕСТНО</span>Открытые вопросы</h3>
+<ul class="pr"><li class="ob"><span>Закупочная цена <small>— нет предложения поставщика</small></span></li><li><span>Спрос на ваше предложение по вашей цене</span></li><li><span>Доставка от поставщика, подготовка, хранение, возвраты, реклама <small>— расчётный предел их не учитывает</small></span></li></ul>
+<ul class="pn"><li><span>Купят ли набор <span class="nw">8–12&nbsp;шт.</span> по <span class="nw">20–25&nbsp;€</span></span></li><li><span>Ключевые слова, поисковый спрос, тренды<span class="st nip">нет в продукте</span></span></li><li class="ob"><span>Закупочная цена набора <small>— нет предложения</small></span></li><li class="oa"><span>Доставка от поставщика</span></li></ul>
+</div>
+<div class="ex-x">
+<h3 class="ex-h">Следующий шаг</h3>
+<div class="pr"><p class="ex-s ob">Найти предложение поставщика и&nbsp;сравнить с&nbsp;пределом</p><p class="ex-s oa">Уточнить стоимость доставки и&nbsp;условия получения образца</p><span class="mark team">предложение ищет и&nbsp;подключает команда LotPrism</span></div>
+<div class="pn"><p class="ex-s ob">Проверить, продаются&nbsp;ли наборы <span class="nw">8–12&nbsp;шт.</span> разного объёма по&nbsp;<span class="nw">20–25&nbsp;€</span>: история цены и&nbsp;отметки «куплено» таких листингов. Параллельно команда ищет поставщика набора.</p><p class="ex-s oa">Уточнить стоимость доставки и&nbsp;условия получения образца</p><span class="mark team">предложение ищет и&nbsp;подключает команда LotPrism</span></div>
+</div>
+<table class="sr pr"><caption>Ключевые значения графика цены</caption><tbody><tr><th scope="row">Наблюдаемая цена, 90 дней</th><td>23,90–25,90 €</td></tr><tr><th scope="row">Цена на 26.09.2026</th><td>24,90 €</td></tr><tr><th scope="row">Прогноз P10, +30 дней</th><td>22,90 €</td></tr><tr><th scope="row">Прогноз P90, +30 дней</th><td>26,40 €</td></tr></tbody></table>
+</div>
+</div>
+</section>
+
+<section class="sec of6" id="offer" aria-labelledby="h-offer" data-screen-label="04 · предложение поставщика">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Предложение поставщика</span><h2 id="h-offer">Есть предложение поставщика? Проверьте условия закупки</h2><p>Что прайс поставщика добавляет к&nbsp;оценке товара, что в&nbsp;нём сверено и&nbsp;чего ещё не&nbsp;хватает.</p></div>
+<div class="seg sm" role="radiogroup" aria-label="Сценарий"><button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span>Перепродажа</button><button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>Новый листинг</button></div></div>
+<div class="ctl of-ctl">
+<div class="seg" role="radiogroup" aria-label="Предложение поставщика в демопримере"><button type="button" role="radio" data-set="offer" data-v="0" aria-checked="true"><span class="m" aria-hidden="true"></span>Без предложения</button><button type="button" role="radio" data-set="offer" data-v="1" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>С&nbsp;предложением</button></div>
+<p class="of-dn">Демопример на&nbsp;этой странице. В&nbsp;приложении прайсы и&nbsp;фиды поставщиков подключает команда LotPrism; самостоятельной загрузки пока нет.</p>
+</div>
+<article class="of-c" aria-label="Карточка товара и предложение поставщика">
+<div class="of-h">
+<img class="pr" src="img/c-k18.jpg" alt="" width="40" height="50" loading="lazy"><img class="pn" src="img/c-k15.jpg" alt="" width="40" height="50" loading="lazy">
+<h3 class="pr">Чайник заварочный, глина, 400&nbsp;мл<span><span class="nw">Пример: Amazon Германия · EUR</span>&nbsp;· существующий листинг</span></h3>
+<h3 class="pn">Банки стеклянные разного объёма, набор<span><span class="nw">Пример: Amazon Германия · EUR</span>&nbsp;· гипотеза, число штук <span class="nw">(8–12)</span> не&nbsp;проверено</span></h3>
+<span class="verdict pr">Кандидат для проверки</span><span class="verdict y pn">Гипотеза товара</span>
+</div>
+<div class="of-v" aria-live="off">
+<p class="pr ob">Расчётный предел закупочной цены посчитан, но&nbsp;предложения поставщика нет&nbsp;— сравнить пока не&nbsp;с&nbsp;чем.</p>
+<p class="pr oa">Цена поставщика на&nbsp;<span class="num nw">2,00&nbsp;€</span> ниже расчётного предела. Вердикт прежний: часть расходов ещё не&nbsp;учтена.</p>
+<p class="pn ob">Закупочная цена набора неизвестна. Расчётного предела для&nbsp;гипотезы нет.</p>
+<p class="pn oa">Из&nbsp;прайса известны цена, количество банок и&nbsp;число объёмов. Какие именно объёмы входят в&nbsp;набор, ещё нужно проверить. Спрос и&nbsp;прибыльность прайс не&nbsp;подтверждает.</p>
+</div>
+<div class="of-g">
+<div class="of-m">
+<div class="of-cmp pr" role="group" aria-label="Цена поставщика и расчётный предел закупочной цены">
+<div class="of-row of-p ob"><span class="of-lb"><span class="k u">НЕТ ДАННЫХ</span>Прайс поставщика</span><span class="of-n0">нет предложения</span></div>
+<div class="of-row of-p oa"><span class="of-lb"><span class="k o">ПРАЙС</span>Цена поставщика <small>25.09.2026 · демо <span class="of-new">новое из&nbsp;прайса</span></small></span><span class="of-num"><span class="num">7,60&nbsp;€</span><small>за&nbsp;шт., без&nbsp;НДС</small></span></div>
+<div class="of-row"><span class="of-lb"><span class="k c">РАСЧЁТ</span>Расчётный предел закупочной цены <small>по&nbsp;допущениям примера</small></span><span class="of-num"><span class="num">9,60&nbsp;€</span><small>за&nbsp;шт., без&nbsp;НДС</small></span></div>
+
+<div class="of-row of-d oa"><span class="of-lb">Разница</span><span class="of-num"><span class="num">2,00&nbsp;€</span><small>это ещё не&nbsp;прибыль</small></span></div>
+<div class="of-cond oa"><h4 class="of-t">Условия из&nbsp;прайса <small>25.09.2026 · демо</small></h4><dl class="of-dl pr"><div><dt>Доставка от&nbsp;поставщика</dt><dd><span class="num">6,90&nbsp;€</span> за&nbsp;посылку<small>число посылок на&nbsp;партию не&nbsp;указано&nbsp;— к&nbsp;цене не&nbsp;прибавляется</small></dd></div><div><dt>Мин. заказ</dt><dd><span class="num">60</span>&nbsp;шт.</dd></div><div><dt>Наличие</dt><dd>есть</dd></div><div><dt>Страна</dt><dd>Чехия</dd></div></dl></div>
+</div>
+<div class="of-cmp pn" role="group" aria-label="Цена набора поставщика">
+<div class="of-row of-p ob"><span class="of-lb"><span class="k u">НЕТ ДАННЫХ</span>Закупочная цена набора</span><span class="of-n0">нет предложения</span></div>
+<div class="of-row of-p oa"><span class="of-lb"><span class="k o">ПРАЙС</span>Цена набора <small>24.09.2026 · демо <span class="of-new">новое из&nbsp;прайса</span></small></span><span class="of-num"><span class="num">5,40&nbsp;€</span><small>за&nbsp;набор из&nbsp;10, без&nbsp;НДС</small></span></div>
+<p class="of-x ob">Гипотезу можно проверять и&nbsp;без поставщика; предложение покажет, во&nbsp;что обойдётся набор.</p>
+<div class="of-sets oa"><div><span class="of-k">Набор поставщика</span><b>10&nbsp;шт., 3&nbsp;объёма</b><small>какие объёмы&nbsp;— не&nbsp;проверено</small></div><div><span class="of-k">Гипотеза</span><b>8–12&nbsp;шт., 2–3&nbsp;объёма</b><small>по&nbsp;20–25&nbsp;€, спрос не&nbsp;подтверждён</small></div></div>
+<div class="of-cond oa"><h4 class="of-t">Условия из&nbsp;прайса <small>24.09.2026 · демо</small></h4><dl class="of-dl pn"><div><dt>Доставка от&nbsp;поставщика</dt><dd>«по&nbsp;запросу»<small>указана текстом&nbsp;— к&nbsp;цене не&nbsp;прибавляется</small></dd></div><div><dt>Мин. заказ</dt><dd><span class="num">300</span>&nbsp;наборов</dd></div><div><dt>Наличие</dt><dd>есть</dd></div><div><dt>Страна</dt><dd>Польша</dd></div></dl></div>
+</div>
+<div class="of-s ob">
+<h4 class="of-t">Поиск предложения</h4>
+<p class="pr">Ещё не&nbsp;проводился. Предложение ищет команда LotPrism в&nbsp;прайсах, фидах и&nbsp;B2B-каталогах, в&nbsp;том числе с&nbsp;помощью языковой модели.</p>
+<p class="pn">Ещё не&nbsp;проводился. Поставщика набора ищет команда LotPrism, в&nbsp;том числе с&nbsp;помощью языковой модели.</p>
+<p class="of-sm">Найденный кандидат в&nbsp;поставщики&nbsp;— ещё не&nbsp;закупочное предложение: цену и&nbsp;условия подтверждает прайс. «Не&nbsp;найдено» значит «не&nbsp;найдено этим поиском на&nbsp;эту дату», а&nbsp;не&nbsp;«поставщика нет».</p>
+<div class="of-demo js-only"><button class="btn btn-s addb" type="button" data-set="offer" data-v="1"><span class="lbl"><span class="tx">Показать демопример с&nbsp;предложением</span></span></button><span class="of-sm">Переключает пример на&nbsp;этой странице, поставщику ничего не&nbsp;отправляется.</span></div>
+</div>
+
+</div>
+<div class="of-a">
+<div class="of-s of-chk oa">
+<h4 class="of-t pr">Сверено</h4><h4 class="of-t pn">Совпало и&nbsp;не&nbsp;проверено</h4>
+<ul class="of-ok pr"><li>EAN совпал с&nbsp;листингом</li><li>Упаковка 1&nbsp;шт. = 1&nbsp;шт. листинга</li><li>Обе цены без&nbsp;НДС</li></ul>
+<p class="of-sm pr">Это не&nbsp;проверка качества: образец всё равно нужен.</p>
+<ul class="of-ok pn"><li>Число штук (10) и&nbsp;объёмов (3)&nbsp;— в&nbsp;пределах гипотезы</li></ul>
+<ul class="of-q pn"><li>Какие именно объёмы входят в&nbsp;набор</li><li>Качество&nbsp;— образца нет</li><li>Код сверять не&nbsp;с&nbsp;чем&nbsp;— листинга ещё нет</li></ul>
+</div>
+<div class="unkn of-u">
+<h4><span class="unk">НЕИЗВЕСТНО</span></h4>
+<ul class="pr ob"><li><span>Цена без&nbsp;НДС, упаковка, мин. заказ, наличие, доставка, страна&nbsp;— нет прайса</span></li><li><span>Доставка от&nbsp;поставщика, подготовка, хранение, возвраты, реклама&nbsp;— предел их&nbsp;не&nbsp;учитывает</span></li></ul>
+<ul class="pr oa"><li><span>Доставка партии&nbsp;— число посылок</span></li><li><span>Качество&nbsp;— образец не&nbsp;проверен</span></li><li><span>Подготовка, хранение, возвраты, реклама</span></li><li><span>Срок поставки, оплата, проверка компании <small>— в&nbsp;прайсе не&nbsp;указаны</small></span></li></ul>
+<ul class="pn ob"><li><span>Закупочная цена набора&nbsp;— нет предложения</span></li><li><span>Купят&nbsp;ли набор <span class="nw">8–12&nbsp;шт.</span> по&nbsp;<span class="nw">20–25&nbsp;€</span></span></li></ul>
+<ul class="pn oa"><li><span>Доставка от&nbsp;поставщика</span></li><li><span>Спрос на&nbsp;такой набор</span></li><li><span>Цена продажи</span></li><li><span>Прибыльность</span></li></ul>
+</div>
+<div class="of-nx">
+<h4 class="of-t">Следующий шаг</h4>
+<p class="pr ob"><span class="of-ar" aria-hidden="true">→</span><span>Найти предложение не&nbsp;дороже <span class="nw">9,60&nbsp;€</span> за&nbsp;шт. без&nbsp;НДС</span></p>
+<p class="pr oa"><span class="of-ar" aria-hidden="true">→</span><span>Уточнить стоимость доставки и&nbsp;условия получения образца</span></p>
+<span class="mark team pr">предложение ищет и&nbsp;подключает команда LotPrism</span>
+<p class="of-me pr oa">Ваша оценка: подготовка, хранение, возвраты и&nbsp;реклама&nbsp;— расчёт их не&nbsp;учитывает.</p>
+<p class="pn ob"><span class="of-ar" aria-hidden="true">→</span><span>Проверить, продаются&nbsp;ли наборы <span class="nw">8–12&nbsp;шт.</span> разного объёма по&nbsp;<span class="nw">20–25&nbsp;€</span>: история цены и&nbsp;отметки «куплено» таких листингов. Параллельно команда LotPrism ищет поставщика набора.</span></p>
+<p class="pn oa"><span class="of-ar" aria-hidden="true">→</span><span>Уточнить стоимость доставки и&nbsp;условия получения образца. Продажи наборов <span class="nw">8–12&nbsp;шт.</span> по&nbsp;<span class="nw">20–25&nbsp;€</span> по&#8209;прежнему проверить.</span></p>
+<span class="mark team pn">предложение ищет и&nbsp;подключает команда LotPrism</span>
+</div>
+<details class="of-ctx pr"><summary><span>Откуда предел <span class="num nw">9,60&nbsp;€</span> и&nbsp;контекст рынка</span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="of-cb"><p class="of-sm">amazon.de, 26.09.2026: цена листинга <span class="num nw">24,90&nbsp;€</span> с&nbsp;НДС · куплено за&nbsp;прошлый месяц <span class="num">300+</span> (нижняя граница) · 5&nbsp;продавцов, Amazon нет · EAN <span class="num nw">4&nbsp;006…217</span></p>
+<table class="of-calc"><caption class="sr">Расчёт предела за 1 шт.</caption><tbody>
+<tr><th scope="row">Цена листинга, с&nbsp;НДС</th><td class="num">24,90</td></tr>
+<tr><th scope="row">− НДС 19&nbsp;% из&nbsp;цены</th><td class="num">3,98</td></tr>
+<tr><th scope="row">− Комиссия Amazon 15&nbsp;% <small>допущение</small></th><td class="num">3,74</td></tr>
+<tr><th scope="row">− Комиссия FBA <small>допущение</small></th><td class="num">4,19</td></tr>
+<tr><th scope="row">− Доставка до&nbsp;склада Amazon <small>допущение</small></th><td class="num">0,50</td></tr>
+<tr><th scope="row">÷ (1&nbsp;+ доходность на&nbsp;закупку 30&nbsp;%) <small>допущение</small></th><td class="num">1,30</td></tr>
+<tr class="t"><th scope="row">= Предел за&nbsp;1&nbsp;шт., без&nbsp;НДС</th><td class="num">9,60&nbsp;€</td></tr>
+</tbody></table>
+<p class="of-sm">Доходность на&nbsp;закупку&nbsp;— что остаётся после НДС, комиссий, доставки до&nbsp;склада и&nbsp;самой закупки, в&nbsp;% от&nbsp;закупочной цены; это не&nbsp;маржа. Не&nbsp;учтены доставка от&nbsp;поставщика, подготовка, хранение, возвраты и&nbsp;реклама.</p></div>
+</details>
+<details class="of-ctx pn"><summary><span>Контекст из&nbsp;примера</span><span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary>
+<div class="of-cb"><p class="of-sm">Keepa, 26.09.2026: 6 похожих наборов, отметки «куплено» от&nbsp;<span class="num">200+</span> до&nbsp;<span class="num">500+</span>&nbsp;— нижние границы, складывать нельзя; у&nbsp;каждого 1–3 продавца. Ближе всего по&nbsp;составу наборы на&nbsp;8 и&nbsp;10&nbsp;шт. разного объёма, <span class="num nw">24,90</span> и&nbsp;<span class="num nw">26,90&nbsp;€</span> с&nbsp;НДС.</p></div>
+</details>
+</div>
+</div>
+<p class="of-f">Решение о&nbsp;закупке&nbsp;— за&nbsp;вами; автоматических закупок нет.</p>
+</article>
+</div>
+</section>
+
+<section class="sec rsch rs8" id="research" aria-labelledby="h-rs" data-screen-label="05 · LotPrism Research">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">LotPrism Research · для оптовиков</span><h2 id="h-rs">Проверить крупную партию до&nbsp;закупки</h2><p>Для перепродажи партий: можно&nbsp;ли покупать и&nbsp;на&nbsp;каких условиях, какие направления подходят, чего не&nbsp;хватает для&nbsp;решения. Отказ&nbsp;— тоже результат.</p></div>
+<div class="rs8-ac"><span class="stat"><i aria-hidden="true"></i>Запуск и&nbsp;оплата пока недоступны</span><p>Описать задачу и&nbsp;сохранить черновик можно уже сейчас.</p><div class="rs-act"><a class="btn btn-s sm" href="https://app.lotprism.com/login?lang=ru&next=%2Fresearch"><span class="lbl"><span class="tx">Войти и описать задачу</span></span></a><a class="go2" href="#access" data-acc data-interest="research">Нет учётной записи? Запросить доступ</a></div></div></div>
+<div class="rs8-tk">
+<h3 class="rs8-h">С какой задачей приходят <small>описание инструмента, запуск пока не&nbsp;открыт</small></h3>
+<ul class="rs8-tl">
+<li><b>Проверить товар, предложение или партию</b><span>можно&nbsp;ли покупать и&nbsp;на&nbsp;каких условиях</span></li>
+<li><b>Найти товар или направление под&nbsp;ваши условия</b><span>есть рынок и&nbsp;деньги, нет товара</span></li>
+<li><b>Проверить импортный маршрут</b><span>пошлины, налоги, импортёр</span></li>
+<li><b>Подготовить меморандум по&nbsp;готовому исследованию</b><span>для&nbsp;себя, партнёра или бухгалтера</span></li>
+<li><b>Обновить исследование</b><span>после новой котировки или тарифа</span></li>
+</ul>
+</div>
+<div class="rs8-pa">
+<h3 class="rs8-h">Как проходит исследование</h3>
+<ol class="rs8-st">
+<li class="on"><span class="rs8-i" aria-hidden="true">1</span><div><h4>Описать задачу</h4><p>Предмет, цель, деньги и&nbsp;срок, почта для&nbsp;отчёта.</p><span class="mark">доступно после входа; без&nbsp;файлов</span></div></li>
+<li><span class="rs8-i" aria-hidden="true">2</span><div><h4>Согласовать объём, стоимость и&nbsp;срок</h4><span class="mark soon">пока недоступно: тариф не&nbsp;утверждён</span></div></li>
+<li><span class="rs8-i" aria-hidden="true">3</span><div><h4>Оплатить</h4><span class="mark soon">недоступно</span></div></li>
+<li><span class="rs8-i" aria-hidden="true">4</span><div><h4>Провести исследование</h4><span class="mark soon">недоступно: запуск не&nbsp;открыт</span></div></li>
+<li><span class="rs8-i" aria-hidden="true">5</span><div><h4>Получить отчёт</h4><p>В&nbsp;кабинете и&nbsp;письмом; связь&nbsp;— только почта.</p><span class="mark soon">после запуска</span></div></li>
+</ol>
+</div>
+<div class="rs8-rs">
+<h3 class="rs8-h">Что вы получите</h3>
+<div class="rs8-g">
+<figure class="rs8-doc" aria-labelledby="rs8-cap">
+<figcaption id="rs8-cap" class="rs8-cap"><span class="tagdemo">макет</span>Фрагмент макета отчёта · исторический кейс TopDown, 30.09.2026 · не&nbsp;текущее исследование</figcaption>
+<div class="rs8-sh">
+<div class="rs8-sh-h"><span class="rs8-kd">Отчёт исследования · полный</span><span class="rs8-mk">МАКЕТ · исторический кейс</span></div>
+<p class="rs8-tt">Палета детских лицензионных футболок TopDown: проверка перед закупкой</p>
+<dl class="rs8-meta"><div><dt>Рынок и маршрут</dt><dd>GB · закупка в&nbsp;GB → eBay UK</dd></div><div><dt>Дата · валюта</dt><dd class="num">30.09.2026 · GBP</dd></div></dl>
+<p class="rs8-sl">1 · Какое действие допустимо</p>
+<div class="rs8-dc"><p class="rs8-dv">Не покупать сейчас&nbsp;— нужны данные</p><p>Подтверждённых стоп-факторов нет&nbsp;— это не&nbsp;отказ. Статус не&nbsp;повысится, пока не&nbsp;появятся подтверждения из&nbsp;п.&nbsp;6.</p></div>
+<p class="rs8-sl">2 · Три причины</p>
+<ol class="rs8-rn">
+<li><b>Состав и&nbsp;количество партии не&nbsp;подтверждены</b><span>Размеры и&nbsp;дизайны неизвестны. Страница продавца&nbsp;— <span class="num nw">1&nbsp;500</span>&nbsp;шт., поисковый фрагмент&nbsp;— <span class="num nw">1&nbsp;200</span>&nbsp;шт.; при проверке страница ответила 403 и&nbsp;не&nbsp;прочитана.</span></li>
+<li><b><span class="nw">400 продаж</span> троек по&nbsp;<span class="num">£16.95</span>&nbsp;— допущение</b><span>Найдены только активные предложения других наборов. Состоявшихся продаж сопоставимых троек нет.</span></li>
+<li><b>Нет полной котировки склада</b><span>Сортировка, сборка троек, фото и&nbsp;листинг не&nbsp;оценены; есть только публичный прайс отдельных операций.</span></li>
+</ol>
+<p class="rs8-sl">3 · Предел закупки</p>
+<dl class="rs8-mn"><div><dt>Максимальная цена</dt><dd><span class="rs8-u">не&nbsp;определена</span></dd></div><div><dt>Объём</dt><dd><span class="rs8-u">не&nbsp;определён</span></dd></div></dl>
+<p class="rs8-sl">6 · Каких подтверждений не&nbsp;хватает</p>
+<ul class="rs8-ms">
+<li><span>Manifest с&nbsp;размерами и&nbsp;дизайнами</span><small>продавец</small></li>
+<li><span>Письменная котировка: количество и&nbsp;цена</span><small>продавец</small></li>
+<li><span>Котировка 3PL: сортировка, сборка, фото, исполнение</span><small>склад</small></li>
+<li><span>Продажи сопоставимых троек на&nbsp;eBay UK</span><small>выгрузка</small></li>
+<li><span>Ваш предел убытка и&nbsp;цели</span><small>вы</small></li>
+</ul>
+<p class="rs8-ft">Не&nbsp;инвестиционная рекомендация и&nbsp;не&nbsp;разрешение на&nbsp;закупку</p>
+</div>
+</figure>
+<div class="rs8-sd">
+<div class="rs8-bk"><h4>Что выясняет исследование</h4>
+<ul class="rs8-dl">
+<li>Что подтверждено, а&nbsp;что известно только со&nbsp;слов продавца</li>
+<li>Продавец&nbsp;— по&nbsp;реестрам; комиссии, доставка, налоги&nbsp;— по&nbsp;официальным страницам</li>
+<li>Экономика с&nbsp;неблагоприятным случаем; неизвестный расход&nbsp;— не&nbsp;ноль</li>
+<li>Предел закупки и&nbsp;что мешает решению</li>
+</ul></div>
+<div class="rs8-bk"><h4>Три формата одного отчёта</h4>
+<dl class="rs8-fm">
+<div><dt><span class="rs8-fl">A</span>Подробный отчёт</dt><dd>полный разбор с&nbsp;резюме</dd></div>
+<div><dt><span class="rs8-fl">B</span>Финансовый разбор</dt><dd>расчёт сделки&nbsp;— когда главный вопрос деньги</dd></div>
+<div><dt><span class="rs8-fl">C</span>Аналитический меморандум</dt><dd>короткое обоснование решения</dd></div>
+</dl>
+<p class="rs8-n">Вердикт и&nbsp;суммы одинаковы; формат меняют без&nbsp;доплаты.</p></div>
+</div>
+</div>
+</div>
+<p class="rs8-yo">Research ничего не&nbsp;покупает и&nbsp;не&nbsp;ведёт переговоры от&nbsp;вашего имени: отчёт говорит, что запросить у&nbsp;продавца и&nbsp;склада, а&nbsp;решение о&nbsp;закупке остаётся за&nbsp;вами. Положительный вывод не&nbsp;гарантирован; юридического и&nbsp;налогового заключения нет.</p>
+</div>
+</section>
+
+<section class="sec" id="process" aria-labelledby="h-pr" data-screen-label="06 · как работает">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Как работает</span><h2 id="h-pr">От вопроса к&nbsp;следующему шагу</h2><p>Четыре шага до&nbsp;решения. У&nbsp;каждого подписано, кто его выполняет: вы, программа или команда LotPrism.</p></div>
+<div class="seg sm" role="radiogroup" aria-label="Сценарий"><button type="button" role="radio" data-set="path" data-v="r" aria-checked="true"><span class="m" aria-hidden="true"></span>Перепродажа</button><button type="button" role="radio" data-set="path" data-v="n" aria-checked="false" tabindex="-1"><span class="m" aria-hidden="true"></span>Новый листинг</button></div></div>
+<div class="pc-st"><p><b>Начало&nbsp;— вход в&nbsp;приложение.</b> Учётные записи создаёт команда LotPrism по&nbsp;заявке, самостоятельной регистрации нет.</p><div class="pc-go"><a class="btn btn-s" href="#access" data-acc><span class="lbl"><span class="tx">Запросить доступ</span></span></a><a class="go2 pc-in" href="https://app.lotprism.com/login?lang=ru">Войти</a></div></div>
+<ol class="pc pr" aria-label="Путь: перепродажа">
+<li class="pc-s "><span class="pc-n" aria-hidden="true">1</span><div class="pc-w"><span class="sr">Кто делает: </span><span class="pc-r u">вы</span><span class="pc-r a">программа</span></div><h3>Выбрать листинг</h3><div class="pc-b"><p>Карточка товара с&nbsp;amazon.de: цена листинга, отметка «куплено», продавцы и&nbsp;история цены.</p></div></li>
+<li class="pc-s "><span class="pc-n" aria-hidden="true">2</span><div class="pc-w"><span class="sr">Кто делает: </span><span class="pc-r u">вы</span><span class="pc-r a">программа</span></div><h3>Изучить основания</h3><div class="pc-b"><p>Программа показывает вердикт и&nbsp;расчётный предел закупочной цены с&nbsp;допущениями. Расчёт учитывает не&nbsp;все расходы и&nbsp;не&nbsp;равен прибыли.</p><a class="go2 pc-l" href="?p=r#example" data-go="r" data-to="example">Пример карточки<span aria-hidden="true">&nbsp;↑</span></a></div></li>
+<li class="pc-s "><span class="pc-n" aria-hidden="true">3</span><div class="pc-w"><span class="sr">Кто делает: </span><span class="pc-r u">вы</span><span class="pc-r t">команда LotPrism</span><span class="pc-r a">программа</span></div><h3>Сопоставить предложение</h3><div class="pc-b"><p>Команда находит и&nbsp;подключает прайс поставщика. Программа сверяет EAN и&nbsp;количество в&nbsp;упаковке, сравнивает цену без&nbsp;НДС с&nbsp;пределом.</p><a class="go2 pc-l" href="#offer">Пример с&nbsp;предложением<span aria-hidden="true">&nbsp;↑</span></a></div></li>
+<li class="pc-s "><span class="pc-n" aria-hidden="true">4</span><div class="pc-w"><span class="sr">Кто делает: </span><span class="pc-r u">вы</span></div><h3>Уточнить расходы</h3><div class="pc-b"><p>Доставка партии, подготовка, хранение, возвраты и&nbsp;реклама; оценка образца. Эти расходы в&nbsp;предел не&nbsp;входят.</p></div></li>
+</ol>
+<ol class="pc pn" aria-label="Путь: новый листинг">
+<li class="pc-s "><span class="pc-n" aria-hidden="true">1</span><div class="pc-w"><span class="sr">Кто делает: </span><span class="pc-r u">вы</span><span class="pc-r t">команда LotPrism</span><span class="pc-r a">программа</span></div><h3>Выбрать гипотезу</h3><div class="pc-b"><p>Подборку гипотез готовит команда LotPrism. Программа показывает гипотезу и&nbsp;её параметры: состав и&nbsp;предполагаемую цену.</p></div></li>
+<li class="pc-s "><span class="pc-n" aria-hidden="true">2</span><div class="pc-w"><span class="sr">Кто делает: </span><span class="pc-r u">вы</span><span class="pc-r a">программа</span></div><h3>Изучить похожие листинги</h3><div class="pc-b"><p>Программа показывает цены, отметки «куплено» и&nbsp;продавцов похожих наборов. Отметки&nbsp;— нижние границы, не&nbsp;точные продажи.</p><a class="go2 pc-l" href="?p=n#example" data-go="n" data-to="example">Пример гипотезы<span aria-hidden="true">&nbsp;↑</span></a></div></li>
+<li class="pc-s "><span class="pc-n" aria-hidden="true">3</span><div class="pc-w"><span class="sr">Кто делает: </span><span class="pc-r u">вы</span></div><h3>Проверить предположения</h3><div class="pc-b"><p>Сравните состав и&nbsp;цену гипотезы с&nbsp;похожими наборами: станет видно, какие предположения опираются на&nbsp;данные, а&nbsp;какие остаются гипотезой. Купят&nbsp;ли такой набор, данные не&nbsp;доказывают; расчётного предела для&nbsp;гипотезы нет.</p></div></li>
+<li class="pc-s "><span class="pc-n" aria-hidden="true">4</span><div class="pc-w"><span class="sr">Кто делает: </span><span class="pc-r u">вы</span><span class="pc-r t">команда LotPrism</span><span class="pc-r a">программа</span></div><h3>Уточнить условия закупки</h3><div class="pc-b"><p>Команда находит и&nbsp;подключает прайс. Из&nbsp;него видны цена набора, количество банок и&nbsp;число объёмов; какие именно объёмы входят, ещё нужно проверить. Спрос и&nbsp;прибыльность прайс не&nbsp;подтверждает.</p><a class="go2 pc-l" href="#offer">Пример с&nbsp;предложением<span aria-hidden="true">&nbsp;↑</span></a></div></li>
+</ol>
+<div class="pc-d"><div class="pc-w"><span class="pc-r u">вы</span></div><div class="pc-dt"><h3>Решение о&nbsp;закупке&nbsp;— за&nbsp;вами</h3><p>Программа не&nbsp;закупает и&nbsp;не&nbsp;пишет поставщикам. Заказ поставщику делаете&nbsp;вы.</p></div></div>
+<p class="pc-rs"><b>LotPrism Research</b>&nbsp;— отдельно: можно описать задачу и&nbsp;сохранить черновик&nbsp;— после входа в&nbsp;приложение. Запуск исследования и&nbsp;оплата пока недоступны. <a class="go2" href="#research">О&nbsp;Research<span aria-hidden="true">&nbsp;↑</span></a></p>
+</div>
+</section>
+
+<section class="sec" id="data" aria-labelledby="h-dt" data-screen-label="07 · данные и модели">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Данные и модели</span><h2 id="h-dt">Данные, расчёт и прогноз&nbsp;— у каждого своя роль</h2></div></div>
+<ul class="as-r dt3" aria-label="Роли данных">
+<li><span class="bl"><span class="k f">ФАКТ</span>Что наблюдали</span><p>Источники дают наблюдения: цену листинга, отметку «куплено», продавцов. У наблюдения есть источник и дата.</p></li>
+<li><span class="bl"><span class="k c">РАСЧЁТ</span>Что посчитали</span><p>Показывает результат на известных данных и явно названных допущениях. Потолок закупки&nbsp;— расчёт, а не прибыль.</p></li>
+<li><span class="bl">Что предполагает модель</span><p>Помогает оценить возможную динамику цены. Прогнозы работают в исследовательском режиме: не меняют потолок, вердикт и пороги и не гарантируют будущую цену или продажи.</p></li>
+</ul>
+<p class="cap">Языковая модель помогает команде LotPrism искать предложения поставщиков и сигналы спроса. Вердикт и потолок считают правила по данным рынка; чата в LotPrism нет; поддержка работает по почте.</p>
+</div>
+</section>
+
+<section class="sec fresh" id="fresh" aria-labelledby="h-fr" data-screen-label="08 · актуальность">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Актуальность</span><h2 id="h-fr">Проверяйте дату оценки</h2></div></div>
+<div class="fr-g"><p>Цена, конкуренция и условия поставщика меняются. LotPrism отмечает дату данных в карточке; при новых данных или изменении правил появляется новая версия оценки.</p><p>Перед закупкой проверьте дату данных и открытые вопросы. Данные обновляются по расписанию, а не в реальном времени, и частота для разных товаров может различаться.</p></div>
+</div>
+</section>
+
+<section class="sec faq3" id="faq" aria-labelledby="h-faq" data-screen-label="09 · вопросы">
+<div class="wrap">
+<div class="sh3"><div class="t"><span class="eyebrow">Вопросы</span><h2 id="h-faq">Частые вопросы</h2></div></div>
+<div class="faq2">
+<details><summary>Для кого LotPrism?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Для продавцов и предпринимателей, которые выбирают товары, сравнивают закупочные предложения и хотят понимать основания расчёта до вложения денег.</p></details>
+<details id="access"><summary>Как получить доступ?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Нажмите «Запросить доступ» и укажите почту для ответа и что хотите проверить. Подтверждение придёт письмом; уточнить задачу можно, просто ответив на него. Учётные записи создаёт оператор LotPrism; самостоятельной регистрации нет. Если учётная запись у вас уже есть, нажмите «Войти».</p></details><details><summary>Как связаться с поддержкой?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Поддержка LotPrism работает по почте: ответьте на любое наше письмо или отправьте заявку на этой странице. Первым отвечает AI-ассистент: он объясняет возможности, помогает выбрать сценарий и уточнить задачу. Цены, сроки, выдачу доступа и платежи он не обещает и не меняет. В таких случаях и по вашей просьбе к той же переписке подключается сотрудник LotPrism.</p></details>
+<details><summary>Нужен ли поставщик, чтобы начать?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Нет. Можно начать с рыночной возможности или идеи товара. Предложение поставщика понадобится для оценки конкретных условий закупки.</p></details>
+<details><summary>Чем Research отличается от карточки товара?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Карточка показывает стандартную оценку по доступным данным рынка. Research предназначен для отдельного вопроса с согласованным объёмом проверки. Сейчас после входа можно описать задачу и сохранить черновик. Запуск исследования и оплата пока недоступны.</p></details>
+<details><summary>Можно ли проверить партию или импорт?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Такие задачи предусмотрены в Research. Можно ли выполнить исследование для конкретного товара и маршрута, будет подтверждаться до принятия заказа.</p></details>
+<details><summary>Какие рынки поддерживаются?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>В приложении можно выбрать рынок Amazon, но выбор рынка ещё не означает, что по нему есть рекомендации. Они появляются только там, где собраны данные и известны условия продажи: комиссии, НДС, доставка. Если по рынку рекомендаций нет, приложение показывает причину. У каждой карточки указаны её рынок и валюта; цены разных рынков не пересчитываются. Пример на этой странице&nbsp;— Amazon Германия (EUR). Охват отдельного исследования согласуется по задаче.</p></details>
+<details><summary>Вы проверяете качество товара и надёжность поставщика?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Нет. LotPrism сверяет код товара (EAN/GTIN) и количество в упаковке с листингом Amazon. Совпадение кода не подтверждает качество; образцы, осмотр товара и проверку поставщика выполняете вы.</p></details>
+<details><summary>Можно ли получить юридическое или налоговое заключение?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Нет, оно не входит в оценку LotPrism. Расчёты учитывают ставки и правила как допущения и показывают их.</p></details>
+<details><summary>Гарантируется ли прибыль?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Нет. Результат зависит от закупки, фактических расходов, спроса и исполнения. LotPrism показывает расчёт, допущения и риски.</p></details>
+<details><summary>LotPrism закупает товар или пишет поставщикам?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Нет. Программа не размещает заказы и не пишет поставщикам. Решение о закупке и заказ&nbsp;— за вами.</p></details>
+<details><summary>Сколько стоит Research и когда будет результат?<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Запуск исследования и оплата пока недоступны. Стоимость, срок и состав результата будут согласовываться до начала каждой работы; заранее мы их не публикуем.</p></details>
+</div>
+</div>
+</section>
+
+<section class="fin2 fin3" id="start" aria-labelledby="h-fin" data-screen-label="10 · начало">
+<div class="wrap">
+<div class="l"><span class="eyebrow">Начало</span><h2 id="h-fin">Хотите проверить свой товар или закупку?</h2><p>Расскажите, что вы продаёте или закупаете и на каком рынке. Ответ придёт письмом от Поддержки LotPrism; продолжить разговор можно, просто ответив на него.</p><div class="fin-b"><a class="btn btn-p" href="#access" data-acc><span class="lbl"><span class="tx">Запросить доступ</span></span><span class="ic" aria-hidden="true"><svg class="ar" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"></path></svg></span></a><a class="btn btn-s" href="https://app.lotprism.com/login?lang=ru"><span class="lbl"><span class="tx">Войти</span></span></a></div><p class="sm2">«Войти»&nbsp;— для тех, у кого уже есть учётная запись LotPrism. Самостоятельной регистрации нет: учётные записи создаёт оператор LotPrism.</p></div>
+</div>
+</section>
+</main>
+<footer class="foot">
+<div class="wrap foot-g">
+<div class="foot-id">
+<img src="logo.svg" alt="LotPrism" width="136" height="18">
+<p>LotPrism&nbsp;— анализ товаров и закупок: рыночные возможности Amazon, оценка предложений поставщиков и LotPrism Research.</p>
+<p>Интерфейс продукта&nbsp;— на английском, русском, немецком и испанском. Основной текст карточек пока на английском.</p>
+<p class="demo">Товары, цены, EAN и поставщики в примерах&nbsp;— демоданные. <span class="nw">Пример: Amazon Германия · EUR</span>.</p>
+</div>
+<nav class="foot-nav" aria-label="Разделы сайта">
+<section aria-labelledby="ft-p"><h2 id="ft-p" class="eyebrow">Продукт</h2>
+<ul><li><a href="#scenarios">Возможности</a></li><li><a href="#research">Research</a></li><li><a href="#example">Пример</a></li><li><a href="#process">Как работает</a></li><li><a href="#access" data-acc>Запросить доступ</a></li><li><a href="https://app.lotprism.com/login?lang=ru">Войти<span aria-hidden="true"> ↗</span></a></li></ul></section>
+<section aria-labelledby="ft-h"><h2 id="ft-h" class="eyebrow">Помощь</h2>
+<ul><li><a href="#faq">Вопросы</a></li><li><a href="#data">Данные и модели</a></li></ul></section>
+<section aria-labelledby="ft-d"><h2 id="ft-d" class="eyebrow">Документы</h2>
+<ul><li><a href="../licenses/">Лицензии и атрибуция</a></li></ul></section>
+</nav>
+</div>
+<div class="wrap foot-b">
+<details class="phc2"><summary>Источники изображений<span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 4.5 3 3 3-3"></path></svg></span></summary><p>Фото товаров: Seven Colors, pmv chamara (Unsplash). Иллюстрация в первом экране сгенерирована.</p><p><a href="../licenses/">Лицензии и атрибуция</a></p></details>
+</div>
+</footer>
+<dialog id="acc" aria-labelledby="acc-h">
+<div class="dlg">
+<div class="dlg-h"><h2 id="acc-h">Запросить доступ</h2><button class="x" type="button" id="acc-x" aria-label="Закрыть">×</button></div>
+<p class="dlg-p" id="acc-p">Расскажите, что хотите проверить. Ответ придёт письмом от Поддержки LotPrism; первым отвечает AI-ассистент. Учётные записи создаёт оператор LotPrism.</p>
+<form class="dlgf" id="acc-f" novalidate>
+<fieldset class="fs" id="acc-fs">
+<div class="fld"><label for="acc-mail">Почта для ответа</label><input id="acc-mail" name="email" type="email" autocomplete="email" required maxlength="200" aria-describedby="acc-mail-e"><p class="err" id="acc-mail-e" hidden></p></div>
+<div class="fld"><label for="acc-int">Что хотите проверить</label><select id="acc-int" name="interest" required aria-describedby="acc-int-e"><option value="">Выберите вариант</option><option value="resale">Товар для перепродажи</option><option value="new_listing">Идею нового листинга</option><option value="supplier_offer">Предложение поставщика</option><option value="research">Задачу для LotPrism Research</option><option value="other">Пока не знаю</option></select><p class="err" id="acc-int-e" hidden></p></div>
+<div class="fld"><label for="acc-mkt">Рынок <span class="opt">— необязательно</span></label><input id="acc-mkt" name="market" autocomplete="off" maxlength="200" aria-describedby="acc-mkt-h"><p class="hint" id="acc-mkt-h">Например, Amazon Германия</p></div>
+<div class="fld"><label for="acc-msg">Комментарий <span class="opt">— необязательно</span></label><textarea id="acc-msg" name="message" rows="3" maxlength="1000" aria-describedby="acc-msg-h"></textarea><p class="hint" id="acc-msg-h">До 1000 знаков: товар, объём закупки, что уже известно</p></div>
+<div class="hp" aria-hidden="true"><label for="acc-x1">Не заполняйте это поле</label><input id="acc-x1" name="lp_extra" tabindex="-1" autocomplete="off"></div>
+<div class="proto sim"><p><b>Имитация.</b> Прототип не отправляет ни заявку, ни письма. Выберите ответ сервера для проверки:</p>
+<div class="sim-r" role="radiogroup" aria-label="Ответ сервера в имитации"><label><input type="radio" name="sim" value="ok" checked> заявка сохранена</label><label><input type="radio" name="sim" value="net"> ошибка сети</label><label><input type="radio" name="sim" value="limit"> слишком много попыток</label></div></div>
+<p class="snd-e" id="acc-e" role="alert" hidden></p>
+<button class="btn btn-p" type="submit" id="acc-s"><span class="lbl"><span class="tx" id="acc-st">Отправить заявку</span><span class="spin" aria-hidden="true"></span></span></button>
+</fieldset>
+</form>
+<div class="done" id="acc-ok" hidden><div class="okb" id="acc-okm" tabindex="-1" aria-live="polite"><p class="okh">Заявка сохранена.</p><p id="acc-okt"></p></div><div class="proto"><p>Имитация: так выглядит ответ сервера «сохранено». Заявка и письмо никуда не отправлены.</p><details class="mail"><summary>Пример первого письма</summary><div class="mail-b" id="acc-mail-ex"></div></details></div><button class="btn btn-s" type="button" id="acc-c"><span class="lbl"><span class="tx">Закрыть</span></span></button></div>
+</div>
+</dialog>
+<script src="d.js"></script>
+<script src="o.js"></script>
+<script src="r.js"></script>
+<script src="acc.js"></script>
+<script>(function(){var H=document.documentElement,t;new MutationObserver(function(){if(!H.classList.contains('mo'))return;H.classList.remove('swap');void H.offsetWidth;H.classList.add('swap');clearTimeout(t);t=setTimeout(function(){H.classList.remove('swap')},260)}).observe(H,{attributes:true,attributeFilter:['data-path']})})()</script>
+</body>
+</html>

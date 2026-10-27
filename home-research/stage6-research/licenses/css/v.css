@@ -1,0 +1,95 @@
+/* Поиск товарных возможностей — поверх ../B5/base.css (токены, кнопки, шапка). B5 не меняется. */
+.num{font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums;font-feature-settings:"tnum";white-space:nowrap}
+a{color:var(--ink)}a:hover{color:var(--lem)}
+.links{display:flex;gap:32px;font-size:15px;white-space:nowrap}.links a{color:var(--mute);min-height:44px;display:inline-flex;align-items:center}.links a:hover{color:var(--ink)}
+.acts{display:flex;gap:18px;align-items:center;font-size:15px}.acts .in{min-height:44px;display:inline-flex;align-items:center}
+.menu-btn{display:none;width:44px;height:44px;border:1px solid var(--line2);background:transparent;border-radius:999px;cursor:pointer;align-items:center;justify-content:center}
+.menu-btn span{display:block;width:16px;height:1.5px;background:var(--ink);box-shadow:0 5px 0 var(--ink),0 -5px 0 var(--ink)}
+.drawer{display:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* текст hero — одинаковый во всех вариантах */
+.ht h1{font:500 48px/1.1 Unbounded,system-ui,sans-serif;letter-spacing:-.035em;text-wrap:balance}
+.ht h1 span{display:block}.ht h1 .half{font-weight:300;color:var(--mute)}
+.ht .sub{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:22px;font-size:17px;line-height:1.45;color:var(--mute);max-width:560px}
+.ht .sub li{display:grid;grid-template-columns:14px minmax(0,1fr);gap:10px;align-items:baseline;text-wrap:pretty}
+.ht .sub li::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--c,var(--mute));transform:translateY(-1px)}
+.ht .sub li:nth-child(1){--c:var(--teal)}.ht .sub li:nth-child(2){--c:var(--yel)}.ht .sub li:nth-child(3){--c:var(--lem)}
+.ht .sub b{color:var(--ink);font-weight:500}
+.ht .ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.hnote{font-size:14px;color:var(--mute);margin-top:18px;max-width:560px;text-wrap:pretty}
+/* подпись «иллюстрация» */
+.ill{display:inline-flex;align-items:center;gap:8px;font:500 11px/1.3 'JetBrains Mono',ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);background:rgba(10,14,22,.88);border:1px solid var(--line2);border-radius:4px;padding:5px 7px;white-space:nowrap}
+.ill::before{content:"";width:6px;height:6px;border-radius:50%;border:1px solid var(--mute)}
+.cred{font-size:12px;color:var(--mute)}.cred a{color:var(--mute);text-decoration:underline;text-underline-offset:2px}
+/* пометки доступности */
+.st.team{border:1px solid var(--line2);color:var(--mute)}
+.st.res{border:1px dashed rgba(255,216,74,.55);color:var(--yel)}
+/* переключатель путей — настоящие вкладки */
+.pt{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:5px;border:1px solid var(--line2);border-radius:14px;background:rgba(10,14,22,.82)}
+.pt [role=tab]{position:relative;display:flex;gap:12px;align-items:flex-start;text-align:left;min-height:60px;padding:10px 12px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--mute);font:inherit;cursor:pointer;transition:background-color var(--d-hover) var(--ease-out),border-color var(--d-hover) var(--ease-out),color var(--d-hover) var(--ease-out)}
+.pt [role=tab]::before{content:"";flex:none;width:10px;height:10px;margin-top:5px;border-radius:2px;border:1.5px solid var(--c);transition:background-color var(--d-hover) var(--ease-out)}
+.pt [data-p=r]{--c:var(--teal)}.pt [data-p=n]{--c:var(--yel)}
+.pt [role=tab] b{display:block;font:500 16px/1.25 Onest,system-ui,sans-serif;color:inherit}
+.pt [role=tab] small{display:block;font-size:13px;line-height:1.35;color:var(--faint);margin-top:2px}
+.pt [role=tab][aria-selected=true]{background:var(--p2);border-color:var(--line2);color:var(--ink)}
+.pt [role=tab][aria-selected=true]::before{background:var(--c)}
+.pt [role=tab][aria-selected=true] small{color:var(--mute)}
+@media (hover:hover) and (pointer:fine){.pt [role=tab]:hover{color:var(--ink)}}
+.pt [role=tab]:focus-visible{outline:2px solid var(--lem);outline-offset:-2px;border-radius:10px}
+/* карточка товара: три вида информации */
+.oc{position:relative;background:var(--p1);border:1px solid var(--line2);border-radius:16px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(3,6,12,.3),0 30px 70px -30px rgba(3,6,12,.85);text-align:left;font-size:14px;overflow:hidden}
+.oc-h{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 16px 0}
+.oc-h .eyebrow{font-size:11px}
+.oc h3{padding:8px 16px 12px;font:500 16px/1.3 Onest,system-ui,sans-serif;text-wrap:balance}.oc h3 span{display:block;font-weight:400;font-size:13px;color:var(--mute);margin-top:2px}
+.ly{padding:11px 16px 12px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.lh{display:flex;gap:8px 10px;align-items:center;flex-wrap:wrap;font-size:12px;color:var(--mute)}
+.lh .st{margin-left:auto;font-size:10.5px;padding:4px 6px}
+.dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px}
+.dl div{display:flex;flex-direction:column;gap:1px;min-width:0}
+.dl dt{font-size:12px;color:var(--mute)}.dl dd{font-size:14px;color:var(--ink)}.dl dd .num{font-size:14px}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:13px;color:var(--mute)}.row .num{color:var(--ink);font-size:14px}
+.unk{display:inline-flex;align-items:center;gap:6px;font:600 11px/1 Onest,system-ui,sans-serif;letter-spacing:.04em;color:var(--ink);border:1.5px dashed var(--mute);border-radius:5px;padding:4px 6px;white-space:nowrap}
+/* слой сценария — отдельная вставка */
+.ly.s{margin:2px 10px 10px;border:1px dashed rgba(255,216,74,.5);border-radius:10px;padding:10px 12px;background:repeating-linear-gradient(135deg,rgba(255,216,74,.045) 0 6px,transparent 6px 12px)}
+.ly.s+.ly{border-top:1px solid var(--line)}
+/* предложение поставщика — отдельный источник, дополняет карточку */
+.of{border-top:1px solid var(--line);padding:10px 16px 12px;display:flex;flex-direction:column;gap:10px}
+.of-t{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.sw{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0;margin:-6px 0;background:none;border:0;color:var(--ink);font:500 14px/1.2 Onest,system-ui,sans-serif;cursor:pointer;text-align:left}
+.sw .tr{flex:none;position:relative;width:36px;height:20px;border-radius:999px;border:1px solid var(--line2);background:var(--bg);transition:background-color var(--d-hover) var(--ease-out),border-color var(--d-hover) var(--ease-out)}
+.sw .tr::after{content:"";position:absolute;left:2px;top:2px;width:14px;height:14px;border-radius:50%;background:var(--mute);transition:transform var(--d-hover) var(--ease-out),background-color var(--d-hover) var(--ease-out)}
+.sw[aria-checked=true] .tr{background:rgba(241,255,203,.16);border-color:var(--lem)}
+.sw[aria-checked=true] .tr::after{transform:translateX(16px);background:var(--lem)}
+.sw:focus-visible{outline:2px solid var(--lem);outline-offset:4px;border-radius:8px}
+.slip{position:relative;border-radius:10px;background:rgba(241,255,203,.07);box-shadow:inset 0 0 0 1px rgba(241,255,203,.28);padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.slip .src{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font:500 11px/1.2 'JetBrains Mono',ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--lem)}
+.slip .src::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lem)}
+.slip .dl dt{color:var(--mute)}
+.nof{font-size:13px;color:var(--mute);text-wrap:pretty}
+/* сравнение с потолком */
+.cmp{display:grid;gap:5px}
+.cmp .b{position:relative;height:6px;border-radius:3px;background:var(--line)}
+.cmp .b i{position:absolute;left:0;top:0;bottom:0;border-radius:3px;transform-origin:0 50%}
+.cmp .b.c i{width:100%;background:var(--mute)}.cmp .b.o i{width:83%;background:var(--lem)}
+.cmp .row{font-size:12px}
+.oc-f{border-top:1px solid var(--line);padding:12px 16px 14px;display:flex;flex-direction:column;gap:8px}
+.oc-f .verdict{font-size:14px;padding:6px 12px;white-space:nowrap}
+.of .st{white-space:normal;align-self:flex-start;line-height:1.3}
+.verdict.y{border-color:var(--yel);color:var(--yel);background:rgba(255,216,74,.08)}
+.oc-f .nx{font-size:14px}.oc-f .who{font-size:12.5px;color:var(--mute)}
+/* до / после предложения */
+.oc.no-offer .oa{display:none!important}.oc:not(.no-offer) .ob{display:none!important}
+@media (max-width:1100px){.ht h1{font-size:40px}.links{gap:20px}}
+@media (max-width:900px){.links,.acts .in{display:none}}
+@media (max-width:600px){
+.site-h,.nav{height:64px}.logo img{height:18.2px;width:140px}
+.acts>.btn{display:none}.menu-btn{display:inline-flex}
+.drawer.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:4px 16px 16px}
+.drawer a{min-height:48px;display:flex;align-items:center;padding:0 4px;border-bottom:1px solid var(--line)}.drawer .btn{margin-top:12px;border-bottom:0}
+.wrap{padding:0 16px}
+.ht h1{font-size:28px;line-height:1.16}.ht h1 span{display:inline}.ht h1 .half::before{content:" "}
+.ht .sub{font-size:15px;margin-top:16px}
+.ht .ctas{flex-direction:column;margin-top:22px;gap:10px}.ht .ctas .btn{width:100%}
+.hnote{font-size:13px}
+.pt [role=tab]{padding:9px 10px;gap:9px}.pt [role=tab] b{font-size:15px}.pt [role=tab] small{font-size:12px}
+}
