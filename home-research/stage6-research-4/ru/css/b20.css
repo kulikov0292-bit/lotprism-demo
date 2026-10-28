@@ -1,0 +1,30 @@
+/* БРИФ-20 · проход после экспертизы. Поверх fix.css. */
+/* п.1 ссылки к разделу предложения — в духе .go */
+.go2{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:3px;border-radius:4px}
+.go2:hover{text-decoration-color:currentColor}
+.go2:focus-visible{outline:2px solid var(--lem);outline-offset:2px}
+.sup a.opt{align-self:flex-start;color:var(--lem);text-decoration-color:rgba(241,255,203,.45)}
+/* п.1 компьютер: левая колонка на месте, предложение — на месте заглушки */
+.c-of .slot{flex:none;justify-content:flex-start}
+@media (min-width:981px){
+html[data-offer="1"] .oc3-g{grid-template-areas:"f of" "ce of";grid-template-rows:auto 1fr}
+html[data-offer="1"] .c-of{display:flex;flex-direction:column;gap:12px}
+.c-of .cmp2{order:1}.c-of .idc{order:2}
+.c-of .slip{padding:10px 14px;gap:6px}.c-of .slip .fl>div{padding-block:6px}
+}
+/* новые строки с метками: высота карточки первого экрана по-прежнему не прыгает */
+@media (min-width:1280px){[data-offer="0"] .res .rc{min-height:408px}[data-offer="1"] .res .rc{min-height:462px}}
+/* п.1 вспышка только на цене предложения и «Что изменилось в оценке» */
+.mo.arrive .slip .fl>div,.mo.arrive .chgs>div{animation:none}
+.mo.arrive .slip .fl>div:first-child{animation:flash 1.3s var(--ease-out) .25s both}
+.mo.arrive .chgs>div:nth-child(2){animation:flash 1.4s var(--ease-out) .55s both}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* п.4 разметка знания в карточке первого экрана */
+.rc-l dd .k{margin-right:8px;vertical-align:1px}
+.rc-l dd .hy{display:block;margin-top:5px;font-size:14px;line-height:1.4;color:var(--mute)}
+/* п.2 телефон: короткие подписи сценариев */
+@media (max-width:600px){
+.h-s .seg button{padding:8px 9px;gap:7px}
+.h-s .seg button small{display:block;font-size:12px;line-height:1.3;margin-top:1px}
+}
+@media (max-width:375px){.h-s .seg button{font-size:14px;padding:7px 6px;gap:6px}}
